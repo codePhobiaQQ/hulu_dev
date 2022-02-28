@@ -1,0 +1,30 @@
+.sotialsInner
+  position: fixed
+  right: 48px
+  z-index: 10
+  bottom: 200px
+  box-sizing: border-box
+  @media screen and (max-width: 1350px)
+    right: 32px
+  @media screen and (max-width: 992px) and (min-height: 1000px)
+    bottom: 50px
+  li
+    display: block
+    &:nth-child(2)
+      margin: 70px 0
+    svg
+      path
+        fill: darken(#fff, 40)
+      &:hover
+        path
+          transition: fill .3s ease-in-out
+          fill: #ffffff
+  @media screen and (max-width: 767px)
+    right: 7px
+    bottom: 40px
+    li
+      &:nth-child(2)
+        margin: 30px 0
+      svg
+        height: 47px
+

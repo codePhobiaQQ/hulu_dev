@@ -1,0 +1,105 @@
+.videoSection
+  margin: 140px 0 120px
+  height: 100%
+  width: 100%
+  @media screen and (max-width: 576px)
+    margin: 80px 0 70px
+  :global(.moreWrap)
+    display: flex
+    align-items: center
+    width: 210px
+    margin: auto
+    justify-content: space-between
+    cursor: pointer
+      width: 200px
+    &:hover
+      :global(.moreArrow)
+        display: flex
+        align-items: center
+        img
+          margin-top: -10px
+    span
+      margin-left: 40px
+    @media screen and (max-width: 767px)
+      width: 130px
+      span
+        margin-left: 0
+        font-size: 12px
+
+  @media screen and (max-width: 767px)
+    :global(.VideoPlayerWrapper)
+      width: 90px
+
+
+  .videoElem
+    display: flex
+    height: 160px
+    width: 100%
+    margin-bottom: 50px
+    //.video
+    @media screen and (max-width: 576px)
+      margin-bottom: 25px
+    @media screen and (max-width: 992px)
+      margin-bottom: 45px
+      flex-direction: column
+      :global(.VideoPlayerWrapper)
+        width: 100%
+
+    :global(.video-react.video-react-fluid)
+      height: 100% !important
+      width: 287px
+    .contentWrapper
+      display: flex
+      justify-content: space-between
+      border-bottom: 1px solid #fff
+      padding: 17px 0
+      margin-left: 47px
+      width: 100%
+      .leftSide, .rightSide
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+      .leftSide
+        span
+          &:first-child
+            font-size: 16px
+          &:last-child
+            font-weight: bold
+            font-size: 20px
+      .rightSide
+        div
+          display: flex
+          flex-direction: column
+          text-align: right
+          span
+            &:first-child
+              margin-bottom: 7px
+        span
+          text-align: right
+
+    @media screen and (max-width: 992px)
+      height: inherit
+      .contentWrapper
+        margin-top: 15px
+        margin-bottom: 30px
+        margin-left: 0
+        .leftSide
+          span
+            &:first-child
+              font-size: 11px
+              margin-bottom: 40px
+            &:last-child
+              font-weight: bold
+              font-size: 12px
+        .rightSide
+          div
+            span
+              font-size: 11px
+              &:first-child
+                margin-bottom: 2px
+          span
+            font-size: 11px
+
+      :global(.video-react.video-react-fluid)
+        height: inherit
+        width: 100%

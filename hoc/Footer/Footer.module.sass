@@ -1,0 +1,155 @@
+.Footer
+  padding: 110px 0
+  border-top: 1px solid #fff
+  display: flex
+  justify-content: space-between
+  .leftSide
+    max-width: 310px
+    img
+      margin-bottom: 40px
+    span
+      color: #5C5C5C
+      cursor: pointer
+      display: block
+      transition: color .3s ease-in-out
+      margin-bottom: 45px
+      &:last-child
+        margin-bottom: 0
+      &:hover
+        color: #fff
+
+  .centerSide
+    display: flex
+    ul
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      &:first-child
+        margin-right: 73px
+      &:last-child
+        li
+          a:hover
+            color: #fff
+      li
+        a
+          font-size: 18px
+          color: #5C5C5C
+          transition: color .3s ease
+          &.active
+            color: #fff
+
+
+  .rightSide
+    display: flex
+    flex-direction: column
+    .sotials
+      display: flex
+      justify-content: space-between
+    .mobSocials
+      display: none
+    .contact
+      display: flex
+      align-items: center
+      font-size: 18px
+      font-family: "Monsterrat", serif
+      font-weight: 500
+      margin-top: 45px
+      .name
+        color: #5C5C5C
+        margin-right: 20px
+      .value
+        color: #fff
+
+    .subscribeWrapper
+      display: flex
+      align-items: center
+      margin-top: 50px
+      :global(.footerSubscribe)
+        button
+          margin-top: 0
+      input
+        width: 100%
+        margin-right: 30px
+        padding-bottom: 8px
+    .whoMake
+      display: flex
+      align-items: center
+      margin-top: auto
+      span
+        color: #5C5C5C
+        flex: 0 0 auto
+        margin-right: 10px
+
+
+  @media screen and (max-width: 1200px)
+    flex-wrap: wrap
+    .leftSide
+      width: 222px
+      img
+        width: 177px
+        margin-bottom: 5px
+      span
+        font-size: 13px
+        margin-bottom: 35px
+    .centerSide
+      ul
+        li
+          &:first-child
+            display: none
+    .rightSide
+      margin-top: 0
+      .whoMake
+        margin-top: auto
+
+  @media screen and (max-width: 992px)
+    .rightSide
+      margin: 70px auto 0 auto
+      .whoMake
+        margin-top: 30px
+
+  @media screen and (max-width: 765px)
+    padding: 30px 0
+    .leftSide
+      //width: 125px
+      img
+        width: 125px
+        margin-bottom: 5px
+      span
+        font-size: 10px
+        margin-bottom: 28px
+    .centerSide
+      ul
+        &:first-child
+          margin-right: 0
+          li a
+            font-size: 10px
+            text-align: right
+            display: block
+        &:last-child
+          display: none
+    .rightSide
+      margin-top: 25px
+      width: 100%
+      .mobSocials
+        display: flex
+        list-style: none
+        font-size: 10px
+        width: 100%
+        justify-content: space-between
+        margin-top: 30px
+        li a
+          color: #5C5C5C
+      .contact
+        font-size: 10px
+        margin-top: 30px
+      .whoMake
+        font-size: 10px
+        a img
+          width: 101px
+
+      .subscribeWrapper
+        :global(.footerSubscribe)
+          button
+        input
+          width: 200px
