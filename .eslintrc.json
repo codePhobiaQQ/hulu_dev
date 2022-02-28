@@ -32,8 +32,6 @@
         "react/react-in-jsx-scope": "off",
         "require-jsdoc": "off",
         "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/ban-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "react/jsx-no-target-blank": "off"
+        "@typescript-eslint/ban-types": "off"
     }
 }
