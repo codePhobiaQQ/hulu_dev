@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand />
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b784764c-098d-46ec-b76f-b98732ecd47c" name="Default Changelist" comment="" />
+    <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/UI/SocLinks.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/InstagramB.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/LinkedinB.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/TelegramB.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/facebookB.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/twitterB.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sections/WrapperSecond.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/sections/AboutSection.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/MainSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/MainSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/menu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/mixins/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/mixins/_mixins.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="25keaSqbL9A86AfCQG6nci0Y479" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="25n6FcXZDIVbv8pAoJanCqbroqw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -21,13 +65,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/fonts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
@@ -35,16 +76,22 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/fonts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/assets/svg" />
-      <recent name="$PROJECT_DIR$/public/fonts" />
+      <recent name="$PROJECT_DIR$/sections" />
+      <recent name="$PROJECT_DIR$/public/assets/svg/soc" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -58,6 +105,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -66,12 +114,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b784764c-098d-46ec-b76f-b98732ecd47c" name="Default Changelist" comment="" />
-      <created>1646075574371</created>
+      <changelist id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="" />
+      <created>1646150400801</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1646075574371</updated>
-      <workItem from="1646075576048" duration="15232000" />
+      <updated>1646150400801</updated>
+      <workItem from="1646150402077" duration="80000" />
+      <workItem from="1646150483166" duration="13892000" />
     </task>
     <servers />
   </component>
@@ -90,41 +139,25 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="577" y="357" key="#ESLint" timestamp="1646076712276">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="300" key="GridCell.Tab.0.bottom" timestamp="1646165191059">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="577" y="357" key="#ESLint/0.0.1440.900@0.0.1440.900" timestamp="1646076712276" />
-    <state x="460" y="247" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646085458598">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1646165191059" />
+    <state width="1899" height="300" key="GridCell.Tab.0.center" timestamp="1646165191058">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="460" y="247" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1646085458598" />
-    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1646079916909">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="300" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1646165191058" />
+    <state width="1899" height="300" key="GridCell.Tab.0.left" timestamp="1646165191058">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1646079916909" />
-    <state width="1419" height="240" key="GridCell.Tab.0.bottom" timestamp="1646079355841">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="300" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1646165191058" />
+    <state width="1899" height="300" key="GridCell.Tab.0.right" timestamp="1646165191059">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1646079355841" />
-    <state width="1419" height="240" key="GridCell.Tab.0.center" timestamp="1646079355839">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="300" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1646165191059" />
+    <state x="469" y="179" key="SettingsEditor" timestamp="1646152289798">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1646079355839" />
-    <state width="1419" height="240" key="GridCell.Tab.0.left" timestamp="1646079355839">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1646079355839" />
-    <state width="1419" height="240" key="GridCell.Tab.0.right" timestamp="1646079355840">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1646079355840" />
-    <state x="229" y="86" key="SettingsEditor" timestamp="1646078234372">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="229" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1646078234372" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1646085551288">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1646085551288" />
+    <state x="469" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1646152289798" />
   </component>
 </project>

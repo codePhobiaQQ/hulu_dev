@@ -245,11 +245,6 @@ const LiquidButton = () => {
     <a ref={button} href="http://waaark.com" className="btn-liquid">
       <span className="inner">Learn more</span>
       <Line />
-      <canvas
-        width={buttonWidth + 100}
-        height={buttonHeight + 100}
-        ref={canvas}
-      ></canvas>
     </a>
   );
 };

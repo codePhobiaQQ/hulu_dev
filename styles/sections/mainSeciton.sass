@@ -3,12 +3,14 @@
 .mainSection
   height: 100vh
   position: relative
+  z-index: 1
+  background-color: $backgroundColor
   .dirty
     position: absolute
-    right: -300px
-    top: -363px
+    right: -250px
+    top: -263px
     background: radial-gradient(50% 50% at 50% 50%, #01C497 0%, rgba(1, 196, 151, 0) 100%)
-    filter: blur(100px)
+    //filter: blur(100px)
     transform: rotate(30deg)
     width: 1031px
     height: 742px
@@ -18,9 +20,14 @@
     align-items: center
     .content
       width: 717px
+      transition: opacity .4s ease
+      color: #fff
+      &.hide
+        opacity: 0
       h1
         font-size: 60px
         font-family: "SequelBookBody", sans-serif
+        line-height: 140%
         span
           font-family: "SequelBookBody", sans-serif
 

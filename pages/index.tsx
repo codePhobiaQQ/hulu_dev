@@ -1,10 +1,17 @@
 import Header from "../hoc/Header/Header";
 import MainSection from "../sections/MainSection";
+import { useState } from "react";
+import { useViewportScroll } from "framer-motion";
+import WrapperSecond from "../sections/WrapperSecond";
 
 const MainPage = () => {
+  const [hideMain, setHide] = useState<boolean>(false);
+  const { scrollY } = useViewportScroll();
+
   return (
-    <Header>
-      <MainSection />
+    <Header setHide={setHide}>
+      <MainSection hideMain={hideMain} />
+      <WrapperSecond scrolling={scrollY} />
     </Header>
   );
 };

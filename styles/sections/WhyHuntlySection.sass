@@ -1,0 +1,15 @@
+@import "./../mixins/mixins"
+@import './../mixins/vars'
+
+.whyHuntly
+  height: 100vh
+  position: relative
+  background-color: #C4C4C4
+  .backgroundWrapper
+    background-color: #131313
+    @include absoluteAll
+  .container
+    position: relative
+    h2
+      @include titleMix(#fff)
+      color: #fff

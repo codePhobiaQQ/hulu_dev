@@ -1,13 +1,14 @@
 import Logo from "../../public/assets/svg/Logo.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
-import { useRef, useState } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 
 interface IHeader {
   children: React.ReactNode;
+  setHide: Dispatch<SetStateAction<boolean>>;
 }
 
-const Header = ({ children }: IHeader) => {
+const Header = ({ children, setHide }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
   const [close, setClose] = useState<boolean>(true);
 
@@ -36,6 +37,7 @@ const Header = ({ children }: IHeader) => {
   const openMenu = () => {
     setOpen(true);
     menuElems.map((el) => el.current?.classList.add("active"));
+    setHide(true);
     setTimeout(() => {
       backgroundTwo.current?.classList.add("bg-two-full-width");
       backgroundOne.current?.classList.add("bg-one-full-width");
@@ -56,7 +58,7 @@ const Header = ({ children }: IHeader) => {
     }, 2200);
     setTimeout(() => {
       setClose(false);
-    }, 3200);
+    }, 2700);
   };
 
   function toggleClass() {
@@ -84,6 +86,7 @@ const Header = ({ children }: IHeader) => {
     setTimeout(() => {
       backgroundTwo.current?.classList.remove("bg-two-full-width");
       backgroundOne.current?.classList.remove("bg-one-full-width");
+      setHide(false);
     }, 500);
 
     setTimeout(() => {
