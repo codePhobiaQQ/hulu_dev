@@ -1,6 +1,70 @@
 @import '~reset-css'
 @import "./mixins/vars"
 
+@font-face
+  font-family: 'SequelBookBody'
+  src: url('../public/fonts/SequelSans-BookBody.woff2') format('woff2')
+
+@font-face
+  font-family: 'SequelBookBody'
+  src: url('../public/fonts/SequelSans-BookOblBody.woff2') format('woff2')
+
+@font-face
+  font-family: 'SequelHeavyBody'
+  src: url('../public/fonts/SequelSans-HeavyBody.woff2') format('woff2')
+
+@font-face
+  font-family: 'SequelLightBody'
+  src: url('../public/fonts/SequelSans-LightBody.woff2') format('woff2')
+
+@font-face
+  font-family: 'SequelMediumBody'
+  src: url('../public/fonts/SequelSans-MediumBody.woff2') format('woff2')
+
+@font-face
+  font-family: 'SequelMediumDisp'
+  src: url('../public/fonts/SequelSans-MediumDisp.woff2') format('woff2')
+
+@font-face
+  font-family: 'SequelMediumOblBody'
+  src: url('../public/fonts/SequelSans-MediumOblBody.woff2') format('woff2')
+
+@font-face
+  font-family: 'SequelRomanBody'
+  src: url('../public/fonts/SequelSans-RomanBody.woff2') format('woff2')
+
 body, html
   background-color: $backgroundColor
   color: $textColor
+  font-family: 'SequelLightBody', sans-serif
+
+*
+  box-sizing: border-box
+
+a
+  text-decoration: none
+  color: #fff
+
+.container
+  width: 1320px
+  margin: auto
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px)
+  .container
+    width: 1080px
+
+@media only screen and (min-width: 992px) and (max-width: 1200px)
+  .container
+    width: 870px
+
+@media only screen and (min-width: 767px) and (max-width: 992px)
+  .container
+    width: 570px
+
+@media only screen and (min-width: 569px) and (max-width: 767px)
+  .container
+    width: 80%
+
+@media only screen and (min-width: 320px) and (max-width: 568px)
+  .container
+    width: 315px

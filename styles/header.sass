@@ -1,0 +1,23 @@
+.header
+  padding: 20px
+  width: 100%
+  position: fixed
+  z-index: 11
+  top: 0
+  left: 0
+  .headerInner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .logo
+      position: relative
+      transition: all .3s ease
+      &.menuOpen
+        opacity: 0
+        pointer-events: none
+    .hamburger-wrapper
+      position: relative
+      cursor: pointer
+      height: 100%
+
+
