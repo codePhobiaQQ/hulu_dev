@@ -3,14 +3,132 @@
 .DashboardSection
   background-color: #fff
   padding-top: 75px
-  height: 100vh
+  position: relative
+  padding-bottom: 230px
+  .triangle
+    width: 100%
+    background-color: #000
+    clip-path: polygon(100% 30%, 0% 100%, 100% 100%)
+    height: 432px
+    position: absolute
+    bottom: -1px
+    left: 0
+    z-index: 1
   .container
-    h2
-      margin-top: 25px
-      @include titleMix(#131313)
-      margin-bottom: 90px
-    p
-      font-size: 36px
-      font-family: "SequelMediumDisp"
-      width: 710px
-      line-height: 140%
+    display: flex
+    .leftSide
+      h2
+        margin-top: 25px
+        @include titleMix(#131313)
+        margin-bottom: 90px
+      p
+        font-size: 36px
+        font-family: "SequelMediumDisp"
+        width: 710px
+        line-height: 140%
+    .rightSide
+      margin-left: auto
+      .circles
+        margin-right: -118px
+        width: 550px
+        height: 550px
+        position: relative
+        .firstText, .secondText, .thirdText
+          position: absolute
+          width: 125px
+          font-size: 18px
+          left: 95px
+          bottom: 95px
+          color: #666
+          transition: opacity .3s ease
+          &.active
+            color: #131313
+            span
+              color: #131313
+          span
+            display: block
+            font-size: 18px
+            font-family: 'SequelMediumDisp', sans-serif
+        .secondText
+          bottom: 206px
+          left: 206px
+        .thirdText
+          bottom: 315px
+          left: 318px
+        .firstLevel, .secondLevel, .thirdLevel
+          width: 550px
+          height: 550px
+          z-index: 1
+          top: 0
+          right: 0
+          border-radius: 50%
+          border: 1px solid #BABCBE
+          transition: border .3s ease
+          position: absolute
+          animation: round 4s linear infinite
+          &:hover
+            border-color: #131313
+            &:after
+              opacity: 1
+          &:after
+            @include afterMix
+            transition: opacity .3s ease
+            opacity: 0
+            width: 14px
+            height: 14px
+            background: #01C497
+            border-radius: 50%
+            top: -7px
+            left: calc(50% - 7px)
+        .secondLevel
+          position: absolute
+          z-index: 2
+          right: 23px
+          top: 23px
+          width: 400px
+          height: 400px
+        .thirdLevel
+          position: absolute
+          z-index: 3
+          right: 42px
+          top: 45px
+          width: 250px
+          height: 250px
+  .container
+    &:last-child
+      margin-top: 97px
+      display: block
+      position: relative
+      img
+        position: absolute
+        top: 0px
+        right: -223px
+        width: 875px
+      h3
+        &.ultimate
+          font-size: 36px
+          color: #000
+          font-family: "SequelMediumOblBody"
+        &.screening
+          margin-top: 310px
+          @include titleMix(#131313)
+      p
+        width: 537px
+        font-family: "SequelLightBody"
+        line-height: 140%
+        &.text1
+          margin-top: 90px
+        &.text3
+          margin-top: 66px
+          margin-bottom: 30px
+      .textWrapper
+        margin-top: 90px
+        display: flex
+        justify-content: space-between
+
+
+@keyframes round
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(-360deg)
