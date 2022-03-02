@@ -20,32 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/UI/SocLinks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/InstagramB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/LinkedinB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/TelegramB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/facebookB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/svg/soc/twitterB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sections/WrapperSecond.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/sections/AboutSection.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motions/AboutSection.motion.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motions/MainSection.motion.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sections/DashboardSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/sections/DashboardSection.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/AboutSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/MainSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/MainSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/WrapperSecond.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WrapperSecond.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/mixins/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/mixins/_mixins.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/AboutSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/AboutSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646150400801</updated>
       <workItem from="1646150402077" duration="80000" />
-      <workItem from="1646150483166" duration="13892000" />
+      <workItem from="1646150483166" duration="18404000" />
     </task>
     <servers />
   </component>

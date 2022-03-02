@@ -4,6 +4,7 @@ import "../styles/menu.scss";
 import "./../styles/sections/mainSeciton.sass";
 import "./../styles/sections/AboutSection.sass";
 import "./../styles/sections/WhyHuntlySection.sass";
+import "./../styles/sections/DashboardSection.sass";
 import type { AppProps } from "next/app";
 import React, { FC } from "react";
 import withRedux from "next-redux-wrapper";

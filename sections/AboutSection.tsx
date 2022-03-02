@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ILink } from "../components/Menu";
 import { v4 as uuidv4 } from "uuid";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { motion, MotionValue, useTransform } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
+import { fadeFromBot, fadeFromBotDelay } from "../motions/AboutSection.motion";
 
 interface IAboutSection {
   opacity: MotionValue<number>;
@@ -39,6 +39,7 @@ const AboutSection = ({ opacity }: IAboutSection) => {
       link: "#",
     },
   ];
+  console.log(opacity);
 
   return (
     <section className="aboutSection">
@@ -53,7 +54,14 @@ const AboutSection = ({ opacity }: IAboutSection) => {
             <div className="navigation">
               {links.map((link, index) => (
                 <Link key={uuidv4() + index} href={link.link}>
-                  <a className="navigationItem">{link.name}</a>
+                  <motion.a
+                    variants={fadeFromBot}
+                    initial="hidden"
+                    whileInView="visible"
+                    className="navigationItem"
+                  >
+                    {link.name}
+                  </motion.a>
                 </Link>
               ))}
             </div>
@@ -66,16 +74,26 @@ const AboutSection = ({ opacity }: IAboutSection) => {
               banking. Our support is available 24/7 to assist you with that.
             </div>
             <div className="statistic">
-              <div className="statInner">
+              <motion.div
+                variants={fadeFromBot}
+                initial="hidden"
+                whileInView="visible"
+                className="statInner"
+              >
                 <h4>UP TO</h4>
                 <span className="number">60%</span>
                 <span className="small">Less time on AML cases</span>
-              </div>
-              <div className="statInner">
+              </motion.div>
+              <motion.div
+                variants={fadeFromBotDelay}
+                initial="hidden"
+                whileInView="visible"
+                className="statInner"
+              >
                 <h4>UP TO</h4>
                 <span className="number">60%</span>
                 <span className="small">Less time on AML cases</span>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

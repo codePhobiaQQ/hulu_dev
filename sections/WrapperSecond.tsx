@@ -1,6 +1,6 @@
 import WhyHuntySection from "./WhyHuntySection";
 import AboutSection from "./AboutSection";
-import { MotionValue, useTransform } from "framer-motion";
+import { MotionValue, useTransform, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 interface IWrapperSecond {
@@ -8,26 +8,25 @@ interface IWrapperSecond {
 }
 
 const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
-  const [top, setTop] = useState<number>(500);
+  const [topi, setTop] = useState<number>(500);
   const [height, setHeight] = useState<number>(780);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const opacity = useTransform(scrolling, [top, top + height], [1, 0]);
-
-  console.log(opacity);
+  const opacity = useTransform(scrolling, [topi, topi + 500], [1, 0]);
 
   useEffect(() => {
     // @ts-ignore
     setTop(sectionRef.current?.offsetTop);
-    console.log(sectionRef);
+    console.log(top);
     // @ts-ignore
-    setTop(sectionRef.current?.clientHeight);
+    setHeight(sectionRef.current?.clientHeight);
+    console.log(height);
   }, []);
 
   return (
-    <div ref={sectionRef} className="WrapperSecond">
+    <motion.div ref={sectionRef} className="WrapperSecond">
       <WhyHuntySection opacity={opacity} />
       <AboutSection opacity={opacity} />
-    </div>
+    </motion.div>
   );
 };
 
