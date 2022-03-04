@@ -20,18 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/teamLeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/dmitor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/lev.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/sergei.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/svg/in.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sections/OurTeam.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/sections/OurTeamSection.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sections/FooterSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/sections/FooterSection.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/mixins/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/mixins/_mixins.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/DashboardSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/DashboardSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/AboutSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/OurTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/OurTeam.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +65,7 @@
       <recent name="$PROJECT_DIR$/public/assets/svg/soc" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -92,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -109,6 +105,7 @@
       <updated>1646150400801</updated>
       <workItem from="1646150402077" duration="80000" />
       <workItem from="1646150483166" duration="37727000" />
+      <workItem from="1646431958740" duration="1916000" />
     </task>
     <servers />
   </component>
@@ -125,6 +122,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1899" height="300" key="GridCell.Tab.0.bottom" timestamp="1646342454229">

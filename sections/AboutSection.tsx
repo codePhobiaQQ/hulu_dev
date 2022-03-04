@@ -39,7 +39,7 @@ const AboutSection = ({ opacity }: IAboutSection) => {
       link: "#",
     },
   ];
-  console.log(opacity);
+  // console.log(opacity);
 
   return (
     <section className="aboutSection">

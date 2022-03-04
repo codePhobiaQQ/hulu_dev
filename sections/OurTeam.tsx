@@ -5,7 +5,7 @@ import TeamLeader from "../components/teamLeader";
 
 const OurTeam = () => {
   return (
-    <section className="OurTeamSection">
+    <section id="OurTeam" className="OurTeamSection">
       <div className="triangle"></div>
       <div className="container">
         <h2>OUR TEAM</h2>

@@ -2,6 +2,7 @@ import logo from "../public/assets/svg/Logo.svg";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import SocLinks from "./UI/SocLinks";
+import { SetStateAction, Dispatch } from "react";
 
 interface IMenu {
   nav: any;
@@ -12,6 +13,8 @@ interface IMenu {
   social: any;
   links: any;
   title: any;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  toggleClass: () => void;
 }
 
 export interface ILink {
@@ -28,6 +31,8 @@ const Menu = ({
   links,
   social,
   title,
+  setOpen,
+  toggleClass,
 }: IMenu) => {
   const linksMenu: ILink[] = [
     {
@@ -64,13 +69,18 @@ const Menu = ({
     },
     {
       name: "OUR TEAM",
-      link: "#why",
+      link: "OurTeam",
     },
     {
       name: "BLOG",
-      link: "#why",
+      link: "#Blog",
     },
   ];
+
+  const clickLinkHandler = () => {
+    // setOpen(false);
+    toggleClass();
+  };
 
   return (
     <div className="menuUI">
@@ -90,7 +100,7 @@ const Menu = ({
           <div ref={line} className="line"></div>
           <ul ref={links} className="links">
             {linksMenu.map((el, index) => (
-              <li key={uuidv4() + index}>
+              <li onClick={clickLinkHandler} key={uuidv4() + index}>
                 <Link href={`#${el.link}`}>
                   <a>{el.name}</a>
                 </Link>

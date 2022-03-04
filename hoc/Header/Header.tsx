@@ -2,6 +2,7 @@ import Logo from "../../public/assets/svg/Logo.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
+import FooterSection from "../../sections/FooterSection";
 
 interface IHeader {
   children: React.ReactNode;
@@ -55,10 +56,8 @@ const Header = ({ children, setHide }: IHeader) => {
     setTimeout(() => {
       dustParticles.current?.classList.add("active");
       social.current?.classList.add("active");
-    }, 2200);
-    setTimeout(() => {
       setClose(false);
-    }, 2700);
+    }, 2200);
   };
 
   function toggleClass() {
@@ -87,11 +86,12 @@ const Header = ({ children, setHide }: IHeader) => {
       backgroundTwo.current?.classList.remove("bg-two-full-width");
       backgroundOne.current?.classList.remove("bg-one-full-width");
       setHide(false);
+      setOpen(false);
     }, 500);
 
-    setTimeout(() => {
-      setOpen(false);
-    }, 600);
+    // setTimeout(() => {
+    //
+    // }, 600);
   }
 
   return (
@@ -111,6 +111,8 @@ const Header = ({ children, setHide }: IHeader) => {
         </div>
       </div>
       <Menu
+        setOpen={setOpen}
+        toggleClass={toggleClass}
         nav={nav}
         backgroundOne={backgroundOne}
         backgroundTwo={backgroundTwo}
@@ -121,6 +123,7 @@ const Header = ({ children, setHide }: IHeader) => {
         title={title}
       />
       {children}
+      <FooterSection />
     </>
   );
 };
