@@ -1,0 +1,66 @@
+@import "../mixins/mixins"
+@import "../mixins/vars"
+
+.OurTeamSection
+  background-color: #fff
+  padding-top: 104px
+  padding-bottom: 515px
+  position: relative
+  .triangle
+    @include triangle()
+  .container
+    h2
+      @include titleMix(#131313)
+      margin-bottom: 100px
+    ul.teamLists
+      display: flex
+      justify-content: space-between
+      li
+        width: 430px
+        height: 600px
+        cursor: pointer
+        position: relative
+        -webkit-box-shadow: 5px 6px 20px 0px rgba(0,0,0,0.2)
+        -moz-box-shadow: 5px 6px 20px 0px rgba(0,0,0,0.2)
+        box-shadow: 5px 6px 20px 0px rgba(0,0,0,0.2)
+        padding: 20px
+        img.teamImg
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+        .innerWrapper
+          position: relative
+          width: 100%
+          height: 100%
+          //pointer-events: none
+          overflow: hidden
+          .info
+            position: absolute
+            bottom: 0
+            left: 0
+            transition: all .3s ease
+            width: 100%
+            padding: 20px
+            .subInfo
+              p
+                font-size: 13px
+                font-family: "SequelLightBody"
+                color: #fff
+                line-height: 140%
+            .mainInfo
+              display: flex
+              justify-content: space-between
+              align-items: center
+              margin-bottom: 22px
+
+            span
+              color: $accent
+              font-family: "SequelMediumBody"
+              font-size: 36px
+            img
+              width: 38px
+              height: 38px
