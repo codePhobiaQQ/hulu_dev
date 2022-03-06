@@ -11,7 +11,7 @@ interface ISocLink {
 }
 
 interface ISocLinksProps {
-  social: any;
+  social?: any;
 }
 
 const SocLinks = ({ social }: ISocLinksProps) => {

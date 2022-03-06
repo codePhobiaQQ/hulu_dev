@@ -22,6 +22,49 @@ export interface ILink {
   link: string;
 }
 
+export const linksMenu: ILink[] = [
+  {
+    name: "WHY HUNTLI?",
+    link: "#why",
+  },
+  {
+    name: "ABOUT US",
+    link: "#why",
+  },
+  {
+    name: "DASHBOARD",
+    link: "#why",
+  },
+  {
+    name: "SCREENING",
+    link: "#why",
+  },
+  {
+    name: "RISK SCENARIOS",
+    link: "#why",
+  },
+  {
+    name: "EVENTS",
+    link: "#why",
+  },
+  {
+    name: "CONTACTS US",
+    link: "#why",
+  },
+  {
+    name: "PORTFOLIO",
+    link: "#why",
+  },
+  {
+    name: "OUR TEAM",
+    link: "OurTeam",
+  },
+  {
+    name: "BLOG",
+    link: "#Blog",
+  },
+];
+
 const Menu = ({
   nav,
   backgroundOne,
@@ -34,49 +77,6 @@ const Menu = ({
   setOpen,
   toggleClass,
 }: IMenu) => {
-  const linksMenu: ILink[] = [
-    {
-      name: "WHY HUNTLI?",
-      link: "#why",
-    },
-    {
-      name: "ABOUT US",
-      link: "#why",
-    },
-    {
-      name: "DASHBOARD",
-      link: "#why",
-    },
-    {
-      name: "SCREENING",
-      link: "#why",
-    },
-    {
-      name: "RISK SCENARIOS",
-      link: "#why",
-    },
-    {
-      name: "EVENTS",
-      link: "#why",
-    },
-    {
-      name: "CONTACTS US",
-      link: "#why",
-    },
-    {
-      name: "PORTFOLIO",
-      link: "#why",
-    },
-    {
-      name: "OUR TEAM",
-      link: "OurTeam",
-    },
-    {
-      name: "BLOG",
-      link: "#Blog",
-    },
-  ];
-
   const clickLinkHandler = () => {
     // setOpen(false);
     toggleClass();

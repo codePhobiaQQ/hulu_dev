@@ -1,8 +1,61 @@
+@import "../mixins/mixins"
+@import "../mixins/vars"
+
 .footerSection
+  background-color: #131313
   .container
+    display: flex
+    justify-content: space-between
+    border-top: 2px solid #fff
+    padding-top: 105px
+    padding-bottom: 90px
     .leftCol
       img
         width: 415px
         height: 162px
+        margin-top: 14px
+      span
+        margin-top: 54px
+        color: #fff
+        display: block
     .centerCol
+      h3
+        font-family: "SequelMediumBody"
+        font-size: 26px
+        color: #fff
+        text-transform: uppercase
+        margin-bottom: 46px
+      ul
+        li
+          margin-bottom: 22px
+          a
+            font-family: "SequelMediumBody"
+            color: #6F6F6F
+          &:hover
+            color: #fff
+
+
     .rightCol
+      h3
+        font-family: "SequelMediumBody"
+        font-size: 26px
+        color: #fff
+        text-transform: uppercase
+        margin-bottom: 46px
+      .address
+        margin-bottom: 36px
+        font-family: "SequelLightBody"
+        display: block
+      .email
+        font-family: "SequelLightBody"
+        margin-bottom: 61px
+        display: block
+        color: #01C497
+      .tel
+        font-family: "SequelLightBody"
+        margin-bottom: 65px
+        display: block
+      ul
+        display: flex
+        li
+
