@@ -1,5 +1,6 @@
 import TopLine from "../UI/riscSection/TopLine";
 import PlainLine from "../UI/riscSection/PlainLine";
+import { useState } from "react";
 
 interface IRiskElem {
   classing?: string;
@@ -7,6 +8,8 @@ interface IRiskElem {
 }
 
 const RiskElem = ({ classing, plainLine }: IRiskElem) => {
+  const [whatActive, setWhatActive] = useState<number>(1);
+
   return (
     <div className="riskBlock">
       {classing && <TopLine classing={classing} />}
@@ -32,8 +35,18 @@ const RiskElem = ({ classing, plainLine }: IRiskElem) => {
         </div>
       </div>
       <div className="buttonsWrap">
-        <div className="active left">Data Mapping</div>
-        <div className="right">Rule Detail</div>
+        <div
+          onClick={() => setWhatActive(1)}
+          className={whatActive == 1 ? "active left" : "left"}
+        >
+          Data Mapping
+        </div>
+        <div
+          onClick={() => setWhatActive(2)}
+          className={whatActive == 2 ? "right active" : "right"}
+        >
+          Rule Detail
+        </div>
       </div>
     </div>
   );

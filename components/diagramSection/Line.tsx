@@ -8,40 +8,7 @@ const Line = () => {
   return (
     <div className="line">
       <div className="number">15</div>
-      <div className="range">
-        <Range
-          step={0.1}
-          min={0}
-          max={100}
-          values={values}
-          onChange={(values) => setValues(values)}
-          renderTrack={({ props, children }) => (
-            <div
-              {...props}
-              style={{
-                ...props.style,
-                height: "1px",
-                width: "100%",
-                backgroundColor: "#01C497",
-              }}
-            >
-              {children}
-            </div>
-          )}
-          renderThumb={({ props }) => (
-            <div
-              className={"rangeCircle"}
-              {...props}
-              style={{
-                ...props.style,
-                height: "18px",
-                width: "18px",
-                backgroundColor: "#01C497",
-              }}
-            />
-          )}
-        />
-      </div>
+      <div className="range"></div>
       <div className="result">2800 euro</div>
     </div>
   );
