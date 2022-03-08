@@ -1,4 +1,4 @@
-import logo from "../public/assets/svg/Logo.svg";
+import logo from "../public/assets/svg/LogoMenu.svg";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import SocLinks from "./UI/SocLinks";

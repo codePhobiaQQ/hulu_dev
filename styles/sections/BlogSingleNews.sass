@@ -6,10 +6,10 @@
   padding-bottom: 104px
   transition: background-color .3s ease
 
-  &.white
-    background-color: #fff
-  &.grey
-    background-color: #E5E5E5
+
+  &.grey, &.white
+    transition: background-color .3s ease
+    background-color: #C6C6C6
     .contentWrap
       p
         transition: color .3s ease
@@ -18,13 +18,27 @@
         color: #131313
       .infoWrapper
         .date
+          transition: color .3s ease
           color: #666666
           svg
+            transition: fill .3s ease
             fill: #666
         .separator
+          transition: background-color .3s ease
           background-color: #666666
         .categoryBtn
+          transition: background-color .3s ease
           background-color: #131313
+          border: 1px solid #666666
+          color: #666666
+
+  &.white
+    background-color: #fff
+    .contentWrap
+      .infoWrapper
+        .categoryBtn
+          background-color: transparent
+          transition: background-color .3s ease
           border: 1px solid #666666
           color: #666666
 
@@ -105,7 +119,7 @@
               &:hover
                 path
                   fill: #1977F3
-            &.links
+            &.link
               &:hover
                 path
                   fill: #0A66C2

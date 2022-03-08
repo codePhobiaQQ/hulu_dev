@@ -1,0 +1,135 @@
+@import "../mixins/mixins"
+@import "../mixins/vars"
+
+.RiscScenarios
+  padding-top: 100px
+  .container
+    h2
+      @include titleMix(#fff)
+  .riskContainer
+    width: 1530px
+    margin: auto
+    .schemaWrapper
+      margin-top: 49px
+      display: flex
+      align-items: center
+      justify-content: center
+
+      //.leftSide
+      .startBtn, .finishBtn
+        background-color: #01C497
+        cursor: pointer
+        border-radius: 15px
+        width: 227px
+        height: 91px
+        position: relative
+        @include centerMix
+        @include algCircle
+        span
+          margin-left: 20px
+          font-family: "SequelMediumBody"
+          font-size: 26px
+        .topLine
+          position: absolute
+          height: 230px
+          z-index: 0
+          right: -65px
+          top: calc(50% - 223px)
+          &.second
+            transform: scale(1, -1)
+            top: calc(50% - 8px)
+
+      .finishBtn
+        margin-left: 106px
+        &:before, &:after
+          left: -9px
+        &:before
+          left: -10px
+
+      .secondSide, .thirdSide
+        margin-left: 70px
+
+      .thirdSide
+        .riskBlock
+          &:first-child
+            margin-bottom: 0
+          .plainLine
+            position: absolute
+            right: -100px
+            top: calc(50% - .5px)
+
+      .riskBlock
+        border-radius: 30px
+        padding: 30px
+        border: 1px solid $accent
+        position: relative
+        width: 400px
+        height: 280px
+        background: #000000
+        @include algCircle
+        .topLine, .bottomLine
+          position: absolute
+          height: 230px
+          z-index: 0
+          right: -65px
+          transform: scale(1, -1)
+          top: calc(50% - 8px)
+        .bottomLine
+          transform: none
+          top: calc(50% - 223px)
+
+        &:first-child
+          margin-bottom: 153px
+        .riskInner
+          @include algCircle
+          &:after
+            right: inherit
+            left: -9px
+          &:before
+            right: inherit
+            left: -10px
+        .showData
+          position: absolute
+          right: 21px
+          top: 21px
+          font-size: 26px
+          font-family: "SequelMediumBody"
+          color: #757575
+        .field
+          margin-bottom: 25px
+          h4
+            color: #757575
+            font-family: "SequelMediumBody"
+            margin-bottom: 9px
+          span
+            font-size: 13px
+            color: #fff
+        .fieldWrap
+          display: flex
+          justify-content: space-between
+          margin-bottom: 20px
+          .field
+            margin-bottom: 0
+            &:last-child
+              margin-right: 42px
+        .buttonsWrap
+          display: flex
+          justify-content: center
+          div
+            border: 1px solid $accent
+            height: 30px
+            cursor: pointer
+            padding: 0 41px
+            font-size: 13px
+            color: #fff
+            &.active
+              background-color: $accent
+              color: #131313
+            &.left
+              @include centerMix
+              border-bottom-left-radius: 30px
+              border-top-left-radius: 30px
+            &.right
+              @include centerMix
+              border-bottom-right-radius: 30px
+              border-top-right-radius: 30px

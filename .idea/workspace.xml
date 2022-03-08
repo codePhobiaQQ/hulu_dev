@@ -20,18 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/UI/soc/LinkIn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/UI/soc/faceBook.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/UI/soc/twit.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/UI/StartIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/UI/riscSection/Finish.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/UI/riscSection/PlainLine.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/UI/riscSection/TopLine.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/riskSection/RiskElem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/LogoGrey.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/LogoMenu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/svg/LogoWhite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sections/RiscScenarios.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/sections/RiscSection.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/blog/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/header.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/BlogPageSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/BlogPageSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/mixins/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/mixins/_mixins.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/sections/BlogSingleNews.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/BlogSingleNews.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/FooterSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/FooterSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

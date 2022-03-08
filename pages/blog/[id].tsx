@@ -40,7 +40,7 @@ const BlogSinglePage = () => {
   };
 
   return (
-    <Header color={colorMode} setColorMode={setColorMode}>
+    <Header colorMode={colorMode} setColorMode={setColorMode}>
       <section className={"BlogSinglePage " + colorMode}>
         <div className="container">
           <Link href="/blog">

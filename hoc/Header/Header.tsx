@@ -1,9 +1,12 @@
 import Logo from "../../public/assets/svg/Logo.svg";
+import LogoGrey from "../../public/assets/svg/LogoGrey.svg";
+import LogoWhite from "../../public/assets/svg/LogoWhite.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 import FooterSection from "../../sections/FooterSection";
 import { useRouter } from "next/router";
+import { fadeIn } from "../../motions/MainSection.motion";
 
 interface IHeader {
   children: React.ReactNode;
@@ -111,13 +114,23 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
     }
   };
 
+  const whatLogo = () => {
+    if (link.pathname == "/blog/[id]") {
+      if (colorMode == "black") return Logo.src;
+      else if (colorMode == "grey") return LogoGrey.src;
+      else return LogoWhite.src;
+    } else {
+      return Logo.src;
+    }
+  };
+
   return (
     <>
       <div className={"header " + colorMode}>
         <div className={"headerInner"}>
           <Link href="/">
             <a className={open ? "logo menuOpen" : "logo"}>
-              <img src={Logo.src} alt="Logo" />
+              <img src={whatLogo()} alt="Logo" />
             </a>
           </Link>
           {link.pathname == "/blog/[id]" && (

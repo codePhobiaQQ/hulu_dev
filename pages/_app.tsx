@@ -13,6 +13,7 @@ import "./../styles/sections/PortfolioSection.sass";
 import "./../styles/sections/BlogSection.sass";
 import "./../styles/sections/BlogPageSection.sass";
 import "./../styles/sections/BlogSingleNews.sass";
+import "./../styles/sections/RiscSection.sass";
 import "./../styles/sections/FooterSection.sass";
 import type { AppProps } from "next/app";
 import React, { FC } from "react";

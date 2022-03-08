@@ -8,6 +8,7 @@ import EventsSection from "../sections/EventsSection";
 import OurTeam from "../sections/OurTeam";
 import PortfolioSection from "../sections/PortfolioSection";
 import BlogSection from "../sections/BlogSection";
+import RiscScenarios from "../sections/RiscScenarios";
 
 const MainPage = () => {
   const [hideMain, setHide] = useState<boolean>(false);
@@ -18,6 +19,7 @@ const MainPage = () => {
       <MainSection scrolling={scrollY} hideMain={hideMain} />
       <WrapperSecond scrolling={scrollY} />
       <DashboardSection />
+      <RiscScenarios />
       <EventsSection />
       <PortfolioSection />
       <OurTeam />

@@ -289,9 +289,13 @@ $beige: #fff;
       background-position: 1px 1px;
       transform: scale(1);
     }
-    50% {
-      background-position: 15px 15px;
+    33% {
+      background-position: 45px 25px;
       transform: scale(1.03);
+    }
+    66% {
+      background-position: -10px -25px;
+      transform: scale(1.05);
     }
     100% {
       background-position: 1px 1px;
