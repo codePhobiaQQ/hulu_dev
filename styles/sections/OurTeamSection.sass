@@ -1,6 +1,9 @@
 @import "../mixins/mixins"
 @import "../mixins/vars"
 
+$hoverEasing: cubic-bezier(0.23, 1, 0.32, 1)
+$returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
+
 .OurTeamSection
   background-color: #fff
   padding-top: 104px
@@ -38,7 +41,8 @@
           height: 100%
           //pointer-events: none
           overflow: hidden
-          .info
+
+      .info
             position: absolute
             bottom: 0
             left: 0
@@ -64,3 +68,5 @@
             img
               width: 38px
               height: 38px
+
+

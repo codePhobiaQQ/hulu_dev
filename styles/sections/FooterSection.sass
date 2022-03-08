@@ -5,7 +5,7 @@
   background-color: #131313
   .container
     display: flex
-    justify-content: space-between
+    justify-content: space-around
     border-top: 2px solid #fff
     padding-top: 105px
     padding-bottom: 90px
@@ -25,17 +25,23 @@
         color: #fff
         text-transform: uppercase
         margin-bottom: 46px
-      ul
-        li
-          margin-bottom: 22px
-          a
-            font-family: "SequelMediumBody"
-            color: #6F6F6F
-          &:hover
-            color: #fff
+      .linksLists
+        display: flex
+        ul
+          &:first-child
+            margin-right: 130px
+          li
+            margin-bottom: 22px
+            a
+              font-family: "SequelMediumBody"
+              color: #6F6F6F
+              transition: color .3s ease
+              &:hover
+                color: #fff
 
 
     .rightCol
+      width: 266px
       h3
         font-family: "SequelMediumBody"
         font-size: 26px
@@ -45,6 +51,8 @@
       .address
         margin-bottom: 36px
         font-family: "SequelLightBody"
+        color: #fff
+        line-height: 140%
         display: block
       .email
         font-family: "SequelLightBody"
@@ -57,5 +65,6 @@
         display: block
       ul
         display: flex
+        justify-content: space-between
         li
 

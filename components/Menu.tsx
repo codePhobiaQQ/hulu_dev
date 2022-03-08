@@ -57,11 +57,11 @@ export const linksMenu: ILink[] = [
   },
   {
     name: "OUR TEAM",
-    link: "OurTeam",
+    link: "#OurTeam",
   },
   {
     name: "BLOG",
-    link: "#Blog",
+    link: "/blog",
   },
 ];
 
@@ -101,7 +101,7 @@ const Menu = ({
           <ul ref={links} className="links">
             {linksMenu.map((el, index) => (
               <li onClick={clickLinkHandler} key={uuidv4() + index}>
-                <Link href={`#${el.link}`}>
+                <Link href={`${el.link}`}>
                   <a>{el.name}</a>
                 </Link>
               </li>

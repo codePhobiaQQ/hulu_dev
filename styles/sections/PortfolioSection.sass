@@ -1,0 +1,32 @@
+@import "../mixins/mixins"
+@import "../mixins/vars"
+
+.PortfolioSection
+  background-color: #fff
+  padding-top: 94px
+  padding-bottom: 30px
+  .container
+    h2
+      @include titleMix(#131313)
+      margin-bottom: 100px
+  .carousel
+    padding: 100px 20px
+    border-top: 1px solid #C4C4C4
+    border-bottom: 1px solid #C4C4C4
+    .slick-track
+      &:focus-visible
+        outline: none
+    .slick-slide
+      height: 90px
+      outline: none
+      @include centerMix
+      img
+        filter: grayscale(100%)
+        transition: filter .3s ease
+        cursor: pointer
+        &:hover
+          filter: inherit
+    .portfolioElems
+      .legend
+        height: 70px
+        background-color: red

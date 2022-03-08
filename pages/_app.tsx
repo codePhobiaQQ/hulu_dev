@@ -1,3 +1,5 @@
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./../styles/main.sass";
 import "./../styles/header.sass";
 import "../styles/menu.scss";
@@ -7,6 +9,10 @@ import "./../styles/sections/WhyHuntlySection.sass";
 import "./../styles/sections/DashboardSection.sass";
 import "./../styles/sections/EventsSection.sass";
 import "./../styles/sections/OurTeamSection.sass";
+import "./../styles/sections/PortfolioSection.sass";
+import "./../styles/sections/BlogSection.sass";
+import "./../styles/sections/BlogPageSection.sass";
+import "./../styles/sections/BlogSingleNews.sass";
 import "./../styles/sections/FooterSection.sass";
 import type { AppProps } from "next/app";
 import React, { FC } from "react";

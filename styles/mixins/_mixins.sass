@@ -24,6 +24,7 @@
   content: ''
   display: block
   position: absolute
+  box-sizing: border-box
 
 @mixin triangle()
   width: 100%
@@ -34,3 +35,16 @@
   bottom: -1px
   left: 0
   z-index: 1
+
+@mixin greenBtn
+  width: 137px
+  height: 40px
+  border-radius: 50px
+  border: 1px solid #00C497
+  color: #00C497
+  transition: all .3s ease
+  cursor: pointer
+  @include centerMix
+  &:hover
+    background-color: #00C497
+    color: #131313

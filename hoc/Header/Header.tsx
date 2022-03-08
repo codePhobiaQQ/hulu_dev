@@ -6,7 +6,7 @@ import FooterSection from "../../sections/FooterSection";
 
 interface IHeader {
   children: React.ReactNode;
-  setHide: Dispatch<SetStateAction<boolean>>;
+  setHide?: Dispatch<SetStateAction<boolean>>;
 }
 
 const Header = ({ children, setHide }: IHeader) => {
@@ -38,7 +38,9 @@ const Header = ({ children, setHide }: IHeader) => {
   const openMenu = () => {
     setOpen(true);
     menuElems.map((el) => el.current?.classList.add("active"));
-    setHide(true);
+    if (setHide) {
+      setHide(true);
+    }
     setTimeout(() => {
       backgroundTwo.current?.classList.add("bg-two-full-width");
       backgroundOne.current?.classList.add("bg-one-full-width");
@@ -85,7 +87,9 @@ const Header = ({ children, setHide }: IHeader) => {
     setTimeout(() => {
       backgroundTwo.current?.classList.remove("bg-two-full-width");
       backgroundOne.current?.classList.remove("bg-one-full-width");
-      setHide(false);
+      if (setHide) {
+        setHide(false);
+      }
       setOpen(false);
     }, 500);
 

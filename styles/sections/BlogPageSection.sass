@@ -1,0 +1,86 @@
+@import "../mixins/mixins"
+@import "../mixins/vars"
+
+.BlogPageSection
+  padding-top: 132px
+  padding-bottom: 104px
+  min-height: 100vh
+  .container
+    overflow-y: hidden
+    ul.categoriesHead
+      display: flex
+      li
+        @include greenBtn
+        margin-right: 50px
+        &.active
+          background-color: #00C497
+          color: #131313
+        &:last-child
+          margin-right: 0
+    ul.blogEls
+      margin-top: 70px
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      grid-template-rows: auto
+      grid-auto-flow: row dense
+      grid-column-gap: 36px
+      grid-row-gap: 36px
+      //display: flex
+      li
+        grid-column-start: auto
+        grid-row-start: auto
+        background-color: #1D1D1D
+        transition: transform .3s ease
+        //margin-bottom: 76px
+        &:hover
+          transform: scale(1.02)
+        .imgWrapper
+          position: relative
+          &:after
+            @include afterMix
+            position: absolute
+            display: block
+            box-sizing: border-box
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            border: 10px solid #1D1D1D
+          img
+            width: 100%
+
+
+        .content
+          position: relative
+          padding: 20px 26px 64px 26px
+          h3
+            font-family: "SequelMediumBody"
+            color: #6F6F6F
+            text-align: center
+            margin-bottom: 20px
+          p
+            color: #fff
+            text-align: left
+            width: 100%
+            line-height: 140%
+          span
+            position: absolute
+            bottom: 10px
+            right: -10px
+            background-color: #038665
+            height: 43px
+            padding: 0 20px
+            font-size: 20px
+            color: #131313
+            @include centerMix
+            &:after
+              @include afterMix
+              width: 10px
+              height: 10px
+              background-color: #037265
+              clip-path: polygon(0 0, 0% 100%, 100% 100%)
+              top: -9.7px
+              right: 0
+
+
+

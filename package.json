@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
+    "@types/react-slick": "^0.23.8",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta3",
     "compass": "^0.1.1",
@@ -27,8 +28,10 @@
     "react-dom": "17.0.2",
     "react-intersection-observer": "^8.32.2",
     "react-player": "^2.9.0",
+    "react-range": "^1.8.12",
     "react-redux": "^7.2.4",
     "react-scroll-parallax": "^2.4.0",
+    "react-slick": "^0.28.1",
     "react-spinners": "^0.11.0",
     "react-transition-group": "^4.4.2",
     "reactstrap": "^8.9.0",
@@ -37,7 +40,9 @@
     "redux-thunk": "^2.3.0",
     "reset-css": "^5.0.1",
     "sass": "^1.35.2",
+    "slick-carousel": "^1.8.1",
     "uuid": "^8.3.2",
+    "uuidv4": "^6.2.12",
     "video-react": "^0.14.1"
   },
   "devDependencies": {

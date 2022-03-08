@@ -1,0 +1,63 @@
+@import "../mixins/mixins"
+@import "../mixins/vars"
+
+.BlogSinglePage
+  padding-top: 101px
+  padding-bottom: 104px
+  .container
+    .goBackBtn
+      display: flex
+      align-items: center
+      @include greenBtn
+      height: 60px
+      width: 245px
+      margin-bottom: 70px
+      svg
+        margin-right: 18px
+        path
+          transition: .3s ease
+      &:hover
+        svg
+          path
+            fill: #131313
+    .contentWrap
+      color: #fff
+      img
+        //display: inline-block
+        float: left
+        margin: 0 45px 35px 0
+      p
+        margin-bottom: 30px
+        font-size: 18px
+        line-height: 140%
+      h3
+        font-family: "SequelMediumBody"
+        color: #C4C4C4
+        text-align: center
+        margin-bottom: 30px
+      .infoWrapper
+        display: flex
+        align-items: center
+        margin-bottom: 31px
+        .date
+          display: flex
+          align-items: center
+          svg
+            margin-right: 10px
+        .separator
+          background-color: #666666
+          height: 16px
+          width: 1px
+          margin: 0 20px
+        .categoryBtn
+          height: 20px
+          font-size: 11px
+          border-radius: 50px
+          @include centerMix
+          color: #666666
+          padding: 0 32px
+          border: 1px solid #666666
+          span
+            margin-top: -2px
+        .socLinks
+          margin-left: auto

@@ -14,15 +14,34 @@ const FooterSection = () => {
         </div>
         <div className="centerCol">
           <h3>Navigate</h3>
-          <ul className="links">
-            {linksMenu.map((el, index) => (
-              <li key={uuidv4() + index}>
-                <Link href={`#${el.link}`}>
-                  <a>{el.name}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="linksLists">
+            <ul className="links left">
+              {linksMenu.map((el, index) => (
+                <>
+                  {index <= 4 && (
+                    <li key={uuidv4() + index}>
+                      <Link href={`#${el.link}`}>
+                        <a>{el.name}</a>
+                      </Link>
+                    </li>
+                  )}
+                </>
+              ))}
+            </ul>
+            <ul className="links right">
+              {linksMenu.map((el, index) => (
+                <>
+                  {index > 4 && (
+                    <li key={uuidv4() + index}>
+                      <Link href={`#${el.link}`}>
+                        <a>{el.name}</a>
+                      </Link>
+                    </li>
+                  )}
+                </>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="rightCol">
           <h3>CONTACT</h3>
@@ -31,9 +50,6 @@ const FooterSection = () => {
           </span>
           <a className="email" href="mailto:dmytro@huntli.io">
             dmytro@huntli.io
-          </a>
-          <a className="tel" href="tel:+371 22 035 144">
-            +371 22 035 144
           </a>
           <SocLinks />
         </div>

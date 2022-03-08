@@ -14,3 +14,27 @@
     h2
       @include titleMix(#fff)
       color: #fff
+      margin-bottom: 70px
+    .content
+      display: flex
+      .leftCol
+        .lines
+          .line
+            display: flex
+            align-items: center
+            color: #C4C4C4
+            .range
+              width: 500px
+              margin: 0 71px 0 65px
+              .rangeCircle
+                border-radius: 50%
+                outline: none
+                &:after
+                  @include afterMix
+                  width: 20px
+                  height: 20px
+                  border-radius: 50%
+                  top: -2px
+                  left: -2px
+                  border: 1px solid #01C497
+
