@@ -3,16 +3,18 @@ import Link from "next/link";
 import Menu from "../../components/Menu";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 import FooterSection from "../../sections/FooterSection";
+import { useRouter } from "next/router";
 
 interface IHeader {
   children: React.ReactNode;
   setHide?: Dispatch<SetStateAction<boolean>>;
+  setColorMode?: Dispatch<SetStateAction<string>>;
+  colorMode?: string;
 }
 
-const Header = ({ children, setHide }: IHeader) => {
+const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
   const [close, setClose] = useState<boolean>(true);
-
   const nav = useRef<HTMLElement>(null);
   const backgroundOne = useRef<HTMLElement>(null);
   const backgroundTwo = useRef<HTMLElement>(null);
@@ -22,6 +24,8 @@ const Header = ({ children, setHide }: IHeader) => {
   const social = useRef<HTMLElement>(null);
   const links = useRef<HTMLElement>(null);
   const title = useRef<HTMLElement>(null);
+
+  const link = useRouter();
 
   const menuElems = [
     nav,
@@ -98,15 +102,37 @@ const Header = ({ children, setHide }: IHeader) => {
     // }, 600);
   }
 
+  const settingColor = (color: string): any => {
+    if (setColorMode) {
+      setColorMode(color);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("color", color);
+      }
+    }
+  };
+
   return (
     <>
-      <div className={"header"}>
+      <div className={"header " + colorMode}>
         <div className={"headerInner"}>
           <Link href="/">
             <a className={open ? "logo menuOpen" : "logo"}>
               <img src={Logo.src} alt="Logo" />
             </a>
           </Link>
+          {link.pathname == "/blog/[id]" && (
+            <div className="colors">
+              <div
+                onClick={() => settingColor("black")}
+                className="color"
+              ></div>
+              <div className="color" onClick={() => settingColor("grey")}></div>
+              <div
+                className="color"
+                onClick={() => settingColor("white")}
+              ></div>
+            </div>
+          )}
           <div onClick={toggleClass} className="hamburger-wrapper">
             <div className="hamburger-container">
               <div className={open ? "hamburger active" : "hamburger"}></div>

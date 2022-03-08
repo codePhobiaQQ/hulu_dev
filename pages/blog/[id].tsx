@@ -5,8 +5,18 @@ import { IBlog } from "./index";
 import people from "../../public/assets/img/news/pepole.jpg";
 import arca from "../../public/assets/img/news/arca.jpg";
 import Date from "../../components/UI/date";
+import Twit from "../../components/UI/soc/twit";
+import FaceBook from "../../components/UI/soc/faceBook";
+import LinkIn from "../../components/UI/soc/LinkIn";
+import { useEffect, useState } from "react";
 
 const BlogSinglePage = () => {
+  const [colorMode, setColorMode] = useState<string>("black");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setColorMode(localStorage.getItem("color") || "black");
+    }
+  }, []);
   const blog: IBlog = {
     id: 1,
     name: "LOREM IPSUM",
@@ -17,7 +27,7 @@ const BlogSinglePage = () => {
       "is available 24/7 to assist you with that.",
     longText:
       "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-      "sit in id mauris ex. Orce pulvinar consectetur et. Dictu",
+      "sit in id mauris ex. Orce pulvinar fdafadf fadfasf fadsfasf fadfasfas consectetur et. Dictu",
     date: "10 February 2022",
     category: [
       {
@@ -30,8 +40,8 @@ const BlogSinglePage = () => {
   };
 
   return (
-    <Header>
-      <section className="BlogSinglePage">
+    <Header color={colorMode} setColorMode={setColorMode}>
+      <section className={"BlogSinglePage " + colorMode}>
         <div className="container">
           <Link href="/blog">
             <a className="goBackBtn">
@@ -51,7 +61,17 @@ const BlogSinglePage = () => {
               <div className="categoryBtn">
                 <span>{blog.category[0].name}</span>
               </div>
-              <div className="socLinks">link</div>
+              <div className="socLinks">
+                <a href="#">
+                  <Twit />
+                </a>
+                <a href="#">
+                  <FaceBook />
+                </a>
+                <a href="#">
+                  <LinkIn />
+                </a>
+              </div>
             </div>
             <p>{blog.longText}</p>
             <p>{blog.longText}</p>

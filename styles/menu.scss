@@ -314,14 +314,15 @@ $beige: #fff;
   ::before {
     box-shadow: 1px 1px 33px 2px rgba(0, 0, 0, 0.1);
     background: #fff;
-    height: 4px;
+    height: 1px;
     transition: all 1s ease-in-out;
   }
 
   // TOP BAR
   .hamburger {
-    width: 35px;
+    width: 60px;
     position: relative;
+    margin-top: -6px;
 
     &::after,
     &::before {
@@ -331,24 +332,24 @@ $beige: #fff;
 
     // MIDDLE BAR
     &::after {
-      width: 18px;
-      bottom: -220%;
+      width: 30px;
+      bottom: -10px;
       right: 0;
     }
 
     // BOTTOM BAR
     &::before {
       right: -50%;
-      top: 420%;
+      top: 20px;
       opacity: 0;
-      width: 26px;
+      width: 60px;
       transition: all 0.5s ease-in-out;
     }
 
     // HAMBURGER ACTIVE CLASSES
     &.active {
       background: $beige;
-      width: 30px;
+      width: 60px;
 
       &::before {
         background: $beige;
@@ -358,7 +359,7 @@ $beige: #fff;
 
       &::after {
         background: $beige;
-        width: 20px;
+        width: 30px;
       }
     }
   }

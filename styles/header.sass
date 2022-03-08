@@ -1,3 +1,6 @@
+@import "mixins/mixins"
+@import "mixins/vars"
+
 .header
   padding: 20px
   width: 100%
@@ -5,6 +8,9 @@
   z-index: 11
   top: 0
   left: 0
+  &.black
+  &.grey
+  &.white
   .headerInner
     display: flex
     align-items: center
@@ -15,6 +21,37 @@
       &.menuOpen
         opacity: 0
         pointer-events: none
+    .colors
+      display: flex
+      align-items: center
+      margin-left: auto
+      margin-right: 54px
+      .color
+        width: 25px
+        height: 25px
+        cursor: pointer
+        border-radius: 50%
+        background-color: #424242
+        position: relative
+        &:after
+          @include afterMix
+          position: absolute
+          width: 29px
+          top: -2px
+          left: -2px
+          height: 29px
+          border-radius: 50%
+          border: 1px solid #424242
+        &:nth-child(2)
+          margin: 0 27px
+          background-color: #C6C6C6
+          &:after
+            border-color: #C6C6C6
+        &:last-child
+          background-color: #FFFFFF
+          &:after
+            border-color: #FFFFFF
+
     .hamburger-wrapper
       position: relative
       cursor: pointer

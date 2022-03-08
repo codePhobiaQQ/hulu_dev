@@ -4,60 +4,110 @@
 .BlogSinglePage
   padding-top: 101px
   padding-bottom: 104px
-  .container
-    .goBackBtn
-      display: flex
-      align-items: center
-      @include greenBtn
-      height: 60px
-      width: 245px
-      margin-bottom: 70px
-      svg
-        margin-right: 18px
-        path
-          transition: .3s ease
-      &:hover
-        svg
-          path
-            fill: #131313
+  transition: background-color .3s ease
+
+  &.white
+    background-color: #fff
+  &.grey
+    background-color: #E5E5E5
     .contentWrap
-      color: #fff
-      img
-        //display: inline-block
-        float: left
-        margin: 0 45px 35px 0
       p
-        margin-bottom: 30px
-        font-size: 18px
-        line-height: 140%
+        transition: color .3s ease
+        color: #131313
       h3
-        font-family: "SequelMediumBody"
-        color: #C4C4C4
-        text-align: center
-        margin-bottom: 30px
+        color: #131313
       .infoWrapper
-        display: flex
-        align-items: center
-        margin-bottom: 31px
         .date
-          display: flex
-          align-items: center
+          color: #666666
           svg
-            margin-right: 10px
+            fill: #666
         .separator
           background-color: #666666
-          height: 16px
-          width: 1px
-          margin: 0 20px
         .categoryBtn
-          height: 20px
-          font-size: 11px
-          border-radius: 50px
-          @include centerMix
-          color: #666666
-          padding: 0 32px
+          background-color: #131313
           border: 1px solid #666666
-          span
-            margin-top: -2px
-        .socLinks
-          margin-left: auto
+          color: #666666
+
+
+  .container
+    overflow-x: inherit
+    @media only screen and (min-width: 1360px) and (max-width: 1920px)
+      width: 1010px
+  .goBackBtn
+    display: flex
+    align-items: center
+    @include greenBtn
+    height: 60px
+    width: 245px
+    margin-bottom: 70px
+    svg
+      margin-right: 18px
+      path
+        transition: .3s ease
+    &:hover
+      svg
+        path
+          fill: #131313
+  .contentWrap
+    color: #fff
+    img
+      //display: inline-block
+      float: left
+      margin: 0 45px 35px 0
+    p
+      margin-bottom: 30px
+      font-size: 18px
+      line-height: 140%
+    h3
+      font-family: "SequelMediumBody"
+      color: #C4C4C4
+      text-align: center
+      margin-bottom: 30px
+    .infoWrapper
+      display: flex
+      align-items: center
+      margin-bottom: 31px
+      .date
+        display: flex
+        align-items: center
+        svg
+          margin-right: 10px
+      .separator
+        background-color: #666666
+        height: 16px
+        width: 1px
+        margin: 0 20px
+      .categoryBtn
+        height: 20px
+        font-size: 11px
+        border-radius: 50px
+        @include centerMix
+        color: #666666
+        padding: 0 32px
+        border: 1px solid #666666
+        span
+          margin-top: -2px
+      .socLinks
+        display: flex
+        align-items: center
+        margin-left: auto
+        a
+          &:nth-child(2)
+            margin: 0 45px
+          svg
+            path
+              transition: fill .3s ease
+            &.twit
+              &:hover
+                path
+                  fill: #55ACEE
+            &.face
+              &:hover
+                path
+                  fill: #1977F3
+            &.links
+              &:hover
+                path
+                  fill: #0A66C2
+
+
