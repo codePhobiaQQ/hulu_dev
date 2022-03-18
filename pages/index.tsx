@@ -9,6 +9,7 @@ import OurTeam from "../sections/OurTeam";
 import PortfolioSection from "../sections/PortfolioSection";
 import BlogSection from "../sections/BlogSection";
 import RiscScenarios from "../sections/RiscScenarios";
+import ContactSection from "../sections/ContactSection";
 
 const MainPage = () => {
   const [hideMain, setHide] = useState<boolean>(false);
@@ -21,6 +22,7 @@ const MainPage = () => {
       <DashboardSection />
       <RiscScenarios />
       <EventsSection />
+      <ContactSection />
       <PortfolioSection />
       <OurTeam />
       <BlogSection />

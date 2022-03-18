@@ -8,12 +8,12 @@ interface IWhyHuntySection {
   opacity: MotionValue<number>;
 }
 
-const STEP = 0.1;
-const MIN = 0;
-const MAX = 100;
+const STEP = 1;
+const MIN = 1000;
+const MAX = 100000;
 
 const WhyHuntySection = ({ opacity }: IWhyHuntySection) => {
-  const [values, setValue] = useState<number[]>([50]);
+  const [values, setValue] = useState<number[]>([1000]);
 
   return (
     <section className="whyHuntly">
@@ -27,6 +27,7 @@ const WhyHuntySection = ({ opacity }: IWhyHuntySection) => {
           <div className="leftCol">
             <span className="numbers">number of transactions</span>
             <div className="slider">
+              <span>1 000</span>
               <Range
                 step={STEP}
                 min={MIN}
@@ -54,15 +55,25 @@ const WhyHuntySection = ({ opacity }: IWhyHuntySection) => {
                   <div className="circlingRange" {...props} />
                 )}
               />
+              <span>100 000</span>
             </div>
             <div className="resultLines">
-              <span>With Huntli you can save up to:</span>
-              <span>{calcNumbSection(values[0])} €</span>
+              <span className="savingSpan">
+                With Huntli you can save up to:
+              </span>
+              <div className="result green">
+                {calcNumbSection(values[0], true)} €
+              </div>
             </div>
             <div className="resultLines">
-              <span>Without Huntli you can save up to:</span>
-              <span className="green">790 €</span>
+              <span className="savingSpan">
+                Without Huntli you can save up to:
+              </span>
+              <div className="result">
+                {calcNumbSection(values[0], false)} €
+              </div>
             </div>
+
             <p className="weHave">
               We have designed our system to help financial market players save
               up to 60% on their day-to-day compliance costs while being on par

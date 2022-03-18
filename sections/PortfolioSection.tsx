@@ -59,8 +59,8 @@ const PortfolioSection = () => {
     slidesToShow: 5,
     pauseOnHover: true,
     autoplay: true,
-    speed: 1800,
-    autoplaySpeed: 1800,
+    speed: 5000,
+    autoplaySpeed: 5000,
     cssEase: "linear",
   };
   return (

@@ -31,10 +31,17 @@
 
         .slider
           margin-bottom: 60px
+          display: flex
+          align-items: center
+          span
+            color: #fff
+            color: #C4C4C4
+            font-size: 50px
+            font-family: "SequelLightBody"
           .sliderLine
             width: 400px
             height: 1px
-            //background-color: #666666
+            margin: 0 70px
           .circlingRange
             border-radius: 50%
             width: 18px
@@ -54,8 +61,10 @@
         .resultLines
           display: flex
           margin-bottom: 48px
-          span
-            width: 295px
+          width: 600px
+          span.savingSpan
+            //width: 295px
+            white-space: nowrap
             color: #fff
             &:first-child
               margin-right: 43px
@@ -63,9 +72,16 @@
               align-self: flex-end
             &.green
               color: $accent
-            &:last-child
-              font-family: "SequelMediumDisp", sans-serif
-              font-size: 50px
+
+          div.result
+            white-space: nowrap
+            margin-left: auto
+            color: #fff
+            letter-spacing: 0.05em
+            font-family: "SequelMediumDisp", sans-serif
+            font-size: 50px
+            &.green
+              color: $accent
 
 
         p.weHave
