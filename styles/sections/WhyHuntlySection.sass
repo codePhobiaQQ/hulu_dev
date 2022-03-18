@@ -17,24 +17,73 @@
       margin-bottom: 70px
     .content
       display: flex
+      justify-content: space-between
       .leftCol
-        .lines
-          .line
-            display: flex
-            align-items: center
-            color: #C4C4C4
-            .range
-              width: 500px
-              margin: 0 71px 0 65px
-              .rangeCircle
-                border-radius: 50%
-                outline: none
-                &:after
-                  @include afterMix
-                  width: 20px
-                  height: 20px
-                  border-radius: 50%
-                  top: -2px
-                  left: -2px
-                  border: 1px solid #01C497
+        span.numbers
+          display: block
+          line-height: 140%
+          width: 120px
+          font-size: 18px
+          font-family: "SequelLightBody", sans-serif
+          color: #fff
+          margin-bottom: 70px
 
+
+        .slider
+          margin-bottom: 60px
+          .sliderLine
+            width: 400px
+            height: 1px
+            //background-color: #666666
+          .circlingRange
+            border-radius: 50%
+            width: 18px
+            height: 18px
+            background-color: $accent
+            &:after
+              @include afterMix
+              border-radius: 50%
+              top: -2px
+              left: -2px
+              width: 22px
+              height: 22px
+              border: 1px solid $accent
+
+
+
+        .resultLines
+          display: flex
+          margin-bottom: 48px
+          span
+            width: 295px
+            color: #fff
+            &:first-child
+              margin-right: 43px
+              font-family: "SequelLightBody", sans-serif
+              align-self: flex-end
+            &.green
+              color: $accent
+            &:last-child
+              font-family: "SequelMediumDisp", sans-serif
+              font-size: 50px
+
+
+        p.weHave
+          color: #fff
+          width: 590px
+          line-height: 36px
+      .rightCol
+        ul
+          li
+            border-top: 1px solid #C4C4C4
+            color: #C4C4C4
+            width: 320px
+            padding: 28px 0
+            font-size: 18px
+            line-height: 140%
+            font-family: "SequelLightBody", sans-serif
+
+
+  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+    .container
+      .content
