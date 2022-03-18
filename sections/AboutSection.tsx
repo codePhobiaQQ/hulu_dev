@@ -90,9 +90,9 @@ const AboutSection = ({ opacity }: IAboutSection) => {
                 whileInView="visible"
                 className="statInner"
               >
-                <h4>UP TO</h4>
-                <span className="number">60%</span>
-                <span className="small">Less time on AML cases</span>
+                <h4>OVER</h4>
+                <span className="number">200+</span>
+                <span className="small">Ready to use scenarios</span>
               </motion.div>
             </div>
           </div>

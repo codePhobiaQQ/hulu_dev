@@ -33,7 +33,7 @@ const TeamLeader = ({ img, name, text, link }: ILeader) => {
       <img className="teamImg" src={img} alt="team" />
       <div className="innerWrapper">
         <div
-          style={{ transform: `translateY(${!hovering ? bottomimg : 0}px)` }}
+          style={{ transform: `translateY(${!hovering ? bottomimg : 33}px)` }}
           className="info"
         >
           <div className="mainInfo">

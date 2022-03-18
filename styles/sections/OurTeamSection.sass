@@ -42,9 +42,9 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
           //pointer-events: none
           overflow: hidden
 
-      .info
+          .info
             position: absolute
-            bottom: 0
+            bottom: 33px
             left: 0
             transition: all .3s ease
             width: 100%
@@ -68,5 +68,28 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
             img
               width: 38px
               height: 38px
+
+  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+    padding-top: 42px
+    padding-bottom: 307px
+    .container
+      h2
+        margin-bottom: 78px
+      ul.teamLists
+        li
+          width: 287px
+          padding: 15px
+          height: 400px
+          .innerWrapper
+            .info
+              .mainInfo
+                span
+                  font-size: 25px
+                img
+                  width: 25px
+                  height: 25px
+              .subInfo
+                p
+                  font-size: 11px
 
 

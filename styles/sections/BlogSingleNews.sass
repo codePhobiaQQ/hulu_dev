@@ -45,8 +45,6 @@
 
   .container
     overflow-x: inherit
-    @media only screen and (min-width: 1360px) and (max-width: 1920px)
-      width: 1010px
   .goBackBtn
     display: flex
     align-items: center
@@ -124,4 +122,8 @@
                 path
                   fill: #0A66C2
 
-
+  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+    .goBackBtn
+      @include greenBtn
+      height: 40px
+      width: 285px

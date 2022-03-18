@@ -34,6 +34,7 @@
           bottom: 95px
           color: #666
           transition: opacity .3s ease
+          line-height: 140%
           &.active
             color: #131313
             span
@@ -87,6 +88,7 @@
           top: 45px
           width: 250px
           height: 250px
+
   .container
     &:last-child
       margin-top: 97px
@@ -102,6 +104,9 @@
           font-size: 36px
           color: #000
           font-family: "SequelMediumOblBody"
+          opacity: 0
+          height: 0
+          pointer-events: none
         &.screening
           margin-top: 310px
           @include titleMix(#131313)
@@ -118,6 +123,80 @@
         margin-top: 90px
         display: flex
         justify-content: space-between
+
+
+
+
+
+  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+    padding-top: 50px
+    .container
+      .leftSide
+        width: 590px
+        p
+          font-size: 30px
+          width: 100%
+      h3
+        &.ultimate
+          font-size: 36px
+      .rightSide
+        .circles
+          margin-right: 0
+          width: 360px
+          height: 360px
+          .firstText, .secondText, .thirdText
+            font-size: 12px
+            span
+              font-size: 12px
+          .firstText
+            bottom: 56px
+            left: 62px
+            width: 80px
+          .secondText
+            bottom: 130px
+            left: 134px
+            width: 85px
+          .thirdText
+            bottom: 200px
+            left: 208px
+            width: 85px
+
+          .firstLevel
+            width: 360px
+            height: 360px
+          .secondLevel
+            width: 261px
+            height: 261px
+            top: 14px
+            right: 14px
+          .thirdLevel
+            width: 163px
+            height: 163px
+            top: 28px
+            right: 28px
+
+      &:last-child
+        margin-top: 20px
+        img
+          width: 912px
+          right: -106px
+          top: -290px
+        h3
+          &.ultimate
+            display: none
+        p
+          font-size: 16px
+          width: 500px
+          &.text1, &.text2
+            width: 360px
+          &.text1
+            margin-top: 50px
+            margin-bottom: 30px
+          &.text3
+            width: 500px
+        .textWrapper
+          margin-top: 51px
+
 
 
 @keyframes round
