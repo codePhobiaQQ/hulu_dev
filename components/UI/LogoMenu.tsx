@@ -65,10 +65,10 @@ const LogoMenu = ({ refing }: ILogoMenu) => {
           y2="54.4896"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
-          <stop offset="0.1062" stop-color="#5A5A5A" stop-opacity="0.8938" />
-          <stop offset="0.7135" stop-color="#191919" stop-opacity="0.2865" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopColor="#666666" />
+          <stop offset="0.1062" stopColor="#5A5A5A" stopOpacity="0.8938" />
+          <stop offset="0.7135" stopColor="#191919" stopOpacity="0.2865" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
