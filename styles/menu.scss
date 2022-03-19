@@ -376,36 +376,12 @@ $beige: #fff;
   // HAMBURGER HOVER ANIMATION
   &:hover {
     .hamburger {
-      animation: hamburger 1s linear infinite forwards;
+      //animation: hamburger 1s linear infinite forwards;
 
       &::after {
         animation: hamburger-after 1.3s linear infinite forwards;
       }
     }
-  }
-}
-
-@keyframes hamburger {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  25% {
-    transform: rotateZ(2.5deg);
-  }
-  33% {
-    transform: rotateZ(2deg);
-  }
-  50% {
-    transform: rotateZ(0deg);
-  }
-  75% {
-    transform: rotateZ(-2.8deg);
-  }
-  83% {
-    transform: rotateZ(-2deg);
-  }
-  100% {
-    transform: rotateZ(0deg);
   }
 }
 

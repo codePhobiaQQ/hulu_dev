@@ -15,10 +15,6 @@ const AboutSection = ({ opacity }: IAboutSection) => {
       link: "#",
     },
     {
-      name: "Transaction monitoring",
-      link: "#",
-    },
-    {
       name: "Events",
       link: "#",
     },

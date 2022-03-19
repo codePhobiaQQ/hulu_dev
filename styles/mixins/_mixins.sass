@@ -96,9 +96,12 @@
     border: none
     border-bottom: 1px solid #666666
     padding-bottom: 33px
-    font-size: 36px
+    font-size: 28px
+    padding-top: 3px
     font-family: "SequelLightBody", sans-serif
     margin-bottom: 25px
+    &::placeholder
+      font-size: 36px
     &#message
       margin-bottom: 0
   .buttonWrap
@@ -129,9 +132,11 @@
 
   @media only screen and (max-width: 1919px)
     input
-      font-size: 30px
+      font-size: 20px
       padding-bottom: 30px
       margin-bottom: 30px
+      &::placeholder
+        font-size: 30px
     .buttonWrap
       margin-top: 30px
       button
@@ -144,9 +149,11 @@
 
   @media only screen and (max-width: 576px)
     input
-      font-size: 25px
+      font-size: 18px
       padding-bottom: 25px
       margin-bottom: 25px
+      &::placeholder
+        font-size: 25px
     .buttonWrap
       width: 100%
       display: flex

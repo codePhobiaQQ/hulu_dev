@@ -8,10 +8,10 @@ const WhyHuntlySlider = () => {
     slidesToShow: 4,
     pauseOnHover: false,
     autoplay: true,
-    speed: 3000,
+    // speed: 3000,
     vertical: true,
     draggable: false,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     cssEase: "linear",
   };
   return (
