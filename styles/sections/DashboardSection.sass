@@ -10,6 +10,9 @@
   .container
     display: flex
     .leftSide
+      margin-left: 0
+      .circles
+        display: none
       h2
         margin-top: 25px
         @include titleMix(#131313)
@@ -21,6 +24,7 @@
         line-height: 140%
     .rightSide
       margin-left: auto
+    .rightSide, .leftSide
       .circles
         margin-right: -118px
         width: 550px
@@ -128,8 +132,9 @@
 
 
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (max-width: 1919px)
     padding-top: 50px
+    padding-bottom: 180px
     .container
       .leftSide
         width: 590px
@@ -139,7 +144,7 @@
       h3
         &.ultimate
           font-size: 36px
-      .rightSide
+      .rightSide, .leftSide
         .circles
           margin-right: 0
           width: 360px
@@ -196,6 +201,93 @@
             width: 500px
         .textWrapper
           margin-top: 51px
+
+  @media only screen and (max-width: 1359px)
+    .container
+      .leftSide
+        width: 100%
+        .circles
+          display: flex
+        p
+          font-size: 20px
+          width: 70%
+        h2
+          margin-bottom: 40px
+        .circles
+          float: right
+          margin: 0 0 0 30px
+      .rightSide
+        display: none
+        .circles
+          margin-top: 280px
+          float: right
+      &:last-child
+        margin-top: -70px
+        h3.screening
+          margin-top: 32px
+          margin-bottom: 50px
+        img
+          width: 100%
+          max-width: 658px
+          position: relative
+          top: 0
+          right: 0
+        .textWrapper
+          flex-direction: column
+          p:first-child
+            margin-bottom: 40px
+
+  @media only screen and (max-width: 992px)
+    .container
+      .leftSide
+        p
+          width: 80%
+        .circles
+          display: inline-block
+      &:last-child
+        margin-top: 0
+      //.leftSide
+      //  display: flex
+      //  flex-direction: column
+      //  .circles
+      //    order: 2
+
+  @media only screen and (max-width: 576px)
+    padding-bottom: 85px
+    padding-top: 20px
+    position: relative
+    .container
+      .leftSide
+        p
+          width: 100%
+          margin-bottom: 30px
+        .circles
+          display: block
+          float: inherit
+          left: calc(50% - 180px)
+          margin-left: 0
+          position: absolute
+          .firstText
+            bottom: 46px
+            left: 52px
+            width: 80px
+          .secondText
+            bottom: 120px
+            left: 120px
+            width: 85px
+          .thirdText
+            bottom: 170px
+            left: 198px
+            width: 85px
+      &:last-child
+        margin-top: 381px
+        p
+          width: 100%
+          font-size: 13px
+          &.text3, &.text2, &.text1
+            width: 100%
+
+
 
 
 

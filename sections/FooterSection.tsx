@@ -33,7 +33,7 @@ const FooterSection = () => {
                 <>
                   {index > 4 && (
                     <li key={uuidv4() + index}>
-                      <Link href={`#${el.link}`}>
+                      <Link href={`${el.link}`}>
                         <a>{el.name}</a>
                       </Link>
                     </li>

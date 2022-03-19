@@ -14,6 +14,7 @@ const DashboardSection = () => {
             all compliance activities, set up rules, and explore individual
             cases.
           </p>
+          <Circles />
         </div>
         <div className="rightSide">
           <Circles />
