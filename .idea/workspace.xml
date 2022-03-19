@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/DashboardSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/DashboardSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/FooterSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/FooterSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/mixins/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/mixins/_mixins.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/DashboardSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/DashboardSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/ContactSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/ContactSection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
       <workItem from="1646847327920" duration="97000" />
       <workItem from="1647198260940" duration="173000" />
       <workItem from="1647608643745" duration="4263000" />
-      <workItem from="1647614507700" duration="26006000" />
+      <workItem from="1647614507700" duration="27122000" />
     </task>
     <servers />
   </component>

@@ -99,10 +99,12 @@
     font-size: 36px
     font-family: "SequelLightBody", sans-serif
     margin-bottom: 25px
+    &#message
+      margin-bottom: 0
   .buttonWrap
     display: flex
     align-items: center
-    margin-top: 35px
+    margin-top: 60px
     span
       font-size: 18px
       color: #AFAFAF
@@ -124,3 +126,32 @@
         cursor: pointer
         background-color: #008A7E
         color: #fff
+
+  @media only screen and (max-width: 1919px)
+    input
+      font-size: 30px
+      padding-bottom: 30px
+      margin-bottom: 30px
+    .buttonWrap
+      margin-top: 30px
+      button
+        width: 124px
+        height: 40px
+        margin-right: 25px
+        font-size: 13px
+      span
+        font-size: 13px
+
+  @media only screen and (max-width: 576px)
+    input
+      font-size: 25px
+      padding-bottom: 25px
+      margin-bottom: 25px
+    .buttonWrap
+      width: 100%
+      display: flex
+      justify-content: space-between
+      button
+        margin-right: 0
+      span
+        width: 156px

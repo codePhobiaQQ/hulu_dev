@@ -22,7 +22,7 @@ const MainPage = () => {
       <DashboardSection />
       {/*/!*<RiscScenarios />*!/*/}
       {/*/!*<EventsSection />*!/*/}
-      {/*/!*<ContactSection />*!/*/}
+      <ContactSection />
       {/*/!*<PortfolioSection />*!/*/}
       {/*<OurTeam />*/}
       {/*<BlogSection />*/}
