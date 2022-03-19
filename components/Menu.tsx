@@ -25,39 +25,39 @@ export interface ILink {
 export const linksMenu: ILink[] = [
   {
     name: "WHY HUNTLI?",
-    link: "#why",
+    link: "/#WhyHuntli",
   },
   {
     name: "ABOUT US",
-    link: "#why",
+    link: "/#About",
   },
   {
     name: "DASHBOARD",
-    link: "#why",
+    link: "/#Dashboard",
   },
   {
     name: "SCREENING",
-    link: "#why",
+    link: "/#Screening",
   },
   {
     name: "RISK SCENARIOS",
-    link: "#why",
+    link: "/#Risk",
   },
   {
     name: "EVENTS",
-    link: "#why",
+    link: "/#Events",
   },
   {
     name: "CONTACTS US",
-    link: "#why",
+    link: "/#ContactUs",
   },
   {
     name: "PORTFOLIO",
-    link: "#why",
+    link: "/#Portfolio",
   },
   {
     name: "OUR TEAM",
-    link: "#OurTeam",
+    link: "/#OurTeam",
   },
   {
     name: "BLOG",

@@ -1,6 +1,5 @@
 import logo from "../public/assets/svg/Logo.svg";
 import { linksMenu } from "../components/Menu";
-import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 import SocLinks from "../components/UI/SocLinks";
 
@@ -19,8 +18,8 @@ const FooterSection = () => {
               {linksMenu.map((el, index) => (
                 <>
                   {index <= 4 && (
-                    <li key={uuidv4() + index}>
-                      <Link href={`#${el.link}`}>
+                    <li key={"footer" + el.name + el.link}>
+                      <Link href={`${el.link}`}>
                         <a>{el.name}</a>
                       </Link>
                     </li>
@@ -32,7 +31,7 @@ const FooterSection = () => {
               {linksMenu.map((el, index) => (
                 <>
                   {index > 4 && (
-                    <li key={uuidv4() + index}>
+                    <li key={"footer" + el.name + el.link}>
                       <Link href={`${el.link}`}>
                         <a>{el.name}</a>
                       </Link>

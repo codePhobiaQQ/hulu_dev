@@ -22,7 +22,7 @@ const DashboardSection = ({
   console.log();
 
   return (
-    <section ref={sectionRef} className="DashboardSection">
+    <section id="DashBoard" ref={sectionRef} className="DashboardSection">
       <div className="triangle"></div>
       <div className="container">
         <div className="leftSide">

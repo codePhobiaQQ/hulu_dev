@@ -24,7 +24,7 @@ const WhyHuntySection = ({ opacity, setWhyHeight }: IWhyHuntySection) => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="whyHuntly">
+    <section id="WhyHuntli" ref={sectionRef} className="whyHuntly">
       <motion.div
         style={{ opacity: opacity }}
         className="backgroundWrapper"

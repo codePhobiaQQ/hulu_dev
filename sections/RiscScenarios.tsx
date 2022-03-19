@@ -5,7 +5,7 @@ import Finish from "../components/UI/riscSection/Finish";
 
 const RiscScenarios = () => {
   return (
-    <section className="RiscScenarios">
+    <section id="Risk" className="RiscScenarios">
       <div className="container">
         <h2>RISK SCENARIOS</h2>
         <div className="riskContainer">

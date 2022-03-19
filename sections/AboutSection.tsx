@@ -3,12 +3,15 @@ import { ILink } from "../components/Menu";
 import { v4 as uuidv4 } from "uuid";
 import { motion, MotionValue } from "framer-motion";
 import { fadeFromBot, fadeFromBotDelay } from "../motions/AboutSection.motion";
+import { useEffect, useState } from "react";
 
 interface IAboutSection {
   opacity: MotionValue<number>;
 }
 
 const AboutSection = ({ opacity }: IAboutSection) => {
+  const [isProductOpen, setIsProductOpen] = useState<boolean>(false);
+
   const links: ILink[] = [
     {
       name: "Product",
@@ -16,29 +19,34 @@ const AboutSection = ({ opacity }: IAboutSection) => {
     },
     {
       name: "Events",
-      link: "#",
+      link: "/#Events",
     },
     {
       name: "Contact us",
-      link: "#",
+      link: "/#ContactUs",
     },
     {
       name: "Portfolio",
-      link: "#",
+      link: "/#Portfolio",
     },
     {
       name: "Our team",
-      link: "#",
+      link: "/#OurTeam",
     },
     {
       name: "Blog",
-      link: "#",
+      link: "/blog",
     },
   ];
+
+  console.log(() => {
+    console.log("render");
+  });
+
   // console.log(opacity);
 
   return (
-    <section className="aboutSection">
+    <section id="About" className="aboutSection">
       <motion.div
         style={{ opacity: opacity }}
         className="backgroundWrapper"
@@ -49,17 +57,58 @@ const AboutSection = ({ opacity }: IAboutSection) => {
           <div className="leftSide">
             <div className="navigation">
               {links.map((link, index) => (
-                <Link key={uuidv4() + index} href={link.link}>
-                  <motion.a
-                    variants={fadeFromBot}
-                    initial="hidden"
-                    viewport={{ once: true }}
-                    whileInView="visible"
-                    className="navigationItem"
-                  >
-                    {link.name}
-                  </motion.a>
-                </Link>
+                <>
+                  {index == 0 ? (
+                    <>
+                      <motion.div
+                        variants={fadeFromBot}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        onClick={() => setIsProductOpen(!isProductOpen)}
+                        className={`navigationItem product ${
+                          isProductOpen ? " active" : ""
+                        }`}
+                      >
+                        <span>{link.name}</span>
+                        <span className="plus"></span>
+                      </motion.div>
+                      <ul
+                        className={
+                          isProductOpen ? "active menuToggle" : "menuToggle"
+                        }
+                      >
+                        <li>
+                          <Link href="#">
+                            <a>Dashboard</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Screening</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Risk Scenarios</a>
+                          </Link>
+                        </li>
+                      </ul>
+                    </>
+                  ) : (
+                    <Link key={link.name + "about" + index} href={link.link}>
+                      <motion.a
+                        variants={fadeFromBot}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="navigationItem"
+                      >
+                        {link.name}
+                      </motion.a>
+                    </Link>
+                  )}
+                </>
               ))}
             </div>
           </div>

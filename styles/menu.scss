@@ -462,6 +462,9 @@ $beige: #fff;
     }
     .links li {
       padding: 10px 10px 10px 0;
+      &::after {
+        width: 30px;
+      }
     }
 
     .left-side {

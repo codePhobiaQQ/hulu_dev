@@ -89,7 +89,7 @@ const PortfolioSection = () => {
     ],
   };
   return (
-    <section className="PortfolioSection">
+    <section id="Portfolio" className="PortfolioSection">
       <div className="container">
         <h2>PORTFOLIO</h2>
       </div>

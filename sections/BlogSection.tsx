@@ -3,7 +3,7 @@ import newsImg from "../public/assets/img/news/newsImg.jpg";
 
 const BlogSection = () => {
   return (
-    <section className="BlogSection">
+    <section id="Blog" className="BlogSection">
       <div className="container">
         <div className="leftCol">
           <h2>BLOG</h2>

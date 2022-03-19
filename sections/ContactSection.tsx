@@ -2,7 +2,7 @@ import { Formik, Field, Form } from "formik";
 
 const ContactSection = () => {
   return (
-    <section className="ContactSection">
+    <section id="ContactUs" className="ContactSection">
       <div className="container">
         <h2>CONTACTS US</h2>
         <div className="rightSide">

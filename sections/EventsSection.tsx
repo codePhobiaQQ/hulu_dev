@@ -1,6 +1,5 @@
 import Link from "next/link";
 import ecom from "../public/assets/img/ecom.jpg";
-import { v4 as uuidv4 } from "uuid";
 
 interface IEvent {
   link: string;
@@ -15,7 +14,7 @@ interface IEvent {
 const EventsSection = () => {
   const events: IEvent[] = [
     {
-      link: "#",
+      link: "https://huntli.vercel.app/",
       img: ecom.src,
       day: "08",
       date: "03 / 2022",
@@ -24,7 +23,7 @@ const EventsSection = () => {
       name: "Ecom21 Conference",
     },
     {
-      link: "#",
+      link: "https://huntli.vercel.app/",
       img: ecom.src,
       day: "08",
       date: "03 / 2022",
@@ -33,7 +32,7 @@ const EventsSection = () => {
       name: "Ecom21 Conference",
     },
     {
-      link: "#",
+      link: "https://huntli.vercel.app/",
       img: ecom.src,
       day: "08",
       date: "03 / 2022",
@@ -44,7 +43,7 @@ const EventsSection = () => {
   ];
 
   return (
-    <section className="EventsSection">
+    <section id="Events" className="EventsSection">
       <div className="container">
         <div className="leftEls">
           <h2>EVENTS</h2>
@@ -55,7 +54,7 @@ const EventsSection = () => {
 
         <ul className="events">
           {events.map((event, index) => (
-            <li key={uuidv4() + index}>
+            <li key={"event" + event.name + index}>
               <Link href={event.link}>
                 <a className="linkWrapper">
                   <div className="leftSide">
