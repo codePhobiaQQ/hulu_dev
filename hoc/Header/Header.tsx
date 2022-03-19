@@ -153,6 +153,7 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
           </div>
         </div>
       </div>
+      {children}
       <Menu
         setOpen={setOpen}
         toggleClass={toggleClass}
@@ -165,7 +166,6 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
         social={social}
         title={title}
       />
-      {children}
       <FooterSection />
     </>
   );
