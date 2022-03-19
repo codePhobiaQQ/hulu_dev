@@ -61,7 +61,32 @@ const PortfolioSection = () => {
     autoplay: true,
     speed: 5000,
     autoplaySpeed: 5000,
+    draggable: false,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          speed: 2000,
+          autoplaySpeed: 2000,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+          speed: 2000,
+          autoplaySpeed: 2000,
+        },
+      },
+    ],
   };
   return (
     <section className="PortfolioSection">

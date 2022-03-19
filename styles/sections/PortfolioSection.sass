@@ -4,7 +4,7 @@
 .PortfolioSection
   background-color: #fff
   padding-top: 94px
-  padding-bottom: 30px
+  //padding-bottom: 30px
   .container
     h2
       @include titleMix(#131313)
@@ -31,10 +31,16 @@
         height: 70px
         background-color: red
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (max-width: 1919px)
     padding-top: 50px
     .container
       h2
         margin-bottom: 80px
     .carousel
       padding: 80px 18px
+
+  @media only screen and (max-width: 576px)
+    padding-top: 20px
+    .container
+      h2
+        margin-bottom: 30px

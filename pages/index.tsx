@@ -20,12 +20,12 @@ const MainPage = () => {
       <MainSection scrolling={scrollY} hideMain={hideMain} />
       <WrapperSecond scrolling={scrollY} />
       <DashboardSection />
-      {/*/!*<RiscScenarios />*!/*/}
-      {/*/!*<EventsSection />*!/*/}
+      <RiscScenarios />
+      <EventsSection />
       <ContactSection />
-      {/*/!*<PortfolioSection />*!/*/}
-      {/*<OurTeam />*/}
-      {/*<BlogSection />*/}
+      <PortfolioSection />
+      <OurTeam />
+      <BlogSection />
     </Header>
   );
 };

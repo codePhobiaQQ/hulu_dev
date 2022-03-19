@@ -66,7 +66,7 @@
           transition: color .3s ease
           line-height: 140%
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (max-width: 1919px)
     padding-top: 50px
     padding-bottom: 100px
     .container
@@ -88,3 +88,59 @@
           padding: 30px 0
           .shortText
             font-size: 28px
+
+  @media only screen and (max-width: 1359px)
+    .container
+      .rightCol
+        margin-left: 45px
+
+  @media only screen and (max-width: 1199px)
+    .container
+      .rightCol
+        margin-top: 42px
+        .news
+          width: 100%
+
+  @media only screen and (max-width: 992px)
+    .container
+      flex-direction: column
+      .leftCol
+        width: 451px
+        .imgContainer
+          width: 100%
+          img
+            width: 100%
+      .rightCol
+        margin-left: 0
+
+  @media only screen and (max-width: 576px)
+    .container
+      .leftCol
+        width: 305px
+        margin: auto
+        .imgContainer
+          .spansWrap
+            a
+              width: 88px
+              height: 37px
+              font-size: 13px
+            span.when
+              font-size: 13px
+      .rightCol
+        .news
+          padding: 20px 0 40px
+          .shortText
+            font-size: 20px
+          .helpsWrap
+            flex-direction: column
+            position: relative
+            margin-bottom: 20px
+            a, span
+              align-self: flex-start
+            a
+              margin-bottom: 20px
+            span.when
+              position: absolute
+              font-size: 13px
+              right: 0
+              top: 0
