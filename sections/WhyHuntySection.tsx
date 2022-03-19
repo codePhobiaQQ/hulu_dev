@@ -3,6 +3,7 @@ import { MotionValue, motion, useTransform } from "framer-motion";
 import { Range, getTrackBackground } from "react-range";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { calcNumbSection } from "../services/calc.service";
+import WhyHuntlySlider from "../components/whyHuntly/WhyHuntlySlider";
 
 interface IWhyHuntySection {
   opacity: MotionValue<number>;
@@ -88,12 +89,13 @@ const WhyHuntySection = ({ opacity, setWhyHeight }: IWhyHuntySection) => {
             </p>
           </div>
           <div className="rightCol">
-            <ul>
-              <li>monitoring and screening of clients in real-time</li>
-              <li>analytics</li>
-              <li>scoring (for clients and transactions)</li>
-              <li>visual interface for rules creation</li>
-            </ul>
+            <WhyHuntlySlider />
+            {/*<ul>*/}
+            {/*  <li>monitoring and screening of clients in real-time</li>*/}
+            {/*  <li>analytics</li>*/}
+            {/*  <li>scoring (for clients and transactions)</li>*/}
+            {/*  <li>visual interface for rules creation</li>*/}
+            {/*</ul>*/}
           </div>
         </div>
       </div>

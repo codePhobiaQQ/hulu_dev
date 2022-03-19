@@ -15,13 +15,24 @@ const MainPage = () => {
   const [hideMain, setHide] = useState<boolean>(false);
   const { scrollY } = useViewportScroll();
 
+  const [dashboardOffset, setDashboardOffset] = useState<number>(900);
+  const [dashboardHeight, setDashboardHeight] = useState<number>(630);
+
   return (
-    <Header setHide={setHide}>
+    <Header
+      scrolling={scrollY}
+      dashboardOffset={dashboardOffset}
+      dashboardHeight={dashboardHeight}
+      setHide={setHide}
+    >
       <MainSection scrolling={scrollY} hideMain={hideMain} />
       <WrapperSecond scrolling={scrollY} />
-      <DashboardSection />
+      <DashboardSection
+        setDashboardHeight={setDashboardHeight}
+        setDashboardOffset={setDashboardOffset}
+      />
       <RiscScenarios />
-      <EventsSection />
+      {/*<EventsSection />*/}
       <ContactSection />
       <PortfolioSection />
       <OurTeam />

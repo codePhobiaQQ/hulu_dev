@@ -3,19 +3,38 @@ import LogoGrey from "../../public/assets/svg/LogoGrey.svg";
 import LogoWhite from "../../public/assets/svg/LogoWhite.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import FooterSection from "../../sections/FooterSection";
 import { useRouter } from "next/router";
-import { fadeIn } from "../../motions/MainSection.motion";
+import { MotionValue } from "framer-motion";
 
 interface IHeader {
   children: React.ReactNode;
   setHide?: Dispatch<SetStateAction<boolean>>;
   setColorMode?: Dispatch<SetStateAction<string>>;
   colorMode?: string;
+  scrolling?: MotionValue<number>;
+
+  dashboardOffset?: number;
+  dashboardHeight?: number;
 }
 
-const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
+const Header = ({
+  children,
+  setHide,
+  setColorMode,
+  colorMode,
+  dashboardOffset,
+  dashboardHeight,
+  scrolling,
+}: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
   const [close, setClose] = useState<boolean>(true);
   const nav = useRef<HTMLElement>(null);
@@ -29,6 +48,7 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
   const title = useRef<HTMLElement>(null);
 
   const link = useRouter();
+  const [activeLogo, setActiveLogo] = useState<number>(0);
 
   const menuElems = [
     nav,
@@ -60,6 +80,7 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
     setTimeout(() => {
       links.current?.classList.add("active");
       title.current?.classList.add("active");
+      title.current?.classList.add("stroke");
     }, 2000);
 
     setTimeout(() => {
@@ -80,17 +101,13 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
   function closeMenu() {
     setClose(true);
     menuElems.forEach((elem) => elem.current?.classList.remove("active"));
-
     line.current?.classList.remove("active");
-
     links.current?.classList.remove("active");
     title.current?.classList.remove("active");
-
+    title.current?.classList.remove("stroke");
     dustParticles.current?.classList.remove("active");
     social.current?.classList.remove("active");
-
     squares.current?.classList.remove("active");
-
     setTimeout(() => {
       backgroundTwo.current?.classList.remove("bg-two-full-width");
       backgroundOne.current?.classList.remove("bg-one-full-width");
@@ -99,10 +116,6 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
       }
       setOpen(false);
     }, 500);
-
-    // setTimeout(() => {
-    //
-    // }, 600);
   }
 
   const settingColor = (color: string): any => {
@@ -120,54 +133,95 @@ const Header = ({ children, setHide, setColorMode, colorMode }: IHeader) => {
       else if (colorMode == "grey") return LogoGrey.src;
       else return LogoWhite.src;
     } else {
-      return Logo.src;
+      // @ts-ignore
+      if (activeLogo == 0) {
+        return Logo.src;
+      } else if (activeLogo == 1) {
+        return LogoGrey.src;
+      }
     }
   };
 
-  return (
-    <>
-      <div className={"header " + colorMode}>
-        <div className={"headerInner"}>
-          <Link href="/">
-            <a className={open ? "logo menuOpen" : "logo"}>
-              <img src={whatLogo()} alt="Logo" />
-            </a>
-          </Link>
-          {link.pathname == "/blog/[id]" && (
-            <div className="colors">
-              <div
-                onClick={() => settingColor("black")}
-                className="color"
-              ></div>
-              <div className="color" onClick={() => settingColor("grey")}></div>
-              <div
-                className="color"
-                onClick={() => settingColor("white")}
-              ></div>
-            </div>
-          )}
-          <div onClick={toggleClass} className="hamburger-wrapper">
-            <div className="hamburger-container">
-              <div className={open ? "hamburger active" : "hamburger"}></div>
+  // useEffect(() => {
+  //   console.log("render");
+  // });
+
+  // useEffect(() => {
+  //   // @ts-ignore
+  //   scrolling?.onChange(() => {
+  //     // @ts-ignore
+  //     // console.log(scrolling.current);
+  //     // console.log(dashboardOffset);
+  //
+  //     if (
+  //       // @ts-ignore
+  //       scrolling?.current < dashboardOffset + dashboardHeight &&
+  //       // @ts-ignore
+  //       scrolling?.current > dashboardOffset
+  //     ) {
+  //       if (activeLogo != 1) {
+  //         console.log("here0");
+  //         setActiveLogo(1);
+  //       }
+  //     } else {
+  //       console.log("here1");
+  //       if (activeLogo == 1) {
+  //         setActiveLogo(0);
+  //       }
+  //     }
+  //   });
+  // }, [scrolling, dashboardOffset]);
+
+  return useMemo(
+    () => (
+      <>
+        <div className={"header " + colorMode}>
+          <div className={"headerInner"}>
+            <Link href="/">
+              <a className={open ? "logo menuOpen" : "logo"}>
+                <img src={whatLogo()} alt="Logo" />
+              </a>
+            </Link>
+            {link.pathname == "/blog/[id]" && (
+              <div className="colors">
+                <div
+                  onClick={() => settingColor("black")}
+                  className="color"
+                ></div>
+                <div
+                  className="color"
+                  onClick={() => settingColor("grey")}
+                ></div>
+                <div
+                  className="color"
+                  onClick={() => settingColor("white")}
+                ></div>
+              </div>
+            )}
+            <div onClick={toggleClass} className="hamburger-wrapper">
+              <div className="hamburger-container">
+                <div className={open ? "hamburger active" : "hamburger"}></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {children}
-      <Menu
-        setOpen={setOpen}
-        toggleClass={toggleClass}
-        nav={nav}
-        backgroundOne={backgroundOne}
-        backgroundTwo={backgroundTwo}
-        dustParticles={dustParticles}
-        line={line}
-        links={links}
-        social={social}
-        title={title}
-      />
-      <FooterSection />
-    </>
+        {children}
+        <Menu
+          setOpen={setOpen}
+          toggleClass={toggleClass}
+          nav={nav}
+          backgroundOne={backgroundOne}
+          backgroundTwo={backgroundTwo}
+          dustParticles={dustParticles}
+          line={line}
+          links={links}
+          social={social}
+          title={title}
+        />
+        <FooterSection />
+      </>
+    ),
+    [close, open, activeLogo, dashboardOffset, colorMode]
   );
 };
 

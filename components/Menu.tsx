@@ -1,8 +1,8 @@
-import logo from "../public/assets/svg/LogoMenu.svg";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import SocLinks from "./UI/SocLinks";
 import { SetStateAction, Dispatch } from "react";
+import LogoMenu from "./UI/LogoMenu";
 
 interface IMenu {
   nav: any;
@@ -92,7 +92,7 @@ const Menu = ({
             <li></li>
           </ul>
           <div className="left-side">
-            <img ref={title} src={logo.src} alt="Logo" />
+            <LogoMenu refing={title} />
             <div className="social-media">
               <SocLinks social={social} />
             </div>

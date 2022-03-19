@@ -53,19 +53,29 @@ a
   text-decoration: none
   color: #fff
 
+*::-webkit-scrollbar
+  width: 2px
+
+*::-webkit-scrollbar-thumb
+  background-color: $accent
+
+*::-webkit-scrollbar-track
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset
+
 .container
   width: 1400px
   margin: 0 auto
 
-@media only screen and (min-width: 1360px) and (max-width: 1919px)
+@media only screen and (max-width: 1919px)
   .container
     width: 1090px
 
-@media only screen and (min-width: 1200px) and (max-width: 1359px)
+@media only screen and (max-width: 1359px)
   .container
     width: 960px
 
-@media only screen and (min-width: 992px) and (max-width: 1199px)
+@media only screen and (max-width: 1199px)
   .container
     width: 870px
 
@@ -73,10 +83,10 @@ a
   .container
     width: 570px
 
-@media only screen and (max-width: 991px)
+@media only screen and (max-width: 768px)
   .container
     width: 540px
 
-@media only screen and (max-width: 568px)
+@media only screen and (max-width: 576px)
   .container
     width: 315px

@@ -12,8 +12,6 @@ const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
   const [height, setHeight] = useState<number>(780);
   const [whyHeight, setWhyHeight] = useState<number>(630);
 
-  console.log(whyHeight);
-
   const sectionRef = useRef<HTMLDivElement>(null);
   const opacity = useTransform(
     scrolling,
@@ -24,10 +22,8 @@ const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
   useEffect(() => {
     // @ts-ignore
     setTop(sectionRef.current?.offsetTop);
-    console.log(top);
     // @ts-ignore
     setHeight(sectionRef.current?.clientHeight);
-    console.log(height);
   }, []);
 
   return (

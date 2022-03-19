@@ -1,9 +1,28 @@
 import Circles from "../components/Circles";
 import mac from "../public/assets/img/mac.png";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
-const DashboardSection = () => {
+interface IDashboardSection {
+  setDashboardOffset: Dispatch<SetStateAction<number>>;
+  setDashboardHeight: Dispatch<SetStateAction<number>>;
+}
+
+const DashboardSection = ({
+  setDashboardOffset,
+  setDashboardHeight,
+}: IDashboardSection) => {
+  const sectionRef = useRef(null);
+  useEffect(() => {
+    // @ts-ignore
+    setDashboardOffset(sectionRef.current?.offsetTop);
+    // @ts-ignore
+    setDashboardHeight(sectionRef.current?.clientHeight);
+  }, []);
+
+  console.log();
+
   return (
-    <section className="DashboardSection">
+    <section ref={sectionRef} className="DashboardSection">
       <div className="triangle"></div>
       <div className="container">
         <div className="leftSide">

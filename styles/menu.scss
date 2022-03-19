@@ -103,16 +103,21 @@ $beige: #fff;
         justify-content: center;
         height: 80%;
 
-        img {
+        img, svg.logo {
           opacity: 0;
           position: relative;
-          transition: all 0.8s ease-out;
+          transition: all 0.8s ease;
           width: 415px;
           //height: 60px;
           &.active {
             opacity: 1;
           }
-
+          &.stroke {
+            path.whiteStroke {
+              transition: all .3s ease;
+              stroke: transparent;
+            }
+          }
           &:hover {
             &::after {
               height: 100%;
@@ -430,5 +435,15 @@ $beige: #fff;
   }
   100% {
     transform: rotateZ(0deg);
+  }
+}
+
+
+@media only screen and (max-width: 1919px) {
+  .menuUI nav .menu .links li {
+    padding: 10px 10px 10px 0;
+    a {
+      font-size: 18px;
+    }
   }
 }
