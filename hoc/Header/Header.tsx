@@ -3,6 +3,7 @@ import LogoGrey from "../../public/assets/svg/LogoGrey.svg";
 import LogoWhite from "../../public/assets/svg/LogoWhite.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
+import Head from "next/head";
 import {
   Dispatch,
   SetStateAction,
@@ -175,6 +176,14 @@ const Header = ({
   return useMemo(
     () => (
       <>
+        <Head>
+          <title>Huntli</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+
         <div className={"header " + colorMode}>
           <div className={"headerInner"}>
             <Link href="/">
