@@ -416,10 +416,76 @@ $beige: #fff;
 
 
 @media only screen and (max-width: 1919px) {
-  .menuUI nav .menu .links li {
-    padding: 10px 10px 10px 0;
+  .menuUI nav .menu {
+    .links li {
+      padding: 10px 10px 10px 0;
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+  .menuUI nav .menu {
+    .line {
+      margin: 0 60px
+    }
+
+    .links li {
+      padding: 15px 10px 15px 0;
+    }
+
     a {
       font-size: 18px;
+    }
+
+    .left-side {
+      svg.logo {
+        width: 305px;
+      }
+      .social-media {
+        height: 78px;
+        ul.active {
+          top: calc(0% + 30px);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menuUI nav .menu {
+    .line {
+      margin: 0 54px 0 40px
+    }
+    .links li {
+      padding: 10px 10px 10px 0;
+    }
+
+    .left-side {
+      .social-media {
+        width: 16px;
+        height: 300px;
+        margin: auto;
+        ul {
+          flex-direction: column;
+          top: 0;
+          height: 300px;
+          justify-content: space-between;
+          margin: 0;
+          &.active {
+            top: 0;
+          }
+          li {
+            padding: 0;
+          }
+        }
+      }
+      svg.logo {
+        display: none;
+      }
     }
   }
 }

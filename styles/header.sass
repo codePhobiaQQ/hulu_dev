@@ -10,7 +10,6 @@
   left: 0
   backdrop-filter: blur(30px)
   -webkit-backdrop-filter: blur(30px)
-  border-bottom: 1px solid #131313
   &.black
 
   &.white
@@ -98,5 +97,9 @@
         img
           width: 67px
 
-
+  @media only screen and (max-width: 767px)
+    .headerInner
+      .logo.menuOpen
+        opacity: 1
+        pointer-events: inherit
 
