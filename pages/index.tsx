@@ -32,7 +32,7 @@ const MainPage = () => {
         setDashboardOffset={setDashboardOffset}
       />
       <RiscScenarios />
-      {/*<EventsSection />*/}
+      <EventsSection />
       <ContactSection />
       <PortfolioSection />
       <OurTeam />
