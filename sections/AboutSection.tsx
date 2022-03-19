@@ -57,6 +57,7 @@ const AboutSection = ({ opacity }: IAboutSection) => {
                   <motion.a
                     variants={fadeFromBot}
                     initial="hidden"
+                    viewport={{ once: true }}
                     whileInView="visible"
                     className="navigationItem"
                   >
@@ -78,6 +79,7 @@ const AboutSection = ({ opacity }: IAboutSection) => {
                 variants={fadeFromBot}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{ once: true }}
                 className="statInner"
               >
                 <h4>UP TO</h4>
@@ -88,6 +90,7 @@ const AboutSection = ({ opacity }: IAboutSection) => {
                 variants={fadeFromBotDelay}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{ once: true }}
                 className="statInner"
               >
                 <h4>OVER</h4>

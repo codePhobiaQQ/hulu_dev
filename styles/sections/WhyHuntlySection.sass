@@ -2,7 +2,6 @@
 @import './../mixins/vars'
 
 .whyHuntly
-  height: 100vh
   position: relative
   background-color: #C4C4C4
   padding-top: 50px
@@ -27,6 +26,7 @@
           font-family: "SequelLightBody", sans-serif
           color: #fff
           margin-bottom: 70px
+          white-space: nowrap
 
 
         .slider
@@ -34,10 +34,13 @@
           display: flex
           align-items: center
           span
-            color: #fff
             color: #C4C4C4
             font-size: 50px
             font-family: "SequelLightBody"
+            &.numbFirst
+              width: 135px
+            &.numbSecond
+              width: 200px
           .sliderLine
             width: 400px
             height: 1px
@@ -100,6 +103,120 @@
             font-family: "SequelLightBody", sans-serif
 
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (max-width: 1919px)
     .container
       .content
+        .leftCol
+          .slider
+            span
+              font-size: 40px
+              &.numbFirst
+                width: 108px
+              &.numbSecond
+                width: 160px
+            .sliderLine
+              width: 300px
+              margin: 0 40px
+
+          .resultLines
+            width: 550px
+            div.result
+              font-size: 40px
+
+  @media only screen and (max-width: 1359px)
+    .container
+      .content
+        flex-direction: column
+        .leftCol
+          margin-bottom: 40px
+          p.weHave
+            font-size: 16px
+        .rightCol
+          ul
+            li
+              font-size: 16px
+
+  @media only screen and (max-width: 1199px)
+    .container
+      .content
+        .leftCol
+
+  @media only screen and (max-width: 992px)
+    .container
+      .content
+        .leftCol
+          .slider
+            span
+              font-size: 35px
+              &.numbFirst
+                width: 104px
+              &.numbSecond
+                width: 145px
+            .sliderLine
+              width: 260px
+              margin: 0 25px
+
+          p.weHave
+            width: 100%
+
+
+          .resultLines
+            width: 500px
+            div.result
+              font-size: 35px
+
+  @media only screen and (max-width: 576px)
+    .container
+      h2
+        margin-bottom: 40px
+      .content
+        .leftCol
+          span.numbers
+            font-size: 13px
+            width: 120px
+            white-space: inherit
+            margin-bottom: 30px
+          .slider
+            flex-wrap: wrap
+
+
+            .circlingRange
+              width: 12px
+              height: 12px
+              &:after
+                @include afterMix
+                width: 16px
+                height: 16px
+
+            span
+              font-size: 25px
+              &.numbFirst
+                order: 1
+                width: 50%
+              &.numbSecond
+                order: 2
+                width: 50%
+                text-align: right
+            .sliderLine
+              width: 100%
+              order: 3
+              margin: 20px 0
+
+          .resultLines
+            width: 100%
+            margin-bottom: 12px
+            span.savingSpan
+              &:first-child
+                margin-right: 0
+                font-size: 11px
+            div.result
+              font-size: 20px
+
+          p.weHave
+            font-size: 13px
+            margin-top: 35px
+
+        .rightCol
+          ul
+            li
+              font-size: 13px

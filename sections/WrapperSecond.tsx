@@ -10,8 +10,16 @@ interface IWrapperSecond {
 const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
   const [topi, setTop] = useState<number>(500);
   const [height, setHeight] = useState<number>(780);
+  const [whyHeight, setWhyHeight] = useState<number>(630);
+
+  console.log(whyHeight);
+
   const sectionRef = useRef<HTMLDivElement>(null);
-  const opacity = useTransform(scrolling, [topi, topi + 500], [1, 0]);
+  const opacity = useTransform(
+    scrolling,
+    [topi, topi + whyHeight + 100],
+    [1, 0]
+  );
 
   useEffect(() => {
     // @ts-ignore
@@ -24,7 +32,7 @@ const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
 
   return (
     <motion.div ref={sectionRef} className="WrapperSecond">
-      <WhyHuntySection opacity={opacity} />
+      <WhyHuntySection setWhyHeight={setWhyHeight} opacity={opacity} />
       <AboutSection opacity={opacity} />
     </motion.div>
   );

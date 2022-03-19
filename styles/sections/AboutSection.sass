@@ -8,8 +8,11 @@
   .backgroundWrapper
     background-color: $backgroundColor
     @include absoluteAll
+    //z-index: 5
   .container
     height: 100%
+    position: relative
+    //z-index: 10
     h2
       @include titleMix(#131313)
     .content
@@ -26,6 +29,8 @@
         .navigation
           width: 100%
           .navigationItem
+            &:last-child
+              margin-bottom: 0
             width: 100%
             padding-bottom: 22px
             border-bottom: 1px solid #666
@@ -75,7 +80,7 @@
             .small
               display: block
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (max-width: 1919px)
     .container
       .content
         .leftSide
@@ -85,3 +90,63 @@
               font-size: 40px
         .rightSide
           width: 496px
+
+  @media only screen and (max-width: 1359px)
+    .container
+      .content
+        .leftSide
+          width: 450px
+          .navigation
+            .navigationItem
+              font-size: 38px
+              margin-bottom: 15px
+        .rightSide
+          margin-left: 50px
+          .text
+            font-size: 16px
+
+  @media only screen and (max-width: 992px)
+    .container
+      .content
+        flex-direction: column
+        .leftSide
+          width: 500px
+        .rightSide
+          margin-left: 0
+          margin-top: 40px
+          div.text
+            margin-bottom: 40px
+          .statistic
+            .statInner
+              h4
+                font-size: 30px
+              .number
+                margin: 17px 0 18px
+                font-size: 60px
+
+  @media only screen and (max-width: 576px)
+    .container
+      .content
+        .leftSide
+          width: 100%
+          .navigation
+            .navigationItem
+              font-size: 30px
+              margin-bottom: 20px
+        .rightSide
+          width: 100%
+          div.text
+            margin-bottom: 40px
+            font-size: 13px
+            width: 100%
+          .statistic
+            .statInner
+              &:last-child
+                width: 120px
+              h4
+                font-size: 25px
+              .number
+                margin: 25px 0 30px
+                font-size: 50px
+              span.small
+                font-size: 10px

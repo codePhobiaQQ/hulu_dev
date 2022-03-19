@@ -2,7 +2,6 @@
 @import "../mixins/vars"
 
 .ContactSection
-  height: 100vh
   background-color: #C6C6C6
   padding-top: 100px
   padding-bottom: 120px
@@ -13,6 +12,9 @@
     .rightSide
       width: 600px
       margin-left: auto
+      position: relative
       form
+        @include formMix
         display: flex
         flex-direction: column
+

@@ -1,22 +1,29 @@
 // @ts-ignore
 import { MotionValue, motion, useTransform } from "framer-motion";
 import { Range, getTrackBackground } from "react-range";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { calcNumbSection } from "../services/calc.service";
 
 interface IWhyHuntySection {
   opacity: MotionValue<number>;
+  setWhyHeight: Dispatch<SetStateAction<number>>;
 }
 
 const STEP = 1;
 const MIN = 1000;
 const MAX = 100000;
 
-const WhyHuntySection = ({ opacity }: IWhyHuntySection) => {
+const WhyHuntySection = ({ opacity, setWhyHeight }: IWhyHuntySection) => {
   const [values, setValue] = useState<number[]>([1000]);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    // @ts-ignore
+    setWhyHeight(sectionRef.current?.clientHeight);
+  }, []);
 
   return (
-    <section className="whyHuntly">
+    <section ref={sectionRef} className="whyHuntly">
       <motion.div
         style={{ opacity: opacity }}
         className="backgroundWrapper"
@@ -27,7 +34,7 @@ const WhyHuntySection = ({ opacity }: IWhyHuntySection) => {
           <div className="leftCol">
             <span className="numbers">number of transactions</span>
             <div className="slider">
-              <span>1 000</span>
+              <span className="numbFirst">1 000</span>
               <Range
                 step={STEP}
                 min={MIN}
@@ -55,7 +62,7 @@ const WhyHuntySection = ({ opacity }: IWhyHuntySection) => {
                   <div className="circlingRange" {...props} />
                 )}
               />
-              <span>100 000</span>
+              <span className="numbSecond">100 000</span>
             </div>
             <div className="resultLines">
               <span className="savingSpan">

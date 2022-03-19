@@ -20,18 +20,18 @@ const ContactSection = () => {
             }}
           >
             <Form>
-              <Field id="company" name="firstName" placeholder="Company" />
+              <Field id="company" name="company" placeholder="Company" />
 
-              <Field id="name" name="lastName" placeholder="Your Name" />
+              <Field id="name" name="name" placeholder="Your Name" />
 
               <Field
                 id="email"
                 type="email"
-                name="lastName"
+                name="email"
                 placeholder="Your Email"
               />
 
-              <Field id="phone" name="lastName" placeholder="Doe" />
+              <Field id="phone" name="phone" placeholder="Your Phone" />
 
               <Field id="message" name="message" placeholder="Your Message" />
 

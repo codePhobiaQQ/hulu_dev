@@ -66,12 +66,24 @@
     left: -50px
     z-index: 1
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (max-width: 1919px)
     .container
       .content
         h1
           font-size: 50px
 
-      .btn-liquid
-        margin-top: 50px
 
+  @media only screen and (max-width: 1359px)
+    .container
+      .content
+        h1
+          font-size: 45px
+
+
+  @media only screen and (max-width: 767px)
+    .container
+      .content
+        h1
+          font-size: 30px
+          width: 100%
+          max-width: 500px

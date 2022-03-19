@@ -74,7 +74,7 @@
         justify-content: space-between
         li
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (min-width: 1200px) and (max-width: 1919px)
     .container
       .leftCol
         img
@@ -103,3 +103,75 @@
         .email
           margin-bottom: 53px
           font-size: 13px
+
+  @media only screen and (min-width: 768px) and (max-width: 1199px)
+    .container
+      flex-wrap: wrap
+      .leftCol
+        width: 312px
+        img
+          width: 312px
+          margin-top: 0
+        span
+          margin-top: 30px
+
+      .centerCol
+        width: 150px
+        margin-left: auto
+        margin-top: 40px
+        position: relative
+        z-index: 10
+        h3
+          margin-left: auto
+        .linksLists
+          display: flex
+          flex-direction: column
+          ul
+            &:first-child
+              margin: 22px 0 22px 0
+            li
+              width: 100%
+              text-align: right
+              a
+                width: 100%
+
+      .rightCol
+        width: 100%
+        margin-top: -136px
+        .rightColInner
+          width: 240px
+
+  @media only screen and (max-width: 767px)
+    .container
+      padding-top: 0
+      width: 80%
+      flex-direction: column
+      .leftCol
+        width: 100%
+        margin-bottom: 40px
+        img
+          width: 200px
+      .centerCol
+        width: 100%
+        margin-bottom: 51px
+        h3
+          margin-bottom: 30px
+          font-size: 22px
+        .linksLists
+          ul
+            li
+              font-size: 14px
+            &:first-child
+              margin-right: 50px
+
+      .rightCol
+        h3
+          font-size: 22px
+        width: 100%
+        .address
+          width: 301px
+          font-size: 13px
+        a
+          font-size: 13px
+        ul
+          width: 296px

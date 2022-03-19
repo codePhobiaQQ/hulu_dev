@@ -44,14 +44,16 @@ const FooterSection = () => {
           </div>
         </div>
         <div className="rightCol">
-          <h3>CONTACT</h3>
-          <span className="address">
-            Kronvalda bulvāris 10, Centra rajons, Rīga, Latvia, LV-1010
-          </span>
-          <a className="email" href="mailto:dmytro@huntli.io">
-            dmytro@huntli.io
-          </a>
-          <SocLinks />
+          <div className="rightColInner">
+            <h3>CONTACT</h3>
+            <span className="address">
+              Kronvalda bulvāris 10, Centra rajons, Rīga, Latvia, LV-1010
+            </span>
+            <a className="email" href="mailto:dmytro@huntli.io">
+              dmytro@huntli.io
+            </a>
+            <SocLinks />
+          </div>
         </div>
       </div>
     </footer>
