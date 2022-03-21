@@ -5,8 +5,6 @@
   padding-top: 101px
   padding-bottom: 104px
   transition: background-color .3s ease
-
-
   &.grey, &.white
     transition: background-color .3s ease
     background-color: #C6C6C6
@@ -122,8 +120,60 @@
                 path
                   fill: #0A66C2
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+  @media only screen and (max-width: 1919px)
     .goBackBtn
       @include greenBtn
       height: 40px
       width: 285px
+
+
+  @media only screen and (max-width: 1359px)
+    .container
+      .contentWrap
+        display: flex
+        flex-direction: column
+        img
+          width: 288px
+          order: 3
+          margin: 0 33px 33px 0
+          order: 3
+        h3
+          order: 1
+          line-height: 140%
+        .infoWrapper
+          order: 2
+        p
+          order: 4
+
+  @media only screen and (max-width: 767px)
+    .container
+      .goBackBtn
+        width: 173px
+        height: 31px
+        font-size: 13px
+        svg
+          width: 25px
+      .contentWrap
+        display: flex
+        flex-direction: column
+        .infoWrapper
+          flex-wrap: wrap
+          align-items: inherit
+          .date
+            font-size: 13px
+            margin-bottom: 31px
+            svg
+              width: 16px
+              height: 16px
+          .socLinks
+            width: 100%
+            margin-left: auto
+        img
+          width: 305px
+          margin: 0
+          margin-bottom: 30px
+        p
+          font-size: 13px
+          margin-bottom: 40px
+          &:last-child
+            margin-bottom: 0

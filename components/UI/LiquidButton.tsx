@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import line from "../../public/assets/svg/line.svg";
 import Line from "./Line";
+import Link from "next/link";
 
 const LiquidButton = () => {
   // const pointsA = [];
@@ -242,10 +243,12 @@ const LiquidButton = () => {
   }, []);
 
   return (
-    <a ref={button} href="http://waaark.com" className="btn-liquid">
-      <span className="inner">Learn more</span>
-      <Line />
-    </a>
+    <Link ref={button} href="/#WhyHuntli">
+      <a className="btn-liquid">
+        <span className="inner">Learn more</span>
+        <Line />
+      </a>
+    </Link>
   );
 };
 
