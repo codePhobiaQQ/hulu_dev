@@ -6,11 +6,12 @@ interface IRiskElem {
   classing?: string;
   plainLine?: string;
   text: string;
+  classMob?: string;
 }
 
-const RiskElem = ({ classing, plainLine, text }: IRiskElem) => {
+const RiskElem = ({ classing, plainLine, text, classMob }: IRiskElem) => {
   return (
-    <div className="riskBlock">
+    <div className={`riskBlock ${classMob ? classMob : ""}`}>
       {classing && <TopLine classing={classing} />}
       {plainLine && <PlainLine classing={plainLine} />}
       <div className="riskInner"></div>

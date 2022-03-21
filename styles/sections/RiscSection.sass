@@ -17,6 +17,10 @@
       justify-content: center
 
       //.leftSide
+      .startBtn
+        .plainLine, .startInner, .rightLine
+          display: none
+
       .startBtn, .finishBtn
         background-color: #01C497
         border-radius: 15px
@@ -48,8 +52,15 @@
 
       .secondSide, .thirdSide
         margin-left: 70px
-
+      .secondSide
+        .plainLine, .rightLine, .leftLine
+          display: none
+        .riskBlock
+          &.mobi
+            margin-bottom: 155px
       .thirdSide
+        .thirdSideInner
+          display: none
         .riskBlock
           &:first-child
             margin-bottom: 0
@@ -203,6 +214,8 @@
       width: 684px
       .schemaWrapper
         flex-direction: column
+        .thirdSide
+          margin-top: 60px
         .finishBtn
           margin-left: 0
           margin-top: 58px
@@ -266,6 +279,10 @@
           margin-left: 0
           display: flex
           flex-direction: row
+          .riskBlock
+            &.mobi
+              margin-right: 20px
+              margin-bottom: 0
 
         .thirdSide
           margin-left: 0
@@ -275,11 +292,128 @@
               top: inherit
               bottom: -30px
               width: 58px
-              left: 137px
+              left: 136px
               transform: rotate(-90deg)
 
   @media only screen and (max-width: 767px)
     .riskContainer
       width: 360px
       .schemaWrapper
+
+        .leftSide
+          .startBtn
+            .topLine
+              display: none
+
+        .thirdSide
+          .plainLine
+            //display: none
+
+        .startBtn
+          margin-bottom: 40px
+          .rightLine
+            display: block
+            position: absolute
+            top: 37px
+            height: 468px
+            right: -86px
+          .plainLine
+            position: absolute
+            height: 50px
+            display: block
+            width: 2px
+            opacity: .3
+            background-color: rgb(196, 196, 196)
+            bottom: -40px
+            left: calc(50% - 1px)
+          .startInner
+            display: flex
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            @include algCircle
+            &:after
+              top: calc(50% - 9px)
+              right: calc(-9px)
+            &:before
+              top: calc(50% - 10px)
+              right: calc(-10px)
+
+        .finishBtn
+          margin-top: 40px
+
+
         .secondSide
+          .riskBlock
+            &:last-child
+              display: none
+            .topLine, .bottomLine
+              display: none
+
+        .secondSide
+          position: relative
+          flex-direction: column
+
+          .plainLine
+            position: absolute
+            height: 50px
+            display: block
+            width: 2px
+            opacity: .3
+            background-color: rgb(196, 196, 196)
+            bottom: -40px
+            left: calc(50% - 1px)
+
+          .leftLine
+            display: block
+            position: absolute
+            top: 118px
+            left: -15px
+            height: 548px
+
+          .riskBlock
+            &.mobi
+              margin-right: 0
+              margin-bottom: 40px
+              &:after
+                top: calc(50% - 9px)
+                right: calc(100% - 9px)
+              &:before
+                top: calc(50% - 10px)
+                right: calc(100% - 10px)
+
+            &.mob
+              &:after
+                top: calc(50% - 9px)
+                right: calc(-9px)
+              &:before
+                top: calc(50% - 10px)
+                right: calc(-10px)
+
+              .riskInner
+                &:after
+                  top: calc(100% - 9px)
+                  right: calc(-9px)
+                &:before
+                  top: calc(100% - 10px)
+                  right: calc(-10px)
+
+        .thirdSide
+          margin-top: 40px
+          position: relative
+          .thirdSideInner
+            display: flex
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            @include algCircle
+            &:after
+              top: calc(50% - 9px)
+              right: calc(100% - 9px)
+            &:before
+              top: calc(50% - 10px)
+              right: calc(100% - 10px)

@@ -20,23 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/AboutSection/StatisticElem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/riskSection/LeftLine.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/riskSection/RightLine.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UI/SocLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/SocLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/blog/Filters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/blog/Filters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/blog/blogElem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/blog/blogElem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/riscSection/PlainLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/riscSection/PlainLine.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/riskSection/RiskElem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/riskSection/RiskElem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/AboutSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/DashboardSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/DashboardSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/FooterSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/FooterSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/PortfolioSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/PortfolioSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/RiscScenarios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/RiscScenarios.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/AboutSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/AboutSection.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/sections/RiscSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/RiscSection.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +109,7 @@
       <workItem from="1646847327920" duration="97000" />
       <workItem from="1647198260940" duration="173000" />
       <workItem from="1647608643745" duration="4263000" />
-      <workItem from="1647614507700" duration="59568000" />
+      <workItem from="1647614507700" duration="62922000" />
     </task>
     <servers />
   </component>
