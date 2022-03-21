@@ -14,9 +14,9 @@ const TeamLeader = ({ img, name, text, link }: ILeader) => {
 
   return (
     <li>
-      <img className="teamImg" src={img} alt="team" />
-      <div className="innerWrapper">
-        <div className="info">
+      <div className="cardWrap">
+        <img className="teamImg" src={img} alt="team" />
+        <div className="cardInfo">
           <div className="mainInfo">
             <span>{name}</span>
             <img src={linkIn.src} alt="in" />

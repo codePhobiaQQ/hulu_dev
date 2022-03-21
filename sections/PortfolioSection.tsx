@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import uniepaus from "../public/assets/svg/logos/uniepaus.svg";
 import { uuid } from "uuidv4";
+import { useState } from "react";
 
 interface ILogos {
   beforeHover: string;
@@ -9,6 +10,8 @@ interface ILogos {
 }
 
 const PortfolioSection = () => {
+  const [portfolioOpen, setPortfolioOpen] = useState<boolean>(false);
+
   const logos: ILogos[] = [
     {
       beforeHover: uniepaus.src,
@@ -88,21 +91,32 @@ const PortfolioSection = () => {
       },
     ],
   };
+
+  const openPortfolio = () => {
+    setPortfolioOpen(true);
+  };
+
   return (
-    <section id="Portfolio" className="PortfolioSection">
-      <div className="container">
-        <h2>PORTFOLIO</h2>
-      </div>
-      <div className="carousel">
-        <Slider {...settings}>
-          {logos.map((el, index) => (
-            <div key={"portfolioELem" + index + el.afterHover}>
-              <img src={el.beforeHover} alt="logo" />
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+    <>
+      <section id="Portfolio" className="PortfolioSection">
+        <div className="container">
+          <h2>PORTFOLIO</h2>
+        </div>
+        <div className="carousel">
+          <Slider {...settings}>
+            {logos.map((el, index) => (
+              <div
+                onClick={openPortfolio}
+                key={"portfolioELem" + index + el.afterHover}
+              >
+                <img src={el.beforeHover} alt="logo" />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
+      <PortfolioSection />
+    </>
   );
 };
 

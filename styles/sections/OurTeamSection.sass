@@ -22,81 +22,87 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
         width: 430px
         height: 600px
         cursor: pointer
+        overflow: hidden
         position: relative
-        -webkit-box-shadow: 5px 6px 20px 0px rgba(0,0,0,0.2)
-        -moz-box-shadow: 5px 6px 20px 0px rgba(0,0,0,0.2)
-        box-shadow: 5px 6px 20px 0px rgba(0,0,0,0.2)
-        //padding: 20px
-        img.teamImg
-          position: absolute
-          top: 0
-          left: 0
-          width: 100%
+        transform: perspective(800px)
+        transform-style: preserve-3d
+        //flex: 0 0 430px
+
+        .cardWrap
+          box-shadow: rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(white, 0.5) 0 0 0 6px
+          transition: 1s $returnEasing
+          transform: perspective(800px)
+          transform-style: preserve-3d
           height: 100%
-          object-fit: cover
-
-        .innerWrapper
-          position: relative
-          width: 100%
-          height: 100%
-          //pointer-events: none
-          overflow: hidden
 
 
-          &:hover
-            .info
-              transform: translateY(0)
-
-            .subInfo p
-              opacity: 1
-              transition: 0.6s $hoverEasing
-
-
-            .subInfo:after
-              transition: 5s $hoverEasing
-              opacity: 1
-              transform: translateY(0)
-
-            .img
-              transition: 0.6s $hoverEasing, opacity 5s $hoverEasing
-              opacity: 0.8
-
-            .card
-              transition: 0.6s $hoverEasing, box-shadow 2s $hoverEasing
-              box-shadow: rgba(white, 0.2) 0 0 40px 5px, rgba(white, 1) 0 0 0 1px, rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px
-  
-
-          
-          
-          
-          .info
+          img.teamImg
             position: absolute
-            bottom: 0px
+            top: 0
             left: 0
-            transition: all .3s ease
             width: 100%
-            padding: 20px
-            background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0.6%, rgba(19, 19, 19, 0.8) 100.6%)
-            .subInfo
-              p
-                font-size: 13px
-                font-family: "SequelLightBody"
-                color: #fff
-                line-height: 140%
+            height: 100%
+            object-fit: cover
+
+
+          .cardInfo
+            transform: translateY(40%)
+            transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
+            position: absolute
+            bottom: 0
+
+            &:after
+              content: ''
+              position: absolute
+              top: 0
+              left: 0
+              z-index: 0
+              width: 100%
+              height: 100%
+              background-image: linear-gradient(to bottom, transparent 0%, rgba(#000, 0.6) 100%)
+              background-blend-mode: overlay
+              opacity: 0
+              transform: translateY(100%)
+              transition: 5s 1s $returnEasing
             .mainInfo
               display: flex
               justify-content: space-between
-              align-items: center
-              margin-bottom: 22px
+              margin-bottom: 23px
+              padding: 0 20px
+              span
+                color: $accent
+                font-family: "SequelMediumBody"
+                font-size: 36px
+            p
+              opacity: 0
+              padding: 0 20px
+              line-height: 140%
+              text-shadow: rgba(black, 1) 0 2px 3px
+              transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
 
-            span
-              color: $accent
-              font-family: "SequelMediumBody"
-              font-size: 36px
-            img
-              width: 38px
-              height: 38px
 
+        &:hover
+          .cardInfo
+            transform: translateY(0)
+
+          .cardInfo p
+            opacity: 1
+
+          .cardInfo, .cardInfo p
+            transition: 0.6s $hoverEasing
+
+          .card-info:after
+            transition: 5s $hoverEasing
+            opacity: 1
+            transform: translateY(0)
+
+          .card-bg
+            transition: 0.6s $hoverEasing, opacity 5s $hoverEasing
+            opacity: 0.8
+
+          .card
+            transition: 0.6s $hoverEasing, box-shadow 2s $hoverEasing
+            box-shadow: rgba(white, 0.2) 0 0 40px 5px, rgba(white, 1) 0 0 0 1px, rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px
 
 
 

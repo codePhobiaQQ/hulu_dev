@@ -1,0 +1,27 @@
+.PortfolioPopup
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+  transition: opacity .3s ease
+  align-items: center
+  opacity: 0
+  align-items: center
+  background-color: #C6C6C6
+  pointer-events: none
+  &.active
+    pointer-events: inherit
+    opacity: 1
+  .close
+    position: absolute
+    top: 25px
+    cursor: pointer
+    right: 25px
+    transition: all .3s ease
+    &:hover
+      transform: scale(1.04)
+
+  .container
