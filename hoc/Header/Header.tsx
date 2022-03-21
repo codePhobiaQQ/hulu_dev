@@ -129,9 +129,9 @@ const Header = ({
   const whatLogo = () => {
     // @ts-ignore
     if (activeLogo == 0) {
-      return Logo.src;
-    } else if (activeLogo == 1) {
       return LogoGrey.src;
+    } else if (activeLogo == 1) {
+      return Logo.src;
     }
   };
 

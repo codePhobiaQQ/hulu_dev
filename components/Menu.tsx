@@ -43,10 +43,10 @@ export const linksMenu: ILink[] = [
     name: "RISK SCENARIOS",
     link: "/#Risk",
   },
-  {
-    name: "EVENTS",
-    link: "/#Events",
-  },
+  // {
+  //   name: "EVENTS",
+  //   link: "/#Events",
+  // },
   {
     name: "CONTACTS US",
     link: "/#ContactUs",
