@@ -4,19 +4,11 @@ import LogoWhite from "../../public/assets/svg/LogoWhite.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
 import Head from "next/head";
-import {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import FooterSection from "../../sections/FooterSection";
 import { useRouter } from "next/router";
 import { MotionValue } from "framer-motion";
 import ConnectPopup from "../../components/popups/ConnectPopup";
-import { route } from "next/dist/server/router";
 import Policity from "../../components/popups/Policity";
 
 interface IHeader {
@@ -24,20 +16,17 @@ interface IHeader {
   setHide?: Dispatch<SetStateAction<boolean>>;
   setColorMode?: Dispatch<SetStateAction<string>>;
   colorMode?: string;
-  scrolling?: MotionValue<number>;
-
   dashboardOffset?: number;
   dashboardHeight?: number;
 }
 
-const Header = ({
+const HeaderBlog = ({
   children,
   setHide,
   setColorMode,
   colorMode,
   dashboardOffset,
   dashboardHeight,
-  scrolling,
 }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
   const [close, setClose] = useState<boolean>(true);
@@ -126,101 +115,84 @@ const Header = ({
     }, 500);
   }
 
-  const whatLogo = () => {
-    // @ts-ignore
-    if (activeLogo == 0) {
-      return Logo.src;
-    } else if (activeLogo == 1) {
-      return LogoGrey.src;
+  const settingColor = (color: string): any => {
+    if (setColorMode) {
+      setColorMode(color);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("color", color);
+      }
     }
   };
 
-  useEffect(() => {
-    const show = async () => {
-      setTimeout(() => {
-        setConnectOpen(true);
-      }, 30000);
-    };
-    show();
-  }, []);
+  const whatLogo = () => {
+    if (link.pathname == "/blog/[id]") {
+      if (colorMode == "black") return Logo.src;
+      else if (colorMode == "grey") return LogoGrey.src;
+      else return LogoWhite.src;
+    } else {
+      // @ts-ignore
+      if (activeLogo == 0) {
+        return Logo.src;
+      } else if (activeLogo == 1) {
+        return LogoGrey.src;
+      }
+    }
+  };
 
-  // useEffect(() => {
-  //   // @ts-ignore
-  //   scrolling?.onChange(() => {
-  //     // @ts-ignore
-  //     // console.log(scrolling.current);
-  //     // console.log(dashboardOffset);
-  //
-  //     if (
-  //       // @ts-ignore
-  //       scrolling?.current < dashboardOffset + dashboardHeight &&
-  //       // @ts-ignore
-  //       scrolling?.current > dashboardOffset
-  //     ) {
-  //       if (activeLogo != 1) {
-  //         console.log("here0");
-  //         setActiveLogo(1);
-  //       }
-  //     } else {
-  //       console.log("here1");
-  //       if (activeLogo == 1) {
-  //         setActiveLogo(0);
-  //       }
-  //     }
-  //   });
-  // }, [scrolling, dashboardOffset]);
+  console.log();
 
-  return useMemo(
-    () => (
-      <>
-        <Head>
-          <title>Huntli</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-        </Head>
+  return (
+    <>
+      <Head>
+        <title>Huntli Blog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
 
-        <div className={"header " + colorMode}>
-          <div className={"headerInner"}>
-            <Link href="/">
-              <a className={open ? "logo menuOpen" : "logo"}>
-                <img src={whatLogo()} alt="Logo" />
-              </a>
-            </Link>
-            <div onClick={toggleClass} className="hamburger-wrapper">
-              <div className="hamburger-container">
-                <div className={open ? "hamburger active" : "hamburger"}></div>
-              </div>
+      <div className={"header " + colorMode}>
+        <div className={"headerInner"}>
+          <Link href="/">
+            <a className={open ? "logo menuOpen" : "logo"}>
+              <img src={whatLogo()} alt="Logo" />
+            </a>
+          </Link>
+          {link.pathname == "/blog/[id]" && (
+            <div className="colors">
+              <div
+                onClick={() => settingColor("black")}
+                className="color"
+              ></div>
+              <div className="color" onClick={() => settingColor("grey")}></div>
+              <div
+                className="color"
+                onClick={() => settingColor("white")}
+              ></div>
+            </div>
+          )}
+          <div onClick={toggleClass} className="hamburger-wrapper">
+            <div className="hamburger-container">
+              <div className={open ? "hamburger active" : "hamburger"}></div>
             </div>
           </div>
         </div>
-        {children}
-        <Menu
-          setOpen={setOpen}
-          toggleClass={toggleClass}
-          nav={nav}
-          backgroundOne={backgroundOne}
-          backgroundTwo={backgroundTwo}
-          dustParticles={dustParticles}
-          line={line}
-          links={links}
-          social={social}
-          title={title}
-        />
-        <FooterSection setPolicityOpen={setPolicityOpen} />
-        <Policity
-          setPolicityOpen={setPolicityOpen}
-          policityOpen={policityOpen}
-        />
-        <ConnectPopup
-          connectOpen={connectOpen}
-          setConnectOpen={setConnectOpen}
-        />
-      </>
-    ),
-    [close, open, activeLogo, dashboardOffset, connectOpen, policityOpen]
+      </div>
+      {children}
+      <Menu
+        setOpen={setOpen}
+        toggleClass={toggleClass}
+        nav={nav}
+        backgroundOne={backgroundOne}
+        backgroundTwo={backgroundTwo}
+        dustParticles={dustParticles}
+        line={line}
+        links={links}
+        social={social}
+        title={title}
+      />
+      <FooterSection setPolicityOpen={setPolicityOpen} />
+      <Policity setPolicityOpen={setPolicityOpen} policityOpen={policityOpen} />
+      <ConnectPopup connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
+    </>
   );
 };
 
-export default Header;
+export default HeaderBlog;

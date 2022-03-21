@@ -44,7 +44,11 @@ const FooterSection = ({ setPolicityOpen }: IFooter) => {
     <footer className="footerSection">
       <div className="container">
         <div className="leftCol">
-          <img src={logo.src} alt="Logo" />
+          <Link href="/">
+            <a>
+              <img src={logo.src} alt="Logo" />
+            </a>
+          </Link>
           <span onClick={() => setPolicityOpen(true)}>Privacy and policy</span>
         </div>
         <div className="centerCol">

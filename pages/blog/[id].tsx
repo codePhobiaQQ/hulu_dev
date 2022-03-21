@@ -1,4 +1,3 @@
-import Header from "../../hoc/Header/Header";
 import Link from "next/link";
 import LeftArrow from "../../components/UI/LeftArrow";
 import { IBlog } from "./index";
@@ -9,6 +8,7 @@ import Twit from "../../components/UI/soc/twit";
 import FaceBook from "../../components/UI/soc/faceBook";
 import LinkIn from "../../components/UI/soc/LinkIn";
 import { useEffect, useState } from "react";
+import HeaderBlog from "../../hoc/Header/HeaderBlog";
 
 const BlogSinglePage = () => {
   const [colorMode, setColorMode] = useState<string>("black");
@@ -40,7 +40,7 @@ const BlogSinglePage = () => {
   };
 
   return (
-    <Header colorMode={colorMode} setColorMode={setColorMode}>
+    <HeaderBlog colorMode={colorMode} setColorMode={setColorMode}>
       <section className={"BlogSinglePage " + colorMode}>
         <div className="container">
           <Link href="/blog">
@@ -79,7 +79,7 @@ const BlogSinglePage = () => {
           </div>
         </div>
       </section>
-    </Header>
+    </HeaderBlog>
   );
 };
 

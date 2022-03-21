@@ -6,8 +6,6 @@
   padding-bottom: 104px
   min-height: 100vh
   .container
-    @media only screen and (min-width: 1360px) and (max-width: 1920px)
-      width: 1010px
     ul.categoriesHead
       display: flex
       li
@@ -83,14 +81,45 @@
               top: -9.7px
               right: 0
 
-  @media only screen and (min-width: 1360px) and (max-width: 1919px)
+
+  @media only screen and (max-width: 1919px)
     padding-top: 90px
     .container
+      width: 1013px
+      ul.categoriesHead
+        flex-wrap: wrap
       ul.blogEls
         margin-top: 60px
         grid-column-gap: 21px
         grid-row-gap: 21px
 
+
+  @media only screen and (max-width: 1359px)
+    .container
+      width: 661px
+      ul.categoriesHead
+        li
+          margin-bottom: 30px
+          margin-right: 40px
+          font-size: 20px
+
+      ul.blogEls
+        grid-template-columns: 1fr 1fr
+
+  @media only screen and (max-width: 767px)
+    .container
+      width: 310px
+      ul.categoriesHead
+        li
+          margin-bottom: 15px
+          margin-right: 15px
+          font-size: 13px
+          padding: 0 20px
+          height: 30px
+          width: inherit
+
+      ul.blogEls
+        grid-template-columns: 1fr
 
 
 

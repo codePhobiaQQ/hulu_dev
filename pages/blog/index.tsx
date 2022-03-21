@@ -1,4 +1,3 @@
-import Header from "../../hoc/Header/Header";
 import { useState } from "react";
 import { ICategory } from "../../models/galaryInterfaces";
 import arca from "../../public/assets/img/news/arca.jpg";
@@ -6,6 +5,7 @@ import shar from "../../public/assets/img/news/shar.jpg";
 import people from "../../public/assets/img/news/pepole.jpg";
 import Filters from "../../components/blog/Filters";
 import BlogElem from "../../components/blog/blogElem";
+import HeaderBlog from "../../hoc/Header/HeaderBlog";
 
 export interface IBlog {
   name: string;
@@ -131,7 +131,7 @@ const Blog = () => {
   ];
 
   return (
-    <Header>
+    <HeaderBlog>
       <section className="BlogPageSection">
         <div className="container">
           <Filters
@@ -152,7 +152,7 @@ const Blog = () => {
           </ul>
         </div>
       </section>
-    </Header>
+    </HeaderBlog>
   );
 };
 
