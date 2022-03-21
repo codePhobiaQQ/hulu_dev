@@ -190,7 +190,9 @@ const Header = ({
             </Link>
             <div onClick={toggleClass} className="hamburger-wrapper">
               <div className="hamburger-container">
-                <div className={open ? "hamburger active" : "hamburger"}></div>
+                <div
+                  className={open ? "hamburger active" : "hamburger active"}
+                ></div>
               </div>
             </div>
           </div>

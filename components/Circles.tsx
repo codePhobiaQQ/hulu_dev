@@ -1,12 +1,25 @@
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { fadeIn } from "../motions/DashBoard.motion";
 
 const Circles = () => {
   const [first, setFirst] = useState<boolean>(false);
   const [second, setSecond] = useState<boolean>(false);
   const [third, setThird] = useState<boolean>(false);
 
+  const curcleRef = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
+
   return (
-    <div className="circles">
+    <motion.div
+      ref={curcleRef.ref}
+      variants={fadeIn}
+      animate={curcleRef.inView ? "visible" : "hidden"}
+      className="circles"
+    >
       <p className={first ? "firstText active" : "firstText"}>
         <span>€2 trillion </span>in suspicious transactions
       </p>
@@ -31,7 +44,7 @@ const Circles = () => {
         onMouseLeave={() => setThird(false)}
         className="thirdLevel"
       ></div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,9 @@
 import Circles from "../components/Circles";
 import mac from "../public/assets/img/mac.png";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { fadeFromLeft, wrapperVariant } from "../motions/DashBoard.motion";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface IDashboardSection {
   setDashboardOffset: Dispatch<SetStateAction<number>>;
@@ -19,26 +22,34 @@ const DashboardSection = ({
     setDashboardHeight(sectionRef.current?.clientHeight);
   }, []);
 
-  console.log();
+  const { ref, inView, entry } = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
 
   return (
     <section id="Dashboard" ref={sectionRef} className="DashboardSection">
       <div className="triangle"></div>
-      <div className="container">
+      <motion.div variants={wrapperVariant} className="container">
         <div className="leftSide">
           <h2>DASHBOARD</h2>
-          <p>
+          <motion.p
+            ref={ref}
+            variants={fadeFromLeft}
+            custom={-70}
+            animate={inView ? "visible" : "hidden"}
+          >
             We have created a compliance officer's dashboard that would help you
             to get access to all of our features. It's easy to use to monitor
             all compliance activities, set up rules, and explore individual
             cases.
-          </p>
+          </motion.p>
           <Circles />
         </div>
         <div className="rightSide">
           <Circles />
         </div>
-      </div>
+      </motion.div>
       <div id="Screening" className="container">
         <img src={mac.src} alt="mac" />
         <h3 className="ultimate">Unlimited transaction monitoring alerts</h3>
