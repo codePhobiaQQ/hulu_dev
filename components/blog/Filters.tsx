@@ -1,6 +1,5 @@
 import { SetStateAction, useEffect } from "react";
 import { Dispatch } from "react";
-import { uuid } from "uuidv4";
 import { ICategory } from "../../models/galaryInterfaces";
 import { IBlog } from "../../pages/blog";
 
@@ -36,7 +35,7 @@ const Filters = ({
       {categories.map((category, index) => (
         <li
           className={category.id == activeCategory ? "active" : ""}
-          key={uuid() + "category"}
+          key={"category" + category.id}
           onClick={() => setActive(category.id)}
         >
           {category.name}

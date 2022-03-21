@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ILink } from "../components/Menu";
-import { v4 as uuidv4 } from "uuid";
 import { motion, MotionValue } from "framer-motion";
-import { fadeFromBot, fadeFromBotDelay } from "../motions/AboutSection.motion";
+import { fadeFromBot } from "../motions/AboutSection.motion";
 import { useEffect, useState } from "react";
+import StatisticElem from "../components/AboutSection/StatisticElem";
 
 interface IAboutSection {
   opacity: MotionValue<number>;
@@ -13,10 +13,6 @@ const AboutSection = ({ opacity }: IAboutSection) => {
   const [isProductOpen, setIsProductOpen] = useState<boolean>(false);
 
   const links: ILink[] = [
-    {
-      name: "Product",
-      link: "#",
-    },
     {
       name: "Events",
       link: "/#Events",
@@ -39,12 +35,6 @@ const AboutSection = ({ opacity }: IAboutSection) => {
     },
   ];
 
-  console.log(() => {
-    console.log("render");
-  });
-
-  // console.log(opacity);
-
   return (
     <section id="About" className="aboutSection">
       <motion.div
@@ -56,59 +46,52 @@ const AboutSection = ({ opacity }: IAboutSection) => {
         <div className="content">
           <div className="leftSide">
             <div className="navigation">
+              <motion.div
+                variants={fadeFromBot}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                onClick={() => setIsProductOpen(!isProductOpen)}
+                className={`navigationItem product ${
+                  isProductOpen ? " active" : ""
+                }`}
+              >
+                <span>Products</span>
+                <span className="plus"></span>
+              </motion.div>
+              <ul
+                className={isProductOpen ? "active menuToggle" : "menuToggle"}
+              >
+                <li>
+                  <Link href="/#Dashboard">
+                    <a onClick={() => setIsProductOpen(false)}>Dashboard</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#Screening">
+                    <a onClick={() => setIsProductOpen(false)}>Screening</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#Risk">
+                    <a onClick={() => setIsProductOpen(false)}>
+                      Risk Scenarios
+                    </a>
+                  </Link>
+                </li>
+              </ul>
               {links.map((link, index) => (
-                <>
-                  {index == 0 ? (
-                    <>
-                      <motion.div
-                        variants={fadeFromBot}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        onClick={() => setIsProductOpen(!isProductOpen)}
-                        className={`navigationItem product ${
-                          isProductOpen ? " active" : ""
-                        }`}
-                      >
-                        <span>{link.name}</span>
-                        <span className="plus"></span>
-                      </motion.div>
-                      <ul
-                        className={
-                          isProductOpen ? "active menuToggle" : "menuToggle"
-                        }
-                      >
-                        <li>
-                          <Link href="#">
-                            <a>Dashboard</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            <a>Screening</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            <a>Risk Scenarios</a>
-                          </Link>
-                        </li>
-                      </ul>
-                    </>
-                  ) : (
-                    <Link key={link.name + "about" + index} href={link.link}>
-                      <motion.a
-                        variants={fadeFromBot}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="navigationItem"
-                      >
-                        {link.name}
-                      </motion.a>
-                    </Link>
-                  )}
-                </>
+                <Link key={link.name + "aboutSection" + index} href={link.link}>
+                  <motion.a
+                    variants={fadeFromBot}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="navigationItem"
+                  >
+                    {link.name}
+                  </motion.a>
+                </Link>
               ))}
             </div>
           </div>
@@ -120,28 +103,18 @@ const AboutSection = ({ opacity }: IAboutSection) => {
               banking. Our support is available 24/7 to assist you with that.
             </div>
             <div className="statistic">
-              <motion.div
-                variants={fadeFromBot}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="statInner"
-              >
-                <h4>UP TO</h4>
-                <span className="number">60%</span>
-                <span className="small">Less time on AML cases</span>
-              </motion.div>
-              <motion.div
-                variants={fadeFromBotDelay}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="statInner"
-              >
-                <h4>OVER</h4>
-                <span className="number">200+</span>
-                <span className="small">Ready to use scenarios</span>
-              </motion.div>
+              <StatisticElem
+                title="UP TO"
+                to={60}
+                text={"%"}
+                spaning={"Less time on AML cases"}
+              />
+              <StatisticElem
+                title="OVER"
+                to={200}
+                text={"+"}
+                spaning={"Ready to use scenarios"}
+              />
             </div>
           </div>
         </div>

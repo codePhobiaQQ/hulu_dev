@@ -96,7 +96,7 @@ const PortfolioSection = () => {
       <div className="carousel">
         <Slider {...settings}>
           {logos.map((el, index) => (
-            <div key={uuid() + index}>
+            <div key={"portfolioELem" + index + el.afterHover}>
               <img src={el.beforeHover} alt="logo" />
             </div>
           ))}

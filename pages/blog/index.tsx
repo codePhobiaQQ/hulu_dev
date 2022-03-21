@@ -2,7 +2,6 @@ import Header from "../../hoc/Header/Header";
 import { useState } from "react";
 import { ICategory } from "../../models/galaryInterfaces";
 import arca from "../../public/assets/img/news/arca.jpg";
-import { uuid } from "uuidv4";
 import Link from "next/link";
 import shar from "../../public/assets/img/news/shar.jpg";
 import people from "../../public/assets/img/news/pepole.jpg";
@@ -148,7 +147,7 @@ const Blog = () => {
           <ul className="blogEls">
             {showBlogs.map((blogEl, index) => (
               <BlogElem
-                key={uuid() + "blogEl"}
+                key={"blogEl" + index}
                 categories={categories}
                 blogEl={blogEl}
               />

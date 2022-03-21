@@ -5,9 +5,10 @@ import { useState } from "react";
 interface IRiskElem {
   classing?: string;
   plainLine?: string;
+  text: string;
 }
 
-const RiskElem = ({ classing, plainLine }: IRiskElem) => {
+const RiskElem = ({ classing, plainLine, text }: IRiskElem) => {
   return (
     <div className="riskBlock">
       {classing && <TopLine classing={classing} />}
@@ -20,7 +21,7 @@ const RiskElem = ({ classing, plainLine }: IRiskElem) => {
       </div>
       <div className="field">
         <h4>VARIABLE</h4>
-        <span>Client_sorter_latest</span>
+        <span>{text}</span>
       </div>
       <div className="fieldWrap">
         <div className="field">

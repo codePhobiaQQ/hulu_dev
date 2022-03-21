@@ -1,7 +1,38 @@
 import logo from "../public/assets/svg/Logo.svg";
-import { linksMenu } from "../components/Menu";
+import { ILink, linksMenu } from "../components/Menu";
 import Link from "next/link";
 import SocLinks from "../components/UI/SocLinks";
+
+interface ILinksInt {
+  index: number;
+  el: ILink;
+}
+
+const FirstFootLink = ({ index, el }: ILinksInt) => {
+  if (index <= 4) {
+    return (
+      <li>
+        <Link href={`${el.link}`}>
+          <a>{el.name}</a>
+        </Link>
+      </li>
+    );
+  }
+  return null;
+};
+
+const SecondFootLink = ({ index, el }: ILinksInt) => {
+  if (index > 4) {
+    return (
+      <li key={"footer" + el.name + el.link + "second"}>
+        <Link href={`${el.link}`}>
+          <a>{el.name}</a>
+        </Link>
+      </li>
+    );
+  }
+  return null;
+};
 
 const FooterSection = () => {
   return (
@@ -16,28 +47,20 @@ const FooterSection = () => {
           <div className="linksLists">
             <ul className="links left">
               {linksMenu.map((el, index) => (
-                <>
-                  {index <= 4 && (
-                    <li key={"footer" + el.name + el.link}>
-                      <Link href={`${el.link}`}>
-                        <a>{el.name}</a>
-                      </Link>
-                    </li>
-                  )}
-                </>
+                <FirstFootLink
+                  key={"footer" + el.name + el.link + "first"}
+                  index={index}
+                  el={el}
+                />
               ))}
             </ul>
             <ul className="links right">
               {linksMenu.map((el, index) => (
-                <>
-                  {index > 4 && (
-                    <li key={"footer" + el.name + el.link}>
-                      <Link href={`${el.link}`}>
-                        <a>{el.name}</a>
-                      </Link>
-                    </li>
-                  )}
-                </>
+                <SecondFootLink
+                  key={"footer" + el.name + el.link + "second"}
+                  index={index}
+                  el={el}
+                />
               ))}
             </ul>
           </div>

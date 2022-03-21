@@ -100,7 +100,10 @@ const Menu = ({
           <div ref={line} className="line"></div>
           <ul ref={links} className="links">
             {linksMenu.map((el, index) => (
-              <li onClick={clickLinkHandler} key={uuidv4() + index}>
+              <li
+                onClick={clickLinkHandler}
+                key={"menuElem" + index + el.link + el.name}
+              >
                 <Link href={`${el.link}`}>
                   <a>{el.name}</a>
                 </Link>

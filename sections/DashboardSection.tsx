@@ -22,7 +22,7 @@ const DashboardSection = ({
   console.log();
 
   return (
-    <section id="DashBoard" ref={sectionRef} className="DashboardSection">
+    <section id="Dashboard" ref={sectionRef} className="DashboardSection">
       <div className="triangle"></div>
       <div className="container">
         <div className="leftSide">
@@ -39,7 +39,7 @@ const DashboardSection = ({
           <Circles />
         </div>
       </div>
-      <div className="container">
+      <div id="Screening" className="container">
         <img src={mac.src} alt="mac" />
         <h3 className="ultimate">Unlimited transaction monitoring alerts</h3>
         <h3 className="screening">SCREENING</h3>

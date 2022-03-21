@@ -20,20 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/AboutSection/StatisticElem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/SocLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/SocLinks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/blog/Filters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/blog/Filters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/blog/blogElem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/blog/blogElem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/riskSection/RiskElem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/riskSection/RiskElem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/AboutSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/BlogSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/BlogSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/ContactSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/ContactSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/DashboardSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/DashboardSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/EventsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/EventsSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/FooterSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/FooterSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/PortfolioSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/PortfolioSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/RiscScenarios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/RiscScenarios.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/header.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/sections/AboutSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/AboutSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/RiscSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/RiscSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +119,7 @@
       <workItem from="1646847327920" duration="97000" />
       <workItem from="1647198260940" duration="173000" />
       <workItem from="1647608643745" duration="4263000" />
-      <workItem from="1647614507700" duration="47586000" />
+      <workItem from="1647614507700" duration="59568000" />
     </task>
     <servers />
   </component>
@@ -136,33 +139,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="344" key="GridCell.Tab.0.bottom" timestamp="1647700092867">
+    <state width="1899" height="344" key="GridCell.Tab.0.bottom" timestamp="1647792557132">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="137" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1646729986475" />
-    <state width="1899" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1647700092867" />
-    <state width="1899" height="344" key="GridCell.Tab.0.center" timestamp="1647700092866">
+    <state width="1899" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1647792557132" />
+    <state width="1899" height="344" key="GridCell.Tab.0.center" timestamp="1647792557131">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="137" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1646729986474" />
-    <state width="1899" height="344" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1647700092866" />
-    <state width="1899" height="344" key="GridCell.Tab.0.left" timestamp="1647700092865">
+    <state width="1899" height="344" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1647792557131" />
+    <state width="1899" height="344" key="GridCell.Tab.0.left" timestamp="1647792557130">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="137" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1646729986473" />
-    <state width="1899" height="344" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1647700092865" />
-    <state width="1899" height="344" key="GridCell.Tab.0.right" timestamp="1647700092867">
+    <state width="1899" height="344" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1647792557130" />
+    <state width="1899" height="344" key="GridCell.Tab.0.right" timestamp="1647792557132">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="137" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1646729986475" />
-    <state width="1899" height="344" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1647700092867" />
+    <state width="1899" height="344" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1647792557132" />
     <state x="469" y="179" key="SettingsEditor" timestamp="1646152289798">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="469" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1646152289798" />
-    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1646672819952">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="668" y="279" width="584" height="522" key="find.popup" timestamp="1647797542556">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="668" y="279" width="584" height="522" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1647797542556" />
+    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup" timestamp="1647794581331">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1646672819952" />
+    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1647794581331" />
   </component>
 </project>

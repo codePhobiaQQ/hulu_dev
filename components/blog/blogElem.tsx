@@ -1,4 +1,3 @@
-import { uuid } from "uuidv4";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { IBlog } from "../../pages/blog";

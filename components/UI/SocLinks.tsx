@@ -3,7 +3,6 @@ import instagramB from "../../public/assets/svg/soc/InstagramB.svg";
 import LinkedinB from "../../public/assets/svg/soc/LinkedinB.svg";
 import TelegramB from "../../public/assets/svg/soc/TelegramB.svg";
 import twitterB from "../../public/assets/svg/soc/twitterB.svg";
-import { v4 as uuidv4 } from "uuid";
 
 interface ISocLink {
   img: string;
@@ -40,7 +39,7 @@ const SocLinks = ({ social }: ISocLinksProps) => {
   return (
     <ul ref={social}>
       {links.map((link, index) => (
-        <li key={uuidv4() + index}>
+        <li key={"socLInk" + index + link.link}>
           <a href={link.link}>
             <img src={link.img} alt="soc" />
           </a>

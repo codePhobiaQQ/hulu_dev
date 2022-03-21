@@ -8,28 +8,28 @@ const RiscScenarios = () => {
     <section id="Risk" className="RiscScenarios">
       <div className="container">
         <h2>RISK SCENARIOS</h2>
-        <div className="riskContainer">
-          <div className="schemaWrapper">
-            <div className="leftSide">
-              <div className="startBtn">
-                <StartIcon />
-                <span>input</span>
-                <TopLine classing={"topLine"} />
-                <TopLine classing={"topLine second"} />
-              </div>
+      </div>
+      <div className="riskContainer">
+        <div className="schemaWrapper">
+          <div className="leftSide">
+            <div className="startBtn">
+              <StartIcon />
+              <span>input</span>
+              <TopLine classing={"topLine"} />
+              <TopLine classing={"topLine second"} />
             </div>
-            <div className="secondSide">
-              <RiskElem classing={"topLine"} />
-              <RiskElem classing={"bottomLine"} />
-            </div>
-            <div className="thirdSide">
-              <RiskElem plainLine={"plainLine"} />
-            </div>
-            <div className="finishSide">
-              <div className="finishBtn">
-                <Finish />
-                <span>Output</span>
-              </div>
+          </div>
+          <div className="secondSide">
+            <RiskElem text={"Client_sorter_latest"} classing={"topLine"} />
+            <RiskElem text={"Loan_type_latest"} classing={"bottomLine"} />
+          </div>
+          <div className="thirdSide">
+            <RiskElem text={"Loan_sorter_latest"} plainLine={"plainLine"} />
+          </div>
+          <div className="finishSide">
+            <div className="finishBtn">
+              <Finish />
+              <span>Output</span>
             </div>
           </div>
         </div>

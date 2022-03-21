@@ -3,6 +3,7 @@
 
 .RiscScenarios
   padding-top: 100px
+  padding-bottom: 100px
   .container
     h2
       @include titleMix(#fff)
@@ -18,7 +19,6 @@
       //.leftSide
       .startBtn, .finishBtn
         background-color: #01C497
-        cursor: pointer
         border-radius: 15px
         width: 227px
         height: 91px
@@ -133,3 +133,153 @@
               @include centerMix
               border-bottom-right-radius: 30px
               border-top-right-radius: 30px
+
+  @media only screen and (max-width: 1919px)
+    .riskContainer
+      width: 1266px
+      .schemaWrapper
+        .riskBlock
+          .topLine, .bottomLine
+            top: calc(50% - 4px)
+            height: 200px
+          .bottomLine
+            top: calc(50% - 197px)
+
+        .startBtn, .finishBtn
+          width: 190px
+          height: 76px
+          .topLine
+            top: calc(50% - 197px)
+            height: 200px
+            &.second
+              top: calc(50% - 4px)
+          span
+            margin-left: 16px
+            font-size: 22px
+        .finishBtn
+          width: 208px
+          margin-left: 89px
+        .secondSide, .thirdSide
+          margin-left: 58px
+          .riskBlock
+            padding: 25px
+            width: 332px
+            height: 233px
+            display: flex
+            flex-direction: column
+
+            .fieldWrap
+              margin-bottom: 0
+              .field
+                margin-bottom: 0
+            .field
+              margin-bottom: 15px
+              h4
+                font-size: 14px
+                margin-bottom: 5px
+              span
+                font-size: 10px
+            .showData
+              font-size: 22px
+            .buttonsWrap
+              margin-top: auto
+              width: 100%
+              height: 25px
+              div
+                width: 50%
+                height: 25px
+                font-size: 11px
+                padding: 0 30px
+
+        .thirdSide
+          .riskBlock
+            .plainLine
+              width: 88px
+              right: -88px
+
+
+  @media only screen and (max-width: 1359px)
+    .riskContainer
+      width: 684px
+      .schemaWrapper
+        flex-direction: column
+        .finishBtn
+          margin-left: 0
+          margin-top: 58px
+          &:after
+            top: -9px
+            left: calc(50% - 9px)
+          &:before
+            top: -10px
+            left: calc(50% - 10px)
+        .startBtn
+          margin-bottom: 62px
+          &:after
+            top: calc(100% - 9px)
+            right: calc(50% - 9px)
+          &:before
+            top: calc(100% - 10px)
+            right: calc(50% - 10px)
+
+          .topLine
+            height: 180px
+            transform: rotate(90deg)
+            top: 10px
+            left: calc(50% + 50px)
+            &.second
+              transform: scale(-1, 1) rotate(-90deg)
+              top: 10px
+              left: -25px
+
+
+
+        .riskBlock
+          .bottomLine, .topLine
+            height: 180px
+            transform: rotate(90deg)
+            bottom: 0
+            top: calc(100% - 55px)
+            left: calc(50% + 53px)
+          .bottomLine
+            transform: scale(-1, 1) rotate(-90deg)
+            left: 40px
+          &:after
+            top: calc(100% - 9px)
+            right: calc(50% - 9px)
+          &:before
+            top: calc(100% - 10px)
+            right: calc(50% - 10px)
+          .riskInner
+            width: 100%
+            &:after
+              top: - 9px
+              left: calc(50% - 9px)
+            &:before
+              top: -10px
+              left: calc(50% - 10px)
+
+          &:first-child
+            margin-right: 20px
+            margin-bottom: 58px
+
+        .secondSide
+          margin-left: 0
+          display: flex
+          flex-direction: row
+
+        .thirdSide
+          margin-left: 0
+          .riskBlock
+            margin-right: 0
+            .plainLine
+              top: inherit
+              bottom: -30px
+              width: 58px
+              left: 137px
+              transform: rotate(-90deg)
+
+  @media only screen and (max-width: 767px)
+    .riskContainer
+      width: 360px
+      .schemaWrapper
+        .secondSide
