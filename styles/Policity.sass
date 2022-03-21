@@ -1,0 +1,73 @@
+.PolicityPopup
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+  transition: opacity .3s ease
+  align-items: center
+  opacity: 0
+  align-items: center
+  background-color: #C6C6C6
+  pointer-events: none
+  &.active
+    pointer-events: inherit
+    opacity: 1
+  .close
+    position: absolute
+    top: 25px
+    cursor: pointer
+    right: 25px
+    transition: all .3s ease
+    &:hover
+      transform: scale(1.04)
+
+  .container
+    max-height: 80vh
+    overflow-y: auto
+    padding-right: 30px
+    h3
+      font-size: 25px
+      display: block
+      font-family: "SequelMediumBody"
+      margin-bottom: 30px
+      width: 60%
+      line-height: 140%
+      font-weight: bold
+    p
+      display: block
+      line-height: 140%
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+
+  @media only screen and (max-width: 1919px)
+    .container
+      h3
+        width: 75%
+      p
+        font-size: 16px
+    .close
+      top: 20px
+      right: 20px
+      &:hover
+        transform: scale(1.04)
+      .closeSvg
+        width: 43px
+        height: 43px
+
+
+  @media only screen and (max-width: 767px)
+    .container
+      h3
+        width: 95%
+        font-size: 18px
+      p
+        font-size: 13px
+    .close
+      &:hover
+      .closeSvg
+        width: 23px
+        height: 23px

@@ -15,6 +15,9 @@ import {
 import FooterSection from "../../sections/FooterSection";
 import { useRouter } from "next/router";
 import { MotionValue } from "framer-motion";
+import ConnectPopup from "../../components/popups/ConnectPopup";
+import { route } from "next/dist/server/router";
+import Policity from "../../components/popups/Policity";
 
 interface IHeader {
   children: React.ReactNode;
@@ -38,6 +41,10 @@ const Header = ({
 }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
   const [close, setClose] = useState<boolean>(true);
+
+  const [connectOpen, setConnectOpen] = useState<boolean>(false);
+  const [policityOpen, setPolicityOpen] = useState<boolean>(false);
+
   const nav = useRef<HTMLElement>(null);
   const backgroundOne = useRef<HTMLElement>(null);
   const backgroundTwo = useRef<HTMLElement>(null);
@@ -47,6 +54,8 @@ const Header = ({
   const social = useRef<HTMLElement>(null);
   const links = useRef<HTMLElement>(null);
   const title = useRef<HTMLElement>(null);
+
+  const route = useRouter();
 
   const link = useRouter();
   const [activeLogo, setActiveLogo] = useState<number>(0);
@@ -143,9 +152,16 @@ const Header = ({
     }
   };
 
-  // useEffect(() => {
-  //   console.log("render");
-  // });
+  useEffect(() => {
+    const show = async () => {
+      setTimeout(() => {
+        setConnectOpen(true);
+      }, 30000);
+    };
+    if (route.pathname == "/") {
+      show();
+    }
+  }, []);
 
   // useEffect(() => {
   //   // @ts-ignore
@@ -173,8 +189,88 @@ const Header = ({
   //   });
   // }, [scrolling, dashboardOffset]);
 
-  return useMemo(
-    () => (
+  console.log();
+
+  if (route.pathname == "/") {
+    return useMemo(
+      () => (
+        <>
+          <Head>
+            <title>Huntli</title>
+            <meta
+              name="viewport"
+              content="initial-scale=1.0, width=device-width"
+            />
+          </Head>
+
+          <div className={"header " + colorMode}>
+            <div className={"headerInner"}>
+              <Link href="/">
+                <a className={open ? "logo menuOpen" : "logo"}>
+                  <img src={whatLogo()} alt="Logo" />
+                </a>
+              </Link>
+              {link.pathname == "/blog/[id]" && (
+                <div className="colors">
+                  <div
+                    onClick={() => settingColor("black")}
+                    className="color"
+                  ></div>
+                  <div
+                    className="color"
+                    onClick={() => settingColor("grey")}
+                  ></div>
+                  <div
+                    className="color"
+                    onClick={() => settingColor("white")}
+                  ></div>
+                </div>
+              )}
+              <div onClick={toggleClass} className="hamburger-wrapper">
+                <div className="hamburger-container">
+                  <div
+                    className={open ? "hamburger active" : "hamburger"}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {children}
+          <Menu
+            setOpen={setOpen}
+            toggleClass={toggleClass}
+            nav={nav}
+            backgroundOne={backgroundOne}
+            backgroundTwo={backgroundTwo}
+            dustParticles={dustParticles}
+            line={line}
+            links={links}
+            social={social}
+            title={title}
+          />
+          <FooterSection setPolicityOpen={setPolicityOpen} />
+          <Policity
+            setPolicityOpen={setPolicityOpen}
+            policityOpen={policityOpen}
+          />
+          <ConnectPopup
+            connectOpen={connectOpen}
+            setConnectOpen={setConnectOpen}
+          />
+        </>
+      ),
+      [
+        close,
+        open,
+        activeLogo,
+        dashboardOffset,
+        colorMode,
+        connectOpen,
+        policityOpen,
+      ]
+    );
+  } else {
+    return (
       <>
         <Head>
           <title>Huntli</title>
@@ -227,11 +323,18 @@ const Header = ({
           social={social}
           title={title}
         />
-        <FooterSection />
+        <FooterSection setPolicityOpen={setPolicityOpen} />
+        <Policity
+          setPolicityOpen={setPolicityOpen}
+          policityOpen={policityOpen}
+        />
+        <ConnectPopup
+          connectOpen={connectOpen}
+          setConnectOpen={setConnectOpen}
+        />
       </>
-    ),
-    [close, open, activeLogo, dashboardOffset, colorMode]
-  );
+    );
+  }
 };
 
 export default Header;

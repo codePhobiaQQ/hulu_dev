@@ -20,13 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/riskSection/LeftLine.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/riskSection/RightLine.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/UI/Close.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/popups/ConnectPopup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/popups/Policity.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/Laptop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/Laptop1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/ConnPopup.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/Policity.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UI/riscSection/PlainLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/riscSection/PlainLine.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/riskSection/RiskElem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/riskSection/RiskElem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/RiscScenarios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/RiscScenarios.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/RiscSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/RiscSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/blog/Filters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/blog/Filters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/teamLeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/teamLeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/FooterSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/FooterSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/FooterSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/FooterSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/OurTeamSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/OurTeamSection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +67,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/styles" />
+      <recent name="$PROJECT_DIR$/public/assets/img" />
+      <recent name="$PROJECT_DIR$/public/assets" />
       <recent name="$PROJECT_DIR$/public/assets/svg" />
       <recent name="$PROJECT_DIR$/pages/blog" />
-      <recent name="$PROJECT_DIR$/public/assets/img/news" />
-      <recent name="$PROJECT_DIR$/public/assets/img/logos" />
-      <recent name="$PROJECT_DIR$/public/assets/img" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -109,7 +118,7 @@
       <workItem from="1646847327920" duration="97000" />
       <workItem from="1647198260940" duration="173000" />
       <workItem from="1647608643745" duration="4263000" />
-      <workItem from="1647614507700" duration="62922000" />
+      <workItem from="1647614507700" duration="68342000" />
     </task>
     <servers />
   </component>
@@ -129,6 +138,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="709" y="340" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1647868500666">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="709" y="340" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1647868500666" />
     <state width="1899" height="344" key="GridCell.Tab.0.bottom" timestamp="1647792557132">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

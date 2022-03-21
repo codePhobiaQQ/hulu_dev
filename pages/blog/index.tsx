@@ -2,12 +2,9 @@ import Header from "../../hoc/Header/Header";
 import { useState } from "react";
 import { ICategory } from "../../models/galaryInterfaces";
 import arca from "../../public/assets/img/news/arca.jpg";
-import Link from "next/link";
 import shar from "../../public/assets/img/news/shar.jpg";
 import people from "../../public/assets/img/news/pepole.jpg";
-import { motion } from "framer-motion";
 import Filters from "../../components/blog/Filters";
-import { wrapperVariant } from "../../motions/BlogPage.motion";
 import BlogElem from "../../components/blog/blogElem";
 
 export interface IBlog {

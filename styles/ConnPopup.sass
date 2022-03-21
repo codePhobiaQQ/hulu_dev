@@ -1,0 +1,43 @@
+.ConnectPopup
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+  transition: opacity .3s ease
+  align-items: center
+  opacity: 0
+  pointer-events: none
+  &.active
+    pointer-events: inherit
+    opacity: 1
+  .container
+    display: flex
+    align-items: center
+    .rightSide
+      margin-left: 0
+    .leftSide
+      img
+
+  .close
+    position: absolute
+    top: 25px
+    cursor: pointer
+    right: 25px
+    transition: all .3s ease
+    &:hover
+      transform: scale(1.04)
+    .closeSvg
+
+
+  @media only screen and (max-width: 1919px)
+    .close
+      top: 20px
+      right: 20px
+      &:hover
+        transform: scale(1.04)
+      .closeSvg
+        width: 43px
+        height: 43px

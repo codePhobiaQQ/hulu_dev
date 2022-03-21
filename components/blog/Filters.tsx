@@ -2,6 +2,7 @@ import { SetStateAction, useEffect } from "react";
 import { Dispatch } from "react";
 import { ICategory } from "../../models/galaryInterfaces";
 import { IBlog } from "../../pages/blog";
+import { log } from "util";
 
 interface IFilters {
   categories: ICategory[];
