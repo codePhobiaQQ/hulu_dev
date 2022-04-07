@@ -115,7 +115,6 @@ const PortfolioSection = () => {
           </Slider>
         </div>
       </section>
-      <PortfolioSection />
     </>
   );
 };

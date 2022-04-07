@@ -1,10 +1,6 @@
 import { MutableRefObject } from "react";
 
-interface ILogoMenu {
-  refing: MutableRefObject<any>;
-}
-
-const LogoMenu = ({ refing }: ILogoMenu) => {
+const LogoMenu = () => {
   return (
     <svg
       width="416"
@@ -13,7 +9,6 @@ const LogoMenu = ({ refing }: ILogoMenu) => {
       fill="none"
       className="logo"
       xmlns="http://www.w3.org/2000/svg"
-      ref={refing}
     >
       <path
         d="M56.2432 77.1588V55.7511C56.2432 48.1055 62.4832 41.865 70.2208 41.865C77.9168 41.865 84.1984 48.0641 84.1984 55.7511V147.87C84.1984 155.516 77.9584 161.756 70.2208 161.756C62.5248 161.756 56.2432 155.557 56.2432 147.87V128.322V77.1588Z"

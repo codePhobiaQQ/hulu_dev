@@ -9,6 +9,7 @@ import PortfolioSection from "../sections/PortfolioSection";
 import BlogSection from "../sections/BlogSection";
 import RiscScenarios from "../sections/RiscScenarios";
 import ContactSection from "../sections/ContactSection";
+import TesteMonials from "../sections/TesteMonials";
 
 const MainPage = () => {
   const [hideMain, setHide] = useState<boolean>(false);
@@ -33,6 +34,7 @@ const MainPage = () => {
       <RiscScenarios />
       <ContactSection />
       <PortfolioSection />
+      <TesteMonials />
       <OurTeam />
       <BlogSection />
     </Header>

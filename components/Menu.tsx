@@ -5,16 +5,7 @@ import { SetStateAction, Dispatch } from "react";
 import LogoMenu from "./UI/LogoMenu";
 
 interface IMenu {
-  nav: any;
-  backgroundOne: any;
-  backgroundTwo: any;
-  line: any;
-  dustParticles: any;
-  social: any;
-  links: any;
-  title: any;
   setOpen: Dispatch<SetStateAction<boolean>>;
-  toggleClass: () => void;
 }
 
 export interface ILink {
@@ -65,45 +56,26 @@ export const linksMenu: ILink[] = [
   },
 ];
 
-const Menu = ({
-  nav,
-  backgroundOne,
-  backgroundTwo,
-  line,
-  dustParticles,
-  links,
-  social,
-  title,
-  setOpen,
-  toggleClass,
-}: IMenu) => {
-  const clickLinkHandler = () => {
-    // setOpen(false);
-    toggleClass();
-  };
-
+const Menu = ({ setOpen }: IMenu) => {
   return (
     <div className="menuUI">
-      <nav ref={nav}>
-        <div ref={backgroundOne} className="background-one"></div>
-        <div ref={backgroundTwo} className="background-two"></div>
+      <nav>
+        <div className="background-one"></div>
+        <div className="background-two"></div>
         <div className="menu">
-          <ul ref={dustParticles} className="dust-particles">
+          <ul className="dust-particles">
             <li></li>
           </ul>
           <div className="left-side">
-            <LogoMenu refing={title} />
+            <LogoMenu />
             <div className="social-media">
-              <SocLinks social={social} />
+              <SocLinks />
             </div>
           </div>
-          <div ref={line} className="line"></div>
-          <ul ref={links} className="links">
+          <div className="line"></div>
+          <ul className="links">
             {linksMenu.map((el, index) => (
-              <li
-                onClick={clickLinkHandler}
-                key={"menuElem" + index + el.link + el.name}
-              >
+              <li key={"menuElem" + index + el.link + el.name}>
                 <Link href={`${el.link}`}>
                   <a>{el.name}</a>
                 </Link>

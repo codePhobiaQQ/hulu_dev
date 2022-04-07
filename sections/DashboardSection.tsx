@@ -46,9 +46,7 @@ const DashboardSection = ({
           </motion.p>
           <Circles />
         </div>
-        <div className="rightSide">
-          <Circles />
-        </div>
+        <div className="rightSide"></div>
       </motion.div>
       <div id="Screening" className="container">
         <img src={mac.src} alt="mac" />

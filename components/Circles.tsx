@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { fadeIn } from "../motions/DashBoard.motion";
@@ -12,6 +12,36 @@ const Circles = () => {
     threshold: 1,
     triggerOnce: true,
   });
+
+  const levelHandler = () => {
+    const firstCircle = new Promise((resolve, reject) => {
+      setFirst(true);
+      setTimeout(() => {
+        setFirst(false);
+        console.log("first");
+        resolve("hello world");
+      }, 2000);
+    });
+    firstCircle
+      .then(() => {
+        setSecond(true);
+        setTimeout(() => {
+          console.log("second");
+          setSecond(false);
+        }, 2000);
+      })
+      .then(() => {
+        setThird(true);
+        setTimeout(() => {
+          console.log("third");
+          setThird(false);
+        }, 2000);
+      });
+  };
+
+  useEffect(() => {
+    levelHandler();
+  }, []);
 
   return (
     <motion.div
@@ -29,21 +59,9 @@ const Circles = () => {
       <p className={third ? "thirdText active" : "thirdText"}>
         <span>€180 billion </span>annual cost of compliance
       </p>
-      <div
-        onMouseEnter={() => setFirst(true)}
-        onMouseLeave={() => setFirst(false)}
-        className="firstLevel"
-      ></div>
-      <div
-        onMouseEnter={() => setSecond(true)}
-        onMouseLeave={() => setSecond(false)}
-        className="secondLevel"
-      ></div>
-      <div
-        onMouseEnter={() => setThird(true)}
-        onMouseLeave={() => setThird(false)}
-        className="thirdLevel"
-      ></div>
+      <div className="firstLevel"></div>
+      <div className="secondLevel"></div>
+      <div className="thirdLevel"></div>
     </motion.div>
   );
 };

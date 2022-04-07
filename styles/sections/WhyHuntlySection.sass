@@ -3,7 +3,7 @@
 
 .whyHuntly
   position: relative
-  background-color: #C4C4C4
+  background-color: #fff
   padding-top: 50px
   padding-bottom: 154px
   .backgroundWrapper
@@ -30,8 +30,6 @@
           color: #fff
           margin-bottom: 70px
           white-space: nowrap
-
-
         .slider
           margin-bottom: 60px
           display: flex
@@ -95,23 +93,74 @@
           width: 590px
           line-height: 36px
       .rightCol
-        .slick-slider
-          width: 340px
-          color: #C4C4C4
-          .slick-list
-            width: 340px
-            .slick-track
-              .slick-slide
-                border-top: 1px solid #C4C4C4
-                color: #C4C4C4
-                width: 340px
-                display: flex
-                align-items: center
-                height: 106px
-                padding: 28px 0
-                font-size: 18px
-                line-height: 140%
-                font-family: "SequelLightBody", sans-serif
+        .circles
+          margin-right: -118px
+          width: 550px
+          height: 550px
+          transition: $transition
+          position: relative
+          .firstText, .secondText, .thirdText
+            position: absolute
+            width: 125px
+            font-size: 18px
+            left: 95px
+            bottom: 95px
+            color: #666666
+            transition: opacity .5s $transition
+            line-height: 140%
+            &.active
+              color: #FFFFFF
+              span
+                color: #FFFFFF
+            span
+              display: block
+              font-size: 18px
+              font-family: 'SequelMediumDisp', sans-serif
+          .secondText
+            bottom: 206px
+            left: 206px
+          .thirdText
+            bottom: 315px
+            left: 318px
+          .firstLevel, .secondLevel, .thirdLevel
+            width: 550px
+            height: 550px
+            z-index: 1
+            top: 0
+            right: 0
+            border-radius: 50%
+            border: 1px solid #666666
+            transition: border .5s $transition
+            position: absolute
+            animation: round 4s linear infinite
+            &:hover
+              border-color: #FFFFFF
+              &:after
+                opacity: 1
+            &:after
+              @include afterMix
+              transition: opacity .5s $transition
+              opacity: 0
+              width: 14px
+              height: 14px
+              background: #01C497
+              border-radius: 50%
+              top: -7px
+              left: calc(50% - 7px)
+          .secondLevel
+            position: absolute
+            z-index: 2
+            right: 23px
+            top: 23px
+            width: 400px
+            height: 400px
+          .thirdLevel
+            position: absolute
+            z-index: 3
+            right: 42px
+            top: 45px
+            width: 250px
+            height: 250px
 
 
   @media only screen and (max-width: 1919px)
@@ -144,12 +193,40 @@
           p.weHave
             font-size: 16px
         .rightCol
-          .slick-slider
-            .slick-list
-              width: 340px
-              .slick-track
-                .slick-slide
-                  font-size: 16px
+          .circles
+            margin-right: 0
+            width: 360px
+            height: 360px
+            .firstText, .secondText, .thirdText
+              font-size: 12px
+              span
+                font-size: 12px
+            .firstText
+              bottom: 56px
+              left: 62px
+              width: 80px
+            .secondText
+              bottom: 130px
+              left: 134px
+              width: 85px
+            .thirdText
+              bottom: 200px
+              left: 208px
+              width: 85px
+
+            .firstLevel
+              width: 360px
+              height: 360px
+            .secondLevel
+              width: 261px
+              height: 261px
+              top: 14px
+              right: 14px
+            .thirdLevel
+              width: 163px
+              height: 163px
+              top: 28px
+              right: 28px
 
 
   @media only screen and (max-width: 1199px)
@@ -157,6 +234,8 @@
     .container
       .content
         .leftCol
+        .rightCol
+
 
   @media only screen and (max-width: 992px)
     .container
@@ -198,8 +277,6 @@
             margin-bottom: 30px
           .slider
             flex-wrap: wrap
-
-
             .circlingRange
               width: 12px
               height: 12px
@@ -237,13 +314,21 @@
             margin-top: 35px
 
         .rightCol
-          .slick-slider
-            width: 100%
-            max-width: 340px
-            .slick-list
-              width: 100%
-              max-width: 340px
-              .slick-track
-                .slick-slide
-                  font-size: 13px
-                  padding: 20px 0
+          .circles
+            display: block
+            float: inherit
+            left: calc(50% - 180px)
+            margin-left: 0
+            position: absolute
+            .firstText
+              bottom: 46px
+              left: 52px
+              width: 80px
+            .secondText
+              bottom: 120px
+              left: 120px
+              width: 85px
+            .thirdText
+              bottom: 170px
+              left: 198px
+              width: 85px

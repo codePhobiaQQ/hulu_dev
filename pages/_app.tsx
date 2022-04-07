@@ -10,6 +10,7 @@ import "./../styles/sections/DashboardSection.sass";
 import "./../styles/sections/EventsSection.sass";
 import "./../styles/sections/OurTeamSection.sass";
 import "./../styles/sections/PortfolioSection.sass";
+import "./../styles/sections/TesteMonialSection.sass";
 import "./../styles/sections/BlogSection.sass";
 import "./../styles/sections/BlogPageSection.sass";
 import "./../styles/sections/BlogSingleNews.sass";
