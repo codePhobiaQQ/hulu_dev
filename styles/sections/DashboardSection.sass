@@ -4,64 +4,50 @@
   background-color: #fff
   padding-top: 75px
   position: relative
-  padding-bottom: 230px
+  padding-bottom: 430px
   .triangle
     @include triangle()
   .container
-    display: flex
-    .leftSide
-      margin-left: 0
-      .circles
-        display: none
-      h2
-        margin-top: 25px
-        @include titleMix(#131313)
-        margin-bottom: 90px
+    h2
+      margin-top: 25px
+      @include titleMix(#131313)
+      margin-bottom: 90px
+    .dashboard
       p
         font-size: 36px
         font-family: "SequelMediumDisp"
         width: 710px
         line-height: 140%
-    .rightSide
-      margin-left: auto
-    .rightSide, .leftSide
-
-
-  .container
-    &:last-child
-      margin-top: 97px
-      display: block
-      position: relative
+      .compWrapper
+        display: block
+        float: right
       img
-        position: absolute
-        top: 0px
-        right: -223px
-        width: 875px
-      h3
-        &.ultimate
-          font-size: 36px
-          color: #000
-          font-family: "SequelMediumOblBody"
-          opacity: 0
-          height: 0
-          pointer-events: none
-        &.screening
-          margin-top: 310px
-          @include titleMix(#131313)
-      p
-        width: 537px
-        font-family: "SequelLightBody"
-        line-height: 140%
-        &.text1
-          margin-top: 90px
-        &.text3
-          margin-top: 66px
-          margin-bottom: 30px
-      .textWrapper
-        margin-top: 90px
-        display: flex
-        justify-content: space-between
+        vertical-align: middle
 
+    .screening
+      margin-top: 300px
+    .afterDash
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 80px
+      h3
+        font-size: 36px
+        margin-bottom: 70px
+        font-family: 'Inter', sans-serif
+      p
+        font-size: 24px
+        line-height: 140%
+        max-width: 630px
+      .imageWrapper
+        & > div
+          width: 630px
+          height: 500px
+          img
+            width: 630px
+            height: 500px
+    .risk
+      margin-bottom: 0
 
 
 
@@ -70,113 +56,38 @@
     padding-top: 50px
     padding-bottom: 180px
     .container
-      .leftSide
-        width: 590px
-        p
-          font-size: 30px
-          width: 100%
-      h3
-        &.ultimate
-          font-size: 36px
-      .rightSide, .leftSide
+      width: 590px
+      p
+        font-size: 30px
+        width: 100%
 
-
-      &:last-child
-        margin-top: 20px
-        img
-          width: 912px
-          right: -106px
-          top: -290px
-        h3
-          &.ultimate
-            display: none
-        p
-          font-size: 16px
-          width: 500px
-          &.text1, &.text2
-            width: 360px
-          &.text1
-            margin-top: 50px
-            margin-bottom: 30px
-          &.text3
-            width: 500px
-        .textWrapper
-          margin-top: 51px
 
   @media only screen and (max-width: 1359px)
     .container
-      .leftSide
-        width: 100%
-        .circles
-          display: flex
-        p
-          font-size: 20px
-          width: 70%
-        h2
-          margin-bottom: 40px
-        .circles
-          float: right
-          margin: 0 0 0 30px
-      .rightSide
-        display: none
+      width: 100%
+      p
+        font-size: 20px
+        width: 70%
+      h2
+        margin-bottom: 40px
 
-      &:last-child
-        margin-top: -70px
-        h3.screening
-          margin-top: 32px
-          margin-bottom: 50px
-        img
-          width: 100%
-          max-width: 658px
-          position: relative
-          top: 0
-          right: 0
-        .textWrapper
-          flex-direction: column
-          p:first-child
-            margin-bottom: 40px
+
+
 
   @media only screen and (max-width: 992px)
     .container
-      .leftSide
-        p
-          width: 80%
-        .circles
-          display: inline-block
-      &:last-child
-        margin-top: 0
-      //.leftSide
-      //  display: flex
-      //  flex-direction: column
-      //  .circles
-      //    order: 2
+      p
+        width: 80%
 
   @media only screen and (max-width: 576px)
     padding-bottom: 85px
     padding-top: 20px
     position: relative
     .container
-      .leftSide
-        h2
-          margin-top: 0
-        p
-          width: 100%
-          margin-bottom: 30px
-
-      &:last-child
-        margin-top: 381px
-        p
-          width: 100%
-          font-size: 13px
-          &.text3, &.text2, &.text1
-            width: 100%
+      h2
+        margin-top: 0
+      p
+        width: 100%
+        margin-bottom: 30px
 
 
-
-
-
-@keyframes round
-  0%
-    transform: rotate(0deg)
-  100%
-    transform: rotate(-360deg)

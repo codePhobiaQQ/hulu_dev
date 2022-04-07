@@ -1,46 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { fadeIn } from "../motions/DashBoard.motion";
 
 const Circles = () => {
-  const [first, setFirst] = useState<boolean>(false);
-  const [second, setSecond] = useState<boolean>(false);
-  const [third, setThird] = useState<boolean>(false);
+  const [whatActive, setWhatActive] = useState<number>(0);
+  const benefitsActive = useRef(0);
 
   const curcleRef = useInView({
-    threshold: 1,
+    threshold: 0.3,
     triggerOnce: true,
   });
 
-  const levelHandler = () => {
-    const firstCircle = new Promise((resolve, reject) => {
-      setFirst(true);
-      setTimeout(() => {
-        setFirst(false);
-        console.log("first");
-        resolve("hello world");
-      }, 2000);
-    });
-    firstCircle
-      .then(() => {
-        setSecond(true);
-        setTimeout(() => {
-          console.log("second");
-          setSecond(false);
-        }, 2000);
-      })
-      .then(() => {
-        setThird(true);
-        setTimeout(() => {
-          console.log("third");
-          setThird(false);
-        }, 2000);
-      });
-  };
-
   useEffect(() => {
-    levelHandler();
+    const intervalId = setInterval(() => {
+      benefitsActive.current = (benefitsActive.current + 1) % 3;
+      setWhatActive(benefitsActive.current);
+    }, 3500);
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -50,18 +27,26 @@ const Circles = () => {
       animate={curcleRef.inView ? "visible" : "hidden"}
       className="circles"
     >
-      <p className={first ? "firstText active" : "firstText"}>
+      <p className={`firstText ${benefitsActive.current == 0 ? "active" : ""}`}>
         <span>€2 trillion </span>in suspicious transactions
       </p>
-      <p className={second ? "secondText active" : "secondText"}>
+      <p
+        className={`secondText ${benefitsActive.current == 1 ? "active" : ""}`}
+      >
         <span>€25 billion </span>payment card fraud
       </p>
-      <p className={third ? "thirdText active" : "thirdText"}>
+      <p className={`thirdText ${benefitsActive.current == 2 ? "active" : ""}`}>
         <span>€180 billion </span>annual cost of compliance
       </p>
-      <div className="firstLevel"></div>
-      <div className="secondLevel"></div>
-      <div className="thirdLevel"></div>
+      <div
+        className={`firstLevel ${benefitsActive.current == 0 ? "active" : ""}`}
+      ></div>
+      <div
+        className={`secondLevel ${benefitsActive.current == 1 ? "active" : ""}`}
+      ></div>
+      <div
+        className={`thirdLevel ${benefitsActive.current == 2 ? "active" : ""}`}
+      ></div>
     </motion.div>
   );
 };

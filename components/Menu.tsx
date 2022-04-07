@@ -6,6 +6,7 @@ import LogoMenu from "./UI/LogoMenu";
 
 interface IMenu {
   setOpen: Dispatch<SetStateAction<boolean>>;
+  open: boolean;
 }
 
 export interface ILink {
@@ -56,7 +57,7 @@ export const linksMenu: ILink[] = [
   },
 ];
 
-const Menu = ({ setOpen }: IMenu) => {
+const Menu = ({ setOpen, open }: IMenu) => {
   return (
     <div className="menuUI">
       <nav>

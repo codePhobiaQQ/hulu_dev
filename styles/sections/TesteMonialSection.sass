@@ -8,4 +8,62 @@
     h2
       @include titleMix(#131313)
       margin-bottom: 94px
-    .testemonialsSlider
+
+    .arrows
+      display: flex
+      width: 100px
+      justify-content: space-between
+      margin-left: auto
+      margin-top: 40px
+      .prevArrow, .nextArrow
+        width: 40px
+        height: 40px
+        @include centerMix
+        border: 1px solid #00C497
+        border-radius: 50%
+        transition: background-color .3s $transition
+        cursor: pointer
+        svg path
+          fill: $accent
+          transition: fill .3s $transition
+        &:hover
+          background-color: $accent
+          svg path
+            fill: #fff
+      .prevArrow
+        svg
+          transform: scale(-1, 1)
+          margin-left: -2px
+
+
+
+    .slick-list
+      .slick-track
+        &:focus-visible
+          outline: none
+        .slick-slide
+          width: 630px
+          .slide-inner
+            border: 1px solid #757575
+            border-radius: 25px
+            padding: 70px
+            width: 630px
+            position: relative
+            .logo
+              position: absolute
+              right: 70px
+              top: 70px
+            .icon
+              margin-bottom: 40px
+            h3
+              color: $accent
+              font-family: "SequelMediumDisp", sans-serif
+              font-size: 36px
+              margin-bottom: 20px
+            span
+              margin-bottom: 57px
+              display: block
+            p
+              line-height: 140%
+
+

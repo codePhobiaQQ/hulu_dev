@@ -106,16 +106,16 @@
             left: 95px
             bottom: 95px
             color: #666666
-            transition: opacity .5s $transition
+            transition: opacity .3s $transition
             line-height: 140%
-            &.active
-              color: #FFFFFF
-              span
-                color: #FFFFFF
             span
               display: block
               font-size: 18px
               font-family: 'SequelMediumDisp', sans-serif
+            &.active
+              color: #fff
+              span
+                color: #fff
           .secondText
             bottom: 206px
             left: 206px
@@ -130,23 +130,24 @@
             right: 0
             border-radius: 50%
             border: 1px solid #666666
-            transition: border .5s $transition
+            transition: border .3s $transition
             position: absolute
             animation: round 4s linear infinite
-            &:hover
-              border-color: #FFFFFF
-              &:after
-                opacity: 1
             &:after
               @include afterMix
-              transition: opacity .5s $transition
-              opacity: 0
+              transition: opacity .3s $transition
+              opacity: 1
               width: 14px
               height: 14px
               background: #01C497
               border-radius: 50%
               top: -7px
               left: calc(50% - 7px)
+            &.active
+              border-color: #FFFFFF
+
+
+
           .secondLevel
             position: absolute
             z-index: 2
@@ -332,3 +333,10 @@
               bottom: 170px
               left: 198px
               width: 85px
+
+
+@keyframes round
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(-360deg)

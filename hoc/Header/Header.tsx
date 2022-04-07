@@ -109,7 +109,7 @@ const Header = ({
           </div>
         </div>
         {children}
-        <Menu setOpen={setOpen} />
+        <Menu setOpen={setOpen} open={open} />
         <FooterSection setPolicityOpen={setPolicityOpen} />
         <Policity
           setPolicityOpen={setPolicityOpen}

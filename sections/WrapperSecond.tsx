@@ -15,7 +15,7 @@ const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const opacity = useTransform(
     scrolling,
-    [topi, topi + whyHeight + 100],
+    [topi, topi + whyHeight - 100],
     [1, 0]
   );
 

@@ -1,7 +1,12 @@
 import Circles from "../components/Circles";
 import mac from "../public/assets/img/mac.png";
+
+import review1 from "../public/assets/img/dashboard/Review1.png";
+import review2 from "../public/assets/img/dashboard/Review1.png";
+import review3 from "../public/assets/img/dashboard/Review1.png";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { fadeFromLeft, wrapperVariant } from "../motions/DashBoard.motion";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -31,8 +36,16 @@ const DashboardSection = ({
     <section id="Dashboard" ref={sectionRef} className="DashboardSection">
       <div className="triangle"></div>
       <motion.div variants={wrapperVariant} className="container">
-        <div className="leftSide">
-          <h2>DASHBOARD</h2>
+        <h2>DASHBOARD</h2>
+        <div className="dashboard">
+          <div className="compWrapper">
+            <Image
+              src={mac.src}
+              width={720}
+              height={400}
+              objectFit={"contain"}
+            />
+          </div>
           <motion.p
             ref={ref}
             variants={fadeFromLeft}
@@ -44,40 +57,67 @@ const DashboardSection = ({
             all compliance activities, set up rules, and explore individual
             cases.
           </motion.p>
-          <Circles />
         </div>
-        <div className="rightSide"></div>
+        <div className="screening afterDash">
+          <div className="imageWrapper">
+            <Image
+              src={review1.src}
+              width={630}
+              height={500}
+              objectFit={"contain"}
+            />
+          </div>
+          <div className="content">
+            <h3>SCREENING</h3>
+            <p>
+              Our system helps to manage individual user-profiles and screen for
+              potential risks associated with Money Laundering, Fraud, Tax
+              Evasion, and other financial crime. All the information is
+              accumulated in a single file that is easy to read, process, and
+              share with regulatory authorities upon request
+            </p>
+          </div>
+        </div>
+        <div className="transactions afterDash">
+          <div className="content">
+            <h3>TRANSACTION MONITORING</h3>
+            <p>
+              A risk management system detects and blocks any fraudulent
+              activity that your users might attempt with the customer’s online
+              banking account or payment card in real-time. All that information
+              is available in easy to read format with quick action buttons to
+              influence certain decisions
+            </p>
+          </div>
+          <div className="imageWrapper">
+            <Image
+              src={review2.src}
+              width={630}
+              height={500}
+              objectFit={"contain"}
+            />
+          </div>
+        </div>
+        <div className="risk afterDash">
+          <div className="imageWrapper">
+            <Image
+              src={review3.src}
+              width={630}
+              height={500}
+              objectFit={"contain"}
+            />
+          </div>
+          <div className="content">
+            <h3>RISK SCENARIOS</h3>
+            <p>
+              Visual Rule Engine helps our clients to create and manage even the
+              most complex scenarios in an understandable way. We provide over
+              300 scenarios templates as well as allow our clients to set up
+              their own, based on their internal risk matrix
+            </p>
+          </div>
+        </div>
       </motion.div>
-      <div id="Screening" className="container">
-        <img src={mac.src} alt="mac" />
-        <h3 className="ultimate">Unlimited transaction monitoring alerts</h3>
-        <h3 className="screening">SCREENING</h3>
-        <p className="text1">
-          Our system helps to manage individual user profiles and screen for
-          potential risks associated with Money Laun- dering, Fraud, Tax
-          Evasion, and other financial crime.
-        </p>
-        <p className="text2">
-          All the information is accumulated in a single file that is easy to
-          read, process, and share with regulatory authori- ties upon request
-        </p>
-        <div className="textWrapper">
-          <p>
-            A risk management system detects and blocks any fraudulent activity
-            that your users might attempt with the customer’s online banking
-            account or payment card in real-time.
-          </p>
-          <p>
-            Statistics and Analytics tools help you stay up to date with your
-            current operations. They are packed in easy to read format and are
-            customizable to your needs.
-          </p>
-        </div>
-        <p className="text3">
-          All the information is accumulated in a single file that is easy to
-          read, process, and share with regulatory authori- ties upon request
-        </p>
-      </div>
     </section>
   );
 };
