@@ -2,10 +2,18 @@ import dmitor from "../public/assets/img/dmitor.jpg";
 import lev from "../public/assets/img/lev.jpg";
 import sergei from "../public/assets/img/sergei.jpg";
 import TeamLeader from "../components/teamLeader";
+import { useEffect, useRef, useState } from "react";
 
 const OurTeam = () => {
+  const [scrollTop, setScrollTop] = useState<number>(0);
+  const teamSection = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    teamSection.current ? setScrollTop(teamSection.current.offsetTop) : null;
+  }, [teamSection.current]);
+
   return (
-    <section id="OurTeam" className="OurTeamSection">
+    <section ref={teamSection} id="OurTeam" className="OurTeamSection">
       <div className="triangle"></div>
       <div className="container">
         <h2>OUR TEAM</h2>
@@ -21,6 +29,7 @@ const OurTeam = () => {
             name={"Dmytro Medvid"}
             img={dmitor.src}
             link={"#"}
+            sectionOffset={scrollTop}
           />
           <TeamLeader
             text={
@@ -33,6 +42,7 @@ const OurTeam = () => {
             name={"Lev Bass"}
             img={lev.src}
             link={"#"}
+            sectionOffset={scrollTop}
           />
           <TeamLeader
             text={
@@ -45,6 +55,7 @@ const OurTeam = () => {
             name={"Sergii Balan"}
             img={sergei.src}
             link={"#"}
+            sectionOffset={scrollTop}
           />
         </ul>
       </div>
