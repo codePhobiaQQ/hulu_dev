@@ -40,7 +40,7 @@
 @mixin triangle()
   width: 100%
   background-color: $backgroundColor
-  clip-path: polygon(100% 30%, 0% 100%, 100% 100%)
+  clip-path: polygon(100% 25%, 0% 100%, 100% 100%)
   height: 432px
   position: absolute
   bottom: -1px
@@ -91,7 +91,8 @@
 
 
 @mixin formMix
-  input
+  input, textarea
+    overflow: hidden
     background-color: transparent
     border: none
     border-bottom: 1px solid #666666
@@ -134,7 +135,7 @@
         color: #fff
 
   @media only screen and (max-width: 1919px)
-    input
+    input, textarea
       font-size: 20px
       padding-bottom: 30px
       margin-bottom: 30px
@@ -151,7 +152,7 @@
         font-size: 13px
 
   @media only screen and (max-width: 576px)
-    input
+    input, textarea
       font-size: 18px
       padding-bottom: 25px
       margin-bottom: 25px

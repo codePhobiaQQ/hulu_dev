@@ -2,12 +2,22 @@
 @import "../mixins/vars"
 
 .ContactSection
-  background-color: #C6C6C6
+  background-color: #fff
   padding-top: 100px
   padding-bottom: 120px
+  position: relative
+  .triangle
+    @include triangle()
+    clip-path: polygon(100% 0, 0 0, 0 75%)
+    top: -1px
+    bottom: inherit
+    z-index: 1
   .container
+    z-index: 10
+    position: relative
     h2
       @include titleMix(#131313)
+      color: #fff
       margin-bottom: 76px
     .rightSide
       width: 600px
@@ -17,6 +27,8 @@
         @include formMix
         display: flex
         flex-direction: column
+        textarea
+          resize: none
 
   @media only screen and (max-width: 1919px)
     padding-top: 50px
@@ -24,6 +36,7 @@
     .container
       .rightSide
         width: 500px
+        padding-top: 50px
       h2
         margin-bottom: 30px
 
