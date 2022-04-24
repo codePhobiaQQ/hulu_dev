@@ -23,10 +23,6 @@ const StatisticElem = ({ title, text, to, spaning }: IStaticElem) => {
   }, []);
 
   useEffect(() => {
-    console.log("render");
-  }, []);
-
-  useEffect(() => {
     if (inView) {
       for (let i = 0; i <= to; i++) {
         setTimeout(() => {

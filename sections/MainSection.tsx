@@ -14,7 +14,6 @@ interface IMainSection {
 
 const MainSection = ({ hideMain, scrolling }: IMainSection) => {
   const [height, setHeight] = useState<number>(780);
-
   const sectionRef = useRef<HTMLDivElement>(null);
   const opacity = useTransform(scrolling, [0, height / 2], [1, 0]);
   const y = useTransform(scrolling, [0, height / 2], [0, 150]);

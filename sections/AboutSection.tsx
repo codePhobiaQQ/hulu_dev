@@ -11,7 +11,6 @@ interface IAboutSection {
 
 const AboutSection = ({ opacity }: IAboutSection) => {
   const [isProductOpen, setIsProductOpen] = useState<boolean>(false);
-
   const links: ILink[] = [
     {
       name: "Events",
