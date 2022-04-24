@@ -37,35 +37,22 @@ const DashboardSection = ({
       <div className="triangle"></div>
       <motion.div variants={wrapperVariant} className="container">
         <h2>DASHBOARD</h2>
-        <div className="dashboard">
-          <div className="compWrapper">
-            <Image
-              src={mac.src}
-              width={720}
-              height={400}
-              objectFit={"contain"}
-            />
-          </div>
+        <motion.div ref={ref} className="dashboard">
           <motion.p
-            ref={ref}
             variants={fadeFromLeft}
             custom={-70}
             animate={inView ? "visible" : "hidden"}
           >
+            <img className="comp" src={mac.src} width={1035} height={674} />
             We have created a compliance officer's dashboard that would help you
             to get access to all of our features. It's easy to use to monitor
             all compliance activities, set up rules, and explore individual
             cases.
           </motion.p>
-        </div>
+        </motion.div>
         <div className="screening afterDash">
           <div className="imageWrapper">
-            <Image
-              src={review1.src}
-              width={630}
-              height={500}
-              objectFit={"contain"}
-            />
+            <Image src={review1.src} width={630} height={493} />
           </div>
           <div className="content">
             <h3>SCREENING</h3>
@@ -90,22 +77,12 @@ const DashboardSection = ({
             </p>
           </div>
           <div className="imageWrapper">
-            <Image
-              src={review2.src}
-              width={630}
-              height={500}
-              objectFit={"contain"}
-            />
+            <Image src={review2.src} width={630} height={493} />
           </div>
         </div>
         <div className="risk afterDash">
           <div className="imageWrapper">
-            <Image
-              src={review3.src}
-              width={630}
-              height={500}
-              objectFit={"contain"}
-            />
+            <Image src={review3.src} width={630} height={493} />
           </div>
           <div className="content">
             <h3>RISK SCENARIOS</h3>
