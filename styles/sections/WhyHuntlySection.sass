@@ -9,6 +9,8 @@
   .backgroundWrapper
     background-color: #131313
     @include absoluteAll
+    height: calc(100% + 1px)
+    top: -1px
     z-index: 5
   .container
     position: relative
@@ -16,20 +18,23 @@
     h2
       @include titleMix(#fff)
       color: #fff
-      margin-bottom: 70px
+      margin-bottom: 90px
+      white-space: nowrap
     .content
       display: flex
       justify-content: space-between
       .leftCol
-        span.numbers
+        span.numbers, span.without
           display: block
           line-height: 140%
-          width: 120px
+          width: 240px
           font-size: 18px
           font-family: "SequelLightBody", sans-serif
           color: #fff
           margin-bottom: 70px
-          white-space: nowrap
+        span.without
+          margin-bottom: 90px
+          width: 680px
         .slider
           margin-bottom: 60px
           display: flex
@@ -87,14 +92,10 @@
             &.green
               color: $accent
 
-
-        p.weHave
-          color: #fff
-          width: 590px
-          line-height: 36px
       .rightCol
         .circles
           margin-right: -118px
+          margin-top: -30px
           width: 550px
           height: 550px
           transition: $transition
@@ -145,9 +146,6 @@
               left: calc(50% - 7px)
             &.active
               border-color: #FFFFFF
-
-
-
           .secondLevel
             position: absolute
             z-index: 2
@@ -155,6 +153,7 @@
             top: 23px
             width: 400px
             height: 400px
+            animation-delay: 1.3s
           .thirdLevel
             position: absolute
             z-index: 3
@@ -162,11 +161,14 @@
             top: 45px
             width: 250px
             height: 250px
+            animation-delay: 2.6s
 
 
   @media only screen and (max-width: 1919px)
     padding-bottom: 50px
     .container
+      h2
+        margin-bottom: 40px
       .content
         .leftCol
           .slider
@@ -179,11 +181,52 @@
             .sliderLine
               width: 300px
               margin: 0 40px
-
+          span.without
+            margin-bottom: 60px
+          span.numbers
+            margin-bottom: 50px
           .resultLines
             width: 550px
             div.result
               font-size: 40px
+
+        .rightCol
+          display: flex
+          .circles
+            margin-right: 0
+            margin-top: auto
+            width: 360px
+            height: 360px
+            .firstText, .secondText, .thirdText
+              font-size: 12px
+              span
+                font-size: 12px
+            .firstText
+              bottom: 56px
+              left: 62px
+              width: 80px
+            .secondText
+              bottom: 130px
+              left: 134px
+              width: 85px
+            .thirdText
+              bottom: 200px
+              left: 208px
+              width: 85px
+
+            .firstLevel
+              width: 360px
+              height: 360px
+            .secondLevel
+              width: 261px
+              height: 261px
+              top: 14px
+              right: 14px
+            .thirdLevel
+              width: 163px
+              height: 163px
+              top: 28px
+              right: 28px
 
   @media only screen and (max-width: 1359px)
     .container
@@ -198,6 +241,7 @@
             margin-right: 0
             width: 360px
             height: 360px
+            margin: auto
             .firstText, .secondText, .thirdText
               font-size: 12px
               span
@@ -253,10 +297,6 @@
               width: 260px
               margin: 0 25px
 
-          p.weHave
-            width: 100%
-
-
           .resultLines
             width: 500px
             div.result
@@ -309,10 +349,6 @@
                 font-size: 11px
             div.result
               font-size: 20px
-
-          p.weHave
-            font-size: 13px
-            margin-top: 35px
 
         .rightCol
           .circles

@@ -8,6 +8,8 @@
   .backgroundWrapper
     background-color: $backgroundColor
     @include absoluteAll
+    height: calc(100% + 1px)
+    top: -1px
     z-index: 5
   .container
     height: 100%
@@ -155,6 +157,7 @@
               font-size: 40px
         .rightSide
           width: 496px
+
 
   @media only screen and (max-width: 1359px)
     .container

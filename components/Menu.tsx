@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { v4 as uuidv4 } from "uuid";
+import { AnimatePresence, motion } from "framer-motion";
 import SocLinks from "./UI/SocLinks";
 import { SetStateAction, Dispatch } from "react";
+import { fadeFromBot, menuVariant } from "../motions/Menu.motion";
 import LogoMenu from "./UI/LogoMenu";
+import Close from "./UI/Close";
 
 interface IMenu {
   setOpen: Dispatch<SetStateAction<boolean>>;
@@ -58,34 +60,54 @@ export const linksMenu: ILink[] = [
 ];
 
 const Menu = ({ setOpen, open }: IMenu) => {
+  const clickLinkHandler = () => {
+    setOpen(false);
+  };
+
   return (
-    <div className="menuUI">
-      <nav>
-        <div className="background-one"></div>
-        <div className="background-two"></div>
-        <div className="menu">
-          <ul className="dust-particles">
-            <li></li>
-          </ul>
-          <div className="left-side">
-            <LogoMenu />
-            <div className="social-media">
-              <SocLinks />
-            </div>
+    <AnimatePresence initial={false}>
+      {open && (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={menuVariant}
+          className="menuUI"
+        >
+          <div className="close" onClick={() => setOpen(false)}>
+            <Close />
           </div>
-          <div className="line"></div>
-          <ul className="links">
-            {linksMenu.map((el, index) => (
-              <li key={"menuElem" + index + el.link + el.name}>
-                <Link href={`${el.link}`}>
-                  <a>{el.name}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-    </div>
+          <nav>
+            <div className="menu">
+              <ul className="dust-particles">
+                <li></li>
+              </ul>
+              <div className="left-side">
+                <LogoMenu />
+                <div className="social-media">
+                  <SocLinks />
+                </div>
+              </div>
+              <div className="line"></div>
+              <ul className="links">
+                {linksMenu.map((el, index) => (
+                  <motion.li
+                    variants={fadeFromBot}
+                    custom={index}
+                    onClick={clickLinkHandler}
+                    key={"menuElem" + index + el.link + el.name}
+                  >
+                    <Link href={`${el.link}`}>
+                      <a>{el.name}</a>
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

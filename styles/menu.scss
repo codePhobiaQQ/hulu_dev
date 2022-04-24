@@ -9,61 +9,34 @@ $babyBlue: #C2E7F2;
 $beige: #fff;
 
 .menuUI {
-  // NAV
+  position: fixed;
+  width: 100vw;
+  background-color: #131313;
+  z-index: 1000;
+  bottom: 0;
+  transition: all 0.4s $transition;
+  height: 100vh;
+
+  .close {
+    position: absolute;
+    top: 25px;
+    z-index: 1000;
+    right: 25px;
+    transition: all .3s ease;
+    cursor: pointer;
+    .closeSvg {
+      cursor: pointer;
+      fill: #fff;
+      width: calc(#{$adaptation} * 1.6);
+      height: calc(#{$adaptation} * 1.6);
+    }
+    &:hover {
+      transform: scale(1.04)
+    }
+  }
+
+
   nav {
-    position: fixed;
-    width: 100vw;
-    //pointer-events: none;
-    height: 100vh;
-    z-index: 10;
-    bottom: 0;
-    transition: all 0.5s $transition;
-    height: 100vh;
-
-    //&.active {
-    //
-    //  pointer-events: inherit;
-    //}
-
-    // THIS IS THE RED AND BLACK BACKGROUND PROPERTIES
-    .background-one,
-    .background-two {
-      width: 50%;
-      height: 0%;
-      transition: all 0.4s cubic-bezier(1, 0.02, 0.75, 0.99);
-
-      &.active {
-        height: 100%;
-        z-index: 999;
-      }
-    }
-
-    // RED BACKGROUND SPECIFIC PROPERTIES
-    .background-one {
-      background: $red;
-      float: left;
-      z-index: 1;
-
-      &.bg-one-full-width {
-        animation: bg-one-full-width 1s linear forwards;
-      }
-    }
-
-    //BLACK BACKGROUND SPECIFIC PROPERTIES
-    .background-two {
-      position: absolute;
-      background: $black;
-      float: right;
-      bottom: 0;
-      right: 0;
-      z-index: 2;
-
-      &.bg-two-full-width {
-        width: 100%;
-        animation: bg-two-full-width 1s linear forwards;
-      }
-    }
-
     // MENU
     .menu {
       position: absolute;
@@ -88,12 +61,8 @@ $beige: #fff;
         background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+CiAgICA8Zz4KICAgICAgICA8ZyBvcGFjaXR5PSIwLjE3NjMwMSI+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTIxLjQyNjEsLTkuMTgyNjEpIj4KICAgICAgICAgICAgICAgIDxjaXJjbGUgY3g9IjU1LjIzNSIgY3k9IjQ3LjAyNiIgcj0iMTQuNDciIHN0eWxlPSJmaWxsOndoaXRlOyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEuNjczMDgsMCwwLDEuNjczMDgsLTEzLjUyNTEsMjYuMDUyMikiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMi4yNjM0LDAsMCwyLjI2MzQsMTAuODI3NiwtNjguNTk1NCkiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC41MTI1MzEsMCwwLDAuNTEyNTMxLDE0NS4wODksNzMuMjEyKSI+CiAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSI1NS4yMzUiIGN5PSI0Ny4wMjYiIHI9IjE0LjQ3IiBzdHlsZT0iZmlsbDp3aGl0ZTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjA0MTM4LDAsMCwxLjA0MTM4LDQ5Ljg0NjMsMTI4LjA2NCkiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4xMTYwNTksMCwwLDAuMTE2MDU5LDE3NS40OTIsMTA1LjMyMykiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4yMzY5ODgsMCwwLDAuMjM2OTg4LDE1Mi4wNzcsMTAzLjA2NikiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4yMzY5ODgsMCwwLDAuMjM2OTg4LDE2MC4zMDksMTQ4Ljk5OCkiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4zMzY1NCwwLDAsMS4zMzY1NCw1OC4wNzIyLDcwLjY5NzIpIj4KICAgICAgICAgICAgICAgIDxjaXJjbGUgY3g9IjU1LjIzNSIgY3k9IjQ3LjAyNiIgcj0iMTQuNDciIHN0eWxlPSJmaWxsOndoaXRlOyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEuMzc2MTEsMCwwLDEuMzc2MTEsLTQyLjIwMDQsMTAxLjk0NikiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC40MzQ3MzgsMCwwLDAuNDM0NzM4LDkuNzk2MDUsNjAuMDc3NykiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iNTUuMjM1IiBjeT0iNDcuMDI2IiByPSIxNC40NyIgc3R5bGU9ImZpbGw6d2hpdGU7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=") no-repeat;
         background-size: cover;
         animation: dust-animations 5s ease-in-out infinite forwards;
-        opacity: 0;
         transition: all 1.5s ease-in;
-
-        &.active {
-          opacity: 0.05;
-        }
+        opacity: 0.05;
       }
 
       // LEFT SIDE OF THE MENU (TITLE AND SOCIAL MEDIA)
@@ -105,14 +74,10 @@ $beige: #fff;
         height: 80%;
 
         img, svg.logo {
-          opacity: 0;
           position: relative;
           transition: all 0.8s ease;
           width: 415px;
-          //height: 60px;
-          &.active {
-            opacity: 1;
-          }
+          opacity: 1;
           &.stroke {
             path.whiteStroke {
               transition: all .3s ease;
@@ -148,29 +113,23 @@ $beige: #fff;
             margin: 1rem 0px 0px 0.6rem;
             position: absolute;
             transition: all .4s ease-in;
-
+            top: calc(0% + 50px);
+            img {
+              opacity: 1;
+              height: 16px;
+              width: 16px;
+            }
             li {
               color: rgba($beige, 0.5);
               cursor: pointer;
               padding: 15px 45px 0px 0;
               transition: all 0.3s ease-in;
-
               img {
                 height: 16px;
                 width: 16px;
               }
-
               &:hover {
                 color: rgba($beige, 1);
-              }
-            }
-
-            &.active {
-              top: calc(0% + 50px);
-              img {
-                opacity: 1;
-                height: 16px;
-                width: 16px;
               }
             }
           }
@@ -181,28 +140,26 @@ $beige: #fff;
       .line {
         border-radius: 1px;
         width: 1.5px;
-        height: 0;
         background: rgba($red, 0.5);
         margin: 0 10rem;
         transition: all 0.3s ease-in;
         cursor: pointer;
         z-index: 2;
-
-        &.active {
-          height: 40vh;
-        }
+        height: 40vh;
       }
 
       // NAV LINKS
       .links {
-        opacity: 0;
-        visibility: hidden;
         transition: all 0.3s ease-in;
         max-height: 80%;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        visibility: visible;
+        opacity: 1;
         li {
           font-size: 2.5vw;
           cursor: pointer;
+          will-change: transfrom;
           text-transform: capitalize;
           padding: 22px 30px;
           margin-bottom: 1px;
@@ -210,7 +167,7 @@ $beige: #fff;
           display: block;
           font-size: 18px;
           text-align: right;
-          transition: all 0.8s ease-out;
+          transition: all 0.8s $transition;
           a {
             color: #6F6F6F;
             transition: color .3s ease;
@@ -240,11 +197,6 @@ $beige: #fff;
               left: 50%;
             }
           }
-        }
-
-        &.active {
-          visibility: visible;
-          opacity: 1;
         }
       }
     }

@@ -30,10 +30,16 @@ const WhyHuntySection = ({ opacity, setWhyHeight }: IWhyHuntySection) => {
         className="backgroundWrapper"
       ></motion.div>
       <div className="container">
-        <h2>WHY HUNTLI?</h2>
+        <h2>STOP LOSING MONEY ON COMPLIANCE</h2>
         <div className="content">
           <div className="leftCol">
-            <span className="numbers">number of transactions</span>
+            <span className="without">
+              Without automated transaction monitoring system you are loosing A
+              LOT of money on your day-to-day compliance operations
+            </span>
+            <span className="numbers">
+              How much monthly transactions do you have?
+            </span>
             <div className="slider">
               <span className="numbFirst">1 000</span>
               <Range
@@ -66,27 +72,17 @@ const WhyHuntySection = ({ opacity, setWhyHeight }: IWhyHuntySection) => {
               <span className="numbSecond">100 000</span>
             </div>
             <div className="resultLines">
-              <span className="savingSpan">
-                With Huntli you can save up to:
-              </span>
+              <span className="savingSpan">Money you are loosing:</span>
               <div className="result green">
                 {calcNumbSection(values[0], true)} €
               </div>
             </div>
             <div className="resultLines">
-              <span className="savingSpan">
-                Without Huntli you can save up to:
-              </span>
+              <span className="savingSpan">How much you can save:</span>
               <div className="result">
                 {calcNumbSection(values[0], false)} €
               </div>
             </div>
-
-            <p className="weHave">
-              We have designed our system to help financial market players save
-              up to 60% on their day-to-day compliance costs while being on par
-              with local compliance requirements.
-            </p>
           </div>
           <div className="rightCol">
             <Circles />

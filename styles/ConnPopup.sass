@@ -1,3 +1,5 @@
+@import "/styles/mixins/vars"
+
 .ConnectPopup
   position: fixed
   z-index: 100
@@ -27,9 +29,11 @@
     cursor: pointer
     right: 25px
     transition: all .3s ease
+    .closeSvg
+      width: calc(#{$adaptation} * 1.6)
+      height: calc(#{$adaptation} * 1.6)
     &:hover
       transform: scale(1.04)
-    .closeSvg
 
 
   @media only screen and (max-width: 1919px)
@@ -38,6 +42,3 @@
       right: 20px
       &:hover
         transform: scale(1.04)
-      .closeSvg
-        width: 43px
-        height: 43px
