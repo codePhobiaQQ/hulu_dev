@@ -1,5 +1,7 @@
 @import '~reset-css'
 @import "./mixins/vars"
+@import "~bootstrap/scss/bootstrap-grid"
+
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap')
 
 @font-face
@@ -65,20 +67,21 @@ a
   box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset
 
 .container
-  width: 1400px
+  width: 1475px
+  max-width: inherit
   margin: 0 auto
 
 @media only screen and (max-width: 1919px)
   .container
-    width: 1090px
+    width: 1140px
 
 @media only screen and (max-width: 1359px)
   .container
-    width: 960px
+    width: 1090px
 
 @media only screen and (max-width: 1199px)
   .container
-    width: 870px
+    width: 960px
 
 @media only screen and (max-width: 992px)
   .container
@@ -91,3 +94,7 @@ a
 @media only screen and (max-width: 576px)
   .container
     width: 360px
+
+@media only screen and (max-width: 380px)
+  .container
+    width: 340px

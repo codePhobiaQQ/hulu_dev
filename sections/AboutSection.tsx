@@ -63,18 +63,29 @@ const AboutSection = ({ opacity }: IAboutSection) => {
               >
                 <li>
                   <Link href="/#Dashboard">
-                    <a onClick={() => setIsProductOpen(false)}>Dashboard</a>
+                    <a onClick={() => setIsProductOpen(false)}>
+                      Compliance dashboard
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/#Screening">
-                    <a onClick={() => setIsProductOpen(false)}>Screening</a>
+                    <a onClick={() => setIsProductOpen(false)}>
+                      AML name screening
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/#Risk">
                     <a onClick={() => setIsProductOpen(false)}>
-                      Risk Scenarios
+                      Live transaction monitoring
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#Risk">
+                    <a onClick={() => setIsProductOpen(false)}>
+                      Virtual scenarious builder
                     </a>
                   </Link>
                 </li>

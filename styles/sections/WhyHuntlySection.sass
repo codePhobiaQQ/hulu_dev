@@ -1,6 +1,9 @@
 @import "./../mixins/mixins"
 @import './../mixins/vars'
 
+.WrapperSecond
+  background-color: #fff
+
 .whyHuntly
   position: relative
   background-color: #fff
@@ -277,10 +280,6 @@
   @media only screen and (max-width: 1199px)
     padding-bottom: 91px
     height: inherit
-    .container
-      .content
-        .leftCol
-        .rightCol
 
 
   @media only screen and (max-width: 992px)
@@ -353,6 +352,12 @@
             div.result
               font-size: 20px
 
+  @media only screen and (max-width: 380px)
+    .container
+      .content
+        .rightCol
+          .circles
+            margin-right: -10px
 
 @keyframes round
   0%
