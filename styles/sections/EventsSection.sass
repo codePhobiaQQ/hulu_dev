@@ -86,7 +86,7 @@
                   font-size: 13px
                   font-family: "SequelLightBody"
           .centerSide
-            width: 285px
+            width: 387px
             margin-left: 55px
             h3
               font-size: 28px
@@ -120,6 +120,116 @@
             position: absolute
             top: 0
             right: 0
-            img
+            & > div
               height: 100%
-              object-fit: cover
+              img
+                height: 100%
+                object-fit: cover
+
+  @media only screen and (max-width: 1919px)
+    .container
+      ul.events
+        width: 656px
+        li
+          .linkWrapper
+            padding: 27px 0 27px 27px
+            .leftSide
+              width: 124px
+              .data
+                span:first-child
+                  font-size: 30px
+                  margin-bottom: 0
+                span:last-child
+                  font-size: 11px
+              .button
+                width: 124px
+                height: 40px
+                font-size: 13px
+            .centerSide
+              width: 292px
+              margin-left: 30px
+              .prepis
+                font-size: 9px
+              h3
+                margin-bottom: 48px
+                span
+                  font-size: 21px
+
+  @media only screen and (max-width: 1200px)
+    padding-bottom: 100px
+    .container
+      flex-direction: column
+      padding-bottom: 100px
+      ul.events
+        margin-right: auto
+        margin-left: 0
+        margin-top: 100px
+        li
+          margin-bottom: 50px
+
+  @media only screen and (max-width: 992px)
+    .container
+      ul.events
+        width: 100%
+        li
+          .linkWrapper
+            padding: 27px 0 27px 27px
+            .leftSide
+              width: 124px
+              .data
+                span:first-child
+                  font-size: 30px
+                  margin-bottom: 0
+                span:last-child
+                  font-size: 11px
+              .button
+                width: 124px
+                height: 40px
+                font-size: 13px
+            .centerSide
+              width: 280px
+              margin-left: 20px
+              .prepis
+                font-size: 9px
+              h3
+                margin-bottom: 48px
+                span
+                  font-size: 18px
+
+  @media only screen and (max-width: 768px)
+    .container
+      ul.events
+        width: 100%
+        min-width: 315px
+        margin: auto
+        margin-top: 43px
+        li
+          .linkWrapper
+            padding: 12px 0 12px 12px
+            .leftSide
+              width: 124px
+              .data
+                span:first-child
+                  font-size: 25px
+                  margin-bottom: 0
+                span:last-child
+                  font-size: 9px
+            .centerSide
+              width: 230px
+              margin-left: 0
+              .prepis
+                font-size: 9px
+                margin-left: 26px
+              h3
+                margin-bottom: 60px
+                span
+                  font-size: 15px
+                  margin-left: -40px
+
+            .rightSide
+              top: inherit
+              width: 65px
+              height: 65px
+              bottom: 0
+              img
+                object-fit: contain

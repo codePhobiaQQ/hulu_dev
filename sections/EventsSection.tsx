@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ecom from "../public/assets/img/ecom.jpg";
+import Image from "next/image";
 
 interface IEvent {
   link: string;
@@ -28,8 +29,8 @@ const EventsSection = () => {
       day: "08",
       date: "03 / 2022",
       whatIs: "Webinar",
-      location: "Riga, Latvia",
-      name: "Ecom21 Conference",
+      location: "St. Petersburg",
+      name: "Economic Forum",
     },
     {
       link: "https://huntli.vercel.app/",
@@ -37,7 +38,7 @@ const EventsSection = () => {
       day: "08",
       date: "03 / 2022",
       whatIs: "Webinar",
-      location: "Riga, Latvia",
+      location: "New-York, USA",
       name: "Ecom21 Conference",
     },
   ];
@@ -74,7 +75,12 @@ const EventsSection = () => {
                     <span className="prepis">{event.whatIs}</span>
                   </div>
                   <div className="rightSide">
-                    <img src={event.img} alt="ecom" />
+                    <Image
+                      width={161}
+                      height={161}
+                      src={event.img}
+                      alt="ecom"
+                    />
                   </div>
                 </a>
               </Link>

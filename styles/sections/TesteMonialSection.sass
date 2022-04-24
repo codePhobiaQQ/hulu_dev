@@ -8,7 +8,8 @@
     h2
       @include titleMix(#131313)
       margin-bottom: 94px
-
+    .slick-list .slick-track .slick-slide
+      padding: 0 10px
     .arrows
       display: flex
       width: 100px
@@ -63,7 +64,56 @@
             span
               margin-bottom: 57px
               display: block
+              font-family: "SequelMediumBody", sans-serif
+              color: #666666
             p
               line-height: 140%
+
+  @media only screen and (max-width: 992px)
+    .container
+      .slick-list
+        .slick-track
+          .slick-slide
+            width: 100%
+            padding: 0
+            .slide-inner
+              h3
+                font-size: 28px
+              span
+                font-size: 13px
+                margin-bottom: 30px
+              p
+                font-size: 13px
+
+    @media only screen and (max-width: 576px)
+      .container
+        h2
+          margin-bottom: 40px
+        .arrows
+          margin-top: 20px
+        .slick-list
+          .slick-track
+            .slick-slide
+              width: 100%
+              padding: 0 3px
+              .slide-inner
+                padding: 40px
+                .icon
+                  width: 60px
+                  height: 60px
+                  margin-bottom: 20px
+                .logo
+                  width: 100px
+                  height: auto
+                  top: 40px
+                  right: 40px
+                h3
+                  font-size: 24px
+                  margin-bottom: 10px
+                span
+                  font-size: 13px
+                  margin-bottom: 20px
+                p
+                  font-size: 13px
 
 

@@ -10,6 +10,7 @@ import BlogSection from "../sections/BlogSection";
 import RiscScenarios from "../sections/RiscScenarios";
 import ContactSection from "../sections/ContactSection";
 import TesteMonials from "../sections/TesteMonials";
+import EventsSection from "../sections/EventsSection";
 
 const MainPage = () => {
   const [hideMain, setHide] = useState<boolean>(false);
@@ -32,6 +33,7 @@ const MainPage = () => {
         setDashboardOffset={setDashboardOffset}
       />
       <RiscScenarios />
+      <EventsSection />
       <ContactSection />
       <PortfolioSection />
       <TesteMonials />

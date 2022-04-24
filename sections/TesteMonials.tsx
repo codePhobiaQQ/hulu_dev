@@ -85,9 +85,10 @@ const TesteMonials = () => {
     margin: 20,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 1,
+          margin: 0,
         },
       },
     ],

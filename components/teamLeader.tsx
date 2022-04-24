@@ -11,9 +11,23 @@ interface ILeader {
 
 const TeamLeader = ({ img, name, text, link }: ILeader) => {
   const teamer = useRef<HTMLParagraphElement>(null);
+  const man = useRef(null);
+
+  // const hoverHandler = (e: MouseEvent) => {
+  //   console.log(e.pageX, e.pageY);
+  // };
+  //
+  // useEffect(() => {
+  //   // @ts-ignore
+  //   man.current.addEventListener("mousemove", (e) => hoverHandler(e));
+  //   return () => {
+  //     // @ts-ignore
+  //     man.current.removeEventListener("mousemove", hoverHandler);
+  //   };
+  // }, []);
 
   return (
-    <li>
+    <li ref={man}>
       <div className="cardWrap">
         <img className="teamImg" src={img} alt="team" />
         <div className="cardInfo">
