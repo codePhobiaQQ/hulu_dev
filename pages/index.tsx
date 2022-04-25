@@ -24,7 +24,7 @@ const MainPage = () => {
       dashboardOffset={dashboardOffset}
       dashboardHeight={dashboardHeight}
     >
-      <MainSection />
+      <MainSection scrolling={scrollY} />
       <WrapperSecond scrolling={scrollY} />
       <DashboardSection
         setDashboardHeight={setDashboardHeight}

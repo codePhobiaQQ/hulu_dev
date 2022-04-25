@@ -1,8 +1,24 @@
 import LiquidButton from "../components/UI/LiquidButton";
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { wrapperVariant, fadeIn } from "../motions/MainSection.motion";
+import { useEffect, useRef, useState } from "react";
 
-const MainSection = () => {
+interface IMainSection {
+  scrolling?: MotionValue<number>;
+}
+
+const MainSection = ({ scrolling }: IMainSection) => {
+  const mainSectionRef = useRef<HTMLElement>(null);
+  const [sectionHeight, setSectionHeight] = useState(980);
+
+  useEffect(() => {
+    mainSectionRef.current
+      ? setSectionHeight(mainSectionRef.current.clientHeight)
+      : null;
+  }, [mainSectionRef.current]);
+
+  console.log(scrolling);
+
   return (
     <motion.section
       variants={wrapperVariant}
