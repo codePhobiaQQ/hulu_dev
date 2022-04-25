@@ -2,8 +2,9 @@ import Slider from "react-slick";
 import uniepaus from "../public/assets/svg/logos/uniepaus.svg";
 import { uuid } from "uuidv4";
 import { useState } from "react";
+import PortfolioPopup from "../components/popups/PortfolioPopup";
 
-interface ILogos {
+export interface ILogos {
   beforeHover: string;
   afterHover: string;
   index: number;
@@ -11,6 +12,7 @@ interface ILogos {
 
 const PortfolioSection = () => {
   const [portfolioOpen, setPortfolioOpen] = useState<boolean>(false);
+  const [portfolioIndex, setPortfolioIndex] = useState<number>(1);
 
   const logos: ILogos[] = [
     {
@@ -92,8 +94,9 @@ const PortfolioSection = () => {
     ],
   };
 
-  const openPortfolio = () => {
+  const openPortfolio = (index: number) => {
     setPortfolioOpen(true);
+    setPortfolioIndex(index);
   };
 
   return (
@@ -106,7 +109,7 @@ const PortfolioSection = () => {
           <Slider {...settings}>
             {logos.map((el, index) => (
               <div
-                onClick={openPortfolio}
+                onClick={() => openPortfolio(el.index)}
                 key={"portfolioELem" + index + el.afterHover}
               >
                 <img src={el.beforeHover} alt="logo" />
@@ -115,6 +118,12 @@ const PortfolioSection = () => {
           </Slider>
         </div>
       </section>
+
+      <PortfolioPopup
+        portfolioOpen={portfolioOpen}
+        setPortfolioOpen={setPortfolioOpen}
+        Portfolio={logos.find((logo) => logo.index == portfolioIndex)}
+      />
     </>
   );
 };

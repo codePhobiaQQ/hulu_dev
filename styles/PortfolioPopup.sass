@@ -1,3 +1,6 @@
+@import "./../styles/mixins/vars"
+@import "./../styles/mixins/mixins"
+
 .PortfolioPopup
   position: fixed
   z-index: 100
@@ -10,7 +13,7 @@
   align-items: center
   opacity: 0
   align-items: center
-  background-color: #C6C6C6
+  background-color: #fff
   pointer-events: none
   &.active
     pointer-events: inherit
@@ -25,3 +28,55 @@
       transform: scale(1.04)
 
   .container
+    display: flex
+    justify-content: space-between
+    .contentSide
+      width: 890px
+      overflow: auto
+      padding-right: 10px
+      .infoLine
+        display: flex
+        width: 100%
+        justify-content: space-between
+        margin-bottom: 80px
+        .infoElem
+          span, a
+            display: block
+          .what
+            font-size: 18px
+            font-family: "SequelMediumBody", sans-serif
+            margin-bottom: 10px
+            color: #949494
+          .value
+            font-size: 26px
+            color: #424242
+            font-family: "SequelRomanBody", sans-serif
+
+      .textContent
+        p
+          font-size: 18px
+          font-family: "SequelLightBody", sans-serif
+          color: #131313
+          margin-bottom: 40px
+          line-height: 140%
+      .contactBtn
+        @include greenBtn()
+        margin-left: auto
+
+  @media only screen and (max-width: 1919px)
+    .container
+      .contentSide
+        width: 770px
+        .infoLine
+          margin-bottom: 50px
+          .infoElem
+            .what
+              font-size: 13px
+            .value
+              font-size: 20px
+        .logoSide
+          & > div
+            width: 154px
+        .textContent
+          p
+            margin-bottom: 20px
