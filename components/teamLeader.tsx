@@ -27,8 +27,8 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   useEffect(() => {
     man.current ? setHeight(man.current.offsetHeight) : null;
     man.current ? setWidth(man.current.offsetWidth) : null;
-    man.current ? setLeft(man.current.offsetLeft) : null;
-    man.current ? setTop(man.current.offsetTop) : null;
+    man.current ? setLeft(man.current.getBoundingClientRect().y) : null;
+    man.current ? setTop(man.current.getBoundingClientRect().x) : null;
   }, [man.current]);
 
   useEffect(() => {

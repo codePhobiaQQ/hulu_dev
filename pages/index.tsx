@@ -17,6 +17,21 @@ const MainPage = () => {
 
   const [dashboardOffset, setDashboardOffset] = useState<number>(900);
   const [dashboardHeight, setDashboardHeight] = useState<number>(630);
+  const [topPosition, setTopPosition] = useState<number>(0);
+
+  const scrollingHandler = (e: Event) => {
+    console.log(e.target);
+  };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", (e) => scrollingHandler(e), {
+  //     passive: true,
+  //   });
+  //
+  //   return () => {
+  //     window.removeEventListener("scroll", scrollingHandler);
+  //   };
+  // }, []);
 
   return (
     <Header
@@ -42,3 +57,6 @@ const MainPage = () => {
 };
 
 export default MainPage;
+function useEffect(arg0: () => () => void, arg1: never[]) {
+  throw new Error("Function not implemented.");
+}
