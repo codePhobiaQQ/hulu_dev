@@ -5,6 +5,7 @@ import Link from "next/link";
 import Menu from "../../components/Menu";
 import Head from "next/head";
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import FooterSection from "../../sections/FooterSection";
 import { useRouter } from "next/router";
 import { MotionValue } from "framer-motion";
@@ -36,6 +37,8 @@ const Header = ({
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
   const [policityOpen, setPolicityOpen] = useState<boolean>(false);
 
+  const [showOnScroll, setShowOnScroll] = useState(true);
+
   const link = useRouter();
   const [activeLogo, setActiveLogo] = useState<number>(0);
 
@@ -48,6 +51,19 @@ const Header = ({
     }
   };
 
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y;
+      if (isShow !== showOnScroll) setShowOnScroll(isShow);
+    },
+    [showOnScroll],
+    undefined,
+    false,
+    300
+  );
+
+  console.log(showOnScroll);
+
   useEffect(() => {
     const show = async () => {
       setTimeout(() => {
@@ -56,32 +72,6 @@ const Header = ({
     };
     show();
   }, []);
-
-  // useEffect(() => {
-  //   // @ts-ignore
-  //   scrolling?.onChange(() => {
-  //     // @ts-ignore
-  //     // console.log(scrolling.current);
-  //     // console.log(dashboardOffset);
-  //
-  //     if (
-  //       // @ts-ignore
-  //       scrolling?.current < dashboardOffset + dashboardHeight &&
-  //       // @ts-ignore
-  //       scrolling?.current > dashboardOffset
-  //     ) {
-  //       if (activeLogo != 1) {
-  //         console.log("here0");
-  //         setActiveLogo(1);
-  //       }
-  //     } else {
-  //       console.log("here1");
-  //       if (activeLogo == 1) {
-  //         setActiveLogo(0);
-  //       }
-  //     }
-  //   });
-  // }, [scrolling, dashboardOffset]);
 
   return useMemo(
     () => (
@@ -94,7 +84,11 @@ const Header = ({
           />
         </Head>
 
-        <div className={"header " + colorMode}>
+        <div
+          className={
+            showOnScroll ? "header " + colorMode : "header hide " + colorMode
+          }
+        >
           <div className={"headerInner"}>
             <Link href="/">
               <a className={open ? "logo menuOpen" : "logo"}>
@@ -121,7 +115,7 @@ const Header = ({
         />
       </>
     ),
-    [open, activeLogo, dashboardOffset, connectOpen, policityOpen]
+    [open, activeLogo, dashboardOffset, connectOpen, policityOpen, showOnScroll]
   );
 };
 

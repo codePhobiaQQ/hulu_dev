@@ -1,4 +1,3 @@
-import dmitor from "../public/assets/img/dmitor.jpg";
 import linkIn from "../public/assets/svg/in.svg";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
@@ -28,8 +27,8 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   useEffect(() => {
     man.current ? setHeight(man.current.offsetHeight) : null;
     man.current ? setWidth(man.current.offsetWidth) : null;
-    man.current ? setLeft(man.current.offsetTop) : null;
-    man.current ? setTop(man.current.offsetLeft) : null;
+    man.current ? setLeft(man.current.offsetLeft) : null;
+    man.current ? setTop(man.current.offsetTop) : null;
   }, [man.current]);
 
   useEffect(() => {
@@ -73,7 +72,7 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
       <div className="cardWrap" style={{ ...cardStyle() }}>
         <img className="teamImg" src={img} alt="team" />
         <div
-          style={{ bottom: isHover ? textHeight - 30 : -60 }}
+          style={isHover ? { bottom: textHeight - 40 } : {}}
           className="cardInfo"
         >
           <div className="mainInfo">

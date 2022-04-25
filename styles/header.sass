@@ -8,6 +8,7 @@
   z-index: 11
   top: 0
   left: 0
+  transition: transform .3s $transition
 
   &.black
 
@@ -41,6 +42,9 @@
               left: -3px
               border-color: #FFFFFF
               border: 1px solid #131313
+
+  &.hide
+    transform: translateY(-86px)
 
   .headerInner
     display: flex
@@ -93,6 +97,8 @@
   @media only screen and (max-width: 992px)
     backdrop-filter: blur(30px)
     -webkit-backdrop-filter: blur(30px)
+    &.hide
+      transform: translateY(-69px)
     .headerInner
       .logo
         img

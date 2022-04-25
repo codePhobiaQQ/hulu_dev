@@ -26,7 +26,7 @@ const MainPage = () => {
       dashboardHeight={dashboardHeight}
       setHide={setHide}
     >
-      <MainSection scrolling={scrollY} hideMain={hideMain} />
+      <MainSection hideMain={hideMain} />
       <WrapperSecond scrolling={scrollY} />
       <DashboardSection
         setDashboardHeight={setDashboardHeight}
