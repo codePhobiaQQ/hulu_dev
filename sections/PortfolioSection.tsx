@@ -122,7 +122,9 @@ const PortfolioSection = () => {
       <PortfolioPopup
         portfolioOpen={portfolioOpen}
         setPortfolioOpen={setPortfolioOpen}
-        Portfolio={logos.find((logo) => logo.index == portfolioIndex)}
+        Portfolio={
+          logos.find((logo) => logo.index == portfolioIndex) || logos[0]
+        }
       />
     </>
   );

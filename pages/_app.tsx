@@ -27,12 +27,8 @@ import React, { FC, Component } from "react";
 import withRedux from "next-redux-wrapper";
 import { makeStore } from "../redux/store";
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
-  return (
-    <>
-      <Component {...pageProps} />
-    </>
-  );
+const MyApp: FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
+  return <>{<Component {...pageProps} />}</>;
 };
 
 export default withRedux(makeStore)(MyApp);
