@@ -22,6 +22,7 @@ const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
     sectionRef.current ? setWhyHeight(sectionRef.current.clientHeight) : null;
   }, [sectionRef.current]);
 
+  // @ts-ignore
   return (
     <section id="WhyHuntli" ref={sectionRef} className="whyHuntly">
       <div className="container">
