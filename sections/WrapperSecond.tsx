@@ -20,7 +20,7 @@ const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
       windowHeight < whyHeight ? topi + whyHeight - windowHeight + 200 : topi,
       windowHeight < whyHeight
         ? topi + whyHeight - windowHeight + 600
-        : topi + whyHeight * 0.75,
+        : topi + whyHeight,
     ],
     [1, 0]
   );
