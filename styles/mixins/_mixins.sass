@@ -91,6 +91,11 @@
 
 
 @mixin formMix
+  .textareaWrapper
+    textarea
+      height: 100%
+      width: 100%
+
   input, textarea
     overflow: hidden
     background-color: transparent
@@ -136,7 +141,7 @@
 
   @media only screen and (max-width: 1919px)
     input, textarea
-      font-size: 20px
+      font-size: 25px
       padding-bottom: 30px
       margin-bottom: 30px
       &::placeholder

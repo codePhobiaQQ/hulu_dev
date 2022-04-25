@@ -16,8 +16,17 @@
       display: flex
       align-items: center
       justify-content: center
-
-      //.leftSide
+      position: relative
+      .schemaSpan
+        position: absolute
+        font-size: 28px
+        font-family: 'SequelMediumBody', sans-serif
+        text-align: right
+        color: #fff
+        top: 0
+        width: 670px
+        line-height: 1.4em
+        right: 0
       .startBtn
         .plainLine, .startInner, .rightLine
           display: none
@@ -150,6 +159,9 @@
     .riskContainer
       width: 1266px
       .schemaWrapper
+        .schemaSpan
+          font-size: 18px
+          width: 460px
         .riskBlock
           .topLine, .bottomLine
             top: calc(50% - 4px)
@@ -215,6 +227,8 @@
       width: 684px
       .schemaWrapper
         flex-direction: column
+        .schemaSpan
+          display: none
         .thirdSide
           margin-top: 60px
         .finishBtn

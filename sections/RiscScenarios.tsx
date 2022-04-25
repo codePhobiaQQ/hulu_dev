@@ -13,6 +13,10 @@ const RiscScenarios = () => {
       </div>
       <div className="riskContainer">
         <div className="schemaWrapper">
+          <span className="schemaSpan">
+            Use drag-n-drop tools to build your perfect fraud prevention
+            scenarios
+          </span>
           <div className="leftSide">
             <div className="startBtn">
               <RightLine />
