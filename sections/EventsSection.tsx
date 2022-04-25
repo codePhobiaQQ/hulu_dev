@@ -76,8 +76,8 @@ const EventsSection = () => {
                   </div>
                   <div className="rightSide">
                     <Image
-                      width={161}
-                      height={161}
+                      width={235}
+                      height={235}
                       src={event.img}
                       alt="ecom"
                     />

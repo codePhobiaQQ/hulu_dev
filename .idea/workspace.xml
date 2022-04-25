@@ -21,11 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/popups/ConnectPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/popups/ConnectPopup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/MainSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/MainSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/EventsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/EventsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/EventsSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/EventsSection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +112,7 @@
       <workItem from="1647892187149" duration="453000" />
       <workItem from="1647892871367" duration="1676000" />
       <workItem from="1649526163638" duration="105000" />
-      <workItem from="1650737779142" duration="32698000" />
+      <workItem from="1650737779142" duration="32876000" />
     </task>
     <servers />
   </component>
