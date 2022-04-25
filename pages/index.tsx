@@ -1,6 +1,6 @@
 import Header from "../hoc/Header/Header";
 import MainSection from "../sections/MainSection";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useViewportScroll } from "framer-motion";
 import WrapperSecond from "../sections/WrapperSecond";
 import DashboardSection from "../sections/DashboardSection";
@@ -23,14 +23,6 @@ const MainPage = () => {
     const position = window.pageYOffset;
     setTopPosition(position);
   };
-
-  // @ts-ignore
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <Header
