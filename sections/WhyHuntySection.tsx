@@ -6,7 +6,6 @@ import { calcNumbSection } from "../services/calc.service";
 import Circles from "../components/Circles";
 
 interface IWhyHuntySection {
-  opacity: MotionValue<number>;
   setWhyHeight: Dispatch<SetStateAction<number>>;
 }
 
@@ -14,21 +13,16 @@ const STEP = 1;
 const MIN = 1000;
 const MAX = 100000;
 
-const WhyHuntySection = ({ opacity, setWhyHeight }: IWhyHuntySection) => {
+const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
   const [values, setValue] = useState<number[]>([1000]);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // @ts-ignore
-    setWhyHeight(sectionRef.current?.clientHeight);
-  }, []);
+    sectionRef.current ? setWhyHeight(sectionRef.current.clientHeight) : null;
+  }, [sectionRef.current]);
 
   return (
     <section id="WhyHuntli" ref={sectionRef} className="whyHuntly">
-      <motion.div
-        style={{ opacity: opacity }}
-        className="backgroundWrapper"
-      ></motion.div>
       <div className="container">
         <h2>STOP LOSING MONEY ON COMPLIANCE</h2>
         <div className="content">

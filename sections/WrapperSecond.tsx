@@ -8,25 +8,35 @@ interface IWrapperSecond {
 }
 
 const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
-  const [topi, setTop] = useState<number>(500);
-  const [height, setHeight] = useState<number>(780);
+  const [topi, setTop] = useState<number>(920);
+  const [windowHeight, setWindowHeight] = useState<number>(920);
   const [whyHeight, setWhyHeight] = useState<number>(630);
 
   const sectionRef = useRef<HTMLDivElement>(null);
-  const opacity = useTransform(scrolling, [topi, topi + whyHeight], [1, 0]);
+
+  const opacity = useTransform(
+    scrolling,
+    [
+      windowHeight < whyHeight ? topi + whyHeight - windowHeight + 200 : topi,
+      windowHeight < whyHeight
+        ? topi + whyHeight - windowHeight + 600
+        : topi + whyHeight * 0.75,
+    ],
+    [1, 0]
+  );
 
   useEffect(() => {
-    // @ts-ignore
-    setTop(sectionRef.current?.offsetTop);
-    // @ts-ignore
-    setHeight(sectionRef.current?.clientHeight);
-  }, []);
+    sectionRef.current ? setTop(sectionRef.current?.offsetTop) : null;
+    console.log(topi, whyHeight, windowHeight);
+    setWindowHeight(window.innerHeight);
+  }, [sectionRef.current]);
 
   return (
-    <motion.div ref={sectionRef} className="WrapperSecond">
-      <WhyHuntySection setWhyHeight={setWhyHeight} opacity={opacity} />
-      <AboutSection opacity={opacity} />
-    </motion.div>
+    <div ref={sectionRef} className="WrapperSecond">
+      <motion.div style={{ opacity: opacity }} className="dirty"></motion.div>
+      <WhyHuntySection setWhyHeight={setWhyHeight} />
+      <AboutSection />
+    </div>
   );
 };
 

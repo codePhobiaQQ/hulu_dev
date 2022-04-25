@@ -14,11 +14,9 @@ import Policity from "../../components/popups/Policity";
 
 interface IHeader {
   children: React.ReactNode;
-  setHide?: Dispatch<SetStateAction<boolean>>;
   setColorMode?: Dispatch<SetStateAction<string>>;
   colorMode?: string;
   scrolling?: MotionValue<number>;
-
   dashboardOffset?: number;
   dashboardHeight?: number;
 }
@@ -53,8 +51,6 @@ const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
     false,
     300
   );
-
-  console.log(showOnScroll);
 
   useEffect(() => {
     const show = async () => {

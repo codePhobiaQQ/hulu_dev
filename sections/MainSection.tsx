@@ -1,16 +1,8 @@
 import LiquidButton from "../components/UI/LiquidButton";
 import { motion } from "framer-motion";
-import {
-  wrapperVariant,
-  fadeIn,
-  fadeInScale,
-} from "../motions/MainSection.motion";
+import { wrapperVariant, fadeIn } from "../motions/MainSection.motion";
 
-interface IMainSection {
-  hideMain: boolean;
-}
-
-const MainSection = ({ hideMain }: IMainSection) => {
+const MainSection = () => {
   return (
     <motion.section
       variants={wrapperVariant}
@@ -20,7 +12,7 @@ const MainSection = ({ hideMain }: IMainSection) => {
     >
       <div className="dirty"></div>
       <div className="container">
-        <motion.div className={hideMain ? "content hide" : "content"}>
+        <motion.div className={"content"}>
           <motion.h1 variants={fadeIn}>
             Most flexible transaction monitoring for your compliance
             <span> needs</span>

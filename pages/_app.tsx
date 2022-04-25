@@ -4,6 +4,7 @@ import "./../styles/main.sass";
 import "./../styles/header.sass";
 import "../styles/menu.scss";
 import "./../styles/sections/mainSeciton.sass";
+import "./../styles/sections/WrapperSection.sass";
 import "./../styles/sections/AboutSection.sass";
 import "./../styles/sections/WhyHuntlySection.sass";
 import "./../styles/sections/DashboardSection.sass";

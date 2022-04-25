@@ -13,7 +13,6 @@ import TesteMonials from "../sections/TesteMonials";
 import EventsSection from "../sections/EventsSection";
 
 const MainPage = () => {
-  const [hideMain, setHide] = useState<boolean>(false);
   const { scrollY } = useViewportScroll();
 
   const [dashboardOffset, setDashboardOffset] = useState<number>(900);
@@ -24,9 +23,8 @@ const MainPage = () => {
       scrolling={scrollY}
       dashboardOffset={dashboardOffset}
       dashboardHeight={dashboardHeight}
-      setHide={setHide}
     >
-      <MainSection hideMain={hideMain} />
+      <MainSection />
       <WrapperSecond scrolling={scrollY} />
       <DashboardSection
         setDashboardHeight={setDashboardHeight}

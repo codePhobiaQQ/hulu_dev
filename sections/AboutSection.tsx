@@ -1,15 +1,11 @@
 import Link from "next/link";
 import { ILink } from "../components/Menu";
-import { motion, MotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeFromBot } from "../motions/AboutSection.motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import StatisticElem from "../components/AboutSection/StatisticElem";
 
-interface IAboutSection {
-  opacity: MotionValue<number>;
-}
-
-const AboutSection = ({ opacity }: IAboutSection) => {
+const AboutSection = () => {
   const [isProductOpen, setIsProductOpen] = useState<boolean>(false);
   const links: ILink[] = [
     {
@@ -36,10 +32,6 @@ const AboutSection = ({ opacity }: IAboutSection) => {
 
   return (
     <section id="About" className="aboutSection">
-      <motion.div
-        style={{ opacity: opacity }}
-        className="backgroundWrapper"
-      ></motion.div>
       <div className="container">
         <h2>ABOUT US</h2>
         <div className="content">

@@ -20,9 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/styles/sections/WrapperSection.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/EventsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/EventsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sections/EventsSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/EventsSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/AboutSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/MainSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/MainSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/WrapperSecond.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WrapperSecond.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/AboutSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/AboutSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/RiscSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/RiscSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/WhyHuntlySection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +122,7 @@
       <workItem from="1647892187149" duration="453000" />
       <workItem from="1647892871367" duration="1676000" />
       <workItem from="1649526163638" duration="105000" />
-      <workItem from="1650737779142" duration="32876000" />
+      <workItem from="1650737779142" duration="35879000" />
     </task>
     <servers />
   </component>
@@ -168,10 +178,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="469" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1646152289798" />
-    <state x="668" y="279" width="584" height="580" key="find.popup" timestamp="1650793440459">
+    <state x="668" y="279" width="584" height="580" key="find.popup" timestamp="1650896677045">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="668" y="279" width="584" height="580" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1650793440459" />
+    <state x="668" y="279" width="584" height="580" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1650896677045" />
     <state x="513" y="134" width="894" height="812" key="search.everywhere.popup" timestamp="1647891436506">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
