@@ -22,7 +22,7 @@ import "../styles/Policity.sass";
 import "../styles/PortfolioPopup.sass";
 import "./../styles/sections/FooterSection.sass";
 import type { AppProps } from "next/app";
-import React, { FC } from "react";
+import React, { FC, Component } from "react";
 import withRedux from "next-redux-wrapper";
 import { makeStore } from "../redux/store";
 
