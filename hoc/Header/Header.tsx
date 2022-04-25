@@ -23,15 +23,7 @@ interface IHeader {
   dashboardHeight?: number;
 }
 
-const Header = ({
-  children,
-  setHide,
-  setColorMode,
-  colorMode,
-  dashboardOffset,
-  dashboardHeight,
-  scrolling,
-}: IHeader) => {
+const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const [connectOpen, setConnectOpen] = useState<boolean>(false);

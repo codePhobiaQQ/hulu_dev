@@ -1,6 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import { Dispatch, SetStateAction } from "react";
 import Close from "../UI/Close";
+import Image from "next/image";
 import Laptop from "../../public/assets/img/Laptop.png";
 
 interface IConnectPopup {
@@ -57,7 +58,13 @@ const ConnectPopup = ({ setConnectOpen, connectOpen }: IConnectPopup) => {
           </Formik>
         </div>
         <div className="leftSide">
-          <img src={Laptop.src} alt="Laptop" />
+          <Image
+            width={800}
+            height={500}
+            objectFit={"contain"}
+            src={Laptop.src}
+            alt="Laptop"
+          />
         </div>
       </div>
     </div>

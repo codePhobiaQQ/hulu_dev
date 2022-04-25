@@ -18,7 +18,7 @@ const MainSection = ({ hideMain }: IMainSection) => {
       animate="visible"
       className="mainSection"
     >
-      <motion.div variants={fadeInScale} className="dirty"></motion.div>
+      <div className="dirty"></div>
       <div className="container">
         <motion.div className={hideMain ? "content hide" : "content"}>
           <motion.h1 variants={fadeIn}>
