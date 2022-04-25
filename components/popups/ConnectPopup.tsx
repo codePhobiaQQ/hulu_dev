@@ -3,6 +3,9 @@ import { Dispatch, SetStateAction } from "react";
 import Close from "../UI/Close";
 import Image from "next/image";
 import Laptop from "../../public/assets/img/Laptop.png";
+import { MessageComp } from "../UI/formComponents/MessageComp";
+import CheckedComp from "../UI/formComponents/CheckedComp";
+import { SignupSchema } from "../../sections/ContactSection";
 
 interface IConnectPopup {
   setConnectOpen: Dispatch<SetStateAction<boolean>>;
@@ -26,35 +29,43 @@ const ConnectPopup = ({ setConnectOpen, connectOpen }: IConnectPopup) => {
               email: "",
               phone: "",
               message: "",
+              politic: false,
             }}
+            validationSchema={SignupSchema}
             onSubmit={async (values: any) => {
               await new Promise((r) => setTimeout(r, 500));
               alert(JSON.stringify(values, null, 2));
             }}
           >
-            <Form>
-              <Field id="company1" name="company" placeholder="Company" />
+            {({ errors, touched }) => (
+              <Form>
+                <Field id="companyPopup" name="company" placeholder="Company" />
 
-              <Field id="name1" name="name" placeholder="Your Name" />
+                <Field id="namePopup" name="name" placeholder="Your Name" />
 
-              <Field
-                id="email1"
-                type="email"
-                name="email"
-                placeholder="Your Email"
-              />
+                <Field
+                  id="emailPopup"
+                  type="string"
+                  name="email"
+                  placeholder="Your Email"
+                  className={errors.email ? "error" : ""}
+                />
 
-              <Field id="phone1" name="phone" placeholder="Your Phone" />
+                <Field id="phonePopup" name="phone" placeholder="Your Phone" />
 
-              <Field id="message1" name="message" placeholder="Your Message" />
+                <MessageComp />
 
-              <div className="buttonWrap">
-                <button type="submit">Send</button>
-                <span>
-                  We will keep your personal information private and safe
-                </span>
-              </div>
-            </Form>
+                <div className="buttonWrap">
+                  <button type="submit">Send</button>
+                  <div className={errors.politic ? "agree error" : "agree"}>
+                    <CheckedComp id={"ContactPopupSection"} />
+                    <span>
+                      We will keep your personal information private and safe
+                    </span>
+                  </div>
+                </div>
+              </Form>
+            )}
           </Formik>
         </div>
         <div className="leftSide">

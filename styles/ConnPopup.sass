@@ -21,11 +21,15 @@
     .rightSide
       margin-left: 0
     .leftSide
-      img
+      margin-right: -30%
+      & > div
+        transform: scale(1.1)
+
 
   .close
     position: absolute
     top: 25px
+    z-index: 1000
     cursor: pointer
     right: 25px
     transition: all .3s ease
@@ -42,3 +46,26 @@
       right: 20px
       &:hover
         transform: scale(1.04)
+
+  @media only screen and (max-width: 1359px)
+    .container
+      flex-direction: column
+      overflow: auto
+      padding: 5% 0
+      height: 100%
+      .rightSide
+        order: 2
+        margin-right: 0
+      .leftSide
+        height: 35%
+        order: 1
+        max-height: 400px
+        margin-right: 0
+        & > div
+          height: 100%
+          transform: inherit
+
+  @media only screen and (max-width: 768px)
+    .container
+      .leftSide
+        display: none

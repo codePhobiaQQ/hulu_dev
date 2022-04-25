@@ -3,7 +3,7 @@ import { MessageComp } from "../components/UI/formComponents/MessageComp";
 import * as Yup from "yup";
 import CheckedComp from "../components/UI/formComponents/CheckedComp";
 
-const SignupSchema = Yup.object().shape({
+export const SignupSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
   politic: Yup.boolean().oneOf([true], "Подтвердите Ваше согласие"),
 });
