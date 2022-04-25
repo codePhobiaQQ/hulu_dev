@@ -1,6 +1,6 @@
 import Header from "../hoc/Header/Header";
 import MainSection from "../sections/MainSection";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useViewportScroll } from "framer-motion";
 import WrapperSecond from "../sections/WrapperSecond";
 import DashboardSection from "../sections/DashboardSection";
@@ -19,19 +19,18 @@ const MainPage = () => {
   const [dashboardHeight, setDashboardHeight] = useState<number>(630);
   const [topPosition, setTopPosition] = useState<number>(0);
 
-  const scrollingHandler = (e: Event) => {
-    console.log(e.target);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setTopPosition(position);
   };
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", (e) => scrollingHandler(e), {
-  //     passive: true,
-  //   });
-  //
-  //   return () => {
-  //     window.removeEventListener("scroll", scrollingHandler);
-  //   };
-  // }, []);
+  // @ts-ignore
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Header
