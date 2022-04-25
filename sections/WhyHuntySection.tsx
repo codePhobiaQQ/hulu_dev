@@ -13,6 +13,7 @@ const STEP = 1;
 const MIN = 1000;
 const MAX = 100000;
 
+// @ts-ignore
 const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
   const [values, setValue] = useState<number[]>([1000]);
   const sectionRef = useRef<HTMLElement>(null);

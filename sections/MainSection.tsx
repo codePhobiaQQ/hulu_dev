@@ -3,11 +3,7 @@ import { motion, MotionValue } from "framer-motion";
 import { wrapperVariant, fadeIn } from "../motions/MainSection.motion";
 import { useEffect, useRef, useState } from "react";
 
-interface IMainSection {
-  scrolling?: MotionValue<number>;
-}
-
-const MainSection = ({ scrolling }: IMainSection) => {
+const MainSection = () => {
   const mainSectionRef = useRef<HTMLElement>(null);
   const [sectionHeight, setSectionHeight] = useState(980);
 
@@ -16,8 +12,6 @@ const MainSection = ({ scrolling }: IMainSection) => {
       ? setSectionHeight(mainSectionRef.current.clientHeight)
       : null;
   }, [mainSectionRef.current]);
-
-  console.log(scrolling);
 
   return (
     <motion.section
