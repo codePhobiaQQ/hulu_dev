@@ -34,23 +34,28 @@
       width: 890px
       overflow: auto
       padding-right: 10px
-      .infoLine
-        display: flex
-        width: 100%
-        justify-content: space-between
-        margin-bottom: 80px
-        .infoElem
-          span, a
-            display: block
-          .what
-            font-size: 18px
-            font-family: "SequelMediumBody", sans-serif
-            margin-bottom: 10px
-            color: #949494
-          .value
-            font-size: 26px
-            color: #424242
-            font-family: "SequelRomanBody", sans-serif
+      .infoLineWrapper
+        & > div
+          display: none !important
+          img
+            display: none
+        .infoLine
+          display: flex
+          width: 100%
+          justify-content: space-between
+          margin-bottom: 80px
+          .infoElem
+            span, a
+              display: block
+            .what
+              font-size: 18px
+              font-family: "SequelMediumBody", sans-serif
+              margin-bottom: 10px
+              color: #949494
+            .value
+              font-size: 26px
+              color: #424242
+              font-family: "SequelRomanBody", sans-serif
 
       .textContent
         p
@@ -65,18 +70,94 @@
 
   @media only screen and (max-width: 1919px)
     .container
+      .logoSide
+        & > div
+          width: 154px
+          height: 50px
+          & > div
+            width: 100%
+            height: 100%
+            & > img
+              width: 100%
+              height: 100%
       .contentSide
         width: 770px
-        .infoLine
-          margin-bottom: 50px
-          .infoElem
-            .what
-              font-size: 13px
-            .value
-              font-size: 20px
-        .logoSide
-          & > div
-            width: 154px
+        .infoLineWrapper
+          .infoLine
+            margin-bottom: 50px
+            .infoElem
+              .what
+                font-size: 13px
+              .value
+                font-size: 20px
         .textContent
           p
             margin-bottom: 20px
+
+  @media only screen and (max-width: 1359px)
+    height: 100%
+    .container
+      padding: 5% 0
+      height: 100%
+      overflow: auto
+      .logoSide
+        display: none
+      .contentSide
+        width: 98%
+        .infoLineWrapper
+          display: flex
+          margin-bottom: 50px
+          & > div
+            width: 154px
+            height: 50px
+            display: block !important
+            & > div
+              width: 100%
+              height: 100%
+              & > img
+                width: 100%
+                height: 100%
+          .infoLine
+            width: 330px
+            flex-wrap: wrap
+            margin-left: auto
+            .infoElem
+              width: 50%
+              &:first-child
+                margin-bottom: 35px
+        .textContent
+          p
+            font-size: 13px
+            margin-bottom: 30px
+
+  @media only screen and (max-width: 767px)
+    .container
+      .contentSide
+        .infoLineWrapper
+          flex-direction: column
+          align-items: center
+          margin-bottom: 0
+          & > div
+            width: 75px
+            height: 24px
+          .infoLine
+            margin: 15px auto 20px auto
+            .infoElem
+              text-align: center
+
+        .contactBtn
+          width: 121px
+          height: 37px
+          font-size: 13px
+
+  @media only screen and (max-width: 576px)
+    .container
+      .contentSide
+        width: 100%
+        .infoLineWrapper
+          .infoLine
+            .infoElem
+              width: 48%
+              text-align: left
+              margin-left: 2%
+

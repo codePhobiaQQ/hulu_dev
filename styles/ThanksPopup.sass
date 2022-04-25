@@ -1,0 +1,42 @@
+@import "../styles/mixins/vars"
+@import "../styles/mixins/mixins"
+
+.thanksPopup
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: #131313
+  display: flex
+  pointer-events: none
+  visibility: hidden
+  z-index: 10001
+  align-items: center
+  justify-content: center
+  transition: all .5s $transition
+  opacity: 0
+  color: #ffffff
+  &.active
+    opacity: 1
+    pointer-events: inherit
+    visibility: visible
+  .close
+    position: absolute
+    top: 25px
+    cursor: pointer
+    right: 25px
+    transition: all .3s ease
+    fill: #fff
+    &:hover
+      transform: scale(1.04)
+  h2
+    font-family: "SequelMediumBody", sans-serif
+    font-size: calc(#{$adaptation} * 4.5)
+    text-align: center
+    margin-bottom: calc(#{$adaptation} * 2)
+
+  p
+    font-family: "SequelLightBody", sans-serif
+    font-size: calc(#{$adaptation} * 2)
+    text-align: center

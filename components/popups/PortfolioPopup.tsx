@@ -15,7 +15,6 @@ const PortfolioPopup = ({
   setPortfolioOpen,
   Portfolio,
 }: IPortfolioPopup) => {
-  console.log(Portfolio);
   return (
     <div className={`PortfolioPopup ${portfolioOpen ? "active" : ""}`}>
       <div className="close" onClick={() => setPortfolioOpen(false)}>
@@ -31,26 +30,35 @@ const PortfolioPopup = ({
           ></Image>
         </div>
         <div className="contentSide">
-          <ul className="infoLine">
-            <li className="infoElem">
-              <span className="what">web</span>
-              <a className="value" href="#" target="_blank">
-                uniepays.com
-              </a>
-            </li>
-            <li className="infoElem">
-              <span className="what">region</span>
-              <span className="value">Europe</span>
-            </li>
-            <li className="infoElem">
-              <span className="what">country</span>
-              <span className="value">Turkey</span>
-            </li>
-            <li className="infoElem">
-              <span className="what">status</span>
-              <span className="value">Active</span>
-            </li>
-          </ul>
+          <div className="infoLineWrapper">
+            <Image
+              width={154}
+              height={50}
+              objectFit={"contain"}
+              src={Portfolio?.beforeHover}
+            ></Image>
+            <ul className="infoLine">
+              <li className="infoElem">
+                <span className="what">web</span>
+                <a className="value" href="#" target="_blank">
+                  uniepays.com
+                </a>
+              </li>
+              <li className="infoElem">
+                <span className="what">region</span>
+                <span className="value">Europe</span>
+              </li>
+              <li className="infoElem">
+                <span className="what">country</span>
+                <span className="value">Turkey</span>
+              </li>
+              <li className="infoElem">
+                <span className="what">status</span>
+                <span className="value">Active</span>
+              </li>
+            </ul>
+          </div>
+
           <div className="textContent">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
