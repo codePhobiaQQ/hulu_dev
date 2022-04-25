@@ -1,9 +1,11 @@
 import { Formik, Field, Form } from "formik";
 import { MessageComp } from "../components/UI/formComponents/MessageComp";
 import * as Yup from "yup";
+import CheckedComp from "../components/UI/formComponents/CheckedComp";
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
+  politic: Yup.boolean().oneOf([true], "Подтвердите Ваше согласие"),
 });
 
 const ContactSection = () => {
@@ -48,9 +50,12 @@ const ContactSection = () => {
 
                 <div className="buttonWrap">
                   <button type="submit">Send</button>
-                  <span>
-                    We will keep your personal information private and safe
-                  </span>
+                  <div className={errors.politic ? "agree error" : "agree"}>
+                    <CheckedComp id={"ContactSection"} />
+                    <span>
+                      We will keep your personal information private and safe
+                    </span>
+                  </div>
                 </div>
               </Form>
             )}
