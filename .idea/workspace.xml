@@ -22,7 +22,6 @@
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +63,7 @@
       <recent name="$PROJECT_DIR$/public/assets" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -113,7 +112,7 @@
       <workItem from="1647892871367" duration="1676000" />
       <workItem from="1649526163638" duration="105000" />
       <workItem from="1650737779142" duration="50304000" />
-      <workItem from="1651343572478" duration="41000" />
+      <workItem from="1651343572478" duration="332000" />
     </task>
     <servers />
   </component>
