@@ -38,35 +38,35 @@ const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
             </span>
             <div className="slider">
               <span className="numbFirst">1 000</span>
-              {
-                <Range
-                  step={STEP}
-                  min={MIN}
-                  max={MAX}
-                  values={values}
-                  onChange={(values) => setValue(values)}
-                  renderTrack={({ props, children }) => (
-                    <div
-                      className="sliderLine"
-                      // ref={props.ref}
-                      {...props}
-                      style={{
-                        background: getTrackBackground({
-                          values: values,
-                          colors: ["#01C497", "#666"],
-                          min: MIN,
-                          max: MAX,
-                        }),
-                      }}
-                    >
-                      {children}
-                    </div>
-                  )}
-                  renderThumb={({ props }) => (
-                    <div className="circlingRange" {...props} />
-                  )}
-                />
-              }
+
+              {/*<Range*/}
+              {/*  step={STEP}*/}
+              {/*  min={MIN}*/}
+              {/*  max={MAX}*/}
+              {/*  values={values}*/}
+              {/*  onChange={(values) => setValue(values)}*/}
+              {/*  renderTrack={({ props, children }) => (*/}
+              {/*    <div*/}
+              {/*      className="sliderLine"*/}
+              {/*      // ref={props.ref}*/}
+              {/*      {...props}*/}
+              {/*      style={{*/}
+              {/*        background: getTrackBackground({*/}
+              {/*          values: values,*/}
+              {/*          colors: ["#01C497", "#666"],*/}
+              {/*          min: MIN,*/}
+              {/*          max: MAX,*/}
+              {/*        }),*/}
+              {/*      }}*/}
+              {/*    >*/}
+              {/*      {children}*/}
+              {/*    </div>*/}
+              {/*  )}*/}
+              {/*  renderThumb={({ props }) => (*/}
+              {/*    <div className="circlingRange" {...props} />*/}
+              {/*  )}*/}
+              {/*/>*/}
+
               <span className="numbSecond">100 000</span>
             </div>
             <div className="resultLines">
