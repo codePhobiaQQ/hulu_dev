@@ -31,32 +31,32 @@ const OurTeam = () => {
             link={"#"}
             sectionOffset={scrollTop}
           />
-          <TeamLeader
-            text={
-              "Professional Business Developer with Total 10+ years of Sales\n" +
-              "              experience combined with 6+ years of Business Development\n" +
-              "              experience having main expertise in creating efficient sales\n" +
-              "              channels, new partner relationships, and acquiring clients from\n" +
-              "              new undiscovered markets."
-            }
-            name={"Lev Bass"}
-            img={lev.src}
-            link={"#"}
-            sectionOffset={scrollTop}
-          />
-          <TeamLeader
-            text={
-              "Professional Business Developer with Total 10+ years of Sales\n" +
-              "              experience combined with 6+ years of Business Development\n" +
-              "              experience having main expertise in creating efficient sales\n" +
-              "              channels, new partner relationships, and acquiring clients from\n" +
-              "              new undiscovered markets."
-            }
-            name={"Sergii Balan"}
-            img={sergei.src}
-            link={"#"}
-            sectionOffset={scrollTop}
-          />
+          {/*<TeamLeader*/}
+          {/*  text={*/}
+          {/*    "Professional Business Developer with Total 10+ years of Sales\n" +*/}
+          {/*    "              experience combined with 6+ years of Business Development\n" +*/}
+          {/*    "              experience having main expertise in creating efficient sales\n" +*/}
+          {/*    "              channels, new partner relationships, and acquiring clients from\n" +*/}
+          {/*    "              new undiscovered markets."*/}
+          {/*  }*/}
+          {/*  name={"Lev Bass"}*/}
+          {/*  img={lev.src}*/}
+          {/*  link={"#"}*/}
+          {/*  sectionOffset={scrollTop}*/}
+          {/*/>*/}
+          {/*<TeamLeader*/}
+          {/*  text={*/}
+          {/*    "Professional Business Developer with Total 10+ years of Sales\n" +*/}
+          {/*    "              experience combined with 6+ years of Business Development\n" +*/}
+          {/*    "              experience having main expertise in creating efficient sales\n" +*/}
+          {/*    "              channels, new partner relationships, and acquiring clients from\n" +*/}
+          {/*    "              new undiscovered markets."*/}
+          {/*  }*/}
+          {/*  name={"Sergii Balan"}*/}
+          {/*  img={sergei.src}*/}
+          {/*  link={"#"}*/}
+          {/*  sectionOffset={scrollTop}*/}
+          {/*/>*/}
         </ul>
       </div>
     </section>
