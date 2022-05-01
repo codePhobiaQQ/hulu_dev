@@ -1,4 +1,3 @@
-import Logo from "../../public/assets/svg/Logo.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
 import Head from "next/head";
@@ -7,6 +6,7 @@ import FooterSection from "../../sections/FooterSection";
 import { MotionValue } from "framer-motion";
 import ConnectPopup from "../../components/popups/ConnectPopup";
 import Policity from "../../components/popups/Policity";
+import Logo from "../../components/UI/Logo";
 
 interface IHeader {
   children: React.ReactNode;
@@ -15,9 +15,15 @@ interface IHeader {
   scrolling?: MotionValue<number>;
   dashboardOffset?: number;
   dashboardHeight?: number;
+  isLightLogo: boolean;
 }
 
-const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
+const Header = ({
+  children,
+  colorMode,
+  dashboardOffset,
+  isLightLogo,
+}: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
@@ -63,7 +69,7 @@ const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
           <div className={"headerInner"}>
             <Link href="/">
               <a className={open ? "logo menuOpen" : "logo"}>
-                <img src={Logo.src} alt="Logo" />
+                <Logo isLightLogo={isLightLogo} />
               </a>
             </Link>
             <div onClick={() => setOpen(true)} className="hamburger-wrapper">
@@ -86,7 +92,14 @@ const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
         />
       </>
     ),
-    [open, dashboardOffset, connectOpen, policityOpen, showOnScroll]
+    [
+      open,
+      dashboardOffset,
+      connectOpen,
+      policityOpen,
+      showOnScroll,
+      isLightLogo,
+    ]
   );
 };
 

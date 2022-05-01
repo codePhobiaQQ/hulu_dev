@@ -1,13 +1,15 @@
 import WhyHuntySection from "./WhyHuntySection";
 import AboutSection from "./AboutSection";
 import { MotionValue, useTransform, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { PositionInterface } from "../pages";
 
 interface IWrapperSecond {
   scrolling: MotionValue<number>;
+  setTopPosition: Dispatch<SetStateAction<number>>;
 }
 
-const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
+const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   const [topi, setTop] = useState<number>(920);
   const [windowHeight, setWindowHeight] = useState<number>(920);
   const [whyHeight, setWhyHeight] = useState<number>(630);
@@ -33,7 +35,7 @@ const WrapperSecond = ({ scrolling }: IWrapperSecond) => {
     <div ref={sectionRef} className="WrapperSecond">
       <motion.div style={{ opacity: opacity }} className="dirty"></motion.div>
       <WhyHuntySection setWhyHeight={setWhyHeight} />
-      <AboutSection />
+      <AboutSection whyHeight={topi} setTopPosition={setTopPosition} />
     </div>
   );
 };

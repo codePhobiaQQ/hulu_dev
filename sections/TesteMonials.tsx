@@ -96,10 +96,6 @@ const TesteMonials = () => {
 
   const sliderRef = useRef<any>(null);
 
-  useEffect(() => {
-    console.log(sliderRef.current);
-  }, []);
-
   return (
     <section className="TesteMonialsSection">
       <div className="container">

@@ -4,10 +4,25 @@ import RiskElem from "../components/riskSection/RiskElem";
 import Finish from "../components/UI/riscSection/Finish";
 import RightLine from "../components/riskSection/RightLine";
 import LeftLine from "../components/riskSection/LeftLine";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { MotionValue } from "framer-motion";
+import { PositionInterface } from "../pages";
 
-const RiscScenarios = () => {
+interface IRiskSection {
+  setTopPosition: Dispatch<SetStateAction<number>>;
+}
+
+const RiscScenarios = ({ setTopPosition }: IRiskSection) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    sectionRef.current
+      ? setTopPosition(sectionRef.current.offsetTop - 100)
+      : null;
+  }, [sectionRef]);
+
   return (
-    <section id="Risk" className="RiscScenarios">
+    <section ref={sectionRef} id="Risk" className="RiscScenarios">
       <div className="container">
         <h2>RISK SCENARIOS</h2>
       </div>

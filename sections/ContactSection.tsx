@@ -6,18 +6,31 @@ import ThanksPopup from "../components/popups/ThanksPopup";
 import { useDispatch } from "react-redux";
 import { setThanksOpen } from "../redux/slices/AppSlice";
 import { mailService } from "../services/mail.service";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { PositionInterface } from "../pages";
+
+interface IContactSection {
+  setTopPosition: Dispatch<SetStateAction<number>>;
+}
 
 export const SignupSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
   politic: Yup.boolean().oneOf([true], "Подтвердите Ваше согласие"),
 });
 
-const ContactSection = () => {
+const ContactSection = ({ setTopPosition }: IContactSection) => {
   const dispatch = useDispatch();
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    sectionRef.current
+      ? setTopPosition(sectionRef.current.offsetTop + 100)
+      : null;
+  }, [sectionRef]);
 
   return (
     <>
-      <section id="ContactUs" className="ContactSection">
+      <section ref={sectionRef} id="ContactUs" className="ContactSection">
         <div className="triangle"></div>
         <div className="container">
           <h2>CONTACTS US</h2>

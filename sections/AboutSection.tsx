@@ -2,11 +2,26 @@ import Link from "next/link";
 import { ILink } from "../components/Menu";
 import { motion } from "framer-motion";
 import { fadeFromBot } from "../motions/AboutSection.motion";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import StatisticElem from "../components/AboutSection/StatisticElem";
+import { PositionInterface } from "../pages";
 
-const AboutSection = () => {
+interface AboutInterface {
+  setTopPosition: Dispatch<SetStateAction<number>>;
+  whyHeight: number;
+}
+
+const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
   const [isProductOpen, setIsProductOpen] = useState<boolean>(false);
+
+  const aboutSection = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    aboutSection.current
+      ? setTopPosition(aboutSection.current.offsetTop + whyHeight - 100)
+      : null;
+  }, [aboutSection]);
+
   const links: ILink[] = [
     {
       name: "Events",
@@ -31,7 +46,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="About" className="aboutSection">
+    <section ref={aboutSection} id="About" className="aboutSection">
       <div className="container">
         <h2>ABOUT US</h2>
         <div className="content">

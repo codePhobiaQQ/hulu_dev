@@ -1,9 +1,22 @@
 import Link from "next/link";
 import newsImg from "../public/assets/img/news/newsImg.jpg";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
-const BlogSection = () => {
+interface IBlogSection {
+  setTopPosition: Dispatch<SetStateAction<number>>;
+}
+
+const BlogSection = ({ setTopPosition }: IBlogSection) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    sectionRef.current
+      ? setTopPosition(sectionRef.current.offsetTop - 150)
+      : null;
+  }, [sectionRef]);
+
   return (
-    <section id="Blog" className="BlogSection">
+    <section ref={sectionRef} id="Blog" className="BlogSection">
       <div className="container">
         <div className="leftCol">
           <h2>BLOG</h2>
