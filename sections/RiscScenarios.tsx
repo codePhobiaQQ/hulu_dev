@@ -5,8 +5,6 @@ import Finish from "../components/UI/riscSection/Finish";
 import RightLine from "../components/riskSection/RightLine";
 import LeftLine from "../components/riskSection/LeftLine";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
-import { MotionValue } from "framer-motion";
-import { PositionInterface } from "../pages";
 
 interface IRiskSection {
   setTopPosition: Dispatch<SetStateAction<number>>;

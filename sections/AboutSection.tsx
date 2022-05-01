@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { fadeFromBot } from "../motions/AboutSection.motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import StatisticElem from "../components/AboutSection/StatisticElem";
-import { PositionInterface } from "../pages";
 
 interface AboutInterface {
   setTopPosition: Dispatch<SetStateAction<number>>;
