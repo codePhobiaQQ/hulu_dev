@@ -45,8 +45,8 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   const mousePY = () => mouseY / height;
 
   const cardStyle = () => {
-    const rX = mousePX();
-    const rY = mousePY();
+    const rX = mousePX() * 15;
+    const rY = mousePY() * 15;
     return {
       transform: `rotateY(${rY}deg) rotateX(${rX}deg)`,
     };
