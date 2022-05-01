@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { setThanksOpen } from "../redux/slices/AppSlice";
 import { mailService } from "../services/mail.service";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
-import { PositionInterface } from "../pages";
 
 interface IContactSection {
   setTopPosition: Dispatch<SetStateAction<number>>;

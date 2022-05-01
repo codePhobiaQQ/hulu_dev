@@ -2,7 +2,6 @@ import WhyHuntySection from "./WhyHuntySection";
 import AboutSection from "./AboutSection";
 import { MotionValue, useTransform, motion } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { PositionInterface } from "../pages";
 
 interface IWrapperSecond {
   scrolling: MotionValue<number>;

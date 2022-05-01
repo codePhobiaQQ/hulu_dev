@@ -8,7 +8,7 @@ const Circles = () => {
   const benefitsActive = useRef(0);
 
   const curcleRef = useInView({
-    threshold: 0.3,
+    threshold: 0.5,
     triggerOnce: true,
   });
 
