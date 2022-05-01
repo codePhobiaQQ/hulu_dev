@@ -77,7 +77,7 @@ const DashboardSection = ({
             animate={secondInView.inView ? "visible" : "hidden"}
           >
             <motion.div
-              custom={{ xing: -70 }}
+              custom={{ xing: -70, delaying: 0.7 }}
               variants={fadeFromLeft}
               className="imageWrapper"
             >
@@ -85,7 +85,7 @@ const DashboardSection = ({
             </motion.div>
             <motion.div
               variants={fadeFromLeft}
-              custom={{ xing: 70, delaying: 0.7 }}
+              custom={{ xing: 70 }}
               className="content"
             >
               <h3>SCREENING</h3>
@@ -105,7 +105,7 @@ const DashboardSection = ({
             animate={thirdInView.inView ? "visible" : "hidden"}
           >
             <motion.div
-              custom={{ xing: 70, delaying: 0.7 }}
+              custom={{ xing: -70 }}
               variants={fadeFromLeft}
               className="content"
             >
@@ -119,7 +119,7 @@ const DashboardSection = ({
               </p>
             </motion.div>
             <motion.div
-              custom={{ xing: -70 }}
+              custom={{ xing: 70, delaying: 0.7 }}
               variants={fadeFromLeft}
               className="imageWrapper"
             >
@@ -134,14 +134,14 @@ const DashboardSection = ({
             className="risk afterDash"
           >
             <motion.div
-              custom={{ xing: -70 }}
+              custom={{ xing: -70, delaying: 0.7 }}
               variants={fadeFromLeft}
               className="imageWrapper"
             >
               <Image src={review3.src} width={630} height={493} />
             </motion.div>
             <motion.div
-              custom={{ xing: 70, delaying: 0.7 }}
+              custom={{ xing: 70 }}
               variants={fadeFromLeft}
               className="content"
             >

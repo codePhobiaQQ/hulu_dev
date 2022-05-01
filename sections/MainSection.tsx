@@ -6,6 +6,27 @@ import { useEffect, useRef, useState } from "react";
 const MainSection = () => {
   const mainSectionRef = useRef<HTMLElement>(null);
   const [sectionHeight, setSectionHeight] = useState(980);
+  const [isHide, setIsHide] = useState(false);
+
+  const scrollPosition = () => {
+    return window.pageYOffset || document.documentElement.scrollTop;
+  };
+
+  const scrollHandler = () => {
+    const position = scrollPosition();
+    if (position > sectionHeight / 4) {
+      setIsHide(true);
+    } else {
+      setIsHide(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, [sectionHeight]);
 
   useEffect(() => {
     mainSectionRef.current
@@ -23,7 +44,7 @@ const MainSection = () => {
     >
       <div className="dirty"></div>
       <div className="container">
-        <div className={"content"}>
+        <div className={!isHide ? "content" : "content hide"}>
           <motion.h1 variants={fadeIn} custom={1}>
             Most flexible transaction monitoring for your compliance
             <span> needs</span>

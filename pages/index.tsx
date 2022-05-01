@@ -12,14 +12,6 @@ import ContactSection from "../sections/ContactSection";
 import TesteMonials from "../sections/TesteMonials";
 import EventsSection from "../sections/EventsSection";
 
-export interface PositionInterface {
-  main: number;
-  about: number;
-  risk: number;
-  contacts: number;
-  // blog: number;
-}
-
 const MainPage = () => {
   const { scrollY } = useViewportScroll();
   const [lastScroll, setLastScroll] = useState<number>(0);

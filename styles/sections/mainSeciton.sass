@@ -24,11 +24,13 @@
     align-items: center
     .content
       width: 717px
-      transition: opacity .4s ease
+      transition: all .4s $transition
+      transform: translateY(0)
+      will-change: translate, opacity
       color: #fff
-
       &.hide
         opacity: 0
+        transform: translateY(-50px)
       h1
         font-size: 60px
         font-family: "SequelBookBody", sans-serif

@@ -26,7 +26,7 @@ export const fadeFromLeft = {
     transition: {
       duration: 0.5,
       type: "spring",
-      stiffness: 100,
+      stiffness: 50,
       delay: delaying,
     },
   }),
