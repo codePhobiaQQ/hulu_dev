@@ -12,7 +12,9 @@ interface ILeader {
 }
 
 const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
+  const [isMobileInfo, setIsMobileInfo] = useState(true);
   const man = useRef<HTMLLIElement>(null);
+  const [windowWidth, setWindowWidth] = useState(1920);
   const [isHover, setIsHover] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
@@ -23,6 +25,10 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   const [textHeight, setTextHeight] = useState<number>(0);
   let mouseLeaveDelay: any = null;
 
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+  }, []);
+
   const textEl = useRef<HTMLDivElement>(null);
   const helpRef = useRef<HTMLInputElement | null>(null);
 
@@ -32,7 +38,6 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   }, [man.current]);
 
   useEffect(() => {
-    console.log("change");
     man.current ? setLeft(man.current.offsetLeft) : null;
     man.current ? setTop(man.current.offsetTop) : null;
   }, [sectionOffset]);
@@ -69,7 +74,7 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
     }, 1000);
   };
 
-  return (
+  return windowWidth > 768 ? (
     <li
       onMouseMove={(e) => mouseMove(e)}
       onMouseEnter={mouseEnter}
@@ -84,6 +89,23 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
           style={isHover ? { bottom: textHeight - 40 } : {}}
           className="cardInfo"
         >
+          <div className="mainInfo">
+            <span>{name}</span>
+            <Image width={40} height={40} src={linkIn.src} alt="in" />
+          </div>
+          <div ref={textEl} className="subInfo">
+            <p>{text}</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  ) : (
+    <li>
+      <div className="cardWrap">
+        <div className="teamImg">
+          <Image width={430} height={600} src={img} alt="team" />
+        </div>
+        <div className="cardInfo">
           <div className="mainInfo">
             <span>{name}</span>
             <Image width={40} height={40} src={linkIn.src} alt="in" />

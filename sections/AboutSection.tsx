@@ -24,7 +24,7 @@ const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
   const links: ILink[] = [
     {
       name: "Events",
-      link: "/#Events",
+      link: "/#Dashboard",
     },
     {
       name: "Contact us",
@@ -82,14 +82,14 @@ const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#Risk">
+                  <Link href="/#Transaction">
                     <a onClick={() => setIsProductOpen(false)}>
                       Live transaction monitoring
                     </a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#Risk">
+                  <Link href="/#Scenarious">
                     <a onClick={() => setIsProductOpen(false)}>
                       Virtual scenarious builder
                     </a>

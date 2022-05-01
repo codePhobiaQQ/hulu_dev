@@ -23,7 +23,7 @@ const RiscScenarios = ({ setTopPosition }: IRiskSection) => {
   }, [sectionRef]);
 
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
     triggerOnce: true,
   });
 
