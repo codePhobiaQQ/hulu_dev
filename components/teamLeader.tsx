@@ -1,5 +1,6 @@
 import linkIn from "../public/assets/svg/in.svg";
 import React from "react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface ILeader {
@@ -76,14 +77,16 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
       ref={man}
     >
       <div className="cardWrap" style={{ ...cardStyle() }}>
-        <img className="teamImg" src={img} alt="team" />
+        <div className="teamImg">
+          <Image width={430} height={600} src={img} alt="team" />
+        </div>
         <div
           style={isHover ? { bottom: textHeight - 40 } : {}}
           className="cardInfo"
         >
           <div className="mainInfo">
             <span>{name}</span>
-            <img src={linkIn.src} alt="in" />
+            <Image width={40} height={40} src={linkIn.src} alt="in" />
           </div>
           <div ref={textEl} className="subInfo">
             <p>{text}</p>
