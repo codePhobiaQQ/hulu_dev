@@ -12,15 +12,16 @@ export const fadeIn = {
     opacity: 0,
     y: 40,
   },
-  visible: {
+  visible: (custom: number) => ({
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
       type: "spring",
-      stiffness: 100,
+      stiffness: 50,
+      delay: custom * 0.4,
     },
-  },
+  }),
 };
 
 export const fadeInScale = {

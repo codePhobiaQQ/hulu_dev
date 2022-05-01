@@ -5,6 +5,7 @@ import CheckedComp from "../components/UI/formComponents/CheckedComp";
 import ThanksPopup from "../components/popups/ThanksPopup";
 import { useDispatch } from "react-redux";
 import { setThanksOpen } from "../redux/slices/AppSlice";
+import { mailService } from "../services/mail.service";
 
 export const SignupSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -33,7 +34,14 @@ const ContactSection = () => {
               validationSchema={SignupSchema}
               onSubmit={async (values: any) => {
                 await new Promise((r) => setTimeout(r, 500));
-                alert(JSON.stringify(values, null, 2));
+                const response = mailService(
+                  values.company,
+                  values.name,
+                  values.email,
+                  values.phone,
+                  values.message
+                );
+                console.log(response);
                 dispatch(setThanksOpen(true));
               }}
             >

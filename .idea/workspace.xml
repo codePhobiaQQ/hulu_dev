@@ -20,12 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/api/mail.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/mail.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/popups/Policity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/popups/Policity.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/popups/ThanksPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/popups/ThanksPopup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/LiquidButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/SocLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/SocLinks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/formComponents/MessageComp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/formComponents/MessageComp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/teamLeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/teamLeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/HeaderBlog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/HeaderBlog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motions/MainSection.motion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/motions/MainSection.motion.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/svg/soc/InstagramB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/svg/soc/InstagramB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/svg/soc/LinkedinB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/svg/soc/LinkedinB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/svg/soc/TelegramB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/svg/soc/TelegramB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/svg/soc/facebookB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/svg/soc/facebookB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/svg/soc/twitterB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/svg/soc/twitterB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/ContactSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/ContactSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/MainSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/MainSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/OurTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/OurTeam.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Policity.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Policity.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/ThanksPopup.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/ThanksPopup.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/WrapperSecond.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WrapperSecond.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/header.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/BlogPageSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/BlogPageSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/FooterSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/FooterSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/mainSeciton.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +136,9 @@
       <workItem from="1647892871367" duration="1676000" />
       <workItem from="1649526163638" duration="105000" />
       <workItem from="1650737779142" duration="50304000" />
-      <workItem from="1651343572478" duration="1919000" />
+      <workItem from="1651343572478" duration="4480000" />
+      <workItem from="1651405262892" duration="1077000" />
+      <workItem from="1651407399919" duration="8827000" />
     </task>
     <servers />
   </component>
@@ -140,32 +162,32 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="709" y="340" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1647868500666" />
-    <state width="1899" height="174" key="GridCell.Tab.0.bottom" timestamp="1651345446837">
+    <state width="1899" height="174" key="GridCell.Tab.0.bottom" timestamp="1651428262519">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="204" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1649185296745" />
-    <state width="1899" height="174" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1651345446837" />
+    <state width="1899" height="174" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1651428262519" />
     <state width="1899" height="344" key="GridCell.Tab.0.bottom/0.23.1920.965@0.23.1920.965" timestamp="1647892664653" />
     <state width="1419" height="204" key="GridCell.Tab.0.bottom/0.25.1440.783@0.25.1440.783" timestamp="1649184997709" />
-    <state width="1899" height="174" key="GridCell.Tab.0.center" timestamp="1651345446835">
+    <state width="1899" height="174" key="GridCell.Tab.0.center" timestamp="1651428262518">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="204" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1649185296743" />
-    <state width="1899" height="174" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1651345446835" />
+    <state width="1899" height="174" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1651428262518" />
     <state width="1899" height="344" key="GridCell.Tab.0.center/0.23.1920.965@0.23.1920.965" timestamp="1647892664652" />
     <state width="1419" height="204" key="GridCell.Tab.0.center/0.25.1440.783@0.25.1440.783" timestamp="1649184997706" />
-    <state width="1899" height="174" key="GridCell.Tab.0.left" timestamp="1651345446835">
+    <state width="1899" height="174" key="GridCell.Tab.0.left" timestamp="1651428262517">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="204" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1649185296742" />
-    <state width="1899" height="174" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1651345446835" />
+    <state width="1899" height="174" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1651428262517" />
     <state width="1899" height="344" key="GridCell.Tab.0.left/0.23.1920.965@0.23.1920.965" timestamp="1647892664652" />
     <state width="1419" height="204" key="GridCell.Tab.0.left/0.25.1440.783@0.25.1440.783" timestamp="1649184997705" />
-    <state width="1899" height="174" key="GridCell.Tab.0.right" timestamp="1651345446836">
+    <state width="1899" height="174" key="GridCell.Tab.0.right" timestamp="1651428262518">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="204" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1649185296744" />
-    <state width="1899" height="174" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1651345446836" />
+    <state width="1899" height="174" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1651428262518" />
     <state width="1899" height="344" key="GridCell.Tab.0.right/0.23.1920.965@0.23.1920.965" timestamp="1647892664653" />
     <state width="1419" height="204" key="GridCell.Tab.0.right/0.25.1440.783@0.25.1440.783" timestamp="1649184997707" />
     <state x="469" y="179" key="SettingsEditor" timestamp="1646152289798">
@@ -176,10 +198,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="668" y="279" width="584" height="580" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1650896677045" />
-    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup" timestamp="1650912347008">
+    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup" timestamp="1651425919956">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1646672819952" />
-    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1650912347008" />
+    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1651425919956" />
   </component>
 </project>

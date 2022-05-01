@@ -1,13 +1,9 @@
 import Logo from "../../public/assets/svg/Logo.svg";
-import LogoGrey from "../../public/assets/svg/LogoGrey.svg";
-import LogoWhite from "../../public/assets/svg/LogoWhite.svg";
 import Link from "next/link";
 import Menu from "../../components/Menu";
 import Head from "next/head";
-import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import { Dispatch, SetStateAction, useMemo, useState } from "react";
 import FooterSection from "../../sections/FooterSection";
-import { useRouter } from "next/router";
 import { MotionValue } from "framer-motion";
 import ConnectPopup from "../../components/popups/ConnectPopup";
 import Policity from "../../components/popups/Policity";
@@ -26,40 +22,27 @@ const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
 
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
   const [policityOpen, setPolicityOpen] = useState<boolean>(false);
-
   const [showOnScroll, setShowOnScroll] = useState(true);
 
-  const link = useRouter();
-  const [activeLogo, setActiveLogo] = useState<number>(0);
-
-  const whatLogo = () => {
-    // @ts-ignore
-    if (activeLogo == 0) {
-      return LogoGrey.src;
-    } else if (activeLogo == 1) {
-      return Logo.src;
-    }
-  };
-
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      const isShow = currPos.y > prevPos.y;
-      if (isShow !== showOnScroll) setShowOnScroll(isShow);
-    },
-    [showOnScroll],
-    undefined,
-    false,
-    300
-  );
-
-  useEffect(() => {
-    const show = async () => {
-      setTimeout(() => {
-        setConnectOpen(true);
-      }, 30000);
-    };
-    show();
-  }, []);
+  // useScrollPosition(
+  //   ({ prevPos, currPos }) => {
+  //     const isShow = currPos.y > prevPos.y;
+  //     if (isShow !== showOnScroll) setShowOnScroll(isShow);
+  //   },
+  //   [showOnScroll],
+  //   undefined,
+  //   false,
+  //   300
+  // );
+  //
+  // useEffect(() => {
+  //   const show = async () => {
+  //     setTimeout(() => {
+  //       setConnectOpen(true);
+  //     }, 30000);
+  //   };
+  //   show();
+  // }, []);
 
   return useMemo(
     () => (
@@ -80,7 +63,7 @@ const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
           <div className={"headerInner"}>
             <Link href="/">
               <a className={open ? "logo menuOpen" : "logo"}>
-                <img src={whatLogo()} alt="Logo" />
+                <img src={Logo.src} alt="Logo" />
               </a>
             </Link>
             <div onClick={() => setOpen(true)} className="hamburger-wrapper">
@@ -103,7 +86,7 @@ const Header = ({ children, colorMode, dashboardOffset }: IHeader) => {
         />
       </>
     ),
-    [open, activeLogo, dashboardOffset, connectOpen, policityOpen, showOnScroll]
+    [open, dashboardOffset, connectOpen, policityOpen, showOnScroll]
   );
 };
 

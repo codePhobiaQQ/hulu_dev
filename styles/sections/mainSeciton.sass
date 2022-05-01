@@ -4,7 +4,7 @@
   height: 100vh
   position: relative
   z-index: 1
-  background-color: $backgroundColor
+  //background-color: $backgroundColor
   will-change: opacity
   .dirty
     position: absolute
@@ -26,13 +26,14 @@
       width: 717px
       transition: opacity .4s ease
       color: #fff
-      will-change: transform, contents
+
       &.hide
         opacity: 0
       h1
         font-size: 60px
         font-family: "SequelBookBody", sans-serif
         line-height: 140%
+        will-change: transform
         span
           font-family: "SequelBookOblBody", sans-serif
 
@@ -72,7 +73,6 @@
     button
       width: 100%
       height: 100%
-
       display: flex
       align-items: center
       justify-content: center

@@ -1,6 +1,6 @@
 import Header from "../hoc/Header/Header";
 import MainSection from "../sections/MainSection";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useViewportScroll } from "framer-motion";
 import WrapperSecond from "../sections/WrapperSecond";
 import DashboardSection from "../sections/DashboardSection";
@@ -12,17 +12,38 @@ import ContactSection from "../sections/ContactSection";
 import TesteMonials from "../sections/TesteMonials";
 import EventsSection from "../sections/EventsSection";
 
+interface PositionInterface {
+  main: number;
+  about: number;
+  // risk: number;
+  // contacts: number;
+  // blog: number;
+}
+
 const MainPage = () => {
   const { scrollY } = useViewportScroll();
-
+  const [lastScroll, setLastScroll] = useState<number>(0);
   const [dashboardOffset, setDashboardOffset] = useState<number>(900);
   const [dashboardHeight, setDashboardHeight] = useState<number>(630);
-  const [topPosition, setTopPosition] = useState<number>(0);
+  // const [topPosition, setTopPosition] = useState<PositionInterface>({
+  //   main: 0,
+  //   about: 0,
+  // });
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setTopPosition(position);
+  const scrollPosition = () => {
+    return window.pageYOffset || document.documentElement.scrollTop;
   };
+
+  const scrollHandler = () => {
+    console.log(lastScroll);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
 
   return (
     <Header
@@ -48,6 +69,3 @@ const MainPage = () => {
 };
 
 export default MainPage;
-function useEffect(arg0: () => () => void, arg1: never[]) {
-  throw new Error("Function not implemented.");
-}

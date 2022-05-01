@@ -37,9 +37,9 @@ const SocLinks = ({ social }: ISocLinksProps) => {
     },
   ];
   return (
-    <ul ref={social}>
+    <ul className={"socLinks"} ref={social}>
       {links.map((link, index) => (
-        <li key={"socLInk" + index + link.link}>
+        <li key={"socLInk" + link.img + link.link}>
           <a href={link.link}>
             <img src={link.img} alt="soc" />
           </a>

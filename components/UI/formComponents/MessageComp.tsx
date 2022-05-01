@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Field } from "formik";
 
 const MIN_TEXTAREA_HEIGHT = 55;
@@ -6,7 +6,7 @@ const MIN_TEXTAREA_HEIGHT = 55;
 export const MessageComp = () => {
   const textareaRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     textareaRef.current ? (textareaRef.current.style.height = "inherit") : null;
     textareaRef.current
       ? (textareaRef.current.style.height = `${Math.max(
