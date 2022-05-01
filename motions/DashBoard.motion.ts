@@ -7,23 +7,29 @@ export const wrapperVariant = {
   },
 };
 
+interface IFadeLeft {
+  xing: number;
+  delaying: number;
+}
+
 export const fadeFromLeft = {
-  hidden: (xing: number) => {
+  hidden: ({ xing, delaying = 0 }: IFadeLeft) => {
     const result = {
       opacity: 0,
       x: xing,
     };
     return result;
   },
-  visible: {
+  visible: ({ xing, delaying = 0 }: IFadeLeft) => ({
     opacity: 1,
     x: 0,
     transition: {
       duration: 0.5,
       type: "spring",
       stiffness: 100,
+      delay: delaying,
     },
-  },
+  }),
 };
 
 export const fadeIn = {
