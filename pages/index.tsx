@@ -23,6 +23,9 @@ export interface PositionInterface {
 const MainPage = () => {
   const { scrollY } = useViewportScroll();
   const [lastScroll, setLastScroll] = useState<number>(0);
+  const [lastScrollHelper, setLastScrollHelper] = useState<number>(0);
+  const [isHide, setIsHide] = useState<boolean>(false);
+
   const [dashboardOffset, setDashboardOffset] = useState<number>(900);
   const [dashboardHeight, setDashboardHeight] = useState<number>(630);
   const [isLightLogo, setIsLightLogo] = useState<boolean>(true);
@@ -36,6 +39,10 @@ const MainPage = () => {
     return window.pageYOffset || document.documentElement.scrollTop;
   };
 
+  useEffect(() => {
+    setLastScrollHelper(scrollPosition());
+  }, []);
+
   const scrollHandler = () => {
     const position = scrollPosition();
     if (position < topPosition1 && isLightLogo == false) {
@@ -45,35 +52,49 @@ const MainPage = () => {
       position <= topPosition2 &&
       isLightLogo != false
     ) {
-      console.log("1");
       setIsLightLogo(false);
     } else if (
       position > topPosition2 &&
       position < topPosition3 &&
       isLightLogo == false
     ) {
-      console.log("2");
       setIsLightLogo(true);
     } else if (
       position >= topPosition3 &&
       position <= topPosition4 &&
       isLightLogo != false
     ) {
-      console.log("3");
       setIsLightLogo(false);
     } else if (position > topPosition4 && isLightLogo == false) {
-      console.log("4");
       setIsLightLogo(true);
+    }
+
+    if (position > lastScrollHelper + 80) {
+      if (!isHide) {
+        setIsHide(true);
+      }
+      setLastScrollHelper(position);
+      setLastScroll(position);
+    } else if (position < lastScroll) {
+      if (isHide) setIsHide(false);
+      setLastScrollHelper(position);
+      setLastScroll(position);
     }
   };
 
   useEffect(() => {
-    console.log(topPosition1, topPosition2, topPosition3, topPosition4);
     window.addEventListener("scroll", scrollHandler);
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, [topPosition1, topPosition2, topPosition3, topPosition4, isLightLogo]);
+  }, [
+    topPosition1,
+    topPosition2,
+    topPosition3,
+    topPosition4,
+    isLightLogo,
+    lastScroll,
+  ]);
 
   return (
     <Header
@@ -81,6 +102,7 @@ const MainPage = () => {
       dashboardOffset={dashboardOffset}
       dashboardHeight={dashboardHeight}
       isLightLogo={isLightLogo}
+      isHide={isHide}
     >
       <MainSection />
       <WrapperSecond setTopPosition={setTopPosition1} scrolling={scrollY} />

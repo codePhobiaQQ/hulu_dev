@@ -14,10 +14,16 @@
   &.white
     .hamburger-container .hamburger, .hamburger-container ::after, .hamburger-container ::before
       background-color: #000
-      transition: background-color .3s ease
+      transition: background-color .3s $transition
     .hamburger-container .hamburger.active
       background-color: #fff
-      transition: background-color .3s ease
+      transition: background-color .3s $transition
+
+  .hamburger-wrapper
+    &.dark
+      .hamburger-container .hamburger, .hamburger-container ::after, .hamburger-container ::before
+        background-color: #000
+        transition: background-color .3s $transition
 
   &.grey, &.white
     .headerInner
@@ -69,12 +75,12 @@
         border-radius: 50%
         background-color: #424242
         position: relative
-        transition: all .3s ease
+        transition: all .3s $transition
         &:after
           @include afterMix
           position: absolute
           width: 29px
-          transition: border .2s ease
+          transition: border .3s $transition
           top: -2px
           left: -2px
           height: 29px
@@ -95,6 +101,7 @@
       cursor: pointer
       height: 100%
 
+
   @media only screen and (max-width: 992px)
     backdrop-filter: blur(30px)
     -webkit-backdrop-filter: blur(30px)
@@ -106,7 +113,14 @@
           width: 67px
 
   @media only screen and (max-width: 767px)
+    padding: 10px
     .headerInner
+      .hamburger-wrapper
+        transform: scale(0.7)
+      .logo
+        svg
+          width: 67px
+          height: 26px
       .colors
         margin-right: 15px
       .logo.menuOpen

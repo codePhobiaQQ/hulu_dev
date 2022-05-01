@@ -11,7 +11,7 @@ const BlogSection = ({ setTopPosition }: IBlogSection) => {
 
   useEffect(() => {
     sectionRef.current
-      ? setTopPosition(sectionRef.current.offsetTop - 150)
+      ? setTopPosition(sectionRef.current.offsetTop - 100)
       : null;
   }, [sectionRef]);
 

@@ -16,6 +16,7 @@ interface IHeader {
   dashboardOffset?: number;
   dashboardHeight?: number;
   isLightLogo: boolean;
+  isHide: boolean;
 }
 
 const Header = ({
@@ -23,32 +24,11 @@ const Header = ({
   colorMode,
   dashboardOffset,
   isLightLogo,
+  isHide,
 }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
-
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
   const [policityOpen, setPolicityOpen] = useState<boolean>(false);
-  const [showOnScroll, setShowOnScroll] = useState(true);
-
-  // useScrollPosition(
-  //   ({ prevPos, currPos }) => {
-  //     const isShow = currPos.y > prevPos.y;
-  //     if (isShow !== showOnScroll) setShowOnScroll(isShow);
-  //   },
-  //   [showOnScroll],
-  //   undefined,
-  //   false,
-  //   300
-  // );
-  //
-  // useEffect(() => {
-  //   const show = async () => {
-  //     setTimeout(() => {
-  //       setConnectOpen(true);
-  //     }, 30000);
-  //   };
-  //   show();
-  // }, []);
 
   return useMemo(
     () => (
@@ -63,7 +43,7 @@ const Header = ({
 
         <div
           className={
-            showOnScroll ? "header " + colorMode : "header hide " + colorMode
+            isHide ? "header hide " + colorMode : "header " + colorMode
           }
         >
           <div className={"headerInner"}>
@@ -72,7 +52,12 @@ const Header = ({
                 <Logo isLightLogo={isLightLogo} />
               </a>
             </Link>
-            <div onClick={() => setOpen(true)} className="hamburger-wrapper">
+            <div
+              onClick={() => setOpen(true)}
+              className={
+                isLightLogo ? "hamburger-wrapper" : "hamburger-wrapper dark"
+              }
+            >
               <div className="hamburger-container">
                 <div className={"hamburger active"}></div>
               </div>
@@ -92,14 +77,7 @@ const Header = ({
         />
       </>
     ),
-    [
-      open,
-      dashboardOffset,
-      connectOpen,
-      policityOpen,
-      showOnScroll,
-      isLightLogo,
-    ]
+    [open, dashboardOffset, connectOpen, policityOpen, isHide, isLightLogo]
   );
 };
 
