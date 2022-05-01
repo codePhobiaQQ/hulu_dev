@@ -1,19 +1,33 @@
 import TopLine from "../UI/riscSection/TopLine";
 import PlainLine from "../UI/riscSection/PlainLine";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../motions/RiskSection.motion";
 
 interface IRiskElem {
   classing?: string;
   plainLine?: string;
   text: string;
   classMob?: string;
+  custom?: number;
+  customLine?: number;
 }
 
-const RiskElem = ({ classing, plainLine, text, classMob }: IRiskElem) => {
+const RiskElem = ({
+  classing,
+  plainLine,
+  text,
+  classMob,
+  custom,
+  customLine,
+}: IRiskElem) => {
   return (
-    <div className={`riskBlock ${classMob ? classMob : ""}`}>
-      {classing && <TopLine classing={classing} />}
-      {plainLine && <PlainLine classing={plainLine} />}
+    <motion.div
+      variants={fadeIn}
+      custom={custom || 0}
+      className={`riskBlock ${classMob ? classMob : ""}`}
+    >
+      {classing && <TopLine custom={customLine} classing={classing} />}
+      {plainLine && <PlainLine custom={customLine} classing={plainLine} />}
       <div className="riskInner"></div>
       <span className="showData">Show data</span>
       <div className="field">
@@ -38,7 +52,7 @@ const RiskElem = ({ classing, plainLine, text, classMob }: IRiskElem) => {
         <div className={"active left"}>Data Mapping</div>
         <div className={"right"}>Rule Detail</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

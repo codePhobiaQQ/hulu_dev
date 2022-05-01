@@ -1,10 +1,13 @@
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import StartIcon from "../components/UI/StartIcon";
 import TopLine from "../components/UI/riscSection/TopLine";
 import RiskElem from "../components/riskSection/RiskElem";
 import Finish from "../components/UI/riscSection/Finish";
 import RightLine from "../components/riskSection/RightLine";
 import LeftLine from "../components/riskSection/LeftLine";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { wrapperVariant, fadeIn } from "../motions/RiskSection.motion";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface IRiskSection {
   setTopPosition: Dispatch<SetStateAction<number>>;
@@ -19,54 +22,77 @@ const RiscScenarios = ({ setTopPosition }: IRiskSection) => {
       : null;
   }, [sectionRef]);
 
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   return (
     <section ref={sectionRef} id="Risk" className="RiscScenarios">
       <div className="container">
         <h2>RISK SCENARIOS</h2>
       </div>
       <div className="riskContainer">
-        <div className="schemaWrapper">
+        <motion.div
+          className="schemaWrapper"
+          ref={ref}
+          animate={inView ? "visible" : "hidden"}
+          variants={wrapperVariant}
+        >
           <span className="schemaSpan">
             Use drag-n-drop tools to build your perfect fraud prevention
             scenarios
           </span>
           <div className="leftSide">
-            <div className="startBtn">
-              <RightLine />
+            <motion.div variants={fadeIn} custom={1} className="startBtn">
+              <RightLine custom={4} />
               <StartIcon />
               <span>input</span>
-              <div className="plainLine"></div>
-              <TopLine classing={"topLine"} />
-              <TopLine classing={"topLine second"} />
+              <motion.div
+                variants={fadeIn}
+                custom={1}
+                className="plainLine"
+              ></motion.div>
+              <TopLine custom={2} classing={"topLine"} />
+              <TopLine custom={4} classing={"topLine second"} />
               <div className="startInner"></div>
-            </div>
+            </motion.div>
           </div>
           <div className="secondSide">
-            <LeftLine />
-            <RightLine />
+            <LeftLine custom={6} />
+            <RightLine custom={7} />
             <RiskElem
               classMob={"mobi"}
               text={"Client_sorter_latest"}
               classing={"topLine"}
+              custom={3}
+              customLine={6}
             />
             <RiskElem
               classMob={"mob"}
               text={"Loan_type_latest"}
               classing={"bottomLine"}
+              custom={5}
+              customLine={7}
             />
-            <div className="plainLine"></div>
+            <motion.div custom={9} className="plainLine"></motion.div>
           </div>
           <div className="thirdSide">
             <div className="thirdSideInner"></div>
-            <RiskElem text={"Loan_sorter_latest"} plainLine={"plainLine"} />
+            <RiskElem
+              custom={8}
+              text={"Loan_sorter_latest"}
+              plainLine={"plainLine"}
+              customLine={9}
+            />
           </div>
-          <div className="finishSide">
+          <motion.div variants={fadeIn} custom={10} className="finishSide">
             <div className="finishBtn">
               <Finish />
               <span>Output</span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

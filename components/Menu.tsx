@@ -95,7 +95,7 @@ const Menu = ({ setOpen, open }: IMenu) => {
                     variants={fadeFromBot}
                     custom={index}
                     onClick={clickLinkHandler}
-                    key={"menuElem" + index + el.link + el.name}
+                    key={"menuElem" + el.link + el.name}
                   >
                     <Link href={`${el.link}`}>
                       <a>{el.name}</a>

@@ -409,7 +409,15 @@ $beige: #fff;
 }
 
 @media only screen and (max-width: 767px) {
+  .menuUI {
+    .close {
+      top: 5%;
+    }
+  }
+
+
   .menuUI nav .menu {
+
     .line {
       margin: 0 54px 0 40px
     }
