@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UI/RangeWrapper.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/popups/PortfolioPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/popups/PortfolioPopup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/teamLeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/teamLeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/PortfolioPopup.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/PortfolioPopup.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/sections/OurTeamSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/OurTeamSection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +118,7 @@
       <workItem from="1650737779142" duration="50304000" />
       <workItem from="1651343572478" duration="4480000" />
       <workItem from="1651405262892" duration="1077000" />
-      <workItem from="1651407399919" duration="30494000" />
+      <workItem from="1651407399919" duration="33162000" />
     </task>
     <servers />
   </component>

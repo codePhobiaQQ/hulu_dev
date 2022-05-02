@@ -55,10 +55,9 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
 
 
           .cardInfo
-            transform: translateY(40%)
             transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
             position: absolute
-            bottom: -60px
+            bottom: 20px
 
             &:after
               content: ''
@@ -73,21 +72,23 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
               opacity: 0
               transform: translateY(100%)
               transition: 5s 1s $returnEasing
+
             .mainInfo
               display: flex
               justify-content: space-between
-              margin-bottom: 23px
               padding: 0 20px
               span
                 color: $accent
                 font-family: "SequelMediumBody"
                 font-size: 36px
-            p
-              opacity: 0
-              padding: 0 20px
-              line-height: 140%
-              color: #fff
-              transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
+            .subInfo
+              p
+                opacity: 0
+                padding: 0 20px
+                line-height: 140%
+                max-height: 0
+                color: #fff
+                transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
 
 
         &:hover
@@ -127,7 +128,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
           height: 400px
           .cardWrap
             .cardInfo
-              bottom: -100px
               .mainInfo
                 span
                   font-size: 25px

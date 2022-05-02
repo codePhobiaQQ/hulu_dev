@@ -2,7 +2,6 @@ import linkIn from "../public/assets/svg/in.svg";
 import React from "react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { log } from "util";
 
 interface ILeader {
   img: string;
@@ -23,57 +22,51 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   const [top, setTop] = useState<number>(10000);
   const [mouseX, setMouseX] = useState<number>(0);
   const [mouseY, setMouseY] = useState<number>(0);
-  const [textHeight, setTextHeight] = useState<number>(0);
 
-  let mouseLeaveDelay: any = null;
+  const mouseLeaveDelay: any = null;
 
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-  }, []);
+  // useEffect(() => {
+  //   setWindowWidth(window.innerWidth);
+  // }, []);
 
-  const textEl = useRef<HTMLDivElement>(null);
-  const helpRef = useRef<HTMLInputElement | null>(null);
+  // const textEl = useRef<HTMLDivElement>(null);
+  // const helpRef = useRef<HTMLInputElement | null>(null);
 
-  useEffect(() => {
-    man.current ? setHeight(man.current.offsetHeight) : null;
-    man.current ? setWidth(man.current.offsetWidth) : null;
-  }, [man.current]);
+  // useEffect(() => {
+  //   man.current ? setHeight(man.current.offsetHeight) : null;
+  //   man.current ? setWidth(man.current.offsetWidth) : null;
+  // }, [man.current]);
 
-  useEffect(() => {
-    man.current ? setLeft(man.current.offsetLeft) : null;
-    man.current ? setTop(man.current.offsetTop) : null;
-  }, [sectionOffset]);
+  // useEffect(() => {
+  //   man.current ? setLeft(man.current.offsetLeft) : null;
+  //   man.current ? setTop(man.current.offsetTop) : null;
+  // }, [sectionOffset]);
+  //
+  // const mousePX = () => mouseX / width;
+  // const mousePY = () => mouseY / height;
 
-  useEffect(() => {
-    textEl.current ? setTextHeight(textEl.current.clientHeight) : null;
-  }, [textEl.current]);
+  // const cardStyle = () => {
+  //   const rX = mousePX() * 15;
+  //   const rY = mousePY() * 15;
+  //   return {
+  //     transform: `rotateY(${rY}deg) rotateX(${rX}deg)`,
+  //   };
+  // };
+  // const mouseMove = (e: any) => {
+  //   setMouseY(Math.abs(e.pageY - sectionOffset - top - height / 2));
+  //   setMouseX(Math.abs(e.pageX - left - width / 2));
+  // };
 
-  console.log("textHeight", textHeight);
-
-  const mousePX = () => mouseX / width;
-  const mousePY = () => mouseY / height;
-
-  const cardStyle = () => {
-    const rX = mousePX() * 15;
-    const rY = mousePY() * 15;
-    return {
-      transform: `rotateY(${rY}deg) rotateX(${rX}deg)`,
-    };
-  };
-  const mouseMove = (e: any) => {
-    setMouseY(Math.abs(e.pageY - sectionOffset - top - height / 2));
-    setMouseX(Math.abs(e.pageX - left - width / 2));
-  };
   const mouseEnter = () => {
     setIsHover(true);
     clearTimeout(mouseLeaveDelay);
   };
   const mouseLeave = () => {
     setIsHover(false);
-    mouseLeaveDelay = setTimeout(() => {
-      // setMouseX(0);
-      // setMouseY(0);
-    }, 1000);
+    // mouseLeaveDelay = setTimeout(() => {
+    // setMouseX(0);
+    // setMouseY(0);
+    // }, 1000);
   };
 
   return windowWidth > 992 ? (
@@ -81,25 +74,17 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
       // onMouseMove={(e) => mouseMove(e)}
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
-      ref={man}
     >
-      <div className="cardWrap" style={{ ...cardStyle() }}>
+      <div className="cardWrap">
         <div className="teamImg">
           <Image width={430} height={600} src={img} alt="team" />
         </div>
-        <div
-          style={
-            isHover
-              ? { bottom: textHeight - (window.innerWidth > 1200 ? 40 : 150) }
-              : {}
-          }
-          className="cardInfo"
-        >
+        <div className="cardInfo">
           <div className="mainInfo">
             <span>{name}</span>
             <Image width={40} height={40} src={linkIn.src} alt="in" />
           </div>
-          <div ref={textEl} className="subInfo">
+          <div className="subInfo">
             <p>{text}</p>
           </div>
         </div>
@@ -116,7 +101,7 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
             <span>{name}</span>
             <Image width={40} height={40} src={linkIn.src} alt="in" />
           </div>
-          <div ref={textEl} className="subInfo">
+          <div className="subInfo">
             <p>{text}</p>
           </div>
         </div>

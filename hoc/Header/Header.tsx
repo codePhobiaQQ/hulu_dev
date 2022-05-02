@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Menu from "../../components/Menu";
 import Head from "next/head";
-import { Dispatch, SetStateAction, useMemo, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
 import FooterSection from "../../sections/FooterSection";
 import { MotionValue } from "framer-motion";
 import ConnectPopup from "../../components/popups/ConnectPopup";
@@ -27,6 +27,15 @@ const Header = ({
   const [open, setOpen] = useState<boolean>(false);
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
   const [policityOpen, setPolicityOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const show = async () => {
+      setTimeout(() => {
+        setConnectOpen(true);
+      }, 30000);
+    };
+    show();
+  }, []);
 
   return useMemo(
     () => (

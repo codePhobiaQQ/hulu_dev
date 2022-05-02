@@ -24,49 +24,53 @@
     cursor: pointer
     right: 25px
     transition: all .3s ease
+    svg
+      width: calc(#{$adaptation} * 1.6)
     &:hover
       transform: scale(1.04)
 
   .container
-    display: flex
-    justify-content: space-between
-    .contentSide
-      width: 890px
-      overflow: auto
-      padding-right: 10px
-      .infoLineWrapper
-        & > div
-          display: none !important
-          img
-            display: none
-        .infoLine
-          display: flex
-          width: 100%
-          justify-content: space-between
-          margin-bottom: 80px
-          .infoElem
-            span, a
-              display: block
-            .what
-              font-size: 18px
-              font-family: "SequelMediumBody", sans-serif
-              margin-bottom: 10px
-              color: #949494
-            .value
-              font-size: 26px
-              color: #424242
-              font-family: "SequelRomanBody", sans-serif
+    .contentSideInnerWrapper
+      display: flex
+      justify-content: space-between
 
-      .textContent
-        p
-          font-size: 18px
-          font-family: "SequelLightBody", sans-serif
-          color: #131313
-          margin-bottom: 40px
-          line-height: 140%
-      .contactBtn
-        @include greenBtn()
-        margin-left: auto
+      .contentSide
+        width: 890px
+        overflow: auto
+        padding-right: 10px
+        .infoLineWrapper
+          & > div
+            display: none !important
+            img
+              display: none
+          .infoLine
+            display: flex
+            width: 100%
+            justify-content: space-between
+            margin-bottom: 80px
+            .infoElem
+              span, a
+                display: block
+              .what
+                font-size: 18px
+                font-family: "SequelMediumBody", sans-serif
+                margin-bottom: 10px
+                color: #949494
+              .value
+                font-size: 26px
+                color: #424242
+                font-family: "SequelRomanBody", sans-serif
+
+        .textContent
+          p
+            font-size: 18px
+            font-family: "SequelLightBody", sans-serif
+            color: #131313
+            margin-bottom: 40px
+            line-height: 140%
+        .contactBtn
+          @include greenBtn()
+          margin-left: auto
 
   @media only screen and (max-width: 1919px)
     .container
@@ -80,77 +84,99 @@
             & > img
               width: 100%
               height: 100%
-      .contentSide
-        width: 770px
-        .infoLineWrapper
-          .infoLine
-            margin-bottom: 50px
-            .infoElem
-              .what
-                font-size: 13px
-              .value
-                font-size: 20px
-        .textContent
-          p
-            margin-bottom: 20px
+      .contentSideInnerWrapper
+        .contentSide
+          width: 770px
+          .infoLineWrapper
+            .infoLine
+              margin-bottom: 50px
+              .infoElem
+                .what
+                  font-size: 13px
+                .value
+                  font-size: 20px
+          .textContent
+            p
+              margin-bottom: 20px
 
   @media only screen and (max-width: 1359px)
     height: 100%
     .container
       padding: 5% 0
       height: 100%
-      overflow: auto
       .logoSide
         display: none
-      .contentSide
-        width: 98%
-        .infoLineWrapper
-          display: flex
-          margin-bottom: 50px
-          & > div
-            width: 154px
-            height: 50px
-            display: block !important
+      .contentSideInnerWrapper
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 100%
+        .contentSide
+          width: 98%
+          .infoLineWrapper
+            display: flex
+            margin-bottom: 50px
             & > div
-              width: 100%
-              height: 100%
-              & > img
+              width: 154px
+              height: 50px
+              display: block !important
+              & > div
                 width: 100%
                 height: 100%
-          .infoLine
-            width: 330px
-            flex-wrap: wrap
-            margin-left: auto
-            .infoElem
-              width: 50%
-              &:first-child
-                margin-bottom: 35px
-        .textContent
-          p
-            font-size: 13px
-            margin-bottom: 30px
+                & > img
+                  width: 100%
+                  height: 100%
+            .infoLine
+              width: 330px
+              flex-wrap: wrap
+              margin-left: auto
+              .infoElem
+                width: 50%
+                &:first-child
+                  margin-bottom: 35px
+          .textContent
+            overflow: auto
+            p
+              font-size: 13px
+              margin-bottom: 30px
 
   @media only screen and (max-width: 767px)
     .container
-      .contentSide
-        .infoLineWrapper
-          flex-direction: column
-          align-items: center
-          margin-bottom: 0
-          & > div
-            width: 75px
-            height: 24px
-          .infoLine
-            margin: 15px auto 20px auto
-            .infoElem
-              text-align: center
+      .contentSideInnerWrapper
+        align-items: inherit
+        //justify-content: inherit
+        //padding-top: 50px
+        .contentSide
+          overflow: inherit
+          .infoLineWrapper
+            flex-direction: column
+            margin-bottom: 0
+            align-items: flex-start
+            & > div
+              width: 75px
+              height: 24px
+              margin: auto !important
+            .infoLine
+              margin: 30px auto 20px auto
+              .infoElem
+                text-align: center
 
-        .contactBtn
-          width: 121px
-          height: 37px
-          font-size: 13px
+          .textContent
+            overflow: auto
+            max-height: 300px
+            p
+              &:last-child
+                margin-bottom: 0
+
+          .contactBtn
+            margin-top: 30px
+            width: 121px
+            height: 37px
+            font-size: 13px
 
   @media only screen and (max-width: 576px)
+    .close
+      top: 35px
     .container
       .contentSide
         width: 100%
@@ -159,5 +185,5 @@
             .infoElem
               width: 48%
               text-align: left
-              margin-left: 2%
+              //margin-left: 2%
 
