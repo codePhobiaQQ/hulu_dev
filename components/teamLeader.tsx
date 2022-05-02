@@ -23,6 +23,17 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   const [mouseX, setMouseX] = useState<number>(0);
   const [mouseY, setMouseY] = useState<number>(0);
 
+  const resizeHandler = (e: any) => {
+    setWindowWidth(e.target.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, [windowWidth]);
+
   const mouseLeaveDelay: any = null;
 
   // useEffect(() => {
@@ -63,10 +74,6 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   };
   const mouseLeave = () => {
     setIsHover(false);
-    // mouseLeaveDelay = setTimeout(() => {
-    // setMouseX(0);
-    // setMouseY(0);
-    // }, 1000);
   };
 
   return windowWidth > 992 ? (

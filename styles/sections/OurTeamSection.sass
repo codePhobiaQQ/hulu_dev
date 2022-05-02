@@ -18,6 +18,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
     ul.teamLists
       display: flex
       justify-content: center
+      display: none !important
       li
         cursor: pointer
         position: relative
@@ -31,7 +32,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
 
         &:hover
           .cardWrap
-            transition: 0.6s $hoverEasing, box-shadow 2s $hoverEasing
+            //transition: 0.6s $hoverEasing, box-shadow 2s $hoverEasing
 
 
         .cardWrap
@@ -39,7 +40,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
           height: 100%
           overflow: hidden
           box-shadow: rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(white, 0.5) 0 0 0 6px
-          transition: 1s $returnEasing
+          transition: 2.5s $returnEasing
           transform: perspective(800px)
           transform-style: preserve-3d
 
@@ -57,7 +58,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
           .cardInfo
             transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
             position: absolute
-            bottom: 20px
+            bottom: -5px
 
             &:after
               content: ''
@@ -85,33 +86,35 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
               p
                 opacity: 0
                 padding: 0 20px
+                padding-bottom: 25px
+                padding-top: 0
                 line-height: 140%
                 max-height: 0
                 color: #fff
-                transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
+                transition: all .8s ease
+
 
 
         &:hover
-          .cardInfo
-            bottom: 0
-
-          .cardInfo p
+          .cardWrap .cardInfo .subInfo p
             opacity: 1
+            max-height: 600px
+            padding-top: 15px
 
           .cardInfo, .cardInfo p
-            transition: 0.6s $hoverEasing
+            transition: 0.4s $hoverEasing
 
           .card-info:after
-            transition: 5s $hoverEasing
+            transition: .4s $hoverEasing
             opacity: 1
             transform: translateY(0)
 
           .card-bg
-            transition: 0.6s $hoverEasing, opacity 5s $hoverEasing
+            transition: 0.4s $hoverEasing, opacity .4s $hoverEasing
             opacity: 0.8
 
           .card
-            transition: 0.6s $hoverEasing, box-shadow 2s $hoverEasing
+            transition: 0.4s $hoverEasing, box-shadow .4s $hoverEasing
             box-shadow: rgba(white, 0.2) 0 0 40px 5px, rgba(white, 1) 0 0 0 1px, rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px
 
 
@@ -202,10 +205,13 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
               padding: 0
               .mainInfo
                 span
-                  font-size: 16px
+                  font-size: 25px
                 img
-                  width: 16px
-                  height: 16px
+                  width: 25px
+                  height: 25px
+                .subInfo
+                  p
+                    font-size: 16px
 
   @media only screen and (max-width: 767px)
     padding-top: 20px
@@ -226,12 +232,3 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
           .cardWrap
             .cardInfo
               padding: 0
-              .mainInfo
-                span
-                  font-size: 25px
-                img
-                  width: 25px
-                  height: 25px
-              .subInfo
-                p
-                  font-size: 16px
