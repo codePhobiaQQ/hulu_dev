@@ -1,0 +1,145 @@
+@import "./../styles/mixins/vars"
+@import "./../styles/mixins/mixins"
+
+.screeningMonitor
+  width: 630px
+  height: 493px
+  border-radius: 24px
+  border: 1px solid #666666
+  background-color: #F4F4F4
+  overflow: hidden
+  position: relative
+  will-change: contents
+  .topi
+    @include afterMix
+    top: 0
+    width: 100%
+    height: 62px
+    background-color: #4A586A
+    display: flex
+    align-items: center
+    .circles
+      display: flex
+      align-items: center
+      margin-left: 30px
+      .circle
+        background-color: #FFFFFF
+        width: 15px
+        height: 15px
+        border-radius: 50%
+        &:nth-child(2)
+          margin: 0 16px
+  .contenti
+    padding: 0 70px 66px 70px
+    .infoLine
+      height: 105px
+      display: flex
+      align-items: center
+      margin-top: 103px
+      .leftSide
+        display: flex
+        align-items: center
+        div.leftSideContent
+          &.single
+            margin-left: 0
+        .imgWrap
+          width: 84px
+          height: 84px
+          border-radius: 50%
+          overflow: hidden
+          & > div
+            width: 100%
+            height: 100%
+        div.leftSideContent
+          margin-left: 30px
+          h3, span
+            display: block
+          h3
+            color: #00C497
+            font-size: 28px
+            font-family: "SequelLightBody", sans-serif
+            margin-bottom: 11px
+          span
+            font-size: 18px
+            font-family: "SequelBookBoldBody", sans-serif
+            align-text: min-content
+      .rightSide
+        margin-left: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        span
+          display: block
+          margin-bottom: 7px
+          font-size: 13px
+          font-family: "SequelMediumBody", sans-serif
+        .imgWrap
+          width: 80px
+          height: 80px
+          & > div
+            width: 100%
+            height: 100%
+    .tableLine
+      margin-top: 29px
+      width: 100%
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr 1fr
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+      gap: 10px 10px
+      grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." ". . . ."
+      &.second
+      li
+        background-color: #666666
+        border-radius: 5px
+        display: flex
+        align-items: center
+        font-family: "SequelMediumBody", sans-serif
+        padding: 5px 0 7px
+        color: #fff
+        font-size: 13px
+        justify-content: center
+
+  @media only screen and (max-width: 768px)
+    transform: scale(.75) !important
+    //margin: auto
+
+  @media only screen and (max-width: 576px)
+    transform: scale(1) !important
+    width: 331px
+    height: 260px
+    .contenti
+      padding: 0 38px 36px 38px
+      .tableLine
+        li
+          font-size: 7px
+          padding: 2px 0 3px 0
+      .infoLine
+        margin-top: 58px
+        height: 54px
+        .leftSide
+          .imgWrap
+            width: 44px
+            height: 44px
+          div.leftSideContent
+            margin-left: 14px
+            h3
+              font-size: 14px
+              margin-bottom: 8px
+            span
+              font-size: 9px
+        .rightSide
+          span
+            font-size: 7px
+            margin-bottom: 3px
+          .imgWrap
+            width: 42px
+            height: 42px
+    .topi
+      height: 32px
+      .circles
+        .circle
+          height: 8px
+          width: 8px
+          &:nth-child(2)
+            margin: 0 8px
+

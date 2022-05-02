@@ -45,12 +45,6 @@
             line-height: 140%
             width: 100%
         .imageWrapper
-          & > div
-            width: 630px
-            height: 493px
-            img
-              width: 630px
-              height: 493px
     .risk
       margin-bottom: 0
 
@@ -126,13 +120,14 @@
       .afterDash
         .helpWrapper
           .imageWrapper
-            & > div
-              width: 100%
-              height: 300px
-              img
-                object-fit: contain
-                height: 300px
 
+  @media only screen and (max-width: 768px)
+    .afterDash
+      .helpWrapper
+        .imageWrapper
+          display: flex
+          align-items: center
+          justify-content: center
 
   @media only screen and (max-width: 576px)
     padding-bottom: 85px
@@ -157,13 +152,8 @@
             p
               width: 100%
               font-size: 13px
-          .imageWrapper
-            & > div
-              width: 100%
-              height: 260px
-              img
-                object-fit: contain
-                height: 260px
+
+
 
 
 

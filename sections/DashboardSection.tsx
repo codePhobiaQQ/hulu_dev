@@ -7,6 +7,8 @@ import { fadeFromLeft, wrapperVariant } from "../motions/DashBoard.motion";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ScreeningMonitor from "../components/DashboardSection/ScreeningMonitor";
+import { TransactionMonitor } from "../components/DashboardSection/ScreeningMonitor";
 
 interface IDashboardSection {
   setDashboardOffset: Dispatch<SetStateAction<number>>;
@@ -78,11 +80,11 @@ const DashboardSection = ({
               animate={secondInView.inView ? "visible" : "hidden"}
             >
               <motion.div
-                custom={{ xing: -70, delaying: 0.7 }}
+                custom={{ xing: 0, delaying: 0.7 }}
                 variants={fadeFromLeft}
                 className="imageWrapper"
               >
-                <Image src={review1.src} width={630} height={493} />
+                <ScreeningMonitor />
               </motion.div>
               <motion.div
                 variants={fadeFromLeft}
@@ -124,12 +126,13 @@ const DashboardSection = ({
                   action buttons to influence certain decisions
                 </p>
               </motion.div>
+
               <motion.div
-                custom={{ xing: 70, delaying: 0.7 }}
+                custom={{ xing: 0, delaying: 0.7 }}
                 variants={fadeFromLeft}
                 className="imageWrapper"
               >
-                <Image src={review2.src} width={630} height={493} />
+                <TransactionMonitor />
               </motion.div>
             </motion.div>
 
@@ -145,7 +148,7 @@ const DashboardSection = ({
                   variants={fadeFromLeft}
                   className="imageWrapper"
                 >
-                  <Image src={review3.src} width={630} height={493} />
+                  <TransactionMonitor />
                 </motion.div>
                 <motion.div
                   custom={{ xing: 70 }}

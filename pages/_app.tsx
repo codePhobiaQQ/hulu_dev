@@ -17,6 +17,7 @@ import "./../styles/sections/BlogPageSection.sass";
 import "./../styles/sections/BlogSingleNews.sass";
 import "./../styles/sections/RiscSection.sass";
 import "./../styles/sections/ContactSection.sass";
+import "./../styles/monitors.sass";
 import "../styles/Policity.sass";
 import "./../styles/ConnPopup.sass";
 import "../styles/PortfolioPopup.sass";

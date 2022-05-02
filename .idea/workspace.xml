@@ -20,8 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/DashboardSection/ScreeningMonitor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/dashboard/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/dashboard/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/dashboard/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/dashboard/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/dashboard/Jane.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/dashboard/circles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/monitors.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hoc/Header/HeaderBlog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/HeaderBlog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motions/DashBoard.motion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/motions/DashBoard.motion.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/DashboardSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/DashboardSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/AboutSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/AboutSection.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/sections/DashboardSection.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sections/DashboardSection.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -52,9 +66,6 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/img/dashboard" />
       <recent name="$PROJECT_DIR$/public/assets/img/teste" />
@@ -62,8 +73,11 @@
       <recent name="$PROJECT_DIR$/public/assets/img" />
       <recent name="$PROJECT_DIR$/public/assets" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -115,6 +129,7 @@
       <workItem from="1651343572478" duration="4480000" />
       <workItem from="1651405262892" duration="1077000" />
       <workItem from="1651407399919" duration="40942000" />
+      <workItem from="1651474150580" duration="6248000" />
     </task>
     <servers />
   </component>
