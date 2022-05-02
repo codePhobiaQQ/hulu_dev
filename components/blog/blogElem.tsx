@@ -11,7 +11,7 @@ interface IBlogElem {
 
 const BlogElem = ({ blogEl, categories }: IBlogElem) => {
   return (
-    <li variants={fadeIn}>
+    <div className="blogEl">
       <Link href={`/blog/${blogEl.id}`}>
         <a>
           <div className="imgWrapper">
@@ -24,7 +24,7 @@ const BlogElem = ({ blogEl, categories }: IBlogElem) => {
           </div>
         </a>
       </Link>
-    </li>
+    </div>
   );
 };
 

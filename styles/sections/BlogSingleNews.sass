@@ -5,6 +5,9 @@
   padding-top: 101px
   padding-bottom: 104px
   transition: background-color .3s ease
+  &.white + .footerSection, &.grey + .footerSection
+    .container
+      border: none
   &.grey, &.white
     transition: background-color .3s ease
     background-color: #C6C6C6
@@ -33,12 +36,28 @@
   &.white
     background-color: #fff
     .contentWrap
+      p
+        transition: color .3s ease
+        color: #131313
       .infoWrapper
         .categoryBtn
           background-color: transparent
           transition: background-color .3s ease
           border: 1px solid #666666
           color: #666666
+
+  &.black
+    background-color: #131313
+    .contentWrap
+      p
+        transition: color .3s ease
+        color: #fff
+      .infoWrapper
+        .categoryBtn
+          background-color: transparent
+          transition: background-color .3s ease
+          border: 1px solid #666666
+          color: #fff
 
 
   .container
