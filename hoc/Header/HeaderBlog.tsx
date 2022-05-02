@@ -82,7 +82,14 @@ const HeaderBlog = ({ children, setColorMode, colorMode }: IHeader) => {
               ></div>
             </div>
           )}
-          <div onClick={() => setOpen(true)} className="hamburger-wrapper">
+          <div
+            onClick={() => setOpen(true)}
+            className={
+              colorMode != "white"
+                ? "hamburger-wrapper"
+                : "hamburger-wrapper dark"
+            }
+          >
             <div className="hamburger-container">
               <div
                 className={open ? "hamburger active" : "hamburger active"}
