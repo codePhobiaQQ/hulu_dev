@@ -6,7 +6,6 @@ import people from "../../public/assets/img/news/pepole.jpg";
 import Filters from "../../components/blog/Filters";
 import BlogElem from "../../components/blog/blogElem";
 import HeaderBlog from "../../hoc/Header/HeaderBlog";
-import StackGrid, { transitions } from "react-stack-grid";
 
 export interface IBlog {
   name: string;
@@ -239,7 +238,6 @@ const Blog = () => {
       bigImg: arca.src,
     },
   ];
-  const { scaleDown } = transitions;
 
   return (
     <HeaderBlog>
@@ -252,26 +250,15 @@ const Blog = () => {
             categories={categories}
             blogsEl={blogsEl}
           />
-          <div className="blogEls">
-            <StackGrid
-              appear={scaleDown.appear}
-              appeared={scaleDown.appeared}
-              enter={scaleDown.enter}
-              entered={scaleDown.entered}
-              leaved={scaleDown.leaved}
-              gutterWidth={20}
-              gutterHeight={20}
-              columnWidth={"33%"}
-            >
-              {showBlogs.map((blogEl, index) => (
-                <BlogElem
-                  key={"blogEl" + blogEl.id + blogEl.name}
-                  categories={categories}
-                  blogEl={blogEl}
-                />
-              ))}
-            </StackGrid>
-          </div>
+          <ul className="blogEls">
+            {showBlogs.map((blogEl, index) => (
+              <BlogElem
+                key={"blogEl" + index}
+                categories={categories}
+                blogEl={blogEl}
+              />
+            ))}
+          </ul>
         </div>
       </section>
     </HeaderBlog>

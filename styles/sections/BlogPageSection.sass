@@ -17,12 +17,21 @@
           color: #131313
         &:last-child
           margin-right: 0
-    .blogEls
-      position: relative
-      //margin-top: 70px
-      .blogEl
+    ul.blogEls
+      margin-top: 70px
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      grid-template-rows: auto
+      grid-auto-flow: row dense
+      grid-column-gap: 36px
+      grid-row-gap: 36px
+      //display: flex
+      li
+        grid-column-start: auto
+        grid-row-start: auto
         background-color: #1D1D1D
         transition: transform .3s ease
+        //margin-bottom: 76px
         &:hover
           transform: scale(1.02)
         .imgWrapper
@@ -39,7 +48,6 @@
             border: 10px solid #1D1D1D
           img
             width: 100%
-            height: auto
 
 
         .content
@@ -81,10 +89,10 @@
       width: 1013px
       ul.categoriesHead
         flex-wrap: wrap
-      .blogEls
+      ul.blogEls
         margin-top: 60px
-        //grid-column-gap: 21px
-        //grid-row-gap: 21px
+        grid-column-gap: 21px
+        grid-row-gap: 21px
 
 
   @media only screen and (max-width: 1359px)
@@ -96,6 +104,8 @@
           margin-right: 40px
           font-size: 20px
 
+      ul.blogEls
+        grid-template-columns: 1fr 1fr
 
   @media only screen and (max-width: 767px)
     .container
@@ -109,6 +119,5 @@
           height: 30px
           width: inherit
 
-
-
-
+      ul.blogEls
+        grid-template-columns: 1fr
