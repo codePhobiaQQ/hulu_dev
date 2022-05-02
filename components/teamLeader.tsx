@@ -27,7 +27,7 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-  }, []);
+  }, [window.innerWidth]);
 
   const textEl = useRef<HTMLDivElement>(null);
   const helpRef = useRef<HTMLInputElement | null>(null);
@@ -113,6 +113,12 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
           <div ref={textEl} className="subInfo">
             <p>{text}</p>
           </div>
+        </div>
+        <div className="hoverInfo">
+          <p>{text}</p>
+          <a href="#" target="_blank">
+            Follow me
+          </a>
         </div>
       </div>
     </li>

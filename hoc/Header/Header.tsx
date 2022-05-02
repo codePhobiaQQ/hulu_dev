@@ -11,7 +11,6 @@ import Logo from "../../components/UI/Logo";
 interface IHeader {
   children: React.ReactNode;
   setColorMode?: Dispatch<SetStateAction<string>>;
-  colorMode?: string;
   scrolling?: MotionValue<number>;
   dashboardOffset?: number;
   dashboardHeight?: number;
@@ -21,7 +20,6 @@ interface IHeader {
 
 const Header = ({
   children,
-  colorMode,
   dashboardOffset,
   isLightLogo,
   isHide,
@@ -41,11 +39,7 @@ const Header = ({
           />
         </Head>
 
-        <div
-          className={
-            isHide ? "header hide " + colorMode : "header " + colorMode
-          }
-        >
+        <div className={isHide ? "header hide" : "header"}>
           <div className={"headerInner"}>
             <Link href="/">
               <a className={open ? "logo menuOpen" : "logo"}>

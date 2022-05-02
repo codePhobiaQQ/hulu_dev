@@ -1,5 +1,6 @@
 // @ts-ignore
 import { MotionValue, motion, useTransform } from "framer-motion";
+// @ts-ignore
 import { Range, getTrackBackground } from "react-range";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { calcNumbSection } from "../services/calc.service";
