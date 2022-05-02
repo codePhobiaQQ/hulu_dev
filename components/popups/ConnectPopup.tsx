@@ -8,6 +8,8 @@ import CheckedComp from "../UI/formComponents/CheckedComp";
 import { SignupSchema } from "../../sections/ContactSection";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuVariant } from "../../motions/Menu.motion";
+import { mailService } from "../../services/mail.service";
+import { setThanksOpen } from "../../redux/slices/AppSlice";
 
 interface IConnectPopup {
   setConnectOpen: Dispatch<SetStateAction<boolean>>;
@@ -42,7 +44,15 @@ const ConnectPopup = ({ setConnectOpen, connectOpen }: IConnectPopup) => {
                 validationSchema={SignupSchema}
                 onSubmit={async (values: any) => {
                   await new Promise((r) => setTimeout(r, 500));
-                  alert(JSON.stringify(values, null, 2));
+                  const response = mailService(
+                    values.company,
+                    values.name,
+                    values.email,
+                    values.phone,
+                    values.message
+                  );
+                  console.log(response);
+                  dispatch(setThanksOpen(true));
                 }}
               >
                 {({ errors, touched }) => (
