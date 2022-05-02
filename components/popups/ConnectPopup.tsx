@@ -10,6 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { menuVariant } from "../../motions/Menu.motion";
 import { mailService } from "../../services/mail.service";
 import { setThanksOpen } from "../../redux/slices/AppSlice";
+import { useDispatch } from "react-redux";
 
 interface IConnectPopup {
   setConnectOpen: Dispatch<SetStateAction<boolean>>;
@@ -17,6 +18,8 @@ interface IConnectPopup {
 }
 
 const ConnectPopup = ({ setConnectOpen, connectOpen }: IConnectPopup) => {
+  const dispatch = useDispatch();
+
   return (
     <AnimatePresence initial={false}>
       {connectOpen && (
