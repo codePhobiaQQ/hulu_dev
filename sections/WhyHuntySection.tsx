@@ -1,11 +1,9 @@
 // @ts-ignore
 import { MotionValue, motion, useTransform } from "framer-motion";
-// @ts-ignore
 import { Range, getTrackBackground } from "react-range";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { calcNumbSection } from "../services/calc.service";
 import Circles from "../components/Circles";
-import RangeWrapper from "../components/UI/RangeWrapper";
 
 interface IWhyHuntySection {
   setWhyHeight: Dispatch<SetStateAction<number>>;
@@ -41,41 +39,41 @@ const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
             <div className="slider">
               <span className="numbFirst">1 000</span>
 
-              <RangeWrapper
-                step={STEP}
-                min={MIN}
-                max={MAX}
-                values={values}
-                setValue={setValue}
-              />
-
-              {/*<Range*/}
+              {/*<RangeWrapper*/}
               {/*  step={STEP}*/}
               {/*  min={MIN}*/}
               {/*  max={MAX}*/}
               {/*  values={values}*/}
-              {/*  onChange={(values) => setValue(values)}*/}
-              {/*  renderTrack={({ props, children }) => (*/}
-              {/*    <div*/}
-              {/*      className="sliderLine"*/}
-              {/*      // ref={props.ref}*/}
-              {/*      {...props}*/}
-              {/*      style={{*/}
-              {/*        background: getTrackBackground({*/}
-              {/*          values: values,*/}
-              {/*          colors: ["#01C497", "#666"],*/}
-              {/*          min: MIN,*/}
-              {/*          max: MAX,*/}
-              {/*        }),*/}
-              {/*      }}*/}
-              {/*    >*/}
-              {/*      {children}*/}
-              {/*    </div>*/}
-              {/*  )}*/}
-              {/*  renderThumb={({ props }) => (*/}
-              {/*    <div className="circlingRange" {...props} />*/}
-              {/*  )}*/}
+              {/*  setValue={setValue}*/}
               {/*/>*/}
+
+              <Range
+                step={STEP}
+                min={MIN}
+                max={MAX}
+                values={values}
+                onChange={(values) => setValue(values)}
+                renderTrack={({ props, children }) => (
+                  <div
+                    className="sliderLine"
+                    // ref={props.ref}
+                    {...props}
+                    style={{
+                      background: getTrackBackground({
+                        values: values,
+                        colors: ["#01C497", "#666"],
+                        min: MIN,
+                        max: MAX,
+                      }),
+                    }}
+                  >
+                    {children}
+                  </div>
+                )}
+                renderThumb={({ props }) => (
+                  <div className="circlingRange" {...props} />
+                )}
+              />
 
               <span className="numbSecond">100 000</span>
             </div>

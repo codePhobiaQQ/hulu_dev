@@ -2,6 +2,7 @@ import linkIn from "../public/assets/svg/in.svg";
 import React from "react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { log } from "util";
 
 interface ILeader {
   img: string;
@@ -23,11 +24,12 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   const [mouseX, setMouseX] = useState<number>(0);
   const [mouseY, setMouseY] = useState<number>(0);
   const [textHeight, setTextHeight] = useState<number>(0);
+
   let mouseLeaveDelay: any = null;
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-  }, [window.innerWidth]);
+  }, []);
 
   const textEl = useRef<HTMLDivElement>(null);
   const helpRef = useRef<HTMLInputElement | null>(null);
@@ -46,6 +48,8 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
     textEl.current ? setTextHeight(textEl.current.clientHeight) : null;
   }, [textEl.current]);
 
+  console.log("textHeight", textHeight);
+
   const mousePX = () => mouseX / width;
   const mousePY = () => mouseY / height;
 
@@ -57,8 +61,6 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
     };
   };
   const mouseMove = (e: any) => {
-    console.log("x: ", e.pageX - left);
-    console.log("y: ", e.pageY - sectionOffset - top);
     setMouseY(Math.abs(e.pageY - sectionOffset - top - height / 2));
     setMouseX(Math.abs(e.pageX - left - width / 2));
   };
@@ -69,14 +71,14 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   const mouseLeave = () => {
     setIsHover(false);
     mouseLeaveDelay = setTimeout(() => {
-      setMouseX(0);
-      setMouseY(0);
+      // setMouseX(0);
+      // setMouseY(0);
     }, 1000);
   };
 
-  return windowWidth > 768 ? (
+  return windowWidth > 992 ? (
     <li
-      onMouseMove={(e) => mouseMove(e)}
+      // onMouseMove={(e) => mouseMove(e)}
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
       ref={man}
@@ -86,7 +88,11 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
           <Image width={430} height={600} src={img} alt="team" />
         </div>
         <div
-          style={isHover ? { bottom: textHeight - 40 } : {}}
+          style={
+            isHover
+              ? { bottom: textHeight - (window.innerWidth > 1200 ? 40 : 150) }
+              : {}
+          }
           className="cardInfo"
         >
           <div className="mainInfo">

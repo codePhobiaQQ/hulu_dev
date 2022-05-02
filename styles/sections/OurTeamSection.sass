@@ -150,26 +150,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
     padding-bottom: 173px
     padding-top: 70px
     .container
-      h2
-        margin-bottom: 49px
-      ul.teamLists
-        li
-          width: 175px
-          height: 250px
-          .cardWrap
-            .cardInfo
-              padding: 0
-              .mainInfo
-                span
-                  font-size: 16px
-                img
-                  width: 16px
-                  height: 16px
-
-  @media only screen and (max-width: 767px)
-    padding-top: 20px
-    padding-bottom: 120px
-    .container
       ul.teamLists
         flex-direction: column
         li
@@ -182,6 +162,14 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
             margin-bottom: 40px
           &:last-child
             margin-bottom: 0
+
+      h2
+        margin-bottom: 49px
+      ul.teamLists
+        flex-direction: column
+        li
+          //width: 175px
+          //height: 250px
           .cardWrap
             position: relative
             &:hover
@@ -210,7 +198,32 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
               a
                 @include greenBtn
                 margin: auto
+            .cardInfo
+              padding: 0
+              .mainInfo
+                span
+                  font-size: 16px
+                img
+                  width: 16px
+                  height: 16px
 
+  @media only screen and (max-width: 767px)
+    padding-top: 20px
+    padding-bottom: 120px
+    .container
+      ul.teamLists
+        flex-direction: column
+        li
+          width: 100%
+          max-width: 315px
+          height: 413px
+          margin: auto
+          margin-bottom: 40px
+          &:nth-child(2)
+            margin-bottom: 40px
+          &:last-child
+            margin-bottom: 0
+          .cardWrap
             .cardInfo
               padding: 0
               .mainInfo
