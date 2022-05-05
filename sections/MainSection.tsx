@@ -7,6 +7,8 @@ import { BackUrl } from "../vars";
 
 interface MainSectionDataI {
   title: string;
+  ButtonText: string;
+  ButtonLink: string;
 }
 
 const MainSection = () => {
@@ -18,6 +20,8 @@ const MainSection = () => {
       "Most flexible transaction\n" +
       "monitoring for your\n" +
       "compliance needs",
+    ButtonText: "Learn more",
+    ButtonLink: "#WhyHuntli",
   } as MainSectionDataI);
 
   const scrollPosition = () => {
@@ -85,7 +89,10 @@ const MainSection = () => {
                 ]}
             </span>
           </motion.h1>
-          <LiquidButton />
+          <LiquidButton
+            ButtonText={sectionData.ButtonText}
+            ButtonLink={sectionData.ButtonLink}
+          />
         </div>
       </div>
     </motion.section>

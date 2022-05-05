@@ -3,9 +3,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../motions/MainSection.motion";
 
-const LiquidButton = () => {
+interface ILiquidButton {
+  ButtonText: string;
+  ButtonLink: string;
+}
+
+const LiquidButton = ({ ButtonText, ButtonLink }: ILiquidButton) => {
   return (
-    <Link href="/#WhyHuntli">
+    <Link href={`/${ButtonLink}`}>
       <motion.a variants={fadeIn} custom={2} className="button-container-1">
         <span className="mas">
           <span className="inner">Learn more</span>
@@ -17,7 +22,7 @@ const LiquidButton = () => {
           type="button"
           name="Hover"
         >
-          <span className="inner">Learn more</span>
+          <span className="inner">{ButtonText}</span>
           <Line />
         </button>
       </motion.a>
