@@ -232,7 +232,12 @@ export const RiskMonitor = () => {
           </div>
         </div>
         <div className="secondTableLine">
-          <img src={scheme.src} alt="scheme" />
+          <motion.img
+            variants={fadeFromLeft}
+            custom={{ delaying: 1.3, xing: 0, ying: 10 }}
+            src={scheme.src}
+            alt="scheme"
+          />
         </div>
       </div>
     </motion.div>

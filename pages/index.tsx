@@ -14,8 +14,16 @@ import EventsSection from "../sections/EventsSection";
 import axios from "axios";
 import { BackUrl } from "../vars";
 
+interface IPageDaga {
+  HideEvents: boolean;
+  HideRisk: boolean;
+}
+
 const MainPage = () => {
-  // const [pageData, setPageData] = useState<any>(null);
+  const [pageData, setPageData] = useState<IPageDaga>({
+    HideRisk: false,
+    HideEvents: false,
+  } as IPageDaga);
 
   const { scrollY } = useViewportScroll();
   const [lastScroll, setLastScroll] = useState<number>(0);
@@ -39,19 +47,17 @@ const MainPage = () => {
     setLastScrollHelper(scrollPosition());
   }, []);
 
-  // useEffect(() => {
-  //   const takeData = async () => {
-  //     const response = await axios.get(
-  //       BackUrl + "/api/main-page-fields?populate=*"
-  //     );
-  //     setPageData(response.data.data.attributes);
-  //   };
-  //   takeData();
-  // }, []);
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(BackUrl + "/api/main-page-fields");
+      setPageData(response.data.data.attributes);
+    };
+    takeData();
+  }, []);
 
-  // useEffect(() => {
-  //   console.log(pageData);
-  // }, [pageData]);
+  useEffect(() => {
+    console.log(pageData);
+  }, [pageData]);
 
   const scrollHandler = () => {
     const position = scrollPosition();
@@ -120,8 +126,8 @@ const MainPage = () => {
         setDashboardHeight={setDashboardHeight}
         setDashboardOffset={setDashboardOffset}
       />
-      <RiscScenarios setTopPosition={setTopPosition2} />
-      <EventsSection />
+      {!pageData.HideRisk && <RiscScenarios setTopPosition={setTopPosition2} />}
+      {!pageData.HideEvents && <EventsSection />}
       <ContactSection setTopPosition={setTopPosition3} />
       <PortfolioSection />
       <TesteMonials />
