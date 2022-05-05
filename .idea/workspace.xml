@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/styles/monitors.sass" beforeDir="false" afterPath="$PROJECT_DIR$/styles/monitors.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/FooterSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/FooterSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +117,7 @@
       <workItem from="1651407399919" duration="40942000" />
       <workItem from="1651474150580" duration="11498000" />
       <workItem from="1651510209609" duration="2391000" />
-      <workItem from="1651721474749" duration="6173000" />
+      <workItem from="1651721474749" duration="6491000" />
     </task>
     <servers />
   </component>

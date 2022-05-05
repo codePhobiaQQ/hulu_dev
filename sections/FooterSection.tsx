@@ -2,7 +2,9 @@ import logo from "../public/assets/svg/Logo.svg";
 import { ILink, linksMenu } from "../components/Menu";
 import Link from "next/link";
 import SocLinks from "../components/UI/SocLinks";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import axios from "axios";
+import { BackUrl } from "../vars";
 
 interface ILinksInt {
   index: number;
@@ -11,6 +13,11 @@ interface ILinksInt {
 
 interface IFooter {
   setPolicityOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+interface IContactInfo {
+  address: string;
+  email: string;
 }
 
 const FirstFootLink = ({ index, el }: ILinksInt) => {
@@ -40,6 +47,28 @@ const SecondFootLink = ({ index, el }: ILinksInt) => {
 };
 
 const FooterSection = ({ setPolicityOpen }: IFooter) => {
+  const [pageData, setPageData] = useState<IContactInfo>({
+    address: "Kronvalda bulvāris 10, Centra rajons, Rīga, Latvia, LV-1010",
+    FacebookLink: "https://google.com",
+    InstagramLink: "https://google.com",
+    LinkedinLink: "https://google.com",
+    TelegramLink: "https://google.com",
+    TwitterLink: "https://google.com",
+    email: "dmytro@huntli.io",
+  } as IContactInfo);
+
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(BackUrl + "/api/contact-info");
+      setPageData(response.data.data.attributes);
+    };
+    takeData();
+  }, []);
+
+  useEffect(() => {
+    console.log(pageData);
+  }, [pageData]);
+
   return (
     <footer className="footerSection">
       <div className="container">
@@ -77,11 +106,9 @@ const FooterSection = ({ setPolicityOpen }: IFooter) => {
         <div className="rightCol">
           <div className="rightColInner">
             <h3>CONTACT</h3>
-            <span className="address">
-              Kronvalda bulvāris 10, Centra rajons, Rīga, Latvia, LV-1010
-            </span>
-            <a className="email" href="mailto:dmytro@huntli.io">
-              dmytro@huntli.io
+            <span className="address">{pageData.address}</span>
+            <a className="email" href={`mailto:${pageData.email}`}>
+              {pageData.email}
             </a>
             <SocLinks />
           </div>

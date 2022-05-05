@@ -55,10 +55,6 @@ const MainPage = () => {
     takeData();
   }, []);
 
-  useEffect(() => {
-    console.log(pageData);
-  }, [pageData]);
-
   const scrollHandler = () => {
     const position = scrollPosition();
     if (position < topPosition1 && isLightLogo == false) {
