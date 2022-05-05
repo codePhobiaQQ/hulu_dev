@@ -28,10 +28,6 @@ const Policity = ({ policityOpen, setPolicityOpen }: IPolicity) => {
     takeData();
   }, []);
 
-  useEffect(() => {
-    console.log(pageData);
-  }, [pageData]);
-
   return (
     <AnimatePresence initial={false}>
       {policityOpen && (

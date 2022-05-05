@@ -30,7 +30,6 @@ const SocLinks = ({ social }: ISocLinksProps) => {
       const response = await axios.get(
         BackUrl + "/api/social-infos?populate=img"
       );
-      console.log(response);
       setPageData(
         response.data.data.map((el: any) => {
           return {
@@ -42,10 +41,6 @@ const SocLinks = ({ social }: ISocLinksProps) => {
     };
     takeData();
   }, []);
-
-  useEffect(() => {
-    console.log(pageData);
-  }, [pageData]);
 
   return (
     <ul className={"socLinks"} ref={social}>

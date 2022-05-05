@@ -1,6 +1,7 @@
 module.exports = {
-  image: {
-    domains: ["http://localhost:1337/"],
+  reactStrictMode: true,
+  images: {
+    domains: ["backend.164.92.210.61.nip.io", "localhost"],
   },
   // reactStrictMode: false,
   // async rewrites() {
@@ -11,4 +12,4 @@ module.exports = {
   //     },
   //   ]
   // },
-}
+};

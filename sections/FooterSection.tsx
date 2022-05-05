@@ -65,10 +65,6 @@ const FooterSection = ({ setPolicityOpen }: IFooter) => {
     takeData();
   }, []);
 
-  useEffect(() => {
-    console.log(pageData);
-  }, [pageData]);
-
   return (
     <footer className="footerSection">
       <div className="container">
