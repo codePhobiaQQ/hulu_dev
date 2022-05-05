@@ -24,7 +24,6 @@
       <change beforePath="$PROJECT_DIR$/components/popups/Policity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/popups/Policity.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/WrapperSecond.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WrapperSecond.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,7 @@
       <workItem from="1651407399919" duration="40942000" />
       <workItem from="1651474150580" duration="11498000" />
       <workItem from="1651510209609" duration="2391000" />
-      <workItem from="1651721474749" duration="9605000" />
+      <workItem from="1651721474749" duration="10229000" />
     </task>
     <servers />
   </component>
