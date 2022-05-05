@@ -65,10 +65,6 @@ const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
     takeData();
   }, []);
 
-  useEffect(() => {
-    console.log(sectionData);
-  }, [sectionData]);
-
   return (
     <section ref={aboutSection} id="About" className="aboutSection">
       <div className="container">

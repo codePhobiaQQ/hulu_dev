@@ -22,7 +22,8 @@
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sections/AboutSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/AboutSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WhyHuntySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/DashboardSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/DashboardSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vars.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vars.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,7 @@
       <workItem from="1651407399919" duration="40942000" />
       <workItem from="1651474150580" duration="11498000" />
       <workItem from="1651510209609" duration="2391000" />
-      <workItem from="1651721474749" duration="3936000" />
+      <workItem from="1651721474749" duration="4936000" />
     </task>
     <servers />
   </component>
