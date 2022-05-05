@@ -20,9 +20,9 @@ interface IDashboardSection {
   setDashboardHeight: Dispatch<SetStateAction<number>>;
 }
 
-interface DashboardSectionDataI {
+interface DashBoardSectionDataI {
   title: string;
-  img: ImgI;
+  img: string;
   text: string;
 }
 interface ScreeningSectionDataI {
@@ -35,11 +35,11 @@ const DashboardSection = ({
   setDashboardHeight,
 }: IDashboardSection) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [sectionData, setSectionData] = useState<DashboardSectionDataI>({
+  const [sectionData, setSectionData] = useState<DashBoardSectionDataI>({
     title: "DASHBOARD",
-    img: { data: { attributes: { url: mac.src } } },
+    img: mac.src,
     text: "We have created a compliance officer's dashboard that would help you to get access to all of our features. It's easy to use to monitor all compliance activities, set up rules, and explore individual cases.",
-  } as DashboardSectionDataI);
+  } as DashBoardSectionDataI);
 
   const [screeningData, setScreeningData] = useState<ScreeningSectionDataI>({
     title: "SCREENING",
@@ -90,7 +90,13 @@ const DashboardSection = ({
         BackUrl +
           "/api/main-page-fields?populate=DashboardSection&populate=DashboardSection.img&populate=ScreeningSection&populate=MonitoringSection"
       );
-      setSectionData(response.data.data.attributes.DashboardSection);
+      setSectionData({
+        ...response.data.data.attributes.DashboardSection,
+        img:
+          BackUrl +
+          response.data.data.attributes.DashboardSection.img.data.attributes
+            .url,
+      });
       setScreeningData(response.data.data.attributes.ScreeningSection);
       setTransactionData(response.data.data.attributes.MonitoringSection);
     };
@@ -117,7 +123,7 @@ const DashboardSection = ({
                 variants={fadeFromLeft}
                 custom={{ xing: 70, delaying: 0.7 }}
                 className="comp"
-                src={BackUrl + sectionData.img.data.attributes.url}
+                src={sectionData.img}
                 width={1035}
                 height={674}
               />
