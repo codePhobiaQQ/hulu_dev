@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import Close from "../UI/Close";
 import { menuVariant } from "../../motions/Menu.motion";
 import { AnimatePresence, motion } from "framer-motion";
@@ -9,6 +9,8 @@ interface IPolicity {
 }
 
 const Policity = ({ policityOpen, setPolicityOpen }: IPolicity) => {
+  useEffect(() => {}, []);
+
   return (
     <AnimatePresence initial={false}>
       {policityOpen && (

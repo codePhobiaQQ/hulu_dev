@@ -46,6 +46,7 @@
     "reset-css": "^5.0.1",
     "sass": "^1.35.2",
     "slick-carousel": "^1.8.1",
+    "strapi-markdown-parser": "^0.2.2",
     "uuid": "^8.3.2",
     "uuidv4": "^6.2.12",
     "video-react": "^0.14.1"
