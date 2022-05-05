@@ -80,7 +80,6 @@ const EventsSection = () => {
     };
     takeData();
   }, []);
-
   useEffect(() => {
     console.log(pageData);
   }, [pageData]);
