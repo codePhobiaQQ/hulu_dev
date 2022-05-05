@@ -33,7 +33,11 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   return (
     <div ref={sectionRef} className="WrapperSecond">
       <motion.div
-        style={{ opacity: opacity, backgroundColor: "#131313" }}
+        style={{
+          opacity: opacity,
+          backgroundColor: "#131313",
+          minHeight: "200vh",
+        }}
         className="dirty"
       ></motion.div>
       <WhyHuntySection setWhyHeight={setWhyHeight} />

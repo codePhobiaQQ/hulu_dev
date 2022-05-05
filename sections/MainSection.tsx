@@ -60,12 +60,6 @@ const MainSection = () => {
     takeData();
   }, []);
 
-  useEffect(() => {
-    console.log(
-      sectionData.title.split(" ")[sectionData.title.split(" ").length - 1]
-    );
-  }, [sectionData]);
-
   return (
     <motion.section
       variants={wrapperVariant}

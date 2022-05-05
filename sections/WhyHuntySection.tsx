@@ -4,48 +4,66 @@ import { Range, getTrackBackground } from "react-range";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { calcNumbSection } from "../services/calc.service";
 import Circles from "../components/Circles";
+import axios from "axios";
+import { BackUrl } from "../vars";
 
 interface IWhyHuntySection {
   setWhyHeight: Dispatch<SetStateAction<number>>;
+}
+
+interface WhySectionDataI {
+  title: string;
+  FIrstText: string;
+  SecondText: string;
+  loosing: string;
+  save: string;
 }
 
 const STEP = 1;
 const MIN = 1000;
 const MAX = 100000;
 
-// @ts-ignore
 const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
   const [values, setValue] = useState<number[]>([1000]);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const [sectionData, setSectionData] = useState<WhySectionDataI>({
+    title: "STOP LOSING MONEY ON COMPLIANCE",
+    FIrstText:
+      "Without automated transaction monitoring system you are loosing A LOT of money on your day-to-day compliance operations",
+    SecondText: "How much monthly transactions do you have?",
+    loosing: "Money you are loosing:",
+    save: "How much you can save:",
+  } as WhySectionDataI);
 
   useEffect(() => {
     sectionRef.current ? setWhyHeight(sectionRef.current.clientHeight) : null;
   }, [sectionRef.current]);
 
-  // @ts-ignore
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(
+        BackUrl + "/api/main-page-fields?populate=MoneySection"
+      );
+      setSectionData(response.data.data.attributes.MoneySection);
+    };
+    takeData();
+  }, []);
+
+  useEffect(() => {
+    console.log(sectionData);
+  }, [sectionData]);
+
   return (
     <section id="WhyHuntli" ref={sectionRef} className="whyHuntly">
       <div className="container">
-        <h2>STOP LOSING MONEY ON COMPLIANCE</h2>
+        <h2>{sectionData.title}</h2>
         <div className="content">
           <div className="leftCol">
-            <span className="without">
-              Without automated transaction monitoring system you are loosing A
-              LOT of money on your day-to-day compliance operations
-            </span>
-            <span className="numbers">
-              How much monthly transactions do you have?
-            </span>
+            <span className="without">{sectionData.FIrstText}</span>
+            <span className="numbers">{sectionData.SecondText}</span>
             <div className="slider">
               <span className="numbFirst">1 000</span>
-
-              {/*<RangeWrapper*/}
-              {/*  step={STEP}*/}
-              {/*  min={MIN}*/}
-              {/*  max={MAX}*/}
-              {/*  values={values}*/}
-              {/*  setValue={setValue}*/}
-              {/*/>*/}
 
               <Range
                 step={STEP}
@@ -78,13 +96,13 @@ const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
               <span className="numbSecond">100 000</span>
             </div>
             <div className="resultLines">
-              <span className="savingSpan">Money you are loosing:</span>
+              <span className="savingSpan">{sectionData.loosing}</span>
               <div className="result green">
                 {calcNumbSection(values[0], true)} €
               </div>
             </div>
             <div className="resultLines">
-              <span className="savingSpan">How much you can save:</span>
+              <span className="savingSpan">{sectionData.save}</span>
               <div className="result">
                 {calcNumbSection(values[0], false)} €
               </div>
