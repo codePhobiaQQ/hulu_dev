@@ -75,7 +75,6 @@ const HeaderBlog = ({ children, setColorMode, colorMode }: IHeader) => {
                 onClick={() => settingColor("black")}
                 className="color"
               ></div>
-              <div className="color" onClick={() => settingColor("grey")}></div>
               <div
                 className="color"
                 onClick={() => settingColor("white")}

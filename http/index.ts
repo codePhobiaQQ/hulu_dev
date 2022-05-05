@@ -1,8 +1,8 @@
 import axios from "axios";
-import {back_url} from "../vars";
+import { BackUrl } from "../vars";
 
 const $api = axios.create({
-  baseURL: back_url,
+  baseURL: BackUrl,
 });
 
 // $api.interceptors.request.use((config) => {
