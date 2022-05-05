@@ -11,8 +11,12 @@ import RiscScenarios from "../sections/RiscScenarios";
 import ContactSection from "../sections/ContactSection";
 import TesteMonials from "../sections/TesteMonials";
 import EventsSection from "../sections/EventsSection";
+import axios from "axios";
+import { BackUrl } from "../vars";
 
 const MainPage = () => {
+  // const [pageData, setPageData] = useState<any>(null);
+
   const { scrollY } = useViewportScroll();
   const [lastScroll, setLastScroll] = useState<number>(0);
   const [lastScrollHelper, setLastScrollHelper] = useState<number>(0);
@@ -34,6 +38,20 @@ const MainPage = () => {
   useEffect(() => {
     setLastScrollHelper(scrollPosition());
   }, []);
+
+  // useEffect(() => {
+  //   const takeData = async () => {
+  //     const response = await axios.get(
+  //       BackUrl + "/api/main-page-fields?populate=*"
+  //     );
+  //     setPageData(response.data.data.attributes);
+  //   };
+  //   takeData();
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log(pageData);
+  // }, [pageData]);
 
   const scrollHandler = () => {
     const position = scrollPosition();

@@ -6,6 +6,8 @@ import col1 from "./../../public/assets/img/dashboard/1.png";
 import col2 from "./../../public/assets/img/dashboard/2.png";
 import col3 from "./../../public/assets/img/dashboard/3.png";
 import col4 from "./../../public/assets/img/dashboard/4.png";
+import plus from "./../../public/assets/img/dashboard/plus.png";
+import scheme from "./../../public/assets/img/dashboard/scheme.png";
 import Circles from "./../../public/assets/img/dashboard/circles.png";
 
 const ScreeningMonitor = () => {
@@ -185,6 +187,52 @@ export const TransactionMonitor = () => {
               />
             </div>
           </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export const RiskMonitor = () => {
+  const listTable = [...Array(16)];
+  return (
+    <motion.div
+      variants={fadeFromLeft}
+      custom={{ delaying: 0.8, xing: 0 }}
+      className={"screeningMonitor riskMonitor"}
+    >
+      <motion.div
+        variants={fadeFromLeft}
+        custom={{ delaying: 0.9, xing: 0 }}
+        className="topi"
+      >
+        <div className="circles">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+        </div>
+      </motion.div>
+      <div className="contenti">
+        <div className="infoLine">
+          <div className="leftSide">
+            <div className="leftSideContent single">
+              <motion.h3
+                variants={fadeFromLeft}
+                custom={{ delaying: 1, xing: 0, ying: 10 }}
+              >
+                Transactions
+              </motion.h3>
+              <motion.span
+                variants={fadeFromLeft}
+                custom={{ delaying: 1.1, xing: 0, ying: 10 }}
+              >
+                <img width={38} height={38} src={plus.src} alt="plus" />
+              </motion.span>
+            </div>
+          </div>
+        </div>
+        <div className="secondTableLine">
+          <img src={scheme.src} alt="scheme" />
         </div>
       </div>
     </motion.div>

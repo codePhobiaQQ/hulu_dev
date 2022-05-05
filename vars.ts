@@ -1,1 +1,1 @@
-export const back_url = "http://localhost:1337"
+export const BackUrl = "https://backend.164.92.210.61.nip.io";

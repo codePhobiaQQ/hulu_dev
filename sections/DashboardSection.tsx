@@ -8,7 +8,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ScreeningMonitor from "../components/DashboardSection/ScreeningMonitor";
-import { TransactionMonitor } from "../components/DashboardSection/ScreeningMonitor";
+import {
+  TransactionMonitor,
+  RiskMonitor,
+} from "../components/DashboardSection/ScreeningMonitor";
 
 interface IDashboardSection {
   setDashboardOffset: Dispatch<SetStateAction<number>>;
@@ -148,7 +151,7 @@ const DashboardSection = ({
                   variants={fadeFromLeft}
                   className="imageWrapper"
                 >
-                  <TransactionMonitor />
+                  <RiskMonitor />
                 </motion.div>
                 <motion.div
                   custom={{ xing: 70 }}
