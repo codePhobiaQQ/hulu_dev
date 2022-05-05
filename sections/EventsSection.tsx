@@ -70,9 +70,9 @@ const EventsSection = () => {
             ...el.attributes,
             day: el.attributes.date.split("-")[2],
             date:
-              el.attributes.date.split("-")[0].slice(-2) +
+              el.attributes.date.split("-")[1] +
               " / " +
-              el.attributes.date.split("-")[1],
+              el.attributes.date.split("-")[0],
             img: BackUrl + el.attributes.image.data.attributes.url,
           };
         })
