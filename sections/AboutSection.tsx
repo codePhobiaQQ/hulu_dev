@@ -4,14 +4,25 @@ import { motion } from "framer-motion";
 import { fadeFromBot } from "../motions/AboutSection.motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import StatisticElem from "../components/AboutSection/StatisticElem";
+import axios from "axios";
+import { BackUrl } from "../vars";
 
 interface AboutInterface {
   setTopPosition: Dispatch<SetStateAction<number>>;
   whyHeight: number;
 }
 
+interface AboutSectionDataI {
+  title: string;
+  text: string;
+}
+
 const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
   const [isProductOpen, setIsProductOpen] = useState<boolean>(false);
+  const [sectionData, setSectionData] = useState<AboutSectionDataI>({
+    title: "ABOUT US",
+    text: "Huntli is an all-in-one solution that helps you fight financial fraud and keep you in check with day-to-day compliance. Our one-fits-all system is easy to set up and integrate with your core banking. Our support is available 24/7 to assist you with that.",
+  } as AboutSectionDataI);
 
   const aboutSection = useRef<HTMLElement>(null);
 
@@ -24,7 +35,7 @@ const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
   const links: ILink[] = [
     {
       name: "Events",
-      link: "/#Dashboard",
+      link: "/#Events",
     },
     {
       name: "Contact us",
@@ -44,10 +55,24 @@ const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
     },
   ];
 
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(
+        BackUrl + "/api/main-page-fields?populate=AboutSection"
+      );
+      setSectionData(response.data.data.attributes.AboutSection);
+    };
+    takeData();
+  }, []);
+
+  useEffect(() => {
+    console.log(sectionData);
+  }, [sectionData]);
+
   return (
     <section ref={aboutSection} id="About" className="aboutSection">
       <div className="container">
-        <h2>ABOUT US</h2>
+        <h2>{sectionData.title}</h2>
         <div className="content">
           <div className="leftSide">
             <div className="navigation">
@@ -112,12 +137,7 @@ const AboutSection = ({ setTopPosition, whyHeight }: AboutInterface) => {
             </div>
           </div>
           <div className="rightSide">
-            <div className="text">
-              Huntli is an all-in-one solution that helps you fight financial
-              fraud and keep you in check with day-to-day compliance. Our
-              one-fits-all system is easy to set up and integrate with your core
-              banking. Our support is available 24/7 to assist you with that.
-            </div>
+            <div className="text">{sectionData.text}</div>
             <div className="statistic">
               <StatisticElem
                 title="UP TO"

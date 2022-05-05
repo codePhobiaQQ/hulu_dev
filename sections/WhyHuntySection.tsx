@@ -50,10 +50,6 @@ const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
     takeData();
   }, []);
 
-  useEffect(() => {
-    console.log(sectionData);
-  }, [sectionData]);
-
   return (
     <section id="WhyHuntli" ref={sectionRef} className="whyHuntly">
       <div className="container">
