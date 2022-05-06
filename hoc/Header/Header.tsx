@@ -28,14 +28,14 @@ const Header = ({
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
   const [policityOpen, setPolicityOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    const show = async () => {
-      setTimeout(() => {
-        setConnectOpen(true);
-      }, 30000);
-    };
-    show();
-  }, []);
+  // useEffect(() => {
+  //   const show = async () => {
+  //     setTimeout(() => {
+  //       setConnectOpen(true);
+  //     }, 30000);
+  //   };
+  //   show();
+  // }, []);
 
   return useMemo(
     () => (

@@ -18,7 +18,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
     ul.teamLists
       display: flex
       justify-content: center
-      display: none !important
+      //display: none !important
       li
         cursor: pointer
         position: relative
@@ -39,11 +39,23 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
           width: 100%
           height: 100%
           overflow: hidden
-          box-shadow: rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(white, 0.5) 0 0 0 6px
-          transition: 2.5s $returnEasing
+          box-shadow: rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px
+          transition: 1.5s $returnEasing
           transform: perspective(800px)
           transform-style: preserve-3d
+          position: relative
 
+          &:after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: #000
+            opacity: 0
+            transition: opacity .4s ease
+            pointer-events: none
 
           img.teamImg
             position: absolute
@@ -52,11 +64,10 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
             width: 100%
             height: 100%
             object-fit: cover
-            transition: 1s $returnEasing, opacity 5s 1s $returnEasing
+            z-index: 2
 
 
           .cardInfo
-            transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1)
             position: absolute
             bottom: -5px
 
@@ -68,26 +79,26 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
               z-index: 0
               width: 100%
               height: 100%
-              background-image: linear-gradient(to bottom, transparent 0%, rgba(#000, 0.6) 100%)
-              background-blend-mode: overlay
               opacity: 0
               transform: translateY(100%)
-              transition: 5s 1s $returnEasing
 
             .mainInfo
               display: flex
               justify-content: space-between
               padding: 0 20px
+              transition: all .8s ease
+              position: relative
+              z-index: 2
               span
                 color: $accent
                 font-family: "SequelMediumBody"
                 font-size: 36px
             .subInfo
+              position: relative
+              z-index: 2
               p
                 opacity: 0
-                padding: 0 20px
-                padding-bottom: 25px
-                padding-top: 0
+                padding: 0 20px 25px 20px
                 line-height: 140%
                 max-height: 0
                 color: #fff
@@ -96,10 +107,13 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
 
 
         &:hover
-          .cardWrap .cardInfo .subInfo p
-            opacity: 1
-            max-height: 600px
-            padding-top: 15px
+          .cardWrap
+            &:after
+              opacity: .8
+            .cardInfo .subInfo p
+              opacity: 1
+              max-height: 600px
+              padding-top: 15px
 
           .cardInfo, .cardInfo p
             transition: 0.4s $hoverEasing
@@ -108,14 +122,6 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
             transition: .4s $hoverEasing
             opacity: 1
             transform: translateY(0)
-
-          .card-bg
-            transition: 0.4s $hoverEasing, opacity .4s $hoverEasing
-            opacity: 0.8
-
-          .card
-            transition: 0.4s $hoverEasing, box-shadow .4s $hoverEasing
-            box-shadow: rgba(white, 0.2) 0 0 40px 5px, rgba(white, 1) 0 0 0 1px, rgba(black, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px
 
 
 
@@ -171,10 +177,18 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
       ul.teamLists
         flex-direction: column
         li
-          //width: 175px
-          //height: 250px
+          .cardWrap
+            .cardInfo
+              .subInfo
+                opacity: 0
+                max-height: 0
+              .mainInfo
+                margin-bottom: 25px
+
           .cardWrap
             position: relative
+            &:after
+              display: none
             &:hover
               .hoverInfo
                 opacity: 1
