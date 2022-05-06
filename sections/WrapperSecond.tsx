@@ -12,8 +12,10 @@ interface IWrapperSecond {
 const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   const { height } = useWindowSize();
   const [topi, setTop] = useState<number>(920);
+
   const [whyHeight, setWhyHeight] = useState<number>(630);
   const sectionRef = useRef<HTMLDivElement>(null);
+  // const [opaciting, setOpaciting] = useState<number>(1);
 
   const opacity = useTransform(
     scrolling,
@@ -28,7 +30,8 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
 
   useEffect(() => {
     sectionRef.current ? setTop(sectionRef.current?.offsetTop) : null;
-  }, [sectionRef]);
+    sectionRef.current ? setWhyHeight(sectionRef.current?.clientHeight) : null;
+  }, [sectionRef, height]);
 
   return (
     <div ref={sectionRef} className="WrapperSecond">
