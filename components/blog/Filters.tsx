@@ -1,15 +1,14 @@
 import { SetStateAction, useEffect } from "react";
 import { Dispatch } from "react";
 import { ICategory } from "../../models/galaryInterfaces";
-import { IBlog } from "../../pages/blog";
-import { log } from "util";
+import { IBlogFinal } from "../../pages/blog";
 
 interface IFilters {
   categories: ICategory[];
   activeCategory: number;
   setActive: Dispatch<SetStateAction<number>>;
-  blogsEl: IBlog[];
-  setBlogs: Dispatch<SetStateAction<IBlog[]>>;
+  blogsEl: IBlogFinal[];
+  setBlogs: Dispatch<SetStateAction<IBlogFinal[]>>;
 }
 
 const Filters = ({
@@ -20,24 +19,27 @@ const Filters = ({
   setBlogs,
 }: IFilters) => {
   useEffect(() => {
-    if (activeCategory == 1) {
+    if (activeCategory == 0) {
       setBlogs(blogsEl);
     } else {
       const filter = blogsEl.filter((blogEl, index) =>
-        blogEl.category.map((el) => el.id).includes(activeCategory)
+        blogEl.blog_categories
+          .map((el: any) => {
+            return el.ids;
+          })
+          .includes(activeCategory)
       );
-      console.log(filter);
       setBlogs(filter);
     }
-  }, [activeCategory]);
+  }, [activeCategory, blogsEl, categories]);
 
   return (
     <ul className="categoriesHead">
       {categories.map((category, index) => (
         <li
-          className={category.id == activeCategory ? "active" : ""}
-          key={"category" + category.id}
-          onClick={() => setActive(category.id)}
+          className={category.ids == activeCategory ? "active" : ""}
+          key={"category" + category.ids}
+          onClick={() => setActive(category.ids)}
         >
           {category.name}
         </li>

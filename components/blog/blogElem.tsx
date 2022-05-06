@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { IBlog } from "../../pages/blog";
+import { IBlogFinal } from "../../pages/blog";
 import { ICategory } from "../../models/galaryInterfaces";
 import { fadeIn } from "../../motions/BlogPage.motion";
+import { BackUrl } from "../../vars";
+import ReactMarkdown from "react-markdown";
 
 interface IBlogElem {
-  blogEl: IBlog;
+  blogEl: IBlogFinal;
   categories: ICategory[];
 }
 
@@ -15,12 +17,21 @@ const BlogElem = ({ blogEl, categories }: IBlogElem) => {
       <Link href={`/blog/${blogEl.id}`}>
         <a>
           <div className="imgWrapper">
-            <img src={blogEl.littleImg} alt="blog" />
+            <img
+              src={BackUrl + blogEl.PreviewImg.data.attributes.url}
+              alt="blog"
+            />
           </div>
           <div className="content">
-            <h3>{blogEl.name}</h3>
-            <p>{blogEl.shortText}</p>
-            <span>{blogEl.category[0].name}</span>
+            <h3>{blogEl.ShortTitle}</h3>
+            <ReactMarkdown
+              transformImageUri={(uri: any) =>
+                uri.startsWith("http") ? uri : `${BackUrl}${uri}`
+              }
+            >
+              {blogEl.PreviewText}
+            </ReactMarkdown>
+            <span>{blogEl.blog_categories[0].name}</span>
           </div>
         </a>
       </Link>

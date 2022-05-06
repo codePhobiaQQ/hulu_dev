@@ -1,243 +1,65 @@
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ICategory } from "../../models/galaryInterfaces";
-import arca from "../../public/assets/img/news/arca.jpg";
-import shar from "../../public/assets/img/news/shar.jpg";
-import people from "../../public/assets/img/news/pepole.jpg";
 import Filters from "../../components/blog/Filters";
 import BlogElem from "../../components/blog/blogElem";
 import HeaderBlog from "../../hoc/Header/HeaderBlog";
+import axios from "axios";
+import { BackUrl } from "../../vars";
 
-export interface IBlog {
-  name: string;
-  shortText: string;
-  longText: string;
-  category: ICategory[];
-  littleImg: string;
-  bigImg: string;
-  date: string;
+export interface IBlogFinal {
   id: number;
+  ShortTitle: string;
+  PreviewText: string;
+  PreviewImg: any;
+  Date: any;
+  BigTitle: string;
+  TwitLink: string;
+  FacebookLink: string;
+  LinkedinLink: string;
+  ContentText: string;
+  BlogBigImg: any;
+  // eslint-disable-next-line camelcase
+  blog_categories: any[];
 }
 
 const Blog = () => {
-  const [showBlogs, setBlogs] = useState<IBlog[]>([] as IBlog[]);
-  const [activeCategory, setActive] = useState<number>(1);
-  const categories: ICategory[] = [
-    {
-      name: "All",
-      id: 1,
-    },
-    {
-      name: "Event",
-      id: 2,
-    },
-    {
-      name: "Case study",
-      id: 3,
-    },
-    {
-      name: "Corporate",
-      id: 4,
-    },
-    {
-      name: "Opinion",
-      id: 5,
-    },
-  ];
-  const blogsEl: IBlog[] = [
-    {
-      id: 1,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        "is available 24/7 to assist you with that.",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Corporate",
-          id: 4,
-        },
-      ],
-      littleImg: arca.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 2,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        "is available 24/7 to assist you with that.",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Events",
-          id: 2,
-        },
-      ],
-      littleImg: shar.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 3,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        "is available 24/7 to assist you with that.",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Case study",
-          id: 3,
-        },
-      ],
-      littleImg: people.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 4,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        "is available 24/7 to assist you with that.",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Option",
-          id: 5,
-        },
-      ],
-      littleImg: shar.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 5,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        "is available 24/7 to assist you with that.",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Option",
-          id: 5,
-        },
-      ],
-      littleImg: shar.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 6,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Option",
-          id: 5,
-        },
-      ],
-      littleImg: shar.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 7,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Option",
-          id: 5,
-        },
-      ],
-      littleImg: shar.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 9,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Option",
-          id: 5,
-        },
-      ],
-      littleImg: shar.src,
-      bigImg: arca.src,
-    },
-    {
-      id: 6,
-      name: "LOREM IPSUM",
-      shortText:
-        "Huntli is an all-in-one solution that helps you fight financial" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support" +
-        " fraud and keep you in check with day-to-day compliance. Our one-fits-all" +
-        " system is easy to set up and integrate with your core banking. Our support",
-      longText:
-        "Augue non morbi nec eleifend sit ultricies. Arcu morbi lectus mattis cursus et morbi ut. Venenatis quam, ultricies. Efficitur dui nulla mattis dictum. Dictum non id nunc hac libero, id accumsan non eleifend interdum amet, non cras sed lorem dictumst. Amet luctus mattis vel amet, faucibus. Luctus pulvinar mattis pellentesque orci, nisi orci, non luctus faucibus. Mattis nec eleifend dapibus eleifend ex. Risus molestie dolor interdum ultricies. In ultricies. Dictum. Orci, luctus mauris elit. Platea ornare amet, vestibulum tempus urna nec dui ex. Molestie velit sed imperdiet aenean in molestie interdum interdum dolor nunc dolor dictum vestibulum efficitur nunc risus ultricies. Lectus hac amet sed tortor, lacinia non nunc ex. Dapibus tempus ornare aenean luctus in augue ornare vitae quis, cras dolor lorem dictum habitasse platea leo, vitae cursus elit. Dictum. Amet, sit id non sit quis, eget sodales ut. Non quam, eleifend ultricies. Est. Sit risus dapibus tortor, dapibus sed platea justo faucibus. Aenean imperdiet efficitur pulvinar morbi mattis est. Orci, luctus mauris leo, quam, dictum dictumst. Nec libero, est. Elit. Lorem lorem sit lorem augue ornare imperdiet morbi efficitur dictum. Sit ultricies. Nec amet, amet, luctus molestie molestie non habitasse faucibus. Vulputate dui sit accumsan aenean amet in ultricies. Faucibus. Dictum. Tempus in urna est. Eleifend eleifend pellentesque lorem in habitasse platea risus eget id nunc quis, aenean arcu in mattis non morbi luctus mattis est. Vitae imperdiet tortor, accumsan amet sodales sit cras efficitur nec ipsum lorem vulputate consectetur id faucibus. Risus odio. Leo, vitae et venenatis interdum habitasse tempus nec tempus cursus nunc amet consectetur leo, in sed amet, pulvinar arcu sit efficitur est. Tortor, pulvinar leo, eget mattis efficitur et. Pellentesque accumsan molestie et. Nulla dapibus elit. Non tortor, sed nisi aenean non odio. Non non non aenean mattis non ipsum quam, mattis dictumst. Sed mattis quis, elit. Sed mollis \n" +
-        "cras in id non habitasse dictum accumsan vestibulum pulvinar velit hac ut. Eget dui vulputate adipiscing cursus urna morbi eleifend quis, libero, id sit risus aenean imperdiet amet, nisi elit. Nulla venenatis nisi sit dolor ornare amet, dapibus interdum non sed augue eget in id mauris ex. Orci, eleifend ipsum venenatis cursus nec imperdiet nisi justo malesuada nec ornare amet ornare pulvinar consectetur mollis molestie est. Ornare risus cursus sit sit in lacinia vitae id amet, et. Dictu",
-      date: "10 February 2022",
-      category: [
-        {
-          name: "Option",
-          id: 5,
-        },
-      ],
-      littleImg: shar.src,
-      bigImg: arca.src,
-    },
-  ];
+  const [categoryData, setCategoryData] = useState<ICategory[]>(
+    [] as ICategory[]
+  );
+  const [categoryElems, setCategoryElems] = useState<IBlogFinal[]>(
+    [] as IBlogFinal[]
+  );
+  const [showBlogs, setBlogs] = useState<IBlogFinal[]>([] as IBlogFinal[]);
+  const [activeCategory, setActive] = useState<number>(0);
+
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(
+        BackUrl + "/api/blog-categories?populate=*"
+      );
+      const responsElems = await axios.get(
+        BackUrl +
+          "/api/blogs?populate=BlogBigImg&populate=PreviewImg&populate=blog_categories"
+      );
+      setCategoryData([
+        { name: "All", ids: 0 },
+        ...response.data.data.map((el: any) => el.attributes),
+      ]);
+      setCategoryElems([
+        ...responsElems.data.data.map((el: any, index: number) => {
+          return {
+            ...el.attributes,
+            blog_categories: el.attributes.blog_categories.data.map(
+              (el: any) => el.attributes
+            ),
+            id: responsElems.data.data[index].id,
+          };
+        }),
+      ]);
+      console.log(categoryElems);
+    };
+    takeData();
+  }, []);
 
   return (
     <HeaderBlog>
@@ -247,14 +69,14 @@ const Blog = () => {
             activeCategory={activeCategory}
             setActive={setActive}
             setBlogs={setBlogs}
-            categories={categories}
-            blogsEl={blogsEl}
+            categories={categoryData}
+            blogsEl={categoryElems}
           />
           <ul className="blogEls">
             {showBlogs.map((blogEl, index) => (
               <BlogElem
                 key={"blogEl" + index}
-                categories={categories}
+                categories={categoryData}
                 blogEl={blogEl}
               />
             ))}

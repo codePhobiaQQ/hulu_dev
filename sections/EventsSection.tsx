@@ -49,21 +49,6 @@ const EventsSection = () => {
     const takeData = async () => {
       const response = await axios.get(BackUrl + "/api/event?populate=image");
 
-      console.log(
-        response.data.data.map((el: any) => {
-          console.log(el);
-          return {
-            ...el.attributes,
-            date:
-              el.attributes.date.split("-")[0] +
-              " / " +
-              el.attributes.date.split("-")[1],
-            day: el.attributes.date.split("-")[2],
-            img: BackUrl + el.attributes.image,
-          };
-        })
-      );
-
       setPageData(
         response.data.data.map((el: any) => {
           return {
