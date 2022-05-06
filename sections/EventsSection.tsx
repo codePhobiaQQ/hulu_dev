@@ -65,9 +65,6 @@ const EventsSection = () => {
     };
     takeData();
   }, []);
-  useEffect(() => {
-    console.log(pageData);
-  }, [pageData]);
 
   return (
     <section id="Events" className="EventsSection">

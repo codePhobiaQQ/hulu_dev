@@ -51,7 +51,6 @@ const OurTeam = () => {
       const response = await axios.get(BackUrl + "/api/teams?populate=img");
       setSectionData(
         response.data.data.map((el: any) => {
-          console.log(el);
           return {
             ...el.attributes,
             img: BackUrl + el.attributes.img.data.attributes.url,

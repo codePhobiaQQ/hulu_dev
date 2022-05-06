@@ -121,7 +121,6 @@ const PortfolioSection = () => {
       );
       setSectionData([
         ...response.data.data.map((el: any) => {
-          console.log(el);
           return {
             ...el.attributes,
             Logo: BackUrl + el.attributes.Logo.data.attributes.url,

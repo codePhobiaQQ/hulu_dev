@@ -14,52 +14,53 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   const [whyHeight, setWhyHeight] = useState<number>(630);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const [opaciting, setOpaciting] = useState(1);
+  const [opaciting, setOpaciting] = useState<number>(1);
   const [from, setFrom] = useState(1200);
   const [to, setTo] = useState(2400);
 
-  const opacity = useTransform(
-    scrolling,
-    [
-      windowHeight < whyHeight ? topi + whyHeight - windowHeight + 200 : topi,
-      windowHeight < whyHeight
-        ? topi + whyHeight - windowHeight + 600
-        : topi + whyHeight - 100,
-    ],
-    [1, 0]
-  );
+  // const opacity = useTransform(
+  //   scrolling,
+  //   [
+  //     windowHeight < whyHeight ? topi + whyHeight - windowHeight + 200 : topi,
+  //     windowHeight < whyHeight
+  //       ? topi + whyHeight - windowHeight + 600
+  //       : topi + whyHeight - 100,
+  //   ],
+  //   [1, 0]
+  // );
 
   useEffect(() => {
-    console.log("change");
+    console.log("topi whyHeight, windowHeight", topi, whyHeight, windowHeight);
   }, [topi, whyHeight, windowHeight]);
 
-  // useEffect(() => {
-  //   if (windowHeight < whyHeight) {
-  //     setFrom(topi + whyHeight - windowHeight + 200);
-  //     setTo(topi + whyHeight - windowHeight + 600);
-  //   } else {
-  //     setFrom(topi);
-  //     setTo(topi + whyHeight - 100);
-  //   }
-  // }, [topi]);
-  //
-  // const scrollHandler = () => {
-  //   const position = scrollPosition();
-  //   if (position > from && position < to) {
-  //     setOpaciting(1 - (position - from) / (to - from));
-  //   }
-  // };
-  //
-  // const scrollPosition = () => {
-  //   return window.pageYOffset || document.documentElement.scrollTop;
-  // };
+  useEffect(() => {
+    if (windowHeight < whyHeight) {
+      setFrom(topi + whyHeight - windowHeight);
+      setTo(topi + whyHeight);
+    } else {
+      setFrom(topi);
+      setTo(topi + whyHeight - 200);
+    }
+  }, [topi, whyHeight, windowHeight]);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", scrollHandler);
-  //   return () => {
-  //     window.removeEventListener("scroll", scrollHandler);
-  //   };
-  // }, []);
+  const scrollHandler = () => {
+    if (scrollPosition() > from && scrollPosition() < to) {
+      console.log("here");
+      // @ts-ignore
+      setOpaciting((1 - (scrollPosition() - from) / (to - from)).toFixed(4));
+    }
+  };
+
+  const scrollPosition = () => {
+    return window.pageYOffset || document.documentElement.scrollTop;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, [to, from]);
 
   useEffect(() => {
     sectionRef.current ? setTop(sectionRef.current?.offsetTop) : null;
@@ -70,9 +71,8 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
     <div ref={sectionRef} className="WrapperSecond">
       <motion.div
         style={{
-          opacity: opacity,
+          opacity: opaciting,
           backgroundColor: "#131313",
-          minHeight: "200vh",
         }}
         className="dirty"
       ></motion.div>
