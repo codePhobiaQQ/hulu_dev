@@ -1,7 +1,6 @@
 import Link from "next/link";
 import LeftArrow from "../../components/UI/LeftArrow";
 import { IBlogFinal } from "./index";
-import people from "../../public/assets/img/news/pepole.jpg";
 import arca from "../../public/assets/img/news/arca.jpg";
 import Date from "../../components/UI/date";
 import Twit from "../../components/UI/soc/twit";
@@ -85,13 +84,25 @@ const BlogSinglePage = () => {
                 </span>
               </div>
               <div className="socLinks">
-                <a href="#">
+                <a
+                  rel="noreferrer"
+                  target={"_blank"}
+                  href={categoryElem.TwitLink}
+                >
                   <Twit />
                 </a>
-                <a href="#">
+                <a
+                  rel="noreferrer"
+                  target={"_blank"}
+                  href={categoryElem.FacebookLink}
+                >
                   <FaceBook />
                 </a>
-                <a href="#">
+                <a
+                  rel="noreferrer"
+                  target={"_blank"}
+                  href={categoryElem.LinkedinLink}
+                >
                   <LinkIn />
                 </a>
               </div>
