@@ -1,61 +1,76 @@
 import Slider from "react-slick";
 import uniepaus from "../public/assets/svg/logos/uniepaus.svg";
-import { uuid } from "uuidv4";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PortfolioPopup from "../components/popups/PortfolioPopup";
+import axios from "axios";
+import { BackUrl } from "../vars";
 
-export interface ILogos {
-  beforeHover: string;
-  afterHover: string;
+export interface ILogosFinal {
   index: number;
+  Logo: string;
+  web: string;
+  region: string;
+  country: string;
+  status: string;
+  description: string;
+  contactLink: string;
 }
 
 const PortfolioSection = () => {
   const [portfolioOpen, setPortfolioOpen] = useState<boolean>(false);
   const [portfolioIndex, setPortfolioIndex] = useState<number>(1);
-
-  const logos: ILogos[] = [
+  const [sectionData, setSectionData] = useState<ILogosFinal[]>([
     {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
       index: 1,
+      Logo: uniepaus.src,
+      web: "uniepays.com",
+      region: "Europe",
+      country: "Turkey",
+      status: "Active",
+      description: "Test",
+      contactLink: "https://google.com",
     },
     {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
       index: 2,
+      Logo: uniepaus.src,
+      web: "uniepays.com",
+      region: "Europe",
+      country: "Turkey",
+      status: "Active",
+      description: "Test",
+      contactLink: "https://google.com",
     },
     {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
       index: 3,
+      Logo: uniepaus.src,
+      web: "uniepays.com",
+      region: "Europe",
+      country: "Turkey",
+      status: "Active",
+      description: "Test",
+      contactLink: "https://google.com",
     },
     {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
       index: 4,
+      Logo: uniepaus.src,
+      web: "uniepays.com",
+      region: "Europe",
+      country: "Turkey",
+      status: "Active",
+      description: "Test",
+      contactLink: "https://google.com",
     },
     {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
       index: 5,
+      Logo: uniepaus.src,
+      web: "uniepays.com",
+      region: "Europe",
+      country: "Turkey",
+      status: "Active",
+      description: "Test",
+      contactLink: "https://google.com",
     },
-    {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
-      index: 3,
-    },
-    {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
-      index: 4,
-    },
-    {
-      beforeHover: uniepaus.src,
-      afterHover: uniepaus.src,
-      index: 5,
-    },
-  ];
+  ] as ILogosFinal[]);
 
   const settings = {
     dots: false,
@@ -99,6 +114,24 @@ const PortfolioSection = () => {
     setPortfolioIndex(index);
   };
 
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(
+        BackUrl + "/api/portfolios?populate=Logo"
+      );
+      setSectionData([
+        ...response.data.data.map((el: any) => {
+          console.log(el);
+          return {
+            ...el.attributes,
+            Logo: BackUrl + el.attributes.Logo.data.attributes.url,
+          };
+        }),
+      ]);
+    };
+    takeData();
+  }, []);
+
   return (
     <>
       <section id="Portfolio" className="PortfolioSection">
@@ -107,12 +140,12 @@ const PortfolioSection = () => {
         </div>
         <div className="carousel">
           <Slider {...settings}>
-            {logos.map((el, index) => (
+            {sectionData.map((el, index) => (
               <div
                 onClick={() => openPortfolio(el.index)}
-                key={"portfolioELem" + index + el.afterHover}
+                key={"portfolioELem" + index + el.Logo}
               >
-                <img src={el.beforeHover} alt="logo" />
+                <img src={el.Logo} alt="logo" />
               </div>
             ))}
           </Slider>
@@ -123,7 +156,8 @@ const PortfolioSection = () => {
         portfolioOpen={portfolioOpen}
         setPortfolioOpen={setPortfolioOpen}
         Portfolio={
-          logos.find((logo) => logo.index == portfolioIndex) || logos[0]
+          sectionData.find((logo) => logo.index == portfolioIndex) ||
+          sectionData[0]
         }
       />
     </>

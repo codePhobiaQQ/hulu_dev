@@ -1,13 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
 import Close from "../UI/Close";
-import { ILogos } from "../../sections/PortfolioSection";
+import { ILogosFinal } from "../../sections/PortfolioSection";
 import Image from "next/image";
-import Link from "next/link";
+import { BackUrl } from "../../vars";
+import ReactMarkdown from "react-markdown";
 
 interface IPortfolioPopup {
   portfolioOpen: boolean;
   setPortfolioOpen: Dispatch<SetStateAction<boolean>>;
-  Portfolio: ILogos;
+  Portfolio: ILogosFinal;
 }
 
 const PortfolioPopup = ({
@@ -27,7 +28,7 @@ const PortfolioPopup = ({
               width={270}
               height={90}
               objectFit={"contain"}
-              src={Portfolio?.beforeHover}
+              src={Portfolio.Logo}
             ></Image>
           </div>
           <div className="contentSide">
@@ -36,56 +37,44 @@ const PortfolioPopup = ({
                 width={154}
                 height={50}
                 objectFit={"contain"}
-                src={Portfolio?.beforeHover}
+                src={Portfolio.Logo}
               ></Image>
               <ul className="infoLine">
                 <li className="infoElem">
                   <span className="what">web</span>
                   <a className="value" href="#" target="_blank">
-                    uniepays.com
+                    {Portfolio.web}
                   </a>
                 </li>
                 <li className="infoElem">
                   <span className="what">region</span>
-                  <span className="value">Europe</span>
+                  <span className="value">{Portfolio.region}</span>
                 </li>
                 <li className="infoElem">
                   <span className="what">country</span>
-                  <span className="value">Turkey</span>
+                  <span className="value">{Portfolio.country}</span>
                 </li>
                 <li className="infoElem">
                   <span className="what">status</span>
-                  <span className="value">Active</span>
+                  <span className="value">{Portfolio.status}</span>
                 </li>
               </ul>
             </div>
 
             <div className="textContent">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ipsum a arcu cursus vitae. Elit eget gravida cum sociis natoque
-                penatibus. In cursus turpis massa tincidunt. Aliquam eleifend mi
-                in nulla posuere sollicitudin aliquam ultrices sagittis.
-                Consequat interdum varius sit amet mattis. Scelerisque purus
-                semper eget duis at tellus. Amet luctus venenatis lectus magna
-                fringilla urna porttitor. Purus sit amet volutpat consequat
-                mauris. Rhoncus dolor purus non enim praesent elementum
-                facilisis. Lobortis feugiat
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ipsum a arcu cursus vitae. Elit eget gravida cum sociis natoque
-                penatibus. In cursus turpis massa tincidunt. Aliquam eleifend mi
-                in nulla posuere sollicitudin aliquam ultrices sagittis.
-                Consequat interdum varius sit amet mattis. Scelerisque purus
-                semper eget duis at tellus. Amet luctus venenatis lectus magna
-                fringilla urna porttitor. Purus sit amet volutpat consequat
-                mauris. Rhoncus dolor
-              </p>
+              <ReactMarkdown
+                transformImageUri={(uri: any) =>
+                  uri.startsWith("http") ? uri : `${BackUrl}${uri}`
+                }
+              >
+                {Portfolio.description}
+              </ReactMarkdown>
             </div>
-            <a href="#" target="_blank" className="contactBtn">
+            <a
+              href={Portfolio.contactLink}
+              target="_blank"
+              className="contactBtn"
+            >
               Contact us
             </a>
           </div>
