@@ -27,6 +27,7 @@ const BlogSinglePage = () => {
     blog_categories: { data: [{ attributes: { ids: 0, name: "All" } }] },
   } as IBlogFinal);
   const [colorMode, setColorMode] = useState<string>("black");
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setColorMode(localStorage.getItem("color") || "black");
