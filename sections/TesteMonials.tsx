@@ -2,7 +2,10 @@ import Slider from "react-slick";
 import icon from "../public/assets/img/teste/TesteIcon.png";
 import logo from "../public/assets/img/teste/TesteLogo.png";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import { BackUrl } from "../vars";
+import mac from "../public/assets/img/mac.png";
 
 interface sliderInterface {
   icon: any;
@@ -96,13 +99,33 @@ const TesteMonials = () => {
 
   const sliderRef = useRef<any>(null);
 
+  const [sectionData, setSectionData] = useState<sliderInterface[]>(sliders);
+
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(
+        BackUrl + "/api/testemonials?populate=icon&populate=logo"
+      );
+      setSectionData([
+        ...response.data.data.map((el: any) => {
+          return {
+            ...el.attributes,
+            icon: BackUrl + el.attributes.icon.data.attributes.url,
+            company: BackUrl + el.attributes.logo.data.attributes.url,
+          };
+        }),
+      ]);
+    };
+    takeData();
+  }, []);
+
   return (
     <section className="TesteMonialsSection">
       <div className="container">
         <h2>TESTEMONIALS</h2>
         <div className="testemonialsSlider">
           <Slider ref={sliderRef} {...settings}>
-            {sliders.map((el, index) => (
+            {sectionData.map((el, index) => (
               <div className={"slide-inner"} key={"testemonialELem" + index}>
                 <div className="logo">
                   <Image
