@@ -46,7 +46,7 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
     <li onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
       <Tilt
         className="Tilt"
-        options={{ max: 25, scale: 1 }}
+        options={{ max: 10, scale: 1, speed: 1500 }}
         // style={{ height: 600, width: 430 }}
       >
         <div className="cardWrap">

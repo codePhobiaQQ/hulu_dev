@@ -54,6 +54,8 @@ const BlogSinglePage = () => {
     takeData();
   }, []);
 
+  console.log(categoryElem);
+
   return (
     <HeaderBlog colorMode={colorMode} setColorMode={setColorMode}>
       <section className={"BlogSinglePage " + colorMode}>

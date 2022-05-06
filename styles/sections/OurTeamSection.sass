@@ -109,7 +109,7 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
         &:hover
           .cardWrap
             &:after
-              opacity: .8
+              opacity: .7
             .cardInfo .subInfo p
               opacity: 1
               max-height: 600px
@@ -178,20 +178,23 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95)
         flex-direction: column
         li
           .cardWrap
+
+
+          .cardWrap
+            position: relative
+            &:after
+              display: none
             .cardInfo
               .subInfo
                 opacity: 0
                 max-height: 0
               .mainInfo
                 margin-bottom: 25px
-
-          .cardWrap
-            position: relative
-            &:after
-              display: none
             &:hover
               .hoverInfo
                 opacity: 1
+              .mainInfo
+                display: none
             .hoverInfo
               position: absolute
               width: 100%

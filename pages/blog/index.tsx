@@ -19,7 +19,7 @@ export interface IBlogFinal {
   ContentText: string;
   BlogBigImg: any;
   // eslint-disable-next-line camelcase
-  blog_categories: any[];
+  blog_categories: any;
 }
 
 const Blog = () => {
