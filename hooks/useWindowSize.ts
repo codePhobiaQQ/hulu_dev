@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
 interface HookI {
-  width: number | undefined;
-  height: number | undefined;
+  width: number;
+  height: number;
 }
 
 // Hook
 export function useWindowSize() {
   const [windowSize, setWindowSize] = useState<HookI>({
-    width: undefined,
-    height: undefined,
+    width: 1920,
+    height: 630,
   });
   useEffect(() => {
     if (typeof window !== "undefined") {
