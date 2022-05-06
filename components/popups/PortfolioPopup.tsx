@@ -73,6 +73,7 @@ const PortfolioPopup = ({
             <a
               href={Portfolio.contactLink}
               target="_blank"
+              rel="noreferrer"
               className="contactBtn"
             >
               Contact us
