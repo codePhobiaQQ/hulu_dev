@@ -24,13 +24,16 @@ const BlogElem = ({ blogEl, categories }: IBlogElem) => {
           </div>
           <div className="content">
             <h3>{blogEl.ShortTitle}</h3>
-            <ReactMarkdown
-              transformImageUri={(uri: any) =>
-                uri.startsWith("http") ? uri : `${BackUrl}${uri}`
-              }
-            >
-              {blogEl.PreviewText}
-            </ReactMarkdown>
+            <div className="innerContent">
+              <ReactMarkdown
+                transformImageUri={(uri: any) =>
+                  uri.startsWith("http") ? uri : `${BackUrl}${uri}`
+                }
+              >
+                {blogEl.PreviewText}
+              </ReactMarkdown>
+            </div>
+
             <span>{blogEl.blog_categories[0].name}</span>
           </div>
         </a>
