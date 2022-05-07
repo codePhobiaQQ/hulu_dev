@@ -88,7 +88,7 @@ const DashboardSection = ({
     const takeData = async () => {
       const response = await axios.get(
         BackUrl +
-          "/api/main-page-fields?populate=DashboardSection&populate=DashboardSection.img&populate=ScreeningSection&populate=MonitoringSection"
+          "/api/main-page-fields?populate=DashboardSection&populate=DashboardSection.img&populate=ScreeningSection&populate=ScreeningSection.girlImg&populate=MonitoringSection"
       );
       setSectionData({
         ...response.data.data.attributes.DashboardSection,
@@ -97,7 +97,13 @@ const DashboardSection = ({
           response.data.data.attributes.DashboardSection.img.data.attributes
             .url,
       });
-      setScreeningData(response.data.data.attributes.ScreeningSection);
+      setScreeningData({
+        ...response.data.data.attributes.ScreeningSection,
+        img:
+          BackUrl +
+          response.data.data.attributes.DashboardSection.img.data.attributes
+            .url,
+      });
       setTransactionData(response.data.data.attributes.MonitoringSection);
     };
     takeData();

@@ -9,8 +9,27 @@ import col4 from "./../../public/assets/img/dashboard/4.png";
 import plus from "./../../public/assets/img/dashboard/plus.png";
 import scheme from "./../../public/assets/img/dashboard/scheme.png";
 import Circles from "./../../public/assets/img/dashboard/circles.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { BackUrl } from "../../vars";
 
 const ScreeningMonitor = () => {
+  const [girlImg, setGirlImg] = useState<string>(Jane.src);
+
+  useEffect(() => {
+    const takeData = async () => {
+      const response = await axios.get(
+        BackUrl + "/api/main-page-fields?populate=ScreeningSection.girlImg"
+      );
+      setGirlImg(
+        BackUrl +
+          response.data.data.attributes.ScreeningSection.girlImg.data.attributes
+            .url
+      );
+    };
+    takeData();
+  }, []);
+
   const listTable = [...Array(16)];
   return (
     <motion.div
@@ -38,7 +57,7 @@ const ScreeningMonitor = () => {
               className="imgWrap"
             >
               <Image
-                src={Jane.src}
+                src={girlImg}
                 width={84}
                 height={84}
                 objectFit={"contain"}

@@ -30,7 +30,7 @@ const BlogElem = ({ blogEl, categories }: IBlogElem) => {
                   uri.startsWith("http") ? uri : `${BackUrl}${uri}`
                 }
               >
-                {blogEl.PreviewText}
+                {blogEl.PreviewText.split("").slice(0, 300).join("") + "..."}
               </ReactMarkdown>
             </div>
 
