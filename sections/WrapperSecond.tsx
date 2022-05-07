@@ -15,8 +15,8 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const [opaciting, setOpaciting] = useState<number>(1);
-  const [from, setFrom] = useState(1200);
-  const [to, setTo] = useState(2400);
+  const [froming, setFrom] = useState<number>(1200);
+  const [to, setTo] = useState<number>(2400);
 
   const opacity = useTransform(
     scrolling,
@@ -32,24 +32,27 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   console.log(opacity);
 
   useEffect(() => {
-    console.log("topi whyHeight, windowHeight", topi, whyHeight, windowHeight);
-  }, [topi, whyHeight, windowHeight]);
-
-  useEffect(() => {
     if (windowHeight < whyHeight) {
-      setFrom(topi + whyHeight - windowHeight);
-      setTo(topi + whyHeight);
+      setFrom(topi + whyHeight - windowHeight + 200);
+      setTo(topi + whyHeight - windowHeight + 600);
     } else {
       setFrom(topi);
-      setTo(topi + whyHeight - 200);
+      setTo(topi + whyHeight - 100);
     }
   }, [topi, whyHeight, windowHeight]);
 
   const scrollHandler = () => {
-    if (scrollPosition() > from && scrollPosition() < to) {
-      console.log("here");
-      // @ts-ignore
-      setOpaciting((1 - (scrollPosition() - from) / (to - from)).toFixed(4));
+    const position = scrollPosition();
+
+    if (position < topi && opaciting != 1) {
+      setOpaciting(1);
+    } else if (scrollPosition() > froming && position < to) {
+      setOpaciting(
+        // @ts-ignore
+        (1 - (position - froming) / (to - froming)).toFixed(2)
+      );
+    } else if (position > to && opaciting != 0) {
+      setOpaciting(0);
     }
   };
 
@@ -62,7 +65,7 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, [to, from]);
+  }, [to, froming, topi, opaciting]);
 
   useEffect(() => {
     sectionRef.current ? setTop(sectionRef.current?.offsetTop) : null;

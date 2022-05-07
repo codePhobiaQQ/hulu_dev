@@ -4,6 +4,7 @@
   height: 100vh
   position: relative
   z-index: 1
+  min-height: 630px
   //background-color: $backgroundColor
   will-change: opacity
   .dirty
@@ -154,6 +155,7 @@
 
 
   @media only screen and (max-width: 767px)
+    min-height: inherit
     .container
       .content
         h1
