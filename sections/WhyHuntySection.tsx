@@ -84,6 +84,7 @@ const WhyHuntySection = React.memo(({ setWhyHeight }: IWhyHuntySection) => {
                     }}
                   >
                     {children}
+                    <div className="centerValue">50 000</div>
                   </div>
                 )}
                 renderThumb={({ props }) => (
