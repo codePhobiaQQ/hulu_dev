@@ -12,8 +12,10 @@
     right: -250px
     top: -263px
     background: radial-gradient(50% 50% at 50% 50%, #01C497 0%, rgba(1, 196, 151, 0) 100%)
+    -webkit-background: radial-gradient(50% 50% at 50% 50%, #01C497 0%, rgba(1, 196, 151, 0) 100%)
     transform: rotate(30deg)
     filter: blur(100px)
+    -webkit-filter: blur(100px)
     width: 1031px
     height: 742px
     z-index: 1
@@ -164,3 +166,10 @@
           max-width: 500px
       .button-container-1
         margin-top: 50px
+
+  @media only screen and (max-width: 576px)
+    .dirty
+      width: 701.65px
+      height: 504.76px
+      right: -200px
+      top: -133px
