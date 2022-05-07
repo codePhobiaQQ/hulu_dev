@@ -4,7 +4,7 @@ const timedisp = 100;
 const sharenew = 0.01;
 const horerate = 15;
 
-const toNormalString = (result: string) => {
+export const toNormalString = (result: string) => {
   return new Intl.NumberFormat("ru-RU").format(+result);
 };
 

@@ -2,7 +2,7 @@
 import { MotionValue, motion, useTransform } from "framer-motion";
 import { Range, getTrackBackground } from "react-range";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { calcNumbSection } from "../services/calc.service";
+import { calcNumbSection, toNormalString } from "../services/calc.service";
 import Circles from "../components/Circles";
 import React from "react";
 import axios from "axios";
@@ -84,7 +84,9 @@ const WhyHuntySection = React.memo(({ setWhyHeight }: IWhyHuntySection) => {
                     }}
                   >
                     {children}
-                    <div className="centerValue">50 000</div>
+                    <div className="centerValue">
+                      {toNormalString(values[0].toString())}
+                    </div>
                   </div>
                 )}
                 renderThumb={({ props }) => (
