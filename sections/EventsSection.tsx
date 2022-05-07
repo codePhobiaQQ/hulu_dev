@@ -16,6 +16,8 @@ interface IEvent {
 }
 
 const EventsSection = () => {
+  const [allEventsLink, setAllEventsLink] =
+    useState<string>("https://google.com");
   const [pageData, setPageData] = useState<IEvent[]>([
     {
       link: "https://huntli.vercel.app/",
@@ -48,6 +50,8 @@ const EventsSection = () => {
   useEffect(() => {
     const takeData = async () => {
       const response = await axios.get(BackUrl + "/api/event?populate=image");
+      const eventsLink = await axios.get(BackUrl + "/api/main-page-fields");
+      setAllEventsLink(eventsLink.data.data.attributes.AllEventsLink);
 
       setPageData(
         response.data.data.map((el: any) => {
@@ -71,9 +75,9 @@ const EventsSection = () => {
       <div className="container">
         <div className="leftEls">
           <h2>EVENTS</h2>
-          <Link href="#">
-            <a>All Events</a>
-          </Link>
+          <a href={allEventsLink} target={"_blank"} rel="noreferrer">
+            All Events
+          </a>
         </div>
 
         <ul className="events">
