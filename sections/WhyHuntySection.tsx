@@ -4,6 +4,7 @@ import { Range, getTrackBackground } from "react-range";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { calcNumbSection } from "../services/calc.service";
 import Circles from "../components/Circles";
+import React from "react";
 import axios from "axios";
 import { BackUrl } from "../vars";
 
@@ -23,7 +24,8 @@ const STEP = 1;
 const MIN = 1000;
 const MAX = 100000;
 
-const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
+// eslint-disable-next-line react/display-name
+const WhyHuntySection = React.memo(({ setWhyHeight }: IWhyHuntySection) => {
   const [values, setValue] = useState<number[]>([1000]);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -111,6 +113,6 @@ const WhyHuntySection = ({ setWhyHeight }: IWhyHuntySection) => {
       </div>
     </section>
   );
-};
+});
 
 export default WhyHuntySection;

@@ -29,8 +29,6 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
     [1, 0]
   );
 
-  console.log(opacity);
-
   useEffect(() => {
     if (windowHeight < whyHeight) {
       setFrom(topi + whyHeight - windowHeight + 200);
