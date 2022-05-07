@@ -109,10 +109,6 @@ const DashboardSection = ({
     takeData();
   }, []);
 
-  useEffect(() => {
-    console.log(sectionData);
-  }, [sectionData]);
-
   return (
     <section ref={sectionRef} id="Dashboard" className="DashboardSection">
       <div ref={firstInView.ref} className="wrapperDashboard">
