@@ -53,7 +53,6 @@ const ConnectPopup = ({ setConnectOpen, connectOpen }: IConnectPopup) => {
                     values.email,
                     values.phone,
                     values.message,
-                    values.message,
                     window.location.href.split("//")[0] +
                       "//" +
                       window.location.href.split("/").slice(2).join("")
