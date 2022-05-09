@@ -85,7 +85,10 @@ const ContactSection = ({ setTopPosition }: IContactSection) => {
                       }
                     >
                       <CheckedComp id={"ContactSection"} />
-                      <label htmlFor={"ContactSection"}>
+                      <label
+                        className={"outerLabel"}
+                        htmlFor={"ContactSection"}
+                      >
                         We will keep your personal information private and safe*
                       </label>
                     </div>

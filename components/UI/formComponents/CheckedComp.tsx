@@ -4,7 +4,7 @@ const CheckedComp = (props: any) => {
   return (
     <div className="round">
       <Field id={props.id} type="checkbox" name="politic" />
-      <label htmlFor={props.id}></label>
+      <label className={"innerLable"} htmlFor={props.id}></label>
     </div>
   );
 };

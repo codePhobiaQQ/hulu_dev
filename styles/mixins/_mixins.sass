@@ -124,7 +124,7 @@
         .round label
           transition: color .8s $transition
           border-color: red
-      label
+      .outerLabel
         font-size: 18px
         color: #AFAFAF
         font-family: "SequelLightBody", sans-serif
@@ -156,7 +156,7 @@
     width: 28px
     height: 28px
     margin-right: 10px
-  .round label 
+  .round label
     background-color: #fff
     border: 1px solid #ccc
     border-radius: 50%
@@ -205,11 +205,12 @@
   @media only screen and (max-width: 1919px)
     .round
       transform: scale(.55)
-    .agree
-      margin-left: auto
-      label
-        font-size: 13px !important
-        width: 300px !important
+    .buttonWrap
+      .agree
+        margin-left: auto
+        span
+          font-size: 13px !important
+          width: 300px !important
 
     input, textarea
       font-size: 25px
@@ -224,12 +225,13 @@
         height: 40px
         margin-right: 25px
         font-size: 13px
-      label
-        font-size: 13px
+      .agree
+        .outerLabel
+          font-size: 13px
 
   @media only screen and (max-width: 576px)
     .agree
-      span
+      .outerLabel
         width: 140px !important
 
     input, textarea
@@ -244,6 +246,7 @@
       justify-content: space-between
       button
         margin-right: 0
-      label
-        width: 156px
+      .agree
+        .outerLabel
+          width: 156px
 
