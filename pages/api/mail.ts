@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { log } from "util";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 var nodemailer = require("nodemailer");
 
@@ -12,6 +13,8 @@ export default async function handler(
 ) {
   try {
     console.log(req.body.email);
+    console.log(req.body);
+
     const transporter = await nodemailer.createTransport({
       host: "smtp.mail.ru",
       port: 465,
