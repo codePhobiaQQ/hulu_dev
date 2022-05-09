@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/mail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/mail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/ContactSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/ContactSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/mail.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/mail.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/popups/ConnectPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/popups/ConnectPopup.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
