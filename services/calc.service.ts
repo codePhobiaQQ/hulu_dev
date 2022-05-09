@@ -22,7 +22,12 @@ export const calcNumbSection = (
     );
   } else {
     return toNormalString(
-      (((sharenew * timedisp * transactions) / 60) * 30 * horerate).toFixed(0)
+      (
+        ((transactions * ((1 - share) * time + share * timedisp)) / 60) *
+          30 *
+          horerate -
+        ((sharenew * timedisp * transactions) / 60) * 30 * horerate
+      ).toFixed(0)
     );
   }
 };

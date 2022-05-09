@@ -67,8 +67,8 @@ const ContactSection = ({ setTopPosition }: IContactSection) => {
                     id="email"
                     type="string"
                     name="email"
-                    placeholder="Your Email"
-                    className={errors.email ? "error" : ""}
+                    placeholder="Your Email*"
+                    className={touched.email && errors.email ? "error" : ""}
                   />
 
                   <Field id="phone" name="phone" placeholder="Your Phone" />
@@ -77,11 +77,17 @@ const ContactSection = ({ setTopPosition }: IContactSection) => {
 
                   <div className="buttonWrap">
                     <button type="submit">Send</button>
-                    <div className={errors.politic ? "agree error" : "agree"}>
+                    <div
+                      className={
+                        touched.politic && errors.politic
+                          ? "agree error"
+                          : "agree"
+                      }
+                    >
                       <CheckedComp id={"ContactSection"} />
-                      <span>
-                        We will keep your personal information private and safe
-                      </span>
+                      <label htmlFor={"ContactSection"}>
+                        We will keep your personal information private and safe*
+                      </label>
                     </div>
                   </div>
                 </Form>

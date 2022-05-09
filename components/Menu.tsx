@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import SocLinks from "./UI/SocLinks";
-import { SetStateAction, Dispatch } from "react";
+import { SetStateAction, Dispatch, useCallback, useEffect } from "react";
 import { fadeFromBot, menuVariant } from "../motions/Menu.motion";
 import LogoMenu from "./UI/LogoMenu";
 import Close from "./UI/Close";
@@ -63,6 +63,20 @@ const Menu = ({ setOpen, open }: IMenu) => {
   const clickLinkHandler = () => {
     setOpen(false);
   };
+
+  const keyClickHandler = useCallback((e: KeyboardEvent) => {
+    console.log(e.key);
+    if (e.key === "Escape") clickLinkHandler();
+  }, []);
+
+  useEffect(() => {
+    if (open) {
+      window.addEventListener("keydown", keyClickHandler);
+      return () => {
+        window.removeEventListener("keydown", keyClickHandler);
+      };
+    }
+  }, [open]);
 
   return (
     <AnimatePresence initial={false}>

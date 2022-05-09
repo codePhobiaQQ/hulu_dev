@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { setThanksOpen } from "../../redux/slices/AppSlice";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuVariant } from "../../motions/Menu.motion";
+import { useCallback, useEffect } from "react";
 
 const ThanksPopup = () => {
   const isVisible = useTypedSelector((state) => state.app.isThanksOpen);
@@ -11,6 +12,20 @@ const ThanksPopup = () => {
   const closeHandler = () => {
     dispatch(setThanksOpen(false));
   };
+
+  const keyClickHandler = useCallback((e: KeyboardEvent) => {
+    console.log(e.key);
+    if (e.key === "Escape") closeHandler();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      window.addEventListener("keydown", keyClickHandler);
+      return () => {
+        window.removeEventListener("keydown", keyClickHandler);
+      };
+    }
+  }, [isVisible]);
 
   return (
     <AnimatePresence initial={false}>
@@ -21,8 +36,9 @@ const ThanksPopup = () => {
           exit="exit"
           variants={menuVariant}
           className={"thanksPopup"}
+          onClick={closeHandler}
         >
-          <div className="close" onClick={closeHandler}>
+          <div className="close">
             <Close />
           </div>
           <div className="container">
