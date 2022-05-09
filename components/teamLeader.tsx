@@ -1,7 +1,7 @@
 import linkIn from "../public/assets/svg/in.svg";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+
 // @ts-ignore
 import Tilt from "react-tilt";
 
@@ -17,20 +17,9 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
   const [windowWidth, setWindowWidth] = useState(1920);
   const [isHover, setIsHover] = useState<boolean>(false);
 
-  const resizeHandler = (e: any) => {
-    setWindowWidth(e.target.innerWidth);
-  };
-
   useEffect(() => {
-    window.addEventListener("resize", resizeHandler);
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, [windowWidth]);
-
-  useEffect(() => {
-    console.log("change window width");
-  }, [windowWidth]);
+    setWindowWidth(window.innerWidth);
+  }, []);
 
   const mouseLeaveDelay: any = null;
 
@@ -56,7 +45,9 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
           <div className="cardInfo">
             <div className="mainInfo">
               <span>{name}</span>
-              <Image width={40} height={40} src={linkIn.src} alt="in" />
+              <a href={link} target="_blank" rel="noreferrer">
+                <Image width={40} height={40} src={linkIn.src} alt="in" />
+              </a>
             </div>
             <div className="subInfo">
               <p>{text}</p>
@@ -82,7 +73,7 @@ const TeamLeader = ({ img, name, text, link, sectionOffset }: ILeader) => {
         </div>
         <div className="hoverInfo">
           <p>{text}</p>
-          <a href="#" target="_blank">
+          <a href={link} target="_blank" rel="noreferrer">
             Follow me
           </a>
         </div>

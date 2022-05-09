@@ -1,6 +1,11 @@
 import WhyHuntySection from "./WhyHuntySection";
 import AboutSection from "./AboutSection";
-import { MotionValue, useTransform, motion } from "framer-motion";
+import {
+  MotionValue,
+  useTransform,
+  motion,
+  useViewportScroll,
+} from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 interface IWrapperSecond {
@@ -14,16 +19,20 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   const [whyHeight, setWhyHeight] = useState<number>(630);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const opacity = useTransform(
-    scrolling,
-    [
-      windowHeight < whyHeight ? topi + whyHeight - windowHeight + 200 : topi,
-      windowHeight < whyHeight
-        ? topi + whyHeight - windowHeight + 600
-        : topi + whyHeight - 100,
-    ],
-    [1, 0]
-  );
+  const [from, setFrom] = useState<number>(920);
+  const [to, setTo] = useState<number>(1300);
+
+  useEffect(() => {
+    if (windowHeight < whyHeight) {
+      setFrom(topi + whyHeight - windowHeight + 200);
+      setTo(topi + whyHeight - windowHeight + 600);
+    } else {
+      setFrom(topi);
+      setTo(topi + whyHeight - 100);
+    }
+  }, [windowHeight]);
+
+  const opacity = useTransform(scrolling, [from, to], [1, 0]);
 
   useEffect(() => {
     sectionRef.current ? setTop(sectionRef.current?.offsetTop) : null;
