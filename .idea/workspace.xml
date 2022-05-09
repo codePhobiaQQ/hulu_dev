@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hoc/Header/HeaderBlog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/HeaderBlog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hoc/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hoc/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/WrapperSecond.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/WrapperSecond.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

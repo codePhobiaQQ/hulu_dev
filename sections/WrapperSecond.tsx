@@ -14,10 +14,6 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
   const [whyHeight, setWhyHeight] = useState<number>(630);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const [opaciting, setOpaciting] = useState<number>(1);
-  const [froming, setFrom] = useState<number>(1200);
-  const [to, setTo] = useState<number>(2400);
-
   const opacity = useTransform(
     scrolling,
     [
@@ -28,42 +24,6 @@ const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
     ],
     [1, 0]
   );
-
-  useEffect(() => {
-    if (windowHeight < whyHeight) {
-      setFrom(topi + whyHeight - windowHeight + 200);
-      setTo(topi + whyHeight - windowHeight + 600);
-    } else {
-      setFrom(topi);
-      setTo(topi + whyHeight - 100);
-    }
-  }, [topi, whyHeight, windowHeight]);
-
-  const scrollHandler = () => {
-    const position = scrollPosition();
-
-    if (position < topi && opaciting != 1) {
-      setOpaciting(1);
-    } else if (scrollPosition() > froming && position < to) {
-      setOpaciting(
-        // @ts-ignore
-        (1 - (position - froming) / (to - froming)).toFixed(2)
-      );
-    } else if (position > to && opaciting != 0) {
-      setOpaciting(0);
-    }
-  };
-
-  const scrollPosition = () => {
-    return window.pageYOffset || document.documentElement.scrollTop;
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
-  }, [to, froming, topi, opaciting]);
 
   useEffect(() => {
     sectionRef.current ? setTop(sectionRef.current?.offsetTop) : null;

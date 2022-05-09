@@ -28,6 +28,7 @@ const Header = ({
   const [open, setOpen] = useState<boolean>(false);
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
   const policityOpen = useTypedSelector((state) => state.app.isPolicityOpen);
+
   // useEffect(() => {
   //   const show = async () => {
   //     setTimeout(() => {
