@@ -7,6 +7,7 @@ import { MotionValue } from "framer-motion";
 import ConnectPopup from "../../components/popups/ConnectPopup";
 import Policity from "../../components/popups/Policity";
 import Logo from "../../components/UI/Logo";
+import useTypedSelector from "../../hooks/useTypedSelector";
 
 interface IHeader {
   children: React.ReactNode;
@@ -26,8 +27,7 @@ const Header = ({
 }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
-  const [policityOpen, setPolicityOpen] = useState<boolean>(false);
-
+  const policityOpen = useTypedSelector((state) => state.app.isPolicityOpen);
   // useEffect(() => {
   //   const show = async () => {
   //     setTimeout(() => {
@@ -69,11 +69,8 @@ const Header = ({
         </div>
         {children}
         <Menu setOpen={setOpen} open={open} />
-        <FooterSection setPolicityOpen={setPolicityOpen} />
-        <Policity
-          setPolicityOpen={setPolicityOpen}
-          policityOpen={policityOpen}
-        />
+        <FooterSection />
+        <Policity />
         <ConnectPopup
           connectOpen={connectOpen}
           setConnectOpen={setConnectOpen}

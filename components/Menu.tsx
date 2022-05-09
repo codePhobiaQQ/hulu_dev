@@ -65,7 +65,6 @@ const Menu = ({ setOpen, open }: IMenu) => {
   };
 
   const keyClickHandler = useCallback((e: KeyboardEvent) => {
-    console.log(e.key);
     if (e.key === "Escape") clickLinkHandler();
   }, []);
 

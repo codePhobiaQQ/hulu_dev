@@ -2,17 +2,15 @@ import logo from "../public/assets/svg/Logo.svg";
 import { ILink, linksMenu } from "../components/Menu";
 import Link from "next/link";
 import SocLinks from "../components/UI/SocLinks";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { BackUrl } from "../vars";
+import { useDispatch } from "react-redux";
+import { setPolicityOpen } from "../redux/slices/AppSlice";
 
 interface ILinksInt {
   index: number;
   el: ILink;
-}
-
-interface IFooter {
-  setPolicityOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 interface IContactInfo {
@@ -46,7 +44,7 @@ const SecondFootLink = ({ index, el }: ILinksInt) => {
   return null;
 };
 
-const FooterSection = ({ setPolicityOpen }: IFooter) => {
+const FooterSection = () => {
   const [pageData, setPageData] = useState<IContactInfo>({
     address: "Kronvalda bulvāris 10, Centra rajons, Rīga, Latvia, LV-1010",
     FacebookLink: "https://google.com",
@@ -56,6 +54,8 @@ const FooterSection = ({ setPolicityOpen }: IFooter) => {
     TwitterLink: "https://google.com",
     email: "dmytro@huntli.io",
   } as IContactInfo);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const takeData = async () => {
@@ -74,7 +74,9 @@ const FooterSection = ({ setPolicityOpen }: IFooter) => {
               <img src={logo.src} alt="Logo" />
             </a>
           </Link>
-          <span onClick={() => setPolicityOpen(true)}>Privacy and policy</span>
+          <span onClick={() => dispatch(setPolicityOpen(true))}>
+            Privacy and policy
+          </span>
         </div>
         <div className="centerCol">
           <h3>Navigate</h3>

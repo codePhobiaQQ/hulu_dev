@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import CheckedComp from "../components/UI/formComponents/CheckedComp";
 import ThanksPopup from "../components/popups/ThanksPopup";
 import { useDispatch } from "react-redux";
-import { setThanksOpen } from "../redux/slices/AppSlice";
+import { setThanksOpen, setPolicityOpen } from "../redux/slices/AppSlice";
 import { mailService } from "../services/mail.service";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
@@ -87,7 +87,7 @@ const ContactSection = ({ setTopPosition }: IContactSection) => {
                       <CheckedComp id={"ContactSection"} />
                       <label
                         className={"outerLabel"}
-                        htmlFor={"ContactSection"}
+                        onClick={() => dispatch(setPolicityOpen(true))}
                       >
                         We will keep your personal information private and safe*
                       </label>
