@@ -22,6 +22,8 @@
     <list default="true" id="cbf5b358-25ad-4f3e-87ae-c19081c468ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/mail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/mail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/ContactSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/ContactSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/mail.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/mail.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,10 +194,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1651486381675" />
-    <state x="385" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1651730265979">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup" timestamp="1652090887471">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="385" y="112" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1651730265979" />
-    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1651425919956" />
+    <state x="513" y="134" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1652090887471" />
   </component>
 </project>

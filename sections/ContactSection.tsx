@@ -51,7 +51,10 @@ const ContactSection = ({ setTopPosition }: IContactSection) => {
                   values.name,
                   values.email,
                   values.phone,
-                  values.message
+                  values.message,
+                  window.location.href.split("//")[0] +
+                    "//" +
+                    window.location.href.split("/").slice(2).join("")
                 );
                 console.log(response);
                 dispatch(setThanksOpen(true));

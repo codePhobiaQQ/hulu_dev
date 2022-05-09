@@ -5,9 +5,10 @@ export const mailService = async (
   name: string,
   email: string,
   phone: string,
-  message: string
+  message: string,
+  address: string
 ) => {
-  const response = axios.post("http://localhost:3000/api/mail", {
+  const response = axios.post(`${address}/api/mail`, {
     company,
     name,
     email,

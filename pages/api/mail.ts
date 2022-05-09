@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { log } from "util";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 var nodemailer = require("nodemailer");
 
@@ -52,10 +51,10 @@ export default async function handler(
         "<div style='width: 80%; margin-top: 30px'>Если все-таки закралась случайная ошибка в номере и доступ по истечению 1 рабочего дня тебе не открылся, свяжись со мной в телеграмм: <a target='_blank' href='https://t.me/evteeva_iri'>https://t.me/evteeva_iri</a> и мы быстро решим эту проблему.</div>",
     });
     // @ts-ignore
-    res.json({ info, info1 });
+    return res.json({ info, info1 });
   } catch (e) {
     console.log(e);
     // @ts-ignore
-    res.json({ message: e.message });
+    return res.json({ message: e.message });
   }
 }
