@@ -24,8 +24,6 @@ const HeaderBlog = ({ children, setColorMode, colorMode }: IHeader) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const [connectOpen, setConnectOpen] = useState<boolean>(false);
-  const [policityOpen, setPolicityOpen] = useState<boolean>(false);
-
   const link = useRouter();
   const [activeLogo, setActiveLogo] = useState<number>(0);
 
@@ -99,8 +97,8 @@ const HeaderBlog = ({ children, setColorMode, colorMode }: IHeader) => {
       </div>
       {children}
       <Menu setOpen={setOpen} open={open} />
-      <FooterSection setPolicityOpen={setPolicityOpen} />
-      <Policity setPolicityOpen={setPolicityOpen} policityOpen={policityOpen} />
+      <FooterSection />
+      <Policity />
       <ConnectPopup connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
     </>
   );
