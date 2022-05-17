@@ -6,7 +6,7 @@ import axios from "axios";
 import { BackUrl } from "../vars";
 
 export interface ILogosFinal {
-  index: number;
+  id: number;
   Logo: string;
   web: string;
   region: string;
@@ -21,7 +21,7 @@ const PortfolioSection = () => {
   const [portfolioIndex, setPortfolioIndex] = useState<number>(1);
   const [sectionData, setSectionData] = useState<ILogosFinal[]>([
     {
-      index: 1,
+      id: 1,
       Logo: uniepaus.src,
       web: "uniepays.com",
       region: "Europe",
@@ -31,7 +31,7 @@ const PortfolioSection = () => {
       contactLink: "https://google.com",
     },
     {
-      index: 2,
+      id: 2,
       Logo: uniepaus.src,
       web: "uniepays.com",
       region: "Europe",
@@ -41,7 +41,7 @@ const PortfolioSection = () => {
       contactLink: "https://google.com",
     },
     {
-      index: 3,
+      id: 3,
       Logo: uniepaus.src,
       web: "uniepays.com",
       region: "Europe",
@@ -51,7 +51,7 @@ const PortfolioSection = () => {
       contactLink: "https://google.com",
     },
     {
-      index: 4,
+      id: 4,
       Logo: uniepaus.src,
       web: "uniepays.com",
       region: "Europe",
@@ -61,7 +61,7 @@ const PortfolioSection = () => {
       contactLink: "https://google.com",
     },
     {
-      index: 5,
+      id: 5,
       Logo: uniepaus.src,
       web: "uniepays.com",
       region: "Europe",
@@ -122,6 +122,7 @@ const PortfolioSection = () => {
       setSectionData([
         ...response.data.data.map((el: any) => {
           return {
+            id: el.id,
             ...el.attributes,
             Logo: BackUrl + el.attributes.Logo.data.attributes.url,
           };
@@ -141,7 +142,7 @@ const PortfolioSection = () => {
           <Slider {...settings}>
             {sectionData.map((el, index) => (
               <div
-                onClick={() => openPortfolio(el.index)}
+                onClick={() => openPortfolio(el.id)}
                 key={"portfolioELem" + index + el.Logo}
               >
                 <img src={el.Logo} alt="logo" />
@@ -155,7 +156,7 @@ const PortfolioSection = () => {
         portfolioOpen={portfolioOpen}
         setPortfolioOpen={setPortfolioOpen}
         Portfolio={
-          sectionData.find((logo) => logo.index == portfolioIndex) ||
+          sectionData.find((logo) => logo.id == portfolioIndex) ||
           sectionData[0]
         }
       />
