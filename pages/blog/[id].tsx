@@ -10,14 +10,13 @@ import { useEffect, useState } from "react";
 import HeaderBlog from "../../hoc/Header/HeaderBlog";
 import axios from "axios";
 import { BackUrl } from "../../vars";
-import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 
 const BlogSinglePage = () => {
   // @ts-ignore
   const [categoryElem, setCategoryElem] = useState<IBlogFinal>({
     id: 2,
-    BlogBigImg: { data: { attributes: arca.src } },
+    // BlogBigImg: { data: { attributes: arca.src } },
     BigTitle: "Test",
     TwitLink: "https://google.com",
     LinkedinLink: "https://google.com",
@@ -34,15 +33,13 @@ const BlogSinglePage = () => {
     }
   }, []);
 
-  const link = useRouter();
-
   useEffect(() => {
     const takeData = async () => {
       try {
         const responsElem = await axios.get(
           BackUrl +
             `/api/blogs/${
-              categoryElem.id + 1
+              window.location.href.split("blog/")[1]
             }?populate=BlogBigImg&populate=PreviewImg&populate=blog_categories`
         );
         setCategoryElem(responsElem.data.data.attributes);
@@ -67,11 +64,11 @@ const BlogSinglePage = () => {
             </a>
           </Link>
           <div className="contentWrap">
-            <img
-              width={390}
-              src={BackUrl + categoryElem.BlogBigImg.data.attributes.url}
-              alt="blog"
-            />
+            {/*<img*/}
+            {/*  width={390}*/}
+            {/*  src={BackUrl + categoryElem.BlogBigImg.data.attributes.url}*/}
+            {/*  alt="blog"*/}
+            {/*/>*/}
             <h3>{categoryElem.BigTitle}</h3>
             <div className="infoWrapper">
               <div className="date">

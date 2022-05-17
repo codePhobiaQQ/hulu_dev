@@ -5,6 +5,7 @@
   padding-top: 101px
   padding-bottom: 104px
   transition: background-color .3s ease
+  min-height: calc(100vh - 401px)
   &.white + .footerSection, &.grey + .footerSection
     .container
       border: none
@@ -39,9 +40,11 @@
   &.white
     background-color: #fff
     .contentWrap
-      p
+      p, a
         transition: color .3s ease
         color: #131313
+      a
+        color: lighten(#131313, .2)
       .infoWrapper
         .categoryBtn
           background-color: transparent
@@ -83,13 +86,17 @@
   .contentWrap
     color: #fff
     img
-      //display: inline-block
+      display: inline-block
       float: left
       margin: 0 45px 35px 0
+      max-width: 450px
+      object-fit: contain
     p
       margin-bottom: 30px
       font-size: 18px
       line-height: 140%
+    a
+      text-decoration: underline
     h3
       font-family: "SequelMediumBody"
       color: #C4C4C4
@@ -99,6 +106,7 @@
       display: flex
       align-items: center
       margin-bottom: 31px
+
       .date
         display: flex
         align-items: center

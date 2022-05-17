@@ -17,7 +17,7 @@ export interface IBlogFinal {
   FacebookLink: string;
   LinkedinLink: string;
   ContentText: string;
-  BlogBigImg: any;
+  // BlogBigImg: any;
   // eslint-disable-next-line camelcase
   blog_categories: any;
 }
