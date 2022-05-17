@@ -16,7 +16,7 @@ const BlogSinglePage = () => {
   // @ts-ignore
   const [categoryElem, setCategoryElem] = useState<IBlogFinal>({
     id: 2,
-    // BlogBigImg: { data: { attributes: arca.src } },
+    BlogBigImg: { data: { attributes: arca.src } },
     BigTitle: "Test",
     TwitLink: "https://google.com",
     LinkedinLink: "https://google.com",
@@ -64,11 +64,11 @@ const BlogSinglePage = () => {
             </a>
           </Link>
           <div className="contentWrap">
-            {/*<img*/}
-            {/*  width={390}*/}
-            {/*  src={BackUrl + categoryElem.BlogBigImg.data.attributes.url}*/}
-            {/*  alt="blog"*/}
-            {/*/>*/}
+            <img
+              width={390}
+              src={BackUrl + categoryElem.BlogBigImg.data.attributes.url}
+              alt="blog"
+            />
             <h3>{categoryElem.BigTitle}</h3>
             <div className="infoWrapper">
               <div className="date">
