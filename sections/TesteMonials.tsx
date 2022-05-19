@@ -100,12 +100,15 @@ const TesteMonials = () => {
   const sliderRef = useRef<any>(null);
 
   const [sectionData, setSectionData] = useState<sliderInterface[]>(sliders);
+  const [title, setTitle] = useState<string>("TESTEMONIALS");
 
   useEffect(() => {
     const takeData = async () => {
       const response = await axios.get(
         BackUrl + "/api/testemonials?populate=icon&populate=logo"
       );
+      const response1 = await axios.get(BackUrl + "/api/main-page-fields");
+      setTitle(response1.data.data.attributes.Testemonials);
       setSectionData([
         ...response.data.data.map((el: any) => {
           return {
@@ -122,7 +125,7 @@ const TesteMonials = () => {
   return (
     <section className="TesteMonialsSection">
       <div className="container">
-        <h2>TESTEMONIALS</h2>
+        <h2>{title}</h2>
         <div className="testemonialsSlider">
           <Slider ref={sliderRef} {...settings}>
             {sectionData.map((el, index) => (
