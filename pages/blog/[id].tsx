@@ -64,11 +64,14 @@ const BlogSinglePage = () => {
             </a>
           </Link>
           <div className="contentWrap">
-            <img
-              width={390}
-              src={BackUrl + categoryElem.BlogBigImg.data.attributes.url}
-              alt="blog"
-            />
+            {categoryElem.BlogBigImg.data?.attributes?.url ? (
+              <img
+                width={390}
+                src={BackUrl + categoryElem.BlogBigImg.data.attributes.url}
+                alt="blog"
+              />
+            ) : null}
+
             <h3>{categoryElem.BigTitle}</h3>
             <div className="infoWrapper">
               <div className="date">
@@ -82,13 +85,6 @@ const BlogSinglePage = () => {
                 </span>
               </div>
               <div className="socLinks">
-                <a
-                  rel="noreferrer"
-                  target={"_blank"}
-                  href={categoryElem.TwitLink}
-                >
-                  <Twit />
-                </a>
                 <a
                   rel="noreferrer"
                   target={"_blank"}

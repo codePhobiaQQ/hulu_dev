@@ -9,19 +9,22 @@ import ReactMarkdown from "react-markdown";
 interface IBlogElem {
   blogEl: IBlogFinal;
   categories: ICategory[];
+  activeCategory: number;
 }
 
-const BlogElem = ({ blogEl, categories }: IBlogElem) => {
+const BlogElem = ({ blogEl, categories, activeCategory }: IBlogElem) => {
   return (
     <motion.li initial="hidden" animate="visible" variants={fadeIn}>
       <Link href={`/blog/${blogEl.id}`}>
         <a>
-          <div className="imgWrapper">
-            <img
-              src={BackUrl + blogEl.PreviewImg.data.attributes.url}
-              alt="blog"
-            />
-          </div>
+          {blogEl.PreviewImg.data?.attributes?.url ? (
+            <div className="imgWrapper">
+              <img
+                src={BackUrl + blogEl.PreviewImg.data.attributes.url}
+                alt="blog"
+              />
+            </div>
+          ) : null}
           <div className="content">
             <h3>{blogEl.ShortTitle}</h3>
             <div className="innerContent">
@@ -33,8 +36,9 @@ const BlogElem = ({ blogEl, categories }: IBlogElem) => {
                 {blogEl.PreviewText.split("").slice(0, 300).join("") + "..."}
               </ReactMarkdown>
             </div>
-
-            <span>{blogEl.blog_categories[0].name}</span>
+            {blogEl.blog_categories[0]?.name ? (
+              <span>{blogEl.blog_categories[0].name}</span>
+            ) : null}
           </div>
         </a>
       </Link>

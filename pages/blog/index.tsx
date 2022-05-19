@@ -78,6 +78,7 @@ const Blog = () => {
                 key={"blogEl" + index}
                 categories={categoryData}
                 blogEl={blogEl}
+                activeCategory={activeCategory}
               />
             ))}
           </ul>
