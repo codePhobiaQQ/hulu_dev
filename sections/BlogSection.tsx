@@ -3,6 +3,7 @@ import newsImg from "../public/assets/img/news/newsImg.jpg";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { BackUrl } from "../vars";
+import { IBlogFinal } from "../pages/blog";
 
 interface IBlogSection {
   setTopPosition: Dispatch<SetStateAction<number>>;
@@ -51,11 +52,19 @@ const BlogSection = ({ setTopPosition }: IBlogSection) => {
     RightColText3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   });
 
+  const [categoryElems, setCategoryElems] = useState<IBlogFinal[]>(
+    [] as IBlogFinal[]
+  );
+
   useEffect(() => {
     const takeData = async () => {
       const response = await axios.get(
         BackUrl +
           "/api/main-page-fields?populate=BlogSection&populate=BlogSection.LeftColImg"
+      );
+      const responsElems = await axios.get(
+        BackUrl +
+          "/api/blogs?populate=BlogBigImg&populate=PreviewImg&populate=blog_categories"
       );
       setSectionData({
         ...response.data.data.attributes.BlogSection,
@@ -64,6 +73,21 @@ const BlogSection = ({ setTopPosition }: IBlogSection) => {
           response.data.data.attributes.BlogSection.LeftColImg.data.attributes
             .url,
       });
+      setCategoryElems([
+        ...responsElems.data.data.map((el: any, index: number) => {
+          console.log(el.attributes);
+          return {
+            ...el.attributes,
+            blog_categories: el.attributes.blog_categories.data.map(
+              (el: any) => el.attributes
+            ),
+            id: responsElems.data.data[index].id,
+            PreviewImg: el.attributes?.PreviewImg?.data?.attributes?.url
+              ? BackUrl + el.attributes.PreviewImg.data.attributes.url
+              : "",
+          };
+        }),
+      ]);
     };
     takeData();
   }, []);
@@ -78,54 +102,100 @@ const BlogSection = ({ setTopPosition }: IBlogSection) => {
     <section ref={sectionRef} id="Blog" className="BlogSection">
       <div className="container">
         <div className="leftCol">
-          <h2>{sectionData.title}</h2>
+          {categoryElems[0]?.BigTitle ? (
+            <h2>{categoryElems[0].BigTitle}</h2>
+          ) : null}
           <div className="imgContainer">
-            <img src={sectionData.LeftColImg} alt="news" />
+            {categoryElems[0]?.PreviewImg ? (
+              <img src={categoryElems[0].PreviewImg} alt="news" />
+            ) : null}
             <div className="spansWrap">
-              <Link href={sectionData.LeftCollInk}>
-                <a>News</a>
-              </Link>
-              <span className="when">{sectionData.LeftColDate}</span>
+              {categoryElems[0]?.id ? (
+                <Link href={"blog/" + categoryElems[0].id}>
+                  <a>News</a>
+                </Link>
+              ) : null}
+              {categoryElems[0]?.Date ? (
+                <span className="when">{categoryElems[0].Date}</span>
+              ) : null}
             </div>
           </div>
-          <p className="what">{sectionData.LeftColText}</p>
+          {categoryElems[0]?.PreviewText ? (
+            <p className="what">
+              {categoryElems[0].PreviewText.split("").slice(0, 300).join("") +
+                "..."}
+            </p>
+          ) : null}
         </div>
         <div className="rightCol">
           <div className="news">
             <div className="helpsWrap">
-              <Link href={sectionData.RightColLink1}>
-                <a className="link">News</a>
-              </Link>
-              <span className="classification">
-                {sectionData.RightColCategory1}
-              </span>
-              <span className="when">{sectionData.RightColDate1}</span>
+              {categoryElems[1]?.id ? (
+                <Link href={"blog/" + categoryElems[1].id}>
+                  <a>News</a>
+                </Link>
+              ) : null}
+              {categoryElems[1]?.blog_categories[0]?.name ? (
+                <span className="classification">
+                  {categoryElems[1]?.blog_categories[0]?.name}
+                </span>
+              ) : null}
+              {categoryElems[1]?.Date ? (
+                <span className="when">{categoryElems[1].Date}</span>
+              ) : null}
             </div>
-            <p className="shortText">{sectionData.RightColText1}</p>
+            {categoryElems[1]?.PreviewText ? (
+              <p className="shortText">
+                {categoryElems[1].PreviewText.split("").slice(0, 100).join("") +
+                  "..."}
+              </p>
+            ) : null}
           </div>
           <div className="news">
             <div className="helpsWrap">
-              <Link href={sectionData.RightColLink2}>
-                <a className="link">News</a>
-              </Link>
-              <span className="classification">
-                {sectionData.RightColCategory2}
-              </span>
-              <span className="when">{sectionData.RightColDate2}</span>
+              {categoryElems[2]?.id ? (
+                <Link href={"blog/" + categoryElems[2].id}>
+                  <a>News</a>
+                </Link>
+              ) : null}
+              {categoryElems[2]?.blog_categories[0]?.name ? (
+                <span className="classification">
+                  {categoryElems[2]?.blog_categories[0]?.name}
+                </span>
+              ) : null}
+              {categoryElems[2]?.Date ? (
+                <span className="when">{categoryElems[2].Date}</span>
+              ) : null}
             </div>
-            <p className="shortText">{sectionData.RightColText2}</p>
+            {categoryElems[2]?.PreviewText ? (
+              <p className="shortText">
+                {categoryElems[2].PreviewText.split("").slice(0, 100).join("") +
+                  "..."}
+              </p>
+            ) : null}
           </div>
           <div className="news">
             <div className="helpsWrap">
-              <Link href={sectionData.RightColLink3}>
-                <a className="link">News</a>
-              </Link>
-              <span className="classification">
-                {sectionData.RightColCategory3}
-              </span>
-              <span className="when">{sectionData.RightColDate3}</span>
+              {categoryElems[3]?.id ? (
+                <Link href={"blog/" + categoryElems[3].id}>
+                  <a>News</a>
+                </Link>
+              ) : null}
+              {categoryElems[3]?.blog_categories[0]?.name ? (
+                <span className="classification">
+                  {categoryElems[3]?.blog_categories[0]?.name}
+                </span>
+              ) : null}
+              {categoryElems[3]?.Date ? (
+                <span className="when">{categoryElems[3].Date}</span>
+              ) : null}
             </div>
-            <p className="shortText">{sectionData.RightColText3}</p>
+            {categoryElems[3]?.PreviewText ? (
+              <p className="shortText">
+                {categoryElems[3].PreviewText.split("").slice(0, 100).join("") +
+                  "..."}
+              </p>
+            ) : null}
           </div>
         </div>
       </div>

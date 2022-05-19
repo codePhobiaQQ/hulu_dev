@@ -65,13 +65,16 @@ const MainPage = () => {
       isLightLogo != false
     ) {
       setIsLightLogo(false);
-    } else if (
-      position > topPosition2 &&
-      position < topPosition3 &&
-      isLightLogo == false
-    ) {
-      setIsLightLogo(true);
-    } else if (
+    }
+    // else if (
+    //   position > topPosition2 &&
+    //   position < topPosition3 &&
+    //   isLightLogo == false
+    // )
+    // {
+    //   setIsLightLogo(true);
+    // }
+    else if (
       position >= topPosition3 &&
       position <= topPosition4 &&
       isLightLogo != false
