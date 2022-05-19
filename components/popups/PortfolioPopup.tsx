@@ -56,18 +56,6 @@ const PortfolioPopup = ({
                         {Portfolio.web}
                       </a>
                     </li>
-                    {/*<li className="infoElem">*/}
-                    {/*  <span className="what">region</span>*/}
-                    {/*  <span className="value">{Portfolio.region}</span>*/}
-                    {/*</li>*/}
-                    {/*<li className="infoElem">*/}
-                    {/*  <span className="what">country</span>*/}
-                    {/*  <span className="value">{Portfolio.country}</span>*/}
-                    {/*</li>*/}
-                    {/*<li className="infoElem">*/}
-                    {/*  <span className="what">status</span>*/}
-                    {/*  <span className="value">{Portfolio.status}</span>*/}
-                    {/*</li>*/}
                   </ul>
                 </div>
 
