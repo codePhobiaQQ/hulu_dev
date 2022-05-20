@@ -75,7 +75,7 @@ const FooterSection = () => {
             </a>
           </Link>
           <span onClick={() => dispatch(setPolicityOpen(true))}>
-            Privacy and policy
+            Privacy policy
           </span>
         </div>
         <div className="centerCol">
