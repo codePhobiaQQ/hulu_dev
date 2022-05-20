@@ -52,8 +52,22 @@ const PortfolioPopup = ({
                   <ul className="infoLine">
                     <li className="infoElem">
                       <span className="what">web</span>
-                      <a className="value" href="#" target="_blank">
+                      <a
+                        className="value"
+                        href={Portfolio.webLink}
+                        target="_blank"
+                      >
                         {Portfolio.web}
+                      </a>
+                    </li>
+                    <li className="infoElem">
+                      <span className="what">LinkedIn</span>
+                      <a
+                        className="value"
+                        href={Portfolio.linkedInLink}
+                        target="_blank"
+                      >
+                        {Portfolio.linkedIn}
                       </a>
                     </li>
                   </ul>

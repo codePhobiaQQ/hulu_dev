@@ -9,9 +9,9 @@ export interface ILogosFinal {
   id: number;
   Logo: string;
   web: string;
-  region: string;
-  country: string;
-  status: string;
+  webLink: string;
+  linkedIn: string;
+  linkedInLink: string;
   description: string;
   contactLink: string;
 }
@@ -24,50 +24,50 @@ const PortfolioSection = () => {
       id: 1,
       Logo: uniepaus.src,
       web: "uniepays.com",
-      region: "Europe",
-      country: "Turkey",
-      status: "Active",
       description: "Test",
+      webLink: "test",
+      linkedIn: "test",
+      linkedInLink: "test",
       contactLink: "https://google.com",
     },
     {
       id: 2,
       Logo: uniepaus.src,
       web: "uniepays.com",
-      region: "Europe",
-      country: "Turkey",
-      status: "Active",
       description: "Test",
+      webLink: "test",
+      linkedIn: "test",
+      linkedInLink: "test",
       contactLink: "https://google.com",
     },
     {
       id: 3,
       Logo: uniepaus.src,
       web: "uniepays.com",
-      region: "Europe",
-      country: "Turkey",
-      status: "Active",
       description: "Test",
+      webLink: "test",
+      linkedIn: "test",
+      linkedInLink: "test",
       contactLink: "https://google.com",
     },
     {
       id: 4,
       Logo: uniepaus.src,
       web: "uniepays.com",
-      region: "Europe",
-      country: "Turkey",
-      status: "Active",
       description: "Test",
+      webLink: "test",
+      linkedIn: "test",
+      linkedInLink: "test",
       contactLink: "https://google.com",
     },
     {
       id: 5,
       Logo: uniepaus.src,
       web: "uniepays.com",
-      region: "Europe",
-      country: "Turkey",
-      status: "Active",
       description: "Test",
+      webLink: "test",
+      linkedIn: "test",
+      linkedInLink: "test",
       contactLink: "https://google.com",
     },
   ] as ILogosFinal[]);
