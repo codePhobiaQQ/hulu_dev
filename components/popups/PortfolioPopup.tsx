@@ -56,6 +56,7 @@ const PortfolioPopup = ({
                         className="value"
                         href={Portfolio.webLink}
                         target="_blank"
+                        rel="noreferrer"
                       >
                         {Portfolio.web}
                       </a>
@@ -66,6 +67,7 @@ const PortfolioPopup = ({
                         className="value"
                         href={Portfolio.linkedInLink}
                         target="_blank"
+                        rel="noreferrer"
                       >
                         {Portfolio.linkedIn}
                       </a>
