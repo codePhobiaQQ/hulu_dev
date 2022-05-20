@@ -45,17 +45,24 @@ const Blog = () => {
         { name: "All", ids: 0 },
         ...response.data.data.map((el: any) => el.attributes),
       ]);
-      setCategoryElems([
-        ...responsElems.data.data.map((el: any, index: number) => {
-          return {
-            ...el.attributes,
-            blog_categories: el.attributes.blog_categories.data.map(
-              (el: any) => el.attributes
-            ),
-            id: responsElems.data.data[index].id,
-          };
-        }),
-      ]);
+      setCategoryElems(
+        [
+          ...responsElems.data.data.map((el: any, index: number) => {
+            return {
+              ...el.attributes,
+              blog_categories: el.attributes.blog_categories.data.map(
+                (el: any) => el.attributes
+              ),
+              id: responsElems.data.data[index].id,
+            };
+          }),
+        ].sort(function (a, b) {
+          const c = new Date(a.Date);
+          const d = new Date(b.Date);
+          // @ts-ignore
+          return d - c;
+        })
+      );
       console.log(categoryElems);
     };
     takeData();

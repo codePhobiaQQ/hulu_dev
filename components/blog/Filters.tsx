@@ -22,13 +22,20 @@ const Filters = ({
     if (activeCategory == 0) {
       setBlogs(blogsEl);
     } else {
-      const filter = blogsEl.filter((blogEl, index) =>
-        blogEl.blog_categories
-          .map((el: any) => {
-            return el.ids;
-          })
-          .includes(activeCategory)
-      );
+      const filter = blogsEl
+        .filter((blogEl, index) =>
+          blogEl.blog_categories
+            .map((el: any) => {
+              return el.ids;
+            })
+            .includes(activeCategory)
+        )
+        .sort(function (a, b) {
+          const c = new Date(a.Date);
+          const d = new Date(b.Date);
+          // @ts-ignore
+          return d - c;
+        });
       setBlogs(filter);
     }
   }, [activeCategory, blogsEl, categories]);

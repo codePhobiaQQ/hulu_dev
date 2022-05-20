@@ -73,21 +73,28 @@ const BlogSection = ({ setTopPosition }: IBlogSection) => {
           response.data.data.attributes.BlogSection.LeftColImg.data.attributes
             .url,
       });
-      setCategoryElems([
-        ...responsElems.data.data.map((el: any, index: number) => {
-          console.log(el.attributes);
-          return {
-            ...el.attributes,
-            blog_categories: el.attributes.blog_categories.data.map(
-              (el: any) => el.attributes
-            ),
-            id: responsElems.data.data[index].id,
-            PreviewImg: el.attributes?.PreviewImg?.data?.attributes?.url
-              ? BackUrl + el.attributes.PreviewImg.data.attributes.url
-              : "",
-          };
-        }),
-      ]);
+      setCategoryElems(
+        [
+          ...responsElems.data.data.map((el: any, index: number) => {
+            console.log(el.attributes);
+            return {
+              ...el.attributes,
+              blog_categories: el.attributes.blog_categories.data.map(
+                (el: any) => el.attributes
+              ),
+              id: responsElems.data.data[index].id,
+              PreviewImg: el.attributes?.PreviewImg?.data?.attributes?.url
+                ? BackUrl + el.attributes.PreviewImg.data.attributes.url
+                : "",
+            };
+          }),
+        ].sort(function (a, b) {
+          const c = new Date(a.Date);
+          const d = new Date(b.Date);
+          // @ts-ignore
+          return d - c;
+        })
+      );
     };
     takeData();
   }, []);
