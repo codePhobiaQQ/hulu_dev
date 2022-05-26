@@ -25,7 +25,6 @@ const MainPage = () => {
     HideEvents: false,
   } as IPageDaga);
 
-  const { scrollY } = useViewportScroll();
   const [lastScroll, setLastScroll] = useState<number>(0);
   const [lastScrollHelper, setLastScrollHelper] = useState<number>(0);
   const [isHide, setIsHide] = useState<boolean>(false);
@@ -113,20 +112,19 @@ const MainPage = () => {
 
   return (
     <Header
-      scrolling={scrollY}
       dashboardOffset={dashboardOffset}
       dashboardHeight={dashboardHeight}
       isLightLogo={isLightLogo}
       isHide={isHide}
     >
       <MainSection />
-      <WrapperSecond setTopPosition={setTopPosition1} scrolling={scrollY} />
+      <WrapperSecond setTopPosition={setTopPosition1} />
       <DashboardSection
         setDashboardHeight={setDashboardHeight}
         setDashboardOffset={setDashboardOffset}
       />
       {!pageData.HideRisk && <RiscScenarios setTopPosition={setTopPosition2} />}
-      {!pageData.HideEvents && <EventsSection />}
+      {!pageData.HideEvents && <EventsSection hide={pageData.HideEvents} />}
       <ContactSection setTopPosition={setTopPosition3} />
       <PortfolioSection />
       <TesteMonials />

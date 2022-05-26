@@ -7,47 +7,80 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface IWrapperSecond {
-  scrolling: MotionValue<number>;
   setTopPosition: Dispatch<SetStateAction<number>>;
 }
 
-const WrapperSecond = ({ scrolling, setTopPosition }: IWrapperSecond) => {
+const WrapperSecond = ({ setTopPosition }: IWrapperSecond) => {
   const [topi, setTop] = useState<number>(920);
-  const [windowHeight, setWindowHeight] = useState<number>(920);
   const [whyHeight, setWhyHeight] = useState<number>(630);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const [from, setFrom] = useState<number>(920);
-  const [to, setTo] = useState<number>(1300);
-
-  useEffect(() => {
-    if (windowHeight < whyHeight) {
-      setFrom(topi + whyHeight - windowHeight + 200);
-      setTo(topi + whyHeight - windowHeight + 600);
-    } else {
-      setFrom(topi);
-      setTo(topi + whyHeight - 100);
-    }
-  }, [windowHeight]);
-
-  const opacity = useTransform(scrolling, [from, to], [1, 0]);
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
     sectionRef.current ? setTop(sectionRef.current?.offsetTop) : null;
-    setWindowHeight(window.innerHeight);
-  }, [sectionRef.current]);
+  }, [width, height]);
+
+  const scrollHandler = () => {
+    const top = document.documentElement.scrollTop;
+    const firstPoint = width <= 1359 ? topi + whyHeight / 4 : topi;
+    const secondPoint =
+      width <= 1359 ? topi + (whyHeight * 3) / 4 : topi + whyHeight / 2;
+
+    console.log(firstPoint, secondPoint);
+
+    if (top < firstPoint) {
+      if (
+        !sectionRef.current?.querySelector(".dirty")?.classList.contains("dark")
+      ) {
+        sectionRef.current?.querySelector(".dirty")?.classList.add("dark");
+      }
+    } else if (top >= firstPoint && top < secondPoint) {
+      if (
+        sectionRef.current?.querySelector(".dirty")?.classList.contains("dark")
+      ) {
+        sectionRef.current?.querySelector(".dirty")?.classList.remove("dark");
+      }
+      if (
+        sectionRef.current?.querySelector(".dirty")?.classList.contains("light")
+      ) {
+        sectionRef.current?.querySelector(".dirty")?.classList.remove("light");
+      }
+      sectionRef.current
+        ?.querySelector(".dirty")
+        ?.setAttribute(
+          "style",
+          `opacity: ${
+            1 -
+            Math.round(
+              ((top - firstPoint) * 100) / (secondPoint - firstPoint)
+            ) /
+              100
+          }`
+        );
+    } else {
+      if (
+        !sectionRef.current
+          ?.querySelector(".dirty")
+          ?.classList.contains("light")
+      ) {
+        sectionRef.current?.querySelector(".dirty")?.classList.add("light");
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, [width, height]);
 
   return (
     <div ref={sectionRef} className="WrapperSecond">
-      <motion.div
-        style={{
-          opacity: opacity,
-          backgroundColor: "#131313",
-        }}
-        className="dirty"
-      ></motion.div>
+      <motion.div className="dirty"></motion.div>
       <WhyHuntySection setWhyHeight={setWhyHeight} />
       <AboutSection whyHeight={topi} setTopPosition={setTopPosition} />
     </div>

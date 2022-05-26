@@ -76,7 +76,6 @@ const BlogSection = ({ setTopPosition }: IBlogSection) => {
       setCategoryElems(
         [
           ...responsElems.data.data.map((el: any, index: number) => {
-            console.log(el.attributes);
             return {
               ...el.attributes,
               blog_categories: el.attributes.blog_categories.data.map(

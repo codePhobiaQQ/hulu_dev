@@ -40,7 +40,7 @@ const WhyHuntySection = React.memo(({ setWhyHeight }: IWhyHuntySection) => {
 
   useEffect(() => {
     sectionRef.current ? setWhyHeight(sectionRef.current.clientHeight) : null;
-  }, [sectionRef.current]);
+  }, [sectionRef.current?.clientHeight]);
 
   useEffect(() => {
     const takeData = async () => {

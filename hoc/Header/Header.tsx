@@ -12,7 +12,6 @@ import useTypedSelector from "../../hooks/useTypedSelector";
 interface IHeader {
   children: React.ReactNode;
   setColorMode?: Dispatch<SetStateAction<string>>;
-  scrolling?: MotionValue<number>;
   dashboardOffset?: number;
   dashboardHeight?: number;
   isLightLogo: boolean;
