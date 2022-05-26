@@ -29,8 +29,6 @@ const WrapperSecond = ({ setTopPosition }: IWrapperSecond) => {
     const secondPoint =
       width <= 1359 ? topi + (whyHeight * 3) / 4 : topi + whyHeight / 2;
 
-    console.log(firstPoint, secondPoint);
-
     if (top < firstPoint) {
       if (
         !sectionRef.current?.querySelector(".dirty")?.classList.contains("dark")

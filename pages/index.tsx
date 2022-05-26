@@ -1,6 +1,6 @@
 import Header from "../hoc/Header/Header";
 import MainSection from "../sections/MainSection";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useViewportScroll } from "framer-motion";
 import WrapperSecond from "../sections/WrapperSecond";
 import DashboardSection from "../sections/DashboardSection";
@@ -13,6 +13,7 @@ import TesteMonials from "../sections/TesteMonials";
 import EventsSection from "../sections/EventsSection";
 import axios from "axios";
 import { BackUrl } from "../vars";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface IPageDaga {
   HideEvents: boolean;
@@ -25,8 +26,6 @@ const MainPage = () => {
     HideEvents: false,
   } as IPageDaga);
 
-  const [lastScroll, setLastScroll] = useState<number>(0);
-  const [lastScrollHelper, setLastScrollHelper] = useState<number>(0);
   const [isHide, setIsHide] = useState<boolean>(false);
 
   const [dashboardOffset, setDashboardOffset] = useState<number>(900);
@@ -38,13 +37,9 @@ const MainPage = () => {
   const [topPosition3, setTopPosition3] = useState<number>(6785);
   const [topPosition4, setTopPosition4] = useState<number>(11276);
 
-  const scrollPosition = () => {
-    return window.pageYOffset || document.documentElement.scrollTop;
-  };
-
-  useEffect(() => {
-    setLastScrollHelper(scrollPosition());
-  }, []);
+  const lastScrollHelper = useRef<number>(0);
+  const lastScroll = useRef<number>(0);
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
     const takeData = async () => {
@@ -55,7 +50,7 @@ const MainPage = () => {
   }, []);
 
   const scrollHandler = () => {
-    const position = scrollPosition();
+    const position = document.documentElement.scrollTop;
     if (position < topPosition1 && isLightLogo == false) {
       setIsLightLogo(true);
     } else if (
@@ -64,16 +59,13 @@ const MainPage = () => {
       isLightLogo != false
     ) {
       setIsLightLogo(false);
-    }
-    // else if (
-    //   position > topPosition2 &&
-    //   position < topPosition3 &&
-    //   isLightLogo == false
-    // )
-    // {
-    //   setIsLightLogo(true);
-    // }
-    else if (
+    } else if (
+      position > topPosition2 &&
+      position < topPosition3 &&
+      isLightLogo == false
+    ) {
+      setIsLightLogo(true);
+    } else if (
       position >= topPosition3 &&
       position <= topPosition4 &&
       isLightLogo != false
@@ -83,16 +75,20 @@ const MainPage = () => {
       setIsLightLogo(true);
     }
 
-    if (position > lastScrollHelper + 80) {
-      if (!isHide) {
-        setIsHide(true);
+    if (position > lastScroll.current) {
+      console.log("down");
+      lastScroll.current = position;
+      if (position > lastScrollHelper.current + 80) {
+        if (!isHide) {
+          setIsHide(true);
+        }
+        lastScrollHelper.current = position;
       }
-      setLastScrollHelper(position);
-      setLastScroll(position);
-    } else if (position < lastScroll) {
+    } else {
+      console.log("up");
       if (isHide) setIsHide(false);
-      setLastScrollHelper(position);
-      setLastScroll(position);
+      lastScroll.current = position;
+      lastScrollHelper.current = position;
     }
   };
 
@@ -101,14 +97,7 @@ const MainPage = () => {
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
-  }, [
-    topPosition1,
-    topPosition2,
-    topPosition3,
-    topPosition4,
-    isLightLogo,
-    lastScroll,
-  ]);
+  }, [topPosition1, topPosition2, topPosition3, topPosition4, isHide]);
 
   return (
     <Header
